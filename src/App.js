@@ -30,9 +30,7 @@ function App() {
         {fcards.map((fcard) => {
           return <Flashcard key={Math.random()} fcard={fcard} />;
         })}
-        <form onSubmit={() => addFcard}>
-          <AddFcard />
-        </form>
+        <AddFcard />
       </main>
       <footer>footer</footer>
     </div>

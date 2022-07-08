@@ -4,3 +4,11 @@
     width: 5rem;
     height: 10rem;
 }
+
+.Flashcard__unturned.--input {
+
+}
+
+.Flashcard__form {
+    display: flex;
+}
