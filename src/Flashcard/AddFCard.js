@@ -6,6 +6,7 @@ export const AddFcard = ({ onAddFcard }) => {
   function handleSubmit(e) {
     e.preventDefault();
     onAddFcard(fcard);
+    setFcard({ turned: "", unturned: "" });
   }
   function changeUnturned(e) {
     setFcard(() => {
@@ -20,7 +21,7 @@ export const AddFcard = ({ onAddFcard }) => {
   return (
     <form className="Flashcard__form" onSubmit={handleSubmit}>
       <div className="Flashcard__form__inputs">
-        <div>
+        <div className="Flashcard_form_cell">
           <div className="Flashcard_form_label">UNTURNED</div>
           <input
             className="Flashcard"
@@ -29,7 +30,7 @@ export const AddFcard = ({ onAddFcard }) => {
             onChange={changeUnturned}
           />
         </div>
-        <div>
+        <div className="Flashcard_form_cell">
           <div className="Flashcard_form_label">TURNED</div>
           <input
             className="Flashcard"
