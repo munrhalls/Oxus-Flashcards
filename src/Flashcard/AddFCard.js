@@ -21,7 +21,7 @@ export const AddFcard = ({ onAddFcard }) => {
     <form className="Flashcard__form" onSubmit={handleSubmit}>
       <div className="Flashcard__form__inputs">
         <div>
-          <div>UNTURNED</div>
+          <div className="Flashcard_form_label">UNTURNED</div>
           <input
             className="Flashcard"
             placeholder="Type..."
@@ -30,7 +30,7 @@ export const AddFcard = ({ onAddFcard }) => {
           />
         </div>
         <div>
-          <div>TURNED</div>
+          <div className="Flashcard_form_label">TURNED</div>
           <input
             className="Flashcard"
             placeholder="Type..."
