@@ -19,26 +19,32 @@ export const AddFcard = ({ onAddFcard }) => {
   }
   return (
     <form className="Flashcard__form" onSubmit={handleSubmit}>
-      <div>
-        <div>UNTURNED</div>
-        <input
-          className="Flashcard"
-          placeholder="Type..."
-          value={fcard.unturned}
-          onChange={changeUnturned}
-        />
+      <div className="Flashcard__form__inputs">
+        <div>
+          <div>UNTURNED</div>
+          <input
+            className="Flashcard"
+            placeholder="Type..."
+            value={fcard.unturned}
+            onChange={changeUnturned}
+          />
+        </div>
+        <div>
+          <div>TURNED</div>
+          <input
+            className="Flashcard"
+            placeholder="Type..."
+            value={fcard.turned}
+            onChange={changeTurned}
+          />
+        </div>
       </div>
       <div>
-        <div>TURNED</div>
         <input
-          className="Flashcard"
-          placeholder="Type..."
-          value={fcard.turned}
-          onChange={changeTurned}
+          className="Flashcard__form__submit"
+          type="submit"
+          value="Add FLASHCARD"
         />
-      </div>
-      <div>
-        <input type="submit" value="Submit" />
       </div>
     </form>
   );

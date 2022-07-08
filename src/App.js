@@ -26,12 +26,16 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">header</header>
+      <header className="Header">Flashcards</header>
       <main>
-        {fcards.map((fcard) => {
-          return <Flashcard key={Math.random()} fcard={fcard} />;
-        })}
-        <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
+        <div className="Flashcards">
+          {fcards.map((fcard) => {
+            return <Flashcard key={Math.random()} fcard={fcard} />;
+          })}
+        </div>
+        <div className="Flashcards__form">
+          <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
+        </div>
       </main>
       <footer>footer</footer>
     </div>
