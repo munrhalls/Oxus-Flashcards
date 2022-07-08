@@ -1,9 +1,18 @@
 import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
+import { AddFcard } from "./Flashcard/AddFCard";
 
 function App() {
   const [fcards, setfcards] = useState([
+    {
+      unturned: "Example fcard",
+      turned: "Not a fuck you card",
+    },
+    {
+      unturned: "Example fcard",
+      turned: "Not a fuck you card",
+    },
     {
       unturned: "Example fcard",
       turned: "Not a fuck you card",
@@ -19,10 +28,10 @@ function App() {
       <header className="App-header">header</header>
       <main>
         {fcards.map((fcard) => {
-          return <Flashcard fcard={fcard} />;
+          return <Flashcard key={Math.random()} fcard={fcard} />;
         })}
         <form onSubmit={() => addFcard}>
-          <input type="submit" value="Add flashcard" />
+          <AddFcard />
         </form>
       </main>
       <footer>footer</footer>
