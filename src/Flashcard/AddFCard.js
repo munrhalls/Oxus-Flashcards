@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
-export const AddFcard = () => {
+export const AddFcard = ({ onAddFcard }) => {
   const [fcard, setFcard] = useState({ turned: "", unturned: "" });
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    onAddFcard(fcard);
+  }
   function changeUnturned(e) {
     setFcard(() => {
       return { turned: fcard.turned, unturned: e.target.value };
@@ -14,7 +18,7 @@ export const AddFcard = () => {
     });
   }
   return (
-    <form className="Flashcard__form">
+    <form className="Flashcard__form" onSubmit={handleSubmit}>
       <div>
         <div>UNTURNED</div>
         <input
