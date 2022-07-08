@@ -7,6 +7,8 @@
     border-radius: 5px;
     width: 5rem;
     height: 10rem;
+    padding: 0.25rem;
+    cursor: pointer;
 }
 
 .Flashcard__form {
