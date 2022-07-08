@@ -1,3 +1,7 @@
+
+.Flashcards {
+    display: flex;
+}
 .Flashcard {
     border: 3px solid #000;
     border-radius: 5px;
@@ -5,10 +9,19 @@
     height: 10rem;
 }
 
-.Flashcard__unturned.--input {
-
+.Flashcard__form {
+    padding-top: 3rem;
 }
 
-.Flashcard__form {
+.Flashcard__form__inputs {
     display: flex;
+}
+
+.Flashcard__form__submit {
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
 }
