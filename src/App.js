@@ -33,7 +33,7 @@ function App() {
             return <Flashcard key={Math.random()} fcard={fcard} />;
           })}
         </div>
-        <div className="Flashcards__form">
+        <div className="Flashcards__form__container">
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
         </div>
       </main>
