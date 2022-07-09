@@ -2,9 +2,10 @@ import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
+import ScreenCapture from "./Screener/ScreenCapture";
+import Screener from "./Screener/Screener";
 
 function App() {
-  //comment
   const [fcards, setfcards] = useState([
     {
       unturned: "Example fcard",
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
+      <Screener />
       <main className="Main">
         <div className="Flashcards">
           {fcards.map((fcard) => {
