@@ -1,8 +1,8 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
-import { db } from "./Firebase/app";
+import { flashcardsCol, getDocs, doc } from "./Firebase/Firebase";
 
 function App() {
   const [fcards, setfcards] = useState([
@@ -20,10 +20,22 @@ function App() {
     },
   ]);
 
-  console.log(db);
   function onAddFcard(fcard) {
     setfcards(() => [...fcards, fcard]);
   }
+  async function getFlashcards() {
+    const flashcardSnapshot = await getDocs(flashcardsCol);
+    const flashcardList = flashcardSnapshot.docs.map((doc) => doc.data());
+    return flashcardList;
+  }
+  useEffect(() => {
+    getFlashcards()
+      .then((res) => {
+        setfcards(res);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
