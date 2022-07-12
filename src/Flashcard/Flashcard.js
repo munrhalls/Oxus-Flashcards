@@ -10,9 +10,9 @@ export const Flashcard = ({ fcard }) => {
   return (
     <div className="Flashcard" onClick={() => turn()}>
       {turned ? (
-        <div className="Flashcard__turned">{fcard.turned}</div>
+        <div className="Flashcard__turned">{fcard.turned.text}</div>
       ) : (
-        <div className="Flashcard__unturned">{fcard.unturned}</div>
+        <div className="Flashcard__unturned">{fcard.unturned.text}</div>
       )}
     </div>
   );
