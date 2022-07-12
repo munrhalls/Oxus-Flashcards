@@ -23,21 +23,32 @@ export const AddFcard = ({ onAddFcard }) => {
       <div className="Flashcard__form__inputs">
         <div className="Flashcard_form_cell">
           <div className="Flashcard_form_label">UNTURNED</div>
-          <input
-            className="Flashcard"
-            placeholder="Type..."
-            value={fcard.unturned}
-            onChange={changeUnturned}
-          />
+          <div className="Flashcard">
+            <input
+              className="Flashcard__input"
+              placeholder="Type..."
+              value={fcard.unturned}
+              onChange={changeUnturned}
+            />
+            <input className="Flashcard__input" type="file" />
+          </div>
         </div>
         <div className="Flashcard_form_cell">
           <div className="Flashcard_form_label">TURNED</div>
-          <input
-            className="Flashcard"
-            placeholder="Type..."
-            value={fcard.turned}
-            onChange={changeTurned}
-          />
+          <div className="Flashcard">
+            <input
+              className="Flashcard__input"
+              placeholder="Type..."
+              value={fcard.turned}
+              onChange={changeTurned}
+            />
+            <input
+              className="Flashcard__input"
+              placeholder="Type..."
+              value={fcard.turned}
+              onChange={changeTurned}
+            />
+          </div>
         </div>
       </div>
       <div>
