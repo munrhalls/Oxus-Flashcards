@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDocs } from "firebase/firestore";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDNaOxF_mwBcC1_bJiqonyqjpvDFEhSpgg",
@@ -15,4 +16,4 @@ const db = getFirestore(firebase);
 
 const flashcardsCol = collection(db, "flashcards");
 
-export { flashcardsCol, getDocs, doc };
+export { flashcardsCol, getDocs, doc, getStorage, ref, uploadBytes };
