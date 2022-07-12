@@ -7,7 +7,7 @@ import {
   getDocs,
   addDoc,
 } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDNaOxF_mwBcC1_bJiqonyqjpvDFEhSpgg",
@@ -32,6 +32,7 @@ export {
   getStorage,
   ref,
   uploadBytes,
+  getDownloadURL,
   collection,
   db,
 };

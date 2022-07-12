@@ -2,6 +2,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
+import cloneDeep from "lodash.clonedeep";
+
 import {
   collection,
   db,
@@ -18,41 +20,103 @@ import {
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [fcards, setfcards] = useState("");
-  const [fcardToDB, setfcardToDB] = useState(null);
+  const [fcards, setFcards] = useState("");
+  const [fcardToDB, setFcardToDB] = useState(null);
+  const [imagesToDB, setimagesToDB] = useState({
+    unturned: "",
+    turned: "",
+  });
 
   function onAddFcard(fcard) {
-    setfcards([...fcards, fcard]);
-    setfcardToDB(fcard);
+    setFcardToDB(fcard);
   }
   async function getFlashcards() {
     const flashcardSnapshot = await getDocs(flashcardsCol);
     const flashcardList = flashcardSnapshot.docs.map((doc) => doc.data());
     return flashcardList;
   }
-  useEffect(() => {
-    if (fcardToDB) {
-      addFcardToDb();
+
+  async function handleImages() {
+    const storage = getStorage();
+    const storageRef = ref(storage, "flashcards");
+    let imagesToDB = cloneDeep(imagesToDB);
+    const unturnedImg = fcardToDB.unturned.image;
+    const turnedImg = fcardToDB.turned.image;
+    if (unturnedImg) {
+      uploadBytes(storageRef, unturnedImg)
+        .then((snapshot) => {
+          getDownloadURL(storageRef)
+            .then((url) => {
+              imagesToDB.unturned = url;
+            })
+            .catch((error) => {
+              switch (error.code) {
+                case "storage/object-not-found":
+                  break;
+                case "storage/unauthorized":
+                  break;
+                case "storage/canceled":
+                  break;
+                case "storage/unknown":
+                  break;
+              }
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-    return () => {
-      setfcardToDB(null);
-    };
-  }, [fcardToDB]);
-  async function addFcardToDb() {
-    // const storage = getStorage();
-    // const storageRef = ref(storage, "flashcards");
-    // uploadBytes(storageRef, fcardToDB).then((snapshot) => {
-    //   console.log("Uploaded a blob or file!");
-    // });
-    
-    const docRef = await addDoc(collection(db, "flashcards"), fcardToDB);
+    if (turnedImg) {
+      uploadBytes(storageRef, turnedImg)
+        .then((snapshot) => {
+          getDownloadURL(storageRef)
+            .then((url) => {
+              imagesToDB.turned = url;
+            })
+            .catch((error) => {
+              switch (error.code) {
+                case "storage/object-not-found":
+                  break;
+                case "storage/unauthorized":
+                  break;
+                case "storage/canceled":
+                  break;
+                case "storage/unknown":
+                  break;
+              }
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    setimagesToDB(imagesToDB);
+  }
+  async function handleCard() {
+    const newFcard = cloneDeep(fcardToDB);
+    newFcard.unturned.image = imagesToDB.unturned;
+    newFcard.turned.image = imagesToDB.turned;
+    const docRef = addDoc(collection(db, "flashcards"), newFcard);
     console.log("Document written with ID: ", docRef.id);
   }
 
   useEffect(() => {
+    if (fcardToDB) {
+      handleCard();
+    }
+  }, [imagesToDB]);
+
+  useEffect(() => {
+    if (fcardToDB) {
+      handleImages();
+      handleCard();
+    }
+  }, [fcardToDB]);
+
+  useEffect(() => {
     getFlashcards()
       .then((res) => {
-        setfcards(res);
+        setFcards(res);
         setIsLoading(false);
       })
       .catch((err) => {
