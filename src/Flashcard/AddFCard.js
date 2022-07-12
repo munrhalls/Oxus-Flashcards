@@ -1,21 +1,37 @@
 import React, { useState } from "react";
 
 export const AddFcard = ({ onAddFcard }) => {
-  const [fcard, setFcard] = useState({ turned: "", unturned: "" });
+  const [fcard, setFcard] = useState({
+    turned: { text: "", image: "" },
+    unturned: { text: "", image: "" },
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
     onAddFcard(fcard);
-    setFcard({ turned: "", unturned: "" });
+    setFcard({
+      turned: { text: "", image: "" },
+      unturned: { text: "", image: "" },
+    });
   }
   function changeUnturned(e) {
     setFcard(() => {
-      return { turned: fcard.turned, unturned: e.target.value };
+      return {
+        unturned: {
+          text: e.target.value,
+          image: e.target.files[0],
+        },
+      };
     });
   }
   function changeTurned(e) {
     setFcard(() => {
-      return { turned: e.target.value, unturned: fcard.unturned };
+      return {
+        turned: {
+          text: e.target.value,
+          image: e.target.files[0],
+        },
+      };
     });
   }
   return (
@@ -27,10 +43,14 @@ export const AddFcard = ({ onAddFcard }) => {
             <input
               className="Flashcard__input"
               placeholder="Type..."
-              value={fcard.unturned}
+              value={fcard.unturned.text}
               onChange={changeUnturned}
             />
-            <input className="Flashcard__input" type="file" />
+            <input
+              className="Flashcard__input"
+              type="file"
+              onChange={changeUnturned}
+            />
           </div>
         </div>
         <div className="Flashcard_form_cell">
@@ -39,7 +59,7 @@ export const AddFcard = ({ onAddFcard }) => {
             <input
               className="Flashcard__input"
               placeholder="Type..."
-              value={fcard.turned}
+              value={fcard.turned.text}
               onChange={changeTurned}
             />
             <input
