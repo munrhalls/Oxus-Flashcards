@@ -5,6 +5,7 @@ import { AddFcard } from "./Flashcard/AddFCard";
 import { flashcardsCol, getDocs, doc } from "./Firebase/Firebase";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [fcards, setfcards] = useState([
     {
       unturned: "Example fcard",
@@ -32,19 +33,28 @@ function App() {
     getFlashcards()
       .then((res) => {
         setfcards(res);
+        setIsLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
       <main className="Main">
-        <div className="Flashcards">
-          {fcards.map((fcard) => {
-            return <Flashcard key={Math.random()} fcard={fcard} />;
-          })}
-        </div>
+        {isLoading ? (
+          <div style={{ fontSize: "120px" }}>Loading...</div>
+        ) : (
+          <div className="Flashcards">
+            {fcards.map((fcard) => {
+              return <Flashcard key={Math.random()} fcard={fcard} />;
+            })}
+          </div>
+        )}
+
         <div className="Flashcards__form__container">
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
         </div>
