@@ -1,34 +1,61 @@
 import React, { useState } from "react";
+import cloneDeep from "lodash.clonedeep";
 
 export const AddFcard = ({ onAddFcard }) => {
   const [fcard, setFcard] = useState({
-    turned: { text: "", image: "" },
     unturned: { text: "", image: "" },
+    turned: { text: "", image: "" },
   });
 
   function handleSubmit(e) {
     e.preventDefault();
     onAddFcard(fcard);
     setFcard({
-      turned: { text: "", image: "" },
       unturned: { text: "", image: "" },
+      turned: { text: "", image: "" },
     });
   }
+  function changeUnturnedText(e) {
+    let change = cloneDeep(fcard);
+    change.unturned.text = e.target.value;
+    setFcard(change);
+  }
+  function changeUnturnedImage(e) {
+    e.preventDefault();
+    let change = cloneDeep(fcard);
+    change.unturned.image = e.target.files[0];
+    setFcard(change);
+  }
+  function changeTurnedText(e) {
+    let change = cloneDeep(fcard);
+    change.turned.text = e.target.value;
+    setFcard(change);
+  }
+  function changeTurnedImage(e) {
+    e.preventDefault();
+    let change = cloneDeep(fcard);
+    change.turned.image = e.target.files[0];
+    setFcard(change);
+  }
   function changeUnturned(e) {
+    e.preventDefault();
+    debugger;
     setFcard(() => {
       return {
         unturned: {
-          text: e.target.value,
+          text: e.target.value ? e.target.value : fcard.turned.text,
           image: e.target.files[0],
         },
       };
     });
   }
   function changeTurned(e) {
+    e.preventDefault();
+
     setFcard(() => {
       return {
         turned: {
-          text: e.target.value,
+          text: e.target.value ? e.target.value : fcard.turned.text,
           image: e.target.files[0],
         },
       };
@@ -44,12 +71,12 @@ export const AddFcard = ({ onAddFcard }) => {
               className="Flashcard__input"
               placeholder="Type..."
               value={fcard.unturned.text}
-              onChange={changeUnturned}
+              onChange={changeUnturnedText}
             />
             <input
               className="Flashcard__input"
               type="file"
-              onChange={changeUnturned}
+              onChange={changeUnturnedImage}
             />
           </div>
         </div>
@@ -60,13 +87,12 @@ export const AddFcard = ({ onAddFcard }) => {
               className="Flashcard__input"
               placeholder="Type..."
               value={fcard.turned.text}
-              onChange={changeTurned}
+              onChange={changeTurnedText}
             />
             <input
               className="Flashcard__input"
-              placeholder="Type..."
-              value={fcard.turned}
-              onChange={changeTurned}
+              type="file"
+              onChange={changeTurnedImage}
             />
           </div>
         </div>
