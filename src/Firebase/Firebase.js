@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { collection, addDoc } from "firebase/firestore";
 
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,4 +20,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export { app, getStorage, ref, uploadBytes };
+export { app, getStorage, ref, uploadBytes, getDownloadURL };
