@@ -62,9 +62,9 @@ function App() {
           </div>
         )}
 
-        <div className="Flashcards__form__container">
+        
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
-        </div>
+        
       </main>
       <footer className="Footer">By Munrhalls. 2022.</footer>
     </div>

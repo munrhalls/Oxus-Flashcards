@@ -10,7 +10,23 @@
     padding: 0.25rem;
     cursor: pointer;
 }
+.Flashcards__form__container {
+    margin-top: 1.5rem;
+}
 
+.Flashcards__form__titleRibbon {
+    background-color: #000;
+    color: #fff;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Flashcards__form__title {
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+}
 .Flashcard__form {
     display: flex;
     flex-direction: column;
