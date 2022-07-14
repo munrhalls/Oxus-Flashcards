@@ -7,8 +7,8 @@ export const AddFcard = ({ onAddFcard }) => {
     unturned: { text: "", image: "" },
     turned: { text: "", image: "" },
   });
-  const [turnedImg, setTurnedImg] = useState(null);
-  const [unturnedImg, setUnturnedImg] = useState(null);
+  const [turnedImg, setTurnedImg] = useState("");
+  const [unturnedImg, setUnturnedImg] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -30,60 +30,69 @@ export const AddFcard = ({ onAddFcard }) => {
   }
   return (
     <form className="Flashcard__form" onSubmit={handleSubmit}>
-      <div className="Flashcard__form__container">
-        <div className="Flashcard__turnBtnContainer">
-          <button className="Flashcard__turnBtn" onClick={() => setSide(!side)}>
-            turn
-          </button>
-        </div>
-        <div className="Flashcard__form__inputs">
-          {!side ? (
-            <div className="Flashcard_form_cell">
-              <div className="Flashcard_form_label">UNTURNED</div>
-              <div className="Flashcard">
-                <input
-                  className="Flashcard__input"
-                  placeholder="Type..."
-                  value={fcard.unturned.text}
-                  onChange={changeUnturnedText}
-                />
-                <input
-                  className="Flashcard__input"
-                  type="file"
-                  onChange={(e) => setUnturnedImg(e.target.file[0])}
-                />
+      <div className="Flashcard__form__elementsContainer">
+        <div className="Flashcard__form__elements">
+          <div className="Flashcard__turnBtnContainer">
+            <button
+              className="Flashcard__turnBtn"
+              onClick={() => setSide(!side)}
+            >
+              turn
+            </button>
+          </div>
+          <div className="Flashcard__form__inputs">
+            {!side ? (
+              <div className="Flashcard_form_cell">
+                <div className="Flashcard_form_label">UNTURNED</div>
+                <div className="Flashcard">
+                  <input
+                    className="Flashcard__input"
+                    placeholder="Type..."
+                    value={fcard.unturned.text}
+                    onChange={changeUnturnedText}
+                  />
+                  <input
+                    className="Flashcard__input"
+                    type="file"
+                    onChange={(e) => setUnturnedImg(e.target.file[0])}
+                  />
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="Flashcard_form_cell">
-              <div className="Flashcard_form_label">TURNED</div>
-              <div className="Flashcard">
-                <input
-                  className="Flashcard__input"
-                  placeholder="Type..."
-                  value={fcard.turned.text}
-                  onChange={changeTurnedText}
-                />
-                <input
-                  className="Flashcard__input"
-                  type="file"
-                  onChange={(e) => setTurnedImg(e.target.file[0])}
-                />
+            ) : (
+              <div className="Flashcard_form_cell">
+                <div className="Flashcard_form_label">TURNED</div>
+                <div className="Flashcard">
+                  <input
+                    className="Flashcard__input"
+                    placeholder="Type..."
+                    value={fcard.turned.text}
+                    onChange={changeTurnedText}
+                  />
+                  <input
+                    className="Flashcard__input"
+                    type="file"
+                    onChange={(e) => setTurnedImg(e.target.file[0])}
+                  />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-        <div>
-          <input
-            className="Flashcard__form__submit"
-            type="submit"
-            value="Add FLASHCARD"
+        <div className="Flashcard__form__frame">
+          <img
+            className="Flashcard__form__frameImage"
+            src={side ? turnedImg : unturnedImg}
+            alt="Add flashcard image. Edit here."
           />
+          <button className="Flashcard__turnBtn --frame">Submit image</button>
         </div>
       </div>
-      <div className="Frame">
-        <img className="Frame__image" src={side ? turnedImg : unturnedImg} />
-        <button className="Flashcard__turnBtn">Submit edition</button>
+      <div className="Flashcard__form__submitContainer">
+        <input
+          className="Flashcard__form__submit"
+          type="submit"
+          value="Add FLASHCARD"
+        />
       </div>
     </form>
   );

@@ -11,23 +11,26 @@
     cursor: pointer;
 }
 
-.Flashcards__form__container{
-    padding-top: 3rem;
-}
 .Flashcard__form {
     display: flex;
+    flex-direction: column;
 }
-.Flashcards__form__container {
+.Flashcard__form__elementsContainer {
+    display: flex;
+}
+.Flashcard__form__elements {
     width: 16rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-right: 1.5rem;
 }
 .Flashcard__turnBtnContainer {
     width: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
     margin-bottom: 1.5rem;
 }
 .Flashcard__turnBtn {
@@ -68,14 +71,21 @@
     text-transform: uppercase;
 }
 
-.Frame {
-
+.Flashcard__form__frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.Frame__image {
+.Flashcard__form__frameImage {
     border: 3px solid #000;
     border-radius: 5px;
-    width: 7rem;
-    height: 12rem;
+    width: 14rem;
+    height: 19rem;
     padding: 0.25rem;
     cursor: pointer;
+}
+.Flashcard__turnBtn.--frame {
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
 }
