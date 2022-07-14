@@ -52,9 +52,6 @@ function App() {
     <div className="App">
       <header className="Header">Flashcards</header>
       <main className="Main">
-        <input type="file" name="file" onChange={fileTest} />
-        {/* <img src="" /> */}
-        {/* <img src={image} alt="image here" /> */}
         {isLoading ? (
           <div style={{ fontSize: "120px" }}>Loading...</div>
         ) : (
