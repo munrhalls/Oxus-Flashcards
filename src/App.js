@@ -52,19 +52,19 @@ function App() {
     <div className="App">
       <header className="Header">Flashcards</header>
       <main className="Main">
-        {isLoading ? (
-          <div style={{ fontSize: "120px" }}>Loading...</div>
-        ) : (
-          <div className="Flashcards">
-            {fcards.map((fcard) => {
-              return <Flashcard key={Math.random()} fcard={fcard} />;
-            })}
-          </div>
-        )}
-
-        
+        <div className="Centerstage">
+          {isLoading ? (
+            <div style={{ fontSize: "120px" }}>Loading...</div>
+          ) : (
+            <div className="Flashcards">
+              {fcards.map((fcard) => {
+                return <Flashcard key={Math.random()} fcard={fcard} />;
+              })}
+            </div>
+          )}
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
-        
+        </div>
+        <div className="Aside"></div>
       </main>
       <footer className="Footer">By Munrhalls. 2022.</footer>
     </div>
