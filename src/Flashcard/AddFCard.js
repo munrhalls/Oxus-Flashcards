@@ -6,6 +6,8 @@ export const AddFcard = ({ onAddFcard }) => {
     unturned: { text: "", image: "" },
     turned: { text: "", image: "" },
   });
+  const [turnedImg, setTurnedImg] = useState(null);
+  const [unturnedImg, setUnturnedImg] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -76,7 +78,7 @@ export const AddFcard = ({ onAddFcard }) => {
             <input
               className="Flashcard__input"
               type="file"
-              onChange={changeUnturnedImage}
+              onChange={(e) => setUnturnedImg(e.target.file[0])}
             />
           </div>
         </div>
@@ -92,7 +94,7 @@ export const AddFcard = ({ onAddFcard }) => {
             <input
               className="Flashcard__input"
               type="file"
-              onChange={changeTurnedImage}
+              onChange={(e) => setTurnedImg(e.target.file[0])}
             />
           </div>
         </div>
