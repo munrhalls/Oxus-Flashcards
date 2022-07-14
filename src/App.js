@@ -11,7 +11,9 @@ import {
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(
+    "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
+  );
   const [fcards, setFcards] = useState([
     {
       unturned: {
