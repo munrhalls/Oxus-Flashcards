@@ -12,11 +12,15 @@ export const AddFcard = ({ onAddFcard }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAddFcard(fcard);
     setFcard({
-      unturned: { text: "", image: "" },
-      turned: { text: "", image: "" },
+      unturned: { text: "", image: unturnedImg },
+      turned: { text: "", image: turnedImg },
     });
+    onAddFcard(fcard);
+  }
+  function turnCard(e) {
+    e.preventDefault();
+    setSide(() => !side);
   }
   function changeUnturnedText(e) {
     let change = cloneDeep(fcard);
@@ -50,10 +54,7 @@ export const AddFcard = ({ onAddFcard }) => {
       <div className="Flashcard__form__elementsContainer">
         <div className="Flashcard__form__elements">
           <div className="Flashcard__turnBtnContainer">
-            <button
-              className="Flashcard__turnBtn"
-              onClick={() => setSide(!side)}
-            >
+            <button className="Flashcard__turnBtn" onClick={turnCard}>
               turn
             </button>
           </div>
@@ -115,7 +116,6 @@ export const AddFcard = ({ onAddFcard }) => {
               />
             </>
           )}
-          <button className="Flashcard__turnBtn --frame">Submit image</button>
         </div>
       </div>
       <div className="Flashcard__form__submitContainer">
