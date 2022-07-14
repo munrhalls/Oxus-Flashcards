@@ -25,7 +25,8 @@ export const AddFcard = ({ onAddFcard }) => {
   }
   function changeUnturnedImg(e) {
     e.preventDefault();
-    setUnturnedImg(e.target.files[0]);
+    let str = getBase64(e.target.files[0]);
+    setUnturnedImg(str);
   }
   function changeTurnedText(e) {
     let change = cloneDeep(fcard);
@@ -34,7 +35,18 @@ export const AddFcard = ({ onAddFcard }) => {
   }
   function changeTurnedImg(e) {
     e.preventDefault();
-    setTurnedImg(e.target.files[0]);
+    let str = getBase64(e.target.files[0]);
+    setTurnedImg(str);
+  }
+  function getBase64(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      return reader.result;
+    };
+    reader.onerror = function (error) {
+      return null;
+    };
   }
   return (
     <form className="Flashcard__form" onSubmit={handleSubmit}>
@@ -87,11 +99,25 @@ export const AddFcard = ({ onAddFcard }) => {
           </div>
         </div>
         <div className="Flashcard__form__frame">
-          <img
-            className="Flashcard__form__frameImage"
-            src={side ? turnedImg : unturnedImg}
-            alt="Add flashcard image. Edit here."
-          />
+          {side ? (
+            <>
+              <div className="Flascard__form__frameTitle">TURNED IMAGE</div>
+              <img
+                className="Flashcard__form__frameImage"
+                src={turnedImg}
+                alt="Add flashcard image. Edit here."
+              />
+            </>
+          ) : (
+            <>
+              <div className="Flascard__form__frameTitle">UNTURNED IMAGE</div>
+              <img
+                className="Flashcard__form__frameImage"
+                src={unturnedImg}
+                alt="Add flashcard image. Edit here."
+              />
+            </>
+          )}
           <button className="Flashcard__turnBtn --frame">Submit image</button>
         </div>
       </div>
