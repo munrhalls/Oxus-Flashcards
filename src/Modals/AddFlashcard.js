@@ -62,18 +62,30 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
               {!side ? (
                 <div className="Flashcard_form_cell">
                   <div className="Flashcard_form_label">UNTURNED</div>
-                  <div className="Flashcard --form">
-                    <input
-                      className="Flashcard__input"
+                  <div className="Flashcard__form__inputContainer">
+                    <span className="Flashcard__form__inputTitle">
+                      Add text
+                    </span>
+                    <textarea
+                      className="Flashcard__form__textArea"
                       placeholder="Type..."
                       value={fcard.unturned.text}
                       onChange={changeUnturnedText}
                     />
-                    <input
-                      className="Flashcard__input"
-                      type="file"
-                      onChange={changeUnturnedImg}
-                    />
+                    <span className="Flashcard__form__inputTitle --image">
+                      Add image
+                    </span>
+                    <label
+                      className="Flashcard__form__imageInput"
+                      htmlFor="changeUnturnedImg"
+                    >
+                      UPLOAD IMAGE
+                      <input
+                        id="changeUnturnedImg"
+                        type="file"
+                        onChange={changeUnturnedImg}
+                      />
+                    </label>
                   </div>
                 </div>
               ) : (
