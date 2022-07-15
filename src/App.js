@@ -64,7 +64,14 @@ function App() {
           )}
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
         </div>
-        <div className="Aside"></div>
+        <div className="Aside">
+          <div className="Modal__containerBtns">
+            <button className="Modal__btn">Add flashcard</button>
+            <button className="Modal__btn">Add flashcard</button>
+            <button className="Modal__btn">Add flashcard</button>
+            <button className="Modal__btn">Add flashcard</button>
+          </div>
+        </div>
       </main>
       <footer className="Footer">By Munrhalls. 2022.</footer>
     </div>
