@@ -134,6 +134,18 @@
     justify-content: center;
     align-items: flex-start;
 }
+.Flashcard__form__close {
+    cursor: pointer;
+    width: 8rem;   
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+}
 .Flashcard__form__submit {
     cursor: pointer;
     width: 16rem;   
