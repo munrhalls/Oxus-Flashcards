@@ -2,31 +2,37 @@ import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
 import { Preview } from "./Preview";
 
-export const AddFlashcard = ({ onAddFlashcard }) => {
+export const AddFlashcard = ({ updateFlashcards }) => {
   const [side, setSide] = useState(false);
-  const [fcard, setFcard] = useState({
-    unturned: { text: "", image: "" },
-    turned: { text: "", image: "" },
-  });
   const [turnedImg, setTurnedImg] = useState("");
   const [unturnedImg, setUnturnedImg] = useState("");
+  const [flashcard, setFlashcard] = useState({
+    unturned: { text: "", image: unturnedImg },
+    turned: { text: "", image: turnedImg },
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
-    setFcard({
+    updateFlashcards(flashcard);
+    resetForm();
+  }
+  function resetForm() {
+    setSide(false);
+    setTurnedImg("");
+    setUnturnedImg("");
+    setFlashcard({
       unturned: { text: "", image: unturnedImg },
       turned: { text: "", image: turnedImg },
     });
-    onAddFlashcard(fcard);
   }
   function turnCard(e) {
     e.preventDefault();
     setSide(() => !side);
   }
   function changeUnturnedText(e) {
-    let change = cloneDeep(fcard);
+    let change = cloneDeep(flashcard);
     change.unturned.text = e.target.value;
-    setFcard(change);
+    setFlashcard(change);
   }
   async function changeUnturnedImg(e) {
     e.preventDefault();
@@ -34,9 +40,9 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
     setUnturnedImg(str);
   }
   function changeTurnedText(e) {
-    let change = cloneDeep(fcard);
+    let change = cloneDeep(flashcard);
     change.turned.text = e.target.value;
-    setFcard(change);
+    setFlashcard(change);
   }
   async function changeTurnedImg(e) {
     e.preventDefault();
@@ -69,7 +75,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
                     <textarea
                       className="Flashcard__form__textArea"
                       placeholder="Type..."
-                      value={fcard.unturned.text}
+                      value={flashcard.unturned.text}
                       onChange={changeUnturnedText}
                     />
                     <span className="Flashcard__form__inputTitle --image">
@@ -98,7 +104,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
                     <textarea
                       className="Flashcard__form__textArea"
                       placeholder="Type..."
-                      value={fcard.turned.text}
+                      value={flashcard.turned.text}
                       onChange={changeTurnedText}
                     />
                     <span className="Flashcard__form__inputTitle --image">

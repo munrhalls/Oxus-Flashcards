@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Flashcard = ({ fcard }) => {
+export const Flashcard = ({ flashcard }) => {
   const [turned, setTurned] = useState(false);
 
   function turn() {
@@ -10,9 +10,9 @@ export const Flashcard = ({ fcard }) => {
   return (
     <div className="Flashcard" onClick={() => turn()}>
       {turned ? (
-        <div className="Flashcard__turned">{fcard.turned.text}</div>
+        <div className="Flashcard__turned">{flashcard.turned.text}</div>
       ) : (
-        <div className="Flashcard__unturned">{fcard.unturned.text}</div>
+        <div className="Flashcard__unturned">{flashcard.unturned.text}</div>
       )}
     </div>
   );
