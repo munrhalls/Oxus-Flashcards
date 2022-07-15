@@ -11,3 +11,7 @@
     cursor: pointer;
 }
 
+.Flashcard.--form {
+    border: 3px solid #fff;
+}
+

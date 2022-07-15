@@ -78,12 +78,12 @@ function App() {
             <button className="Modal__btn">Sort flashcards</button>
           </div>
         </div>
-        <div className="Modals__container">
+        {modalOpen && (
           <Modals
             modalOpen={modalOpen}
             setFlashcards={() => setFlashcards(flashcards)}
           />
-        </div>
+        )}
       </main>
       <footer className="Footer">By Munrhalls. 2022.</footer>
     </div>

@@ -66,7 +66,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
               {!side ? (
                 <div className="Flashcard_form_cell">
                   <div className="Flashcard_form_label">UNTURNED</div>
-                  <div className="Flashcard">
+                  <div className="Flashcard --form">
                     <input
                       className="Flashcard__input"
                       placeholder="Type..."
@@ -83,7 +83,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
               ) : (
                 <div className="Flashcard_form_cell">
                   <div className="Flashcard_form_label">TURNED</div>
-                  <div className="Flashcard">
+                  <div className="Flashcard --form">
                     <input
                       className="Flashcard__input"
                       placeholder="Type..."
