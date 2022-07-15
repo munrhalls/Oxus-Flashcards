@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
-import { AddFlashcard } from "./Modals/AddFlashcard";
 import { Modals } from "./Modals/Modals";
 import {
   getStorage,
@@ -48,6 +47,9 @@ function App() {
     setFlashcards([...flashcards, flashcard]);
     console.log(flashcards);
   }
+  function closeModal() {
+    setModalOpen(null);
+  }
 
   return (
     <div className="App">
@@ -81,6 +83,7 @@ function App() {
           <Modals
             modalOpen={modalOpen}
             updateFlashcards={(flashcard) => updateFlashcards(flashcard)}
+            closeModal={() => closeModal()}
           />
         )}
       </main>
