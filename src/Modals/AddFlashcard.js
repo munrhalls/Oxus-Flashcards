@@ -104,11 +104,26 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
             {side ? (
               <>
                 <div className="Flascard__form__frameTitle">TURNED IMAGE</div>
-                <img
-                  className="Flashcard__form__frameImage"
-                  src={turnedImg}
-                  alt="Add flashcard image. Edit here."
-                />
+                {turnedImg ? (
+                  <img
+                    className="Flashcard__form__frameImage"
+                    src={turnedImg}
+                    alt="Add flashcard image. Edit here."
+                  />
+                ) : (
+                  <div className="Flashcard__form__frameNoImage">
+                    <span className="Flashcard__form__frameNoImageTitle">
+                      Want image in flashcard?
+                    </span>
+                    <span className="Flashcard__form__frameNoImageTitle">
+                      Click "choose file" and select an image from your
+                      computer.
+                    </span>
+                    <span className="Flashcard__form__frameNoImageTitle">
+                      You can edit it here.
+                    </span>
+                  </div>
+                )}
               </>
             ) : (
               <>
