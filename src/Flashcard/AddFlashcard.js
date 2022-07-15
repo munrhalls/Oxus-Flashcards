@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
 
-export const AddFcard = ({ onAddFcard }) => {
+export const AddFlashcard = ({ onAddFlashcard }) => {
   const [side, setSide] = useState(false);
   const [fcard, setFcard] = useState({
     unturned: { text: "", image: "" },
@@ -16,7 +16,7 @@ export const AddFcard = ({ onAddFcard }) => {
       unturned: { text: "", image: unturnedImg },
       turned: { text: "", image: turnedImg },
     });
-    onAddFcard(fcard);
+    onAddFlashcard(fcard);
   }
   function turnCard(e) {
     e.preventDefault();
