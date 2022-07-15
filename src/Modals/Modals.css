@@ -1,0 +1,116 @@
+.Modals__container {
+    position: absolute;
+}
+
+.Modals {
+    background-color: #000;
+    color: #fff;
+}
+
+.Flashcards__form__container {
+    margin-top: 1.5rem;
+}
+
+.Flashcards__form__titleRibbon {
+    background-color: #fff;
+    color: #000;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Flashcards__form__title {
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+}
+.Flashcard__form {
+    display: flex;
+    flex-direction: column;
+}
+.Flashcard__form__elementsContainer {
+    display: flex;
+}
+.Flashcard__form__elements {
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+}
+.Flashcard__turnBtnContainer {
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+}
+.Flashcard__turnBtn {
+    cursor: pointer;
+    background: none;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 4rem;
+    height: 4rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 0.25rem;
+    color: #000;
+
+}
+.Flashcard_form_cell {
+    
+}
+
+.Flashcard_form_label {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.25rem;
+}
+.Flashcard__form__inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Flashcard__form__submit {
+    width: 16rem;   
+    margin-top: 1rem;
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Flashcard__form__frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Flascard__form__frameTitle {
+    border: 3px solid #fff;
+    width: 14rem;
+    padding: 0.25rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Flashcard__form__frameImage {
+    border: 3px solid #fff;
+    border-radius: 5px;
+    width: 14rem;
+    height: 19rem;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+.Flashcard__turnBtn.--frame {
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
