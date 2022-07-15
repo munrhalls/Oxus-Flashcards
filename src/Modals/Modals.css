@@ -1,10 +1,19 @@
-.Modals__container {
-    position: absolute;
-}
-
 .Modals {
+    position: absolute;
     background-color: #000;
     color: #fff;
+    left: 0; top: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 9px solid #fff;
+    border-radius: 5px;
 }
 
 .Flashcards__form__container {
