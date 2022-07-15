@@ -60,7 +60,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
           <div className="Flashcard__form__elements">
             <div className="Flashcard__turnBtnContainer">
               <button className="Flashcard__turnBtn" onClick={turnCard}>
-                turn
+                Turn.
               </button>
             </div>
             <div className="Flashcard__form__inputs">
