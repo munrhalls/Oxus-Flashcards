@@ -27,9 +27,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 .Flashcards__form__title {
-    color: #fff;
+    color: #000;
     font-size: 1.25rem;
     letter-spacing: 3px;
 }
