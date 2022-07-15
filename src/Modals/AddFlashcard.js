@@ -80,7 +80,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
                 <div className="Flashcard_form_cell">
                   <div className="Flashcard_form_label">TURNED</div>
                   <div className="Flashcard__form__inputContainer">
-                    <span className="Flashcard__form__textAreaTitle">
+                    <span className="Flashcard__form__inputTitle">
                       Add text
                     </span>
                     <textarea
@@ -89,11 +89,20 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
                       value={fcard.turned.text}
                       onChange={changeTurnedText}
                     />
-                    <input
-                      className="Flashcard__input"
-                      type="file"
-                      onChange={changeTurnedImg}
-                    />
+                    <span className="Flashcard__form__inputTitle --image">
+                      Add image
+                    </span>
+                    <label
+                      className="Flashcard__form__imageInput"
+                      htmlFor="changeTurnedImg"
+                    >
+                      UPLOAD IMAGE
+                      <input
+                        id="changeTurnedImg"
+                        type="file"
+                        onChange={changeTurnedImg}
+                      />
+                    </label>
                   </div>
                 </div>
               )}
