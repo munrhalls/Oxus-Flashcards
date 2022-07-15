@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
-import { AddFlashcard } from "./Flashcard/AddFlashcard";
+import { AddFlashcard } from "./Modals/AddFlashcard";
 import { Modals } from "./Modals/Modals";
 import {
   getStorage,
@@ -15,7 +15,7 @@ function App() {
   const [image, setImage] = useState(
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
-  const [flashcards, setflashcards] = useState([
+  const [flashcards, setFlashcards] = useState([
     {
       unturned: {
         text: "Example flash card.",
@@ -27,7 +27,7 @@ function App() {
       },
     },
   ]);
-  const [modal, setModal] = useState(null);
+  const [modalOpen, setModalOpen] = useState(null);
 
   async function fileTest(e) {
     debugger;
@@ -46,7 +46,7 @@ function App() {
       });
   }
   function onAddFlashcard(fcard) {
-    setflashcards([...flashcards, fcard]);
+    setFlashcards([...flashcards, fcard]);
     console.log(flashcards);
   }
 
@@ -64,16 +64,25 @@ function App() {
               })}
             </div>
           )}
-          {/* <AddFlashcard onAddFlashcard={(fcard) => onAddFlashcard(fcard)} /> */}
-          <Modals setflashcards={() => setflashcards(flashcards)} />
         </div>
         <div className="Aside">
           <div className="Modal__containerBtns">
-            <button className="Modal__btn">Add flashcard</button>
+            <button
+              className="Modal__btn"
+              onClick={() => setModalOpen("AddFlashcard")}
+            >
+              Add flashcard
+            </button>
             <button className="Modal__btn">Edit flashcard</button>
             <button className="Modal__btn">Delete flashcard</button>
             <button className="Modal__btn">Sort flashcards</button>
           </div>
+        </div>
+        <div className="Modals__container">
+          <Modals
+            modalOpen={modalOpen}
+            setFlashcards={() => setFlashcards(flashcards)}
+          />
         </div>
       </main>
       <footer className="Footer">By Munrhalls. 2022.</footer>
