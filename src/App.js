@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
+import { Modals } from "./Modals/Modals";
 import {
   getStorage,
   ref,
@@ -26,6 +27,7 @@ function App() {
       },
     },
   ]);
+  const [modal, setModal] = useState(null);
 
   async function fileTest(e) {
     debugger;
@@ -62,7 +64,8 @@ function App() {
               })}
             </div>
           )}
-          <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
+          {/* <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} /> */}
+          <Modals />
         </div>
         <div className="Aside">
           <div className="Modal__containerBtns">
