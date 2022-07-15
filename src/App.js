@@ -30,7 +30,6 @@ function App() {
   const [modalOpen, setModalOpen] = useState(null);
 
   async function fileTest(e) {
-    debugger;
     let img = e.target.files[0];
     const storage = getStorage();
     const imageRef = ref(storage, img.name);
@@ -45,8 +44,8 @@ function App() {
         });
       });
   }
-  function onAddFlashcard(fcard) {
-    setFlashcards([...flashcards, fcard]);
+  function updateFlashcards(flashcard) {
+    setFlashcards([...flashcards, flashcard]);
     console.log(flashcards);
   }
 
@@ -59,8 +58,8 @@ function App() {
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
             <div className="Flashcards">
-              {flashcards.map((fcard) => {
-                return <Flashcard key={Math.random()} fcard={fcard} />;
+              {flashcards.map((flashcard) => {
+                return <Flashcard key={Math.random()} flashcard={flashcard} />;
               })}
             </div>
           )}
@@ -81,7 +80,7 @@ function App() {
         {modalOpen && (
           <Modals
             modalOpen={modalOpen}
-            setFlashcards={() => setFlashcards(flashcards)}
+            updateFlashcards={(flashcard) => updateFlashcards(flashcard)}
           />
         )}
       </main>
