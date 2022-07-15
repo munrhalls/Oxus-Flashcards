@@ -79,9 +79,12 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
               ) : (
                 <div className="Flashcard_form_cell">
                   <div className="Flashcard_form_label">TURNED</div>
-                  <div className="Flashcard --form">
-                    <input
-                      className="Flashcard__input"
+                  <div className="Flashcard__form__inputContainer">
+                    <span className="Flashcard__form__textAreaTitle">
+                      Add text
+                    </span>
+                    <textarea
+                      className="Flashcard__form__textArea"
                       placeholder="Type..."
                       value={fcard.turned.text}
                       onChange={changeTurnedText}
