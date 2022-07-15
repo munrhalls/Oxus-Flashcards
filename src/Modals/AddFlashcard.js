@@ -112,7 +112,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
             )}
             <div className="Flashcard__turnBtnContainer">
               <button className="Flashcard__turnBtn" onClick={turnCard}>
-                Turn side.
+                Turn.
               </button>
             </div>
           </div>
