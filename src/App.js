@@ -1,7 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import { Flashcard } from "./Flashcard/Flashcard";
 import { Modals } from "./Modals/Modals";
+import { Flashcards } from "./Flashcards/Flashcards";
+import { ModalBtns } from "./Modals/ModalBtns";
+
 import {
   getStorage,
   ref,
@@ -21,13 +23,12 @@ function App() {
         image: "src",
       },
       turned: {
-        text: "Not a fuck you card.",
+        text: "Not an f u card.",
         image: "src",
       },
     },
   ]);
   const [modalOpen, setModalOpen] = useState(false);
-
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -45,7 +46,6 @@ function App() {
   }
   function updateFlashcards(flashcard) {
     setFlashcards([...flashcards, flashcard]);
-    console.log(flashcards);
   }
   function closeModal() {
     setModalOpen(false);
@@ -59,25 +59,11 @@ function App() {
           {isLoading ? (
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
-            <div className="Flashcards">
-              {flashcards.map((flashcard) => {
-                return <Flashcard key={Math.random()} flashcard={flashcard} />;
-              })}
-            </div>
+            <Flashcards flashcards={flashcards} />
           )}
         </div>
         <div className="Aside">
-          <div className="Modal__containerBtns">
-            <button
-              className="Modal__btn"
-              onClick={() => setModalOpen("AddFlashcard")}
-            >
-              Add flashcard
-            </button>
-            <button className="Modal__btn">Edit flashcard</button>
-            <button className="Modal__btn">Delete flashcard</button>
-            <button className="Modal__btn">Sort flashcards</button>
-          </div>
+          <ModalBtns setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         </div>
         {modalOpen && (
           <Modals

@@ -15,7 +15,10 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    updateFlashcards(flashcard);
+    updateFlashcards({
+      unturned: { text: flashcard.unturned.text, image: unturnedImg },
+      turned: { text: flashcard.turned.text, image: turnedImg },
+    });
     resetForm();
   }
   function resetForm() {
@@ -23,8 +26,8 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
     setTurnedImg("");
     setUnturnedImg("");
     setFlashcard({
-      unturned: { text: "", image: unturnedImg },
-      turned: { text: "", image: turnedImg },
+      unturned: { text: "", image: "" },
+      turned: { text: "", image: "" },
     });
   }
   function turnCard(e) {
@@ -53,7 +56,7 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
             {side ? (
               <TurnedFlashcard
                 flashcard={flashcard}
-                setTurnedImg={(turnedImg) => setTurnedImg(turnedImg)}
+                setTurnedImg={(flashcard) => setTurnedImg(flashcard)}
                 getBase64={getBase64}
                 setFlashcard={(flashcard) => setFlashcard(flashcard)}
                 cloneDeep={cloneDeep}
