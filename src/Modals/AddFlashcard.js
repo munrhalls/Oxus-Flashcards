@@ -53,7 +53,7 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
             {side ? (
               <TurnedFlashcard
                 flashcard={flashcard}
-                setTurnedImg={() => setUnturnedImg()}
+                setTurnedImg={(turnedImg) => setTurnedImg(turnedImg)}
                 getBase64={getBase64}
                 setFlashcard={(flashcard) => setFlashcard(flashcard)}
                 cloneDeep={cloneDeep}
@@ -61,7 +61,7 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
             ) : (
               <UnturnedFlashcard
                 flashcard={flashcard}
-                setUnturnedImg={() => setUnturnedImg()}
+                setUnturnedImg={(unturnedImg) => setUnturnedImg(unturnedImg)}
                 getBase64={getBase64}
                 setFlashcard={(flashcard) => setFlashcard(flashcard)}
                 cloneDeep={cloneDeep}
