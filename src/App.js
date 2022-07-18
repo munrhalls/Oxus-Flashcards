@@ -125,7 +125,9 @@ function App() {
           />
         )}
       </main>
-      <footer className="Footer">By Munrhalls. 2022.</footer>
+      <footer className="Footer">By Munrhalls. 2022.
+      <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a>
+</footer>
     </div>
   );
 }
