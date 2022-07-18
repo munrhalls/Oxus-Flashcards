@@ -5,7 +5,9 @@ import img from "./../Assets/right-long-black-arrow.png";
 
 export const Flashcards = ({ flashcards }) => {
   const [current, setCurrent] = useState(1);
-  const [rating, setRating] = useState("hard");
+  const [rating, setRating] = useState(3);
+  const levels = ["pass", "easy", "medium", "hard"];
+
   function showNext() {
     if (flashcards.length > current) {
       setCurrent(() => current + 1);
@@ -13,10 +15,10 @@ export const Flashcards = ({ flashcards }) => {
       setCurrent(1);
     }
   }
-
+  console.log(rating);
 
   function updateRating(e) {
-    setRating(() => e.target.value);
+    setRating(() => levels.indexOf(e.target.value));
   }
   return (
     <div className="Flashcards">
@@ -34,27 +36,35 @@ export const Flashcards = ({ flashcards }) => {
         <div className="Flashcards__btns__difficulty">
           <input
             type="button"
-            className="Flashcards__btns__difficulty__instance"
+            className={`Flashcards__btns__difficulty__instance ${
+              rating === 3 ? "--rating" : ""
+            }`}
             onClick={updateRating}
-            value="hard"
+            value={levels[3]}
           />
           <input
             type="button"
-            className="Flashcards__btns__difficulty__instance"
+            className={`Flashcards__btns__difficulty__instance ${
+              rating === 2 ? "--rating" : ""
+            }`}
             onClick={updateRating}
-            value="medium"
+            value={levels[2]}
           />
           <input
             type="button"
-            className="Flashcards__btns__difficulty__instance"
+            className={`Flashcards__btns__difficulty__instance ${
+              rating === 1 ? "--rating" : ""
+            }`}
             onClick={updateRating}
-            value="easy"
+            value={levels[1]}
           />
           <input
             type="button"
-            className="Flashcards__btns__difficulty__instance"
+            className={`Flashcards__btns__difficulty__instance ${
+              rating === 0 ? "--rating" : ""
+            }`}
             onClick={updateRating}
-            value="got it"
+            value={levels[0]}
           />
         </div>
         <button
