@@ -1,6 +1,7 @@
 import { uuidv4 } from "@firebase/util";
 import React, { useState } from "react";
 import { Flashcard } from "./Flashcard";
+import img from "./../Assets/right-long-black-arrow.png";
 
 export const Flashcards = ({ flashcards }) => {
   const [current, setCurrent] = useState(1);
@@ -23,9 +24,30 @@ export const Flashcards = ({ flashcards }) => {
           ""
         );
       })}
-      <button key={uuidv4()} onClick={showNext}>
-        Next
-      </button>
+      <div className="Flashcards__btns">
+        <div className="Flashcards__btns__difficulty">
+          <button className="Flashcards__btns__difficulty__instance">
+            HARD
+          </button>
+          <button className="Flashcards__btns__difficulty__instance">
+            MEDIUM
+          </button>
+          <button className="Flashcards__btns__difficulty__instance">
+            EASY
+          </button>
+          <button className="Flashcards__btns__difficulty__instance">
+            GOT IT
+          </button>
+        </div>
+        <button
+          className="Flashcards__btns__next"
+          key={uuidv4()}
+          onClick={showNext}
+        >
+          <span className="Flashcards__btn__next__text">Next</span>{" "}
+          <img className="Flashcards__btn__next__image" src={img} />
+        </button>
+      </div>
     </div>
   );
 };
