@@ -20,14 +20,58 @@ function App() {
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
       unturned: {
-        text: "Example flash card.",
+        text: "Question 1",
         image:
           "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
       },
       turned: {
-        text: "Not an f u card.",
+        text: "Answer 2",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      unturned: {
+        text: "Question 3",
+        image: "",
+      },
+      turned: {
+        text: "Answer is 33333333333333. 3..",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      unturned: {
+        text: "Question 4",
+        image: "",
+      },
+      turned: {
+        text: "That's answer 44444444444444. Four. Actually.",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      unturned: {
+        text: "Question",
+        image: "",
+      },
+      turned: {
+        text: "555555555555555555555 55 4 5 5 5 5",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      unturned: {
+        text: "Question",
         image:
           "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "Six.",
+        image: "",
       },
     },
   ]);
