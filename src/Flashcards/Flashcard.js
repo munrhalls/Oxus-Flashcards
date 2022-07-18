@@ -20,12 +20,16 @@ export const Flashcard = ({ flashcard }) => {
     <div className="Flashcard" onClick={() => turn()}>
       {turned ? (
         <>
-          <div className="Flashcard__turned">{flashcard.turned.text}</div>
+          <div className="Flashcard__turned">
+            <span className="Flashcard__text">{flashcard.turned.text}</span>
+          </div>
           {turnedImg}
         </>
       ) : (
         <>
-          <div className="Flashcard__unturned">{flashcard.unturned.text}</div>
+          <div className="Flashcard__unturned">
+            <span className="Flashcard__text">{flashcard.unturned.text}</span>
+          </div>
           {unturnedImg}
         </>
       )}
