@@ -47,7 +47,9 @@
 }
 .Flashcards__btns__difficulty__instance.--rating {
     background-color: #000;
-    color: green
+    color: #fff;
+    box-shadow: inset 0px 0px 20px #fff;
+    font-weight: bold;
 }
 .Flashcards__btns__next {
     height: 4.25rem;
