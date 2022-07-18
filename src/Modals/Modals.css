@@ -14,6 +14,7 @@
     margin-bottom: auto;
     border: 9px solid #fff;
     border-radius: 5px;
+    z-index: 100;
 }
 .Modal__containerBtns {
     display: flex;
