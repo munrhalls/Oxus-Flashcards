@@ -3,6 +3,7 @@ import cloneDeep from "lodash.clonedeep";
 import { Preview } from "./Preview";
 import { UnturnedFlashcard } from "./UnturnedFlashcard";
 import { TurnedFlashcard } from "./TurnedFlashcard";
+const { v4: uuidv4 } = require("uuid");
 
 export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
   const [side, setSide] = useState(false);
@@ -16,6 +17,7 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
   function handleSubmit(e) {
     e.preventDefault();
     updateFlashcards({
+      id: uuidv4(),
       unturned: { text: flashcard.unturned.text, image: unturnedImg },
       turned: { text: flashcard.turned.text, image: turnedImg },
     });
@@ -103,7 +105,6 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
             className="Flashcard__form__submit"
             type="submit"
             value="SAVE"
-            s
           />
         </div>
       </form>
