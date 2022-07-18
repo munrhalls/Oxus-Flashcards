@@ -13,7 +13,7 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
     unturned: { text: "", image: unturnedImg },
     turned: { text: "", image: turnedImg },
   });
-
+  console.log(unturnedImg);
   function handleSubmit(e) {
     e.preventDefault();
     updateFlashcards({
