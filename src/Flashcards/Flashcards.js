@@ -5,12 +5,18 @@ import img from "./../Assets/right-long-black-arrow.png";
 
 export const Flashcards = ({ flashcards }) => {
   const [current, setCurrent] = useState(1);
+  const [rating, setRating] = useState("hard");
   function showNext() {
     if (flashcards.length > current) {
       setCurrent(() => current + 1);
     } else {
       setCurrent(1);
     }
+  }
+
+
+  function updateRating(e) {
+    setRating(() => e.target.value);
   }
   return (
     <div className="Flashcards">
@@ -26,18 +32,30 @@ export const Flashcards = ({ flashcards }) => {
       })}
       <div className="Flashcards__btns">
         <div className="Flashcards__btns__difficulty">
-          <button className="Flashcards__btns__difficulty__instance">
-            HARD
-          </button>
-          <button className="Flashcards__btns__difficulty__instance">
-            MEDIUM
-          </button>
-          <button className="Flashcards__btns__difficulty__instance">
-            EASY
-          </button>
-          <button className="Flashcards__btns__difficulty__instance">
-            GOT IT
-          </button>
+          <input
+            type="button"
+            className="Flashcards__btns__difficulty__instance"
+            onClick={updateRating}
+            value="hard"
+          />
+          <input
+            type="button"
+            className="Flashcards__btns__difficulty__instance"
+            onClick={updateRating}
+            value="medium"
+          />
+          <input
+            type="button"
+            className="Flashcards__btns__difficulty__instance"
+            onClick={updateRating}
+            value="easy"
+          />
+          <input
+            type="button"
+            className="Flashcards__btns__difficulty__instance"
+            onClick={updateRating}
+            value="got it"
+          />
         </div>
         <button
           className="Flashcards__btns__next"
