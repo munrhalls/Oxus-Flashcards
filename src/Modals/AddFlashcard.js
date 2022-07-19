@@ -15,12 +15,16 @@ export const AddFlashcard = ({ flashcards, updateFlashcards, closeModal }) => {
     turned: { text: "", image: turnedImg },
   });
   console.log(unturnedImg);
+  function getNumOfLvlHardCards() {
+    return flashcards.filter((card) => card.difficulty === 3).length;
+  }
   function handleSubmit(e) {
     debugger;
     e.preventDefault();
     updateFlashcards({
       id: uuidv4(),
-      order: flashcards.length + 1,
+      difficulty: 3,
+      orderNum: getNumOfLvlHardCards() + 1,
       unturned: { text: flashcard.unturned.text, image: unturnedImg },
       turned: { text: flashcard.turned.text, image: turnedImg },
     });
