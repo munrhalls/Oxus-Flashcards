@@ -19,7 +19,6 @@ export const AddFlashcard = ({ flashcards, updateFlashcards, closeModal }) => {
     return flashcards.filter((card) => card.difficulty === 3).length;
   }
   function handleSubmit(e) {
-    debugger;
     e.preventDefault();
     updateFlashcards({
       id: uuidv4(),

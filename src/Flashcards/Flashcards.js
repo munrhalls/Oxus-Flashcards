@@ -2,27 +2,23 @@ import { uuidv4 } from "@firebase/util";
 import React, { useState } from "react";
 import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
+import { dblClick } from "@testing-library/user-event/dist/click";
 
-export const Flashcards = ({ flashcards }) => {
-  const [current, setCurrent] = useState(1);
+export const Flashcards = ({ sortedFlashcards }) => {
+  const [orderNum, setOrderNum] = useState(1);
+  const [difficulty, setDifficulty] = useState(3);
   const [rating, setRating] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
 
-  function showNext() {
-    if (flashcards.length > current) {
-      setCurrent(() => current + 1);
-    } else {
-      setCurrent(1);
-    }
-  }
-
+  function showNext() {}
   function updateRating(e) {
     setRating(() => levels.indexOf(e.target.value));
   }
   return (
     <div className="Flashcards">
-      {flashcards.map((flashcard) => {
-        return flashcard.order === current ? (
+      {sortedFlashcards.map((flashcard) => {
+        return flashcard.difficulty === difficulty &&
+          flashcard.orderNum === orderNum ? (
           <div key={uuidv4()}>
             <div className="Flashcard__number">{flashcard.order}</div>
             <Flashcard key={uuidv4()} flashcard={flashcard} />
