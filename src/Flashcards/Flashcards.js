@@ -15,7 +15,6 @@ export const Flashcards = ({ flashcards }) => {
       setCurrent(1);
     }
   }
-  console.log(rating);
 
   function updateRating(e) {
     setRating(() => levels.indexOf(e.target.value));
