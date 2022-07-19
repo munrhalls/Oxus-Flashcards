@@ -2,7 +2,7 @@ import React from "react";
 import { AddFlashcard } from "./AddFlashcard";
 
 export const Modals = ({
-  flashcards,
+  sortedFlashcards,
   updateFlashcards,
   modalOpen,
   closeModal,
@@ -11,7 +11,7 @@ export const Modals = ({
     <div className="Modals">
       {modalOpen === "AddFlashcard" ? (
         <AddFlashcard
-          flashcards={flashcards}
+          sortedFlashcards={sortedFlashcards}
           closeModal={closeModal}
           updateFlashcards={updateFlashcards}
         />
