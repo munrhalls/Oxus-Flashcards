@@ -3,16 +3,56 @@ import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
 import { dblClick } from "@testing-library/user-event/dist/click";
+import cloneDeep from "lodash.clonedeep";
 
 export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
   const [difficulty, setDifficulty] = useState(3);
   const [reviewCount, setReviewCount] = useState(0);
-  const [waitIds, setWaitIds] = useState([{}]);
+  const [waitIds, setWaitIds] = useState([]);
   const levels = ["pass", "easy", "medium", "hard"];
-  let lobbyWaitCount = 0;
+  var displayNthCard__insteadOfFirst = 0;
   useEffect(() => {
-    handleWaitLobby();
+    const cardsInLevel = sortedFlashcards.filter(
+      (card) => card.difficulty === sortedFlashcards[0].difficulty
+    );
+    const difficultyLvl__hasOnlyOneCard = cardsInLevel.length === 1;
+    if (difficultyLvl__hasOnlyOneCard) {
+      handleWaitLobby(cardsInLevel);
+      displayNthCard__insteadOfFirst = waitIds[0] ? waitIds[0].turnesWaited : 0;
+      console.log(waitIds);
+    }
   }, [sortedFlashcards]);
+
+  function handleWaitLobby(cardsInLevel) {
+    const id__ofOnlyCardInLvl = cardsInLevel[0].id;
+    if (!isInWaitLobby(id__ofOnlyCardInLvl)) {
+      addIdToWaitLobby(id__ofOnlyCardInLvl);
+    }
+    if (isInWaitLobby(id__ofOnlyCardInLvl)) {
+      handleTurnsInWaitLobby(id__ofOnlyCardInLvl);
+    }
+  }
+
+  function addIdToWaitLobby(newWaitId) {
+    let rndTurnsWaitNum = randomIntFromInterval(2, 4);
+    setWaitIds([...waitIds, { id: newWaitId, turnesWaited: rndTurnsWaitNum }]);
+  }
+  function handleTurnsInWaitLobby(id__ofOnlyCardInLvl) {
+    let idObj = waitIds.find((instance) => instance.id === id__ofOnlyCardInLvl);
+    idObj.turnesWaited = idObj.turnesWaited - 1;
+    if (idObj.turnesWaited <= 0) {
+      const lobbyIds = waitIds.filter(
+        (instance) => instance.id !== id__ofOnlyCardInLvl
+      );
+      const cloneLobbyIds = cloneDeep(lobbyIds);
+      setWaitIds(cloneLobbyIds);
+    }
+  }
+  function isInWaitLobby(id) {
+    return waitIds.filter((waitingId) => waitingId.id === id).length > 0
+      ? true
+      : false;
+  }
 
   function putAwayCard() {
     let wasFirst = sortedFlashcards[0];
@@ -20,28 +60,12 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
     const cardsInLevel = sortedFlashcards.filter(
       (card) => card.difficulty === difficulty
     );
-    if (cardsInLevel.length === 1 && !isInWaitLobby(cardsInLevel[0].id)) {
-      addIdToWaitLobby(cardsInLevel[0].id);
-    }
     wasFirst.orderNum = cardsInLevel.length;
-    updateFlashcard(wasFirst);
+    let cloneWasFirst = cloneDeep(wasFirst);
+    updateFlashcard(cloneWasFirst);
     setReviewCount(() => reviewCount + 1);
   }
-  function addIdToWaitLobby(newWaitId) {
-    let rndTurnsWaitNum = randomIntFromInterval(2, 4);
-    setWaitIds(() => [
-      ...waitIds,
-      { id: newWaitId, turnesWaited: rndTurnsWaitNum },
-    ]);
-  }
-  function isInWaitLobby(id) {
-    return waitIds.filter((waitingId) => waitingId.id === id).length > 0
-      ? true
-      : false;
-  }
-  function handleWaitLobby() {
-    console.log(waitIds);
-  }
+
   function updateDifficulty(e) {
     setDifficulty(() => levels.indexOf(e.target.value));
   }
@@ -49,7 +73,6 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-
   return (
     <div className="Flashcards">
       <div key={uuidv4()}>
@@ -58,7 +81,7 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
         </div>
         <Flashcard
           key={uuidv4()}
-          flashcard={sortedFlashcards[0 + lobbyWaitCount]}
+          flashcard={sortedFlashcards[0 + displayNthCard__insteadOfFirst]}
         />
       </div>
       <div className="Flashcards__btns">
