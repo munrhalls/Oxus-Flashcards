@@ -6,7 +6,7 @@ import { TurnedFlashcard } from "./TurnedFlashcard";
 import { Flashcards } from "../Flashcards/Flashcards";
 const { v4: uuidv4 } = require("uuid");
 
-export const AddFlashcard = ({ flashcards, updateFlashcards, closeModal }) => {
+export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
   const [side, setSide] = useState(false);
   const [turnedImg, setTurnedImg] = useState("");
   const [unturnedImg, setUnturnedImg] = useState("");
@@ -20,7 +20,7 @@ export const AddFlashcard = ({ flashcards, updateFlashcards, closeModal }) => {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    updateFlashcards({
+    addFlashcard({
       id: uuidv4(),
       difficulty: 3,
       orderNum: getNumOfLvlHardCards() + 1,

@@ -3,21 +3,23 @@ import { useEffect, useState } from "react";
 import { Modals } from "./Modals/Modals";
 import { Flashcards } from "./Flashcards/Flashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
+import { uuidv4 } from "@firebase/util";
 import {
   getStorage,
   ref,
   uploadBytes,
   getDownloadURL,
 } from "./Firebase/Firebase";
+import cloneDeep from "lodash.clonedeep";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [image, setImage] = useState(
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
   const [flashcards, setFlashcards] = useState([
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 3,
       orderNum: 1,
       unturned: {
@@ -31,7 +33,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 3,
       orderNum: 2,
       unturned: {
@@ -44,7 +46,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 2,
       orderNum: 3,
       unturned: {
@@ -57,7 +59,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 0,
       orderNum: 4,
       unturned: {
@@ -70,7 +72,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 1,
       orderNum: 6,
       unturned: {
@@ -84,7 +86,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 1,
       orderNum: 7,
       unturned: {
@@ -98,7 +100,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 1,
       orderNum: 8,
       unturned: {
@@ -112,7 +114,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 3,
       orderNum: 9,
       unturned: {
@@ -126,7 +128,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 2,
       orderNum: 1,
       unturned: {
@@ -140,7 +142,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 3,
       orderNum: 1,
       unturned: {
@@ -154,7 +156,7 @@ function App() {
       },
     },
     {
-      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      id: uuidv4(),
       difficulty: 3,
       orderNum: 2,
       unturned: {
@@ -168,13 +170,15 @@ function App() {
       },
     },
   ]);
-  const [sortedFlashcards, setSortedFlashcards] = useState(flashcards);
+  const [sortedFlashcards, setSortedFlashcards] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const numOfLevels = 4;
   useEffect(() => {
     let sorted = aggregateSortedLevels(flashcards, numOfLevels);
     setSortedFlashcards(() => sorted);
+    setIsLoading(false);
   }, [flashcards]);
+
   console.log(sortedFlashcards);
   function smoothOrderNums(cards, difficulty) {
     const range = cards.filter((card) => card.difficulty === difficulty);
@@ -184,6 +188,7 @@ function App() {
     });
     return smoothOrderNums;
   }
+
   function sortWithinLevel(arr, difficulty) {
     let sorted = arr
       .filter((instance) => instance.difficulty === difficulty)
@@ -200,6 +205,7 @@ function App() {
     }
     return aggregate;
   }
+
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -215,12 +221,22 @@ function App() {
         });
       });
   }
-  function updateFlashcards(flashcard) {
+
+  function addFlashcard(flashcard) {
     setFlashcards([...flashcards, flashcard]);
+  }
+  function updateFlashcard(flashcard) {
+    console.log(flashcard);
+    let cards = cloneDeep(flashcards);
+    let card = cards.find((card) => flashcard.id === card.id);
+    card.difficulty = flashcard.difficulty;
+    card.orderNum = flashcard.orderNum;
+    setFlashcards(() => cards);
   }
   function closeModal() {
     setModalOpen(false);
   }
+
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
@@ -229,7 +245,10 @@ function App() {
           {isLoading ? (
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
-            <Flashcards sortedFlashcards={sortedFlashcards} />
+            <Flashcards
+              updateFlashcard={(flashcard) => updateFlashcard(flashcard)}
+              sortedFlashcards={sortedFlashcards}
+            />
           )}
         </div>
         <div className="Aside">
@@ -239,7 +258,7 @@ function App() {
           <Modals
             sortedFlashcards={sortedFlashcards}
             modalOpen={modalOpen}
-            updateFlashcards={(flashcard) => updateFlashcards(flashcard)}
+            addFlashcard={(flashcard) => addFlashcard(flashcard)}
             closeModal={() => closeModal()}
           />
         )}
