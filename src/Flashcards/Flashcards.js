@@ -10,50 +10,15 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
   const [reviewCount, setReviewCount] = useState(0);
   const [waitIds, setWaitIds] = useState([]);
   const levels = ["pass", "easy", "medium", "hard"];
-  var displayNthCard__insteadOfFirst = 0;
-  useEffect(() => {
-    const cardsInLevel = sortedFlashcards.filter(
-      (card) => card.difficulty === sortedFlashcards[0].difficulty
-    );
-    const difficultyLvl__hasOnlyOneCard = cardsInLevel.length === 1;
-    if (difficultyLvl__hasOnlyOneCard) {
-      handleWaitLobby(cardsInLevel);
-      displayNthCard__insteadOfFirst = waitIds[0] ? waitIds[0].turnesWaited : 0;
-      console.log(waitIds);
-    }
-  }, [sortedFlashcards]);
-
-  function handleWaitLobby(cardsInLevel) {
-    const id__ofOnlyCardInLvl = cardsInLevel[0].id;
-    if (!isInWaitLobby(id__ofOnlyCardInLvl)) {
-      addIdToWaitLobby(id__ofOnlyCardInLvl);
-    }
-    if (isInWaitLobby(id__ofOnlyCardInLvl)) {
-      handleTurnsInWaitLobby(id__ofOnlyCardInLvl);
+  function determineQueue() {
+    let first = sortedFlashcards[0];
+    if (first.hasOwnProperty("queue")) {
+      let afterQueue = sortedFlashcards[0 + first.queue];
+      return afterQueue;
+    } else {
+      return first;
     }
   }
-
-  function addIdToWaitLobby(newWaitId) {
-    let rndTurnsWaitNum = randomIntFromInterval(2, 4);
-    setWaitIds([...waitIds, { id: newWaitId, turnesWaited: rndTurnsWaitNum }]);
-  }
-  function handleTurnsInWaitLobby(id__ofOnlyCardInLvl) {
-    let idObj = waitIds.find((instance) => instance.id === id__ofOnlyCardInLvl);
-    idObj.turnesWaited = idObj.turnesWaited - 1;
-    if (idObj.turnesWaited <= 0) {
-      const lobbyIds = waitIds.filter(
-        (instance) => instance.id !== id__ofOnlyCardInLvl
-      );
-      const cloneLobbyIds = cloneDeep(lobbyIds);
-      setWaitIds(cloneLobbyIds);
-    }
-  }
-  function isInWaitLobby(id) {
-    return waitIds.filter((waitingId) => waitingId.id === id).length > 0
-      ? true
-      : false;
-  }
-
   function putAwayCard() {
     let wasFirst = sortedFlashcards[0];
     wasFirst.difficulty = difficulty;
@@ -79,10 +44,7 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
         <div className="Flashcard__number">
           {reviewCount} / {sortedFlashcards.length}
         </div>
-        <Flashcard
-          key={uuidv4()}
-          flashcard={sortedFlashcards[0 + displayNthCard__insteadOfFirst]}
-        />
+        <Flashcard key={uuidv4()} flashcard={determineQueue()} />
       </div>
       <div className="Flashcards__btns">
         <div className="Flashcards__btns__difficulty">
