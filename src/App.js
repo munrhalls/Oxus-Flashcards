@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Modals } from "./Modals/Modals";
 import { Flashcards } from "./Flashcards/Flashcards";
+import { CompletedFlashcards } from "./Flashcards/CompletedFlashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
 import { uuidv4 } from "@firebase/util";
 import {
@@ -245,10 +246,13 @@ function App() {
           {isLoading ? (
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
-            <Flashcards
-              updateFlashcard={(flashcard) => updateFlashcard(flashcard)}
-              sortedFlashcards={sortedFlashcards}
-            />
+            <>
+              <Flashcards
+                updateFlashcard={(flashcard) => updateFlashcard(flashcard)}
+                sortedFlashcards={sortedFlashcards}
+              />
+              <CompletedFlashcards sortedFlashcards={sortedFlashcards} />
+            </>
           )}
         </div>
         <div className="Aside">
