@@ -1,5 +1,5 @@
 import { uuidv4 } from "@firebase/util";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
 import { dblClick } from "@testing-library/user-event/dist/click";
@@ -7,27 +7,51 @@ import { dblClick } from "@testing-library/user-event/dist/click";
 export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
   const [difficulty, setDifficulty] = useState(3);
   const [reviewCount, setReviewCount] = useState(0);
+  const [waitIds, setWaitIds] = useState([{}]);
   const levels = ["pass", "easy", "medium", "hard"];
+  let lobbyWaitCount = 0;
+  useEffect(() => {
+    handleWaitLobby();
+  }, [sortedFlashcards]);
+
   function putAwayCard() {
     let wasFirst = sortedFlashcards[0];
     wasFirst.difficulty = difficulty;
-    wasFirst.orderNum =
-      sortedFlashcards.filter((card) => card.difficulty === difficulty)
-        .length || 1;
+    const cardsInLevel = sortedFlashcards.filter(
+      (card) => card.difficulty === difficulty
+    );
+    if (cardsInLevel.length === 1) {
+      let rndTurnsWaitNum = randomIntFromInterval(2, 4);
+      setWaitIds(() => [
+        ...waitIds,
+        { id: wasFirst.id, turnesWaited: rndTurnsWaitNum },
+      ]);
+    }
+    wasFirst.orderNum = cardsInLevel.length;
     updateFlashcard(wasFirst);
     setReviewCount(() => reviewCount + 1);
   }
-
+  function handleWaitLobby() {
+    console.log(waitIds);
+  }
   function updateDifficulty(e) {
     setDifficulty(() => levels.indexOf(e.target.value));
   }
+  function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   return (
     <div className="Flashcards">
       <div key={uuidv4()}>
         <div className="Flashcard__number">
           {reviewCount} / {sortedFlashcards.length}
         </div>
-        <Flashcard key={uuidv4()} flashcard={sortedFlashcards[0]} />
+        <Flashcard
+          key={uuidv4()}
+          flashcard={sortedFlashcards[0 + lobbyWaitCount]}
+        />
       </div>
       <div className="Flashcards__btns">
         <div className="Flashcards__btns__difficulty">

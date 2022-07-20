@@ -200,7 +200,7 @@ function App() {
 
   function aggregateSortedLevels(data, numOfLevels) {
     let aggregate = [];
-    for (let i = 0; i < numOfLevels; i++) {
+    for (let i = numOfLevels; i >= 0; i--) {
       let part = sortWithinLevel(data, i);
       aggregate = [...aggregate, ...part];
     }

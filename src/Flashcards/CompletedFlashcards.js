@@ -10,7 +10,11 @@ export const CompletedFlashcards = ({ sortedFlashcards }) => {
           {passCards.length}
         </span>
       </h3>
-      <div></div>
+      <div className="CompletedFlashcards__card__frame">
+        {passCards.map((card) => (
+          <div className="CompletedFlashcards__card"></div>
+        ))}
+      </div>
     </div>
   );
 };
