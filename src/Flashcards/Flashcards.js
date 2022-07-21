@@ -4,8 +4,14 @@ import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
 import { dblClick } from "@testing-library/user-event/dist/click";
 import cloneDeep from "lodash.clonedeep";
+import { CompletedFlashcards } from "./CompletedFlashcards";
 
-export const Flashcards = ({ flashcards, setFlashcards }) => {
+export const Flashcards = ({
+  flashcards,
+  setFlashcards,
+  setCompletedFlashcards,
+  completedFlashcards,
+}) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
   console.log(flashcards);
@@ -45,6 +51,10 @@ export const Flashcards = ({ flashcards, setFlashcards }) => {
     }
     if (difficulty === 1) {
       shuffleEasy(flashcards);
+    }
+    if (difficulty === 0) {
+      const passCard = flashcards.shift();
+      setCompletedFlashcards([...completedFlashcards, passCard]);
     }
     let updated = cloneDeep(flashcards);
     setFlashcards(updated);
