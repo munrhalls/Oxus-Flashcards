@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export const CompletedFlashcards = ({ sortedFlashcards }) => {
-  const passCards = sortedFlashcards.filter((card) => card.difficulty === 0);
+export const CompletedFlashcards = ({ flashcards }) => {
+  // const passCards = flashcards.filter((card) => card.hasOwnPropery('pass'));
   return (
     <div className="CompletedFlashcards">
-      <h3 className="CompletedFlashcards__title">
+      {/* <h3 className="CompletedFlashcards__title">
         COMPLETED CARDS:{" "}
         <span className="CompletedFlashcards__title__number">
           {passCards.length}
@@ -14,7 +14,7 @@ export const CompletedFlashcards = ({ sortedFlashcards }) => {
         {passCards.map((card) => (
           <div className="CompletedFlashcards__card"></div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
