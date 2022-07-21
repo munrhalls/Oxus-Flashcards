@@ -5,46 +5,26 @@ import img from "./../Assets/right-long-black-arrow.png";
 import { dblClick } from "@testing-library/user-event/dist/click";
 import cloneDeep from "lodash.clonedeep";
 
-export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
+export const Flashcards = ({ flashcards, setFlashcards }) => {
   const [difficulty, setDifficulty] = useState(3);
-  const [reviewCount, setReviewCount] = useState(0);
-  const [waitIds, setWaitIds] = useState([]);
   const levels = ["pass", "easy", "medium", "hard"];
-  function determineQueue() {
-    let first = sortedFlashcards[0];
-    if (first.hasOwnProperty("queue")) {
-      let afterQueue = sortedFlashcards[0 + first.queue];
-      return afterQueue;
-    } else {
-      return first;
+  console.log(flashcards);
+  function shuffleCard() {
+    if (difficulty === 3) {
+      // index 0 -> index 3
+      const wasFirst = flashcards.shift();
+      // index 1 2 3 4 are all - 1
+      flashcards.splice(3, 0, wasFirst);
+      // in effect 0 is new 4, 4-1 are 0-3
+      let updated = cloneDeep(flashcards);
+      setFlashcards(updated);
     }
-  }
-  function putAwayCard() {
-    let wasFirst = sortedFlashcards[0];
-    wasFirst.difficulty = difficulty;
-    const cardsInLevel = sortedFlashcards.filter(
-      (card) => card.difficulty === difficulty
-    );
-    wasFirst.orderNum = cardsInLevel.length;
-    let cloneWasFirst = cloneDeep(wasFirst);
-    updateFlashcard(cloneWasFirst);
-    setReviewCount(() => reviewCount + 1);
-  }
-
-  function updateDifficulty(e) {
-    setDifficulty(() => levels.indexOf(e.target.value));
-  }
-  function randomIntFromInterval(min, max) {
-    // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min);
   }
   return (
     <div className="Flashcards">
       <div key={uuidv4()}>
-        <div className="Flashcard__number">
-          {reviewCount} / {sortedFlashcards.length}
-        </div>
-        <Flashcard key={uuidv4()} flashcard={determineQueue()} />
+        <div className="Flashcard__number">fcards num</div>
+        <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
       </div>
       <div className="Flashcards__btns">
         <div className="Flashcards__btns__difficulty">
@@ -53,7 +33,7 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
             className={`Flashcards__btns__difficulty__instance ${
               difficulty === 3 ? "--rating" : ""
             }`}
-            onClick={updateDifficulty}
+            onClick={() => setDifficulty(3)}
             value={levels[3]}
           />
           <input
@@ -61,7 +41,7 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
             className={`Flashcards__btns__difficulty__instance ${
               difficulty === 2 ? "--rating" : ""
             }`}
-            onClick={updateDifficulty}
+            onClick={() => setDifficulty(2)}
             value={levels[2]}
           />
           <input
@@ -69,7 +49,7 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
             className={`Flashcards__btns__difficulty__instance ${
               difficulty === 1 ? "--rating" : ""
             }`}
-            onClick={updateDifficulty}
+            onClick={() => setDifficulty(1)}
             value={levels[1]}
           />
           <input
@@ -77,14 +57,14 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
             className={`Flashcards__btns__difficulty__instance ${
               difficulty === 0 ? "--rating" : ""
             }`}
-            onClick={updateDifficulty}
+            onClick={() => setDifficulty(0)}
             value={levels[0]}
           />
         </div>
         <button
           className="Flashcards__btns__next"
           key={uuidv4()}
-          onClick={putAwayCard}
+          onClick={shuffleCard}
         >
           <span className="Flashcards__btn__next__text">Next</span>{" "}
           <img className="Flashcards__btn__next__image" src={img} />

@@ -14,15 +14,14 @@ import {
 import cloneDeep from "lodash.clonedeep";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [image, setImage] = useState(
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
   const [flashcards, setFlashcards] = useState([
     {
       id: uuidv4(),
-      difficulty: 3,
-      orderNum: 1,
       unturned: {
         text: "Question 1",
         image:
@@ -35,8 +34,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 3,
-      orderNum: 2,
       unturned: {
         text: "Question 3",
         image: "",
@@ -48,8 +45,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 2,
-      orderNum: 3,
       unturned: {
         text: "Question 4",
         image: "",
@@ -61,8 +56,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 0,
-      orderNum: 4,
       unturned: {
         text: "Question",
         image: "",
@@ -74,8 +67,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 1,
-      orderNum: 6,
       unturned: {
         text: "Question",
         image:
@@ -88,8 +79,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 1,
-      orderNum: 7,
       unturned: {
         text: "Question 7",
         image:
@@ -102,8 +91,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 1,
-      orderNum: 8,
       unturned: {
         text: "Question 8",
         image:
@@ -116,8 +103,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 3,
-      orderNum: 9,
       unturned: {
         text: "Question 9",
         image:
@@ -130,8 +115,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 2,
-      orderNum: 1,
       unturned: {
         text: "Question 10",
         image:
@@ -144,8 +127,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 3,
-      orderNum: 1,
       unturned: {
         text: "Question 11",
         image:
@@ -158,8 +139,6 @@ function App() {
     },
     {
       id: uuidv4(),
-      difficulty: 3,
-      orderNum: 2,
       unturned: {
         text: "Question 12",
         image:
@@ -171,41 +150,6 @@ function App() {
       },
     },
   ]);
-  const [sortedFlashcards, setSortedFlashcards] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
-  const numOfLevels = 4;
-  useEffect(() => {
-    let sorted = aggregateSortedLevels(flashcards, numOfLevels);
-    setSortedFlashcards(() => sorted);
-    setIsLoading(false);
-  }, [flashcards]);
-
-  console.log(sortedFlashcards);
-  function smoothOrderNums(cards, difficulty) {
-    const range = cards.filter((card) => card.difficulty === difficulty);
-    const smoothOrderNums = range.map((card, i) => {
-      card.orderNum = i + 1;
-      return card;
-    });
-    return smoothOrderNums;
-  }
-
-  function sortWithinLevel(arr, difficulty) {
-    let sorted = arr
-      .filter((instance) => instance.difficulty === difficulty)
-      .sort((a, b) => (a.orderNum < b.orderNum ? -1 : 1));
-    let smoothened = smoothOrderNums(sorted, difficulty);
-    return smoothened;
-  }
-
-  function aggregateSortedLevels(data, numOfLevels) {
-    let aggregate = [];
-    for (let i = numOfLevels; i >= 0; i--) {
-      let part = sortWithinLevel(data, i);
-      aggregate = [...aggregate, ...part];
-    }
-    return aggregate;
-  }
 
   async function fileTest(e) {
     let img = e.target.files[0];
@@ -226,36 +170,7 @@ function App() {
   function addFlashcard(flashcard) {
     setFlashcards([...flashcards, flashcard]);
   }
-  function updateFlashcard(flashcard) {
-    let cards = cloneDeep(flashcards);
-    let card = cards.find((card) => flashcard.id === card.id);
-    card.difficulty = flashcard.difficulty;
-    card.orderNum = flashcard.orderNum;
-    card = determineCardQueue(card);
-    console.log(card, "card in updateFlashcard in App");
-    setFlashcards(() => cards);
-  }
-  function determineCardQueue(card) {
-    var cardsInLevel = sortedFlashcards.filter(
-      (instance) => instance.difficulty === card.difficulty
-    );
-    if (cardsInLevel.length === 1) {
-      if (card.hasOwnProperty("queue")) {
-        if (card.queue >= 0) {
-          card.queue = card.queue - 1;
-        }
-        if (card.queue < 0) {
-          delete card.queue;
-        }
-      }
-      if (!card.hasOwnProperty("queue")) {
-        card.queue = randomIntFromInterval(2, 4);
-      }
-    }
-    return card;
-  }
   function randomIntFromInterval(min, max) {
-    // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   function closeModal() {
@@ -272,10 +187,10 @@ function App() {
           ) : (
             <>
               <Flashcards
-                updateFlashcard={(flashcard) => updateFlashcard(flashcard)}
-                sortedFlashcards={sortedFlashcards}
+                flashcards={flashcards}
+                setFlashcards={(flashcards) => setFlashcards(flashcards)}
               />
-              <CompletedFlashcards sortedFlashcards={sortedFlashcards} />
+              <CompletedFlashcards flashcards={flashcards} />
             </>
           )}
         </div>
@@ -284,7 +199,7 @@ function App() {
         </div>
         {modalOpen && (
           <Modals
-            sortedFlashcards={sortedFlashcards}
+            flashcards={flashcards}
             modalOpen={modalOpen}
             addFlashcard={(flashcard) => addFlashcard(flashcard)}
             closeModal={() => closeModal()}
