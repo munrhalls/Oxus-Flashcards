@@ -39,6 +39,7 @@
     position: relative;
 }
 .Centerstage {
+    display: flex;
     flex: 4;
 }
 .Aside {
