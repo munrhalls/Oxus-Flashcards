@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
 }
 .Flashcard {
     border: 3px solid #000;
