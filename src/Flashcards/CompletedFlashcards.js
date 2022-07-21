@@ -16,7 +16,19 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
   const heapEffect = makeHeap();
   return (
     <div className="CompletedFlashcards">
-      <div className="CompletedFlashcards__frontCard">{heapEffect}</div>
+      <div className="CompletedFlashcards__frontCard">
+        {completedFlashcards.map((card) => {
+          return (
+            <div className="CompletedFlashcards__frontCard__container">
+              <span className="CompletedFlashcards__frontCard__container__text">
+                {card.unturned.text}
+              </span>
+              <div className="CompletedFlashcards__CSScheckMark"></div>
+            </div>
+          );
+        })}
+        {heapEffect}
+      </div>
       <h3 className="CompletedFlashcards__title">
         COMPLETED CARDS:{" "}
         <span className="CompletedFlashcards__title__number">
