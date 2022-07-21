@@ -52,7 +52,7 @@ export const Flashcards = ({
     if (difficulty === 1) {
       shuffleEasy(flashcards);
     }
-    if (difficulty === 0) {
+    if (difficulty === 0 && flashcards.length) {
       const passCard = flashcards.shift();
       setCompletedFlashcards([...completedFlashcards, passCard]);
     }
