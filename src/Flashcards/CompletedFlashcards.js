@@ -3,11 +3,15 @@ import React, { useState } from "react";
 export const CompletedFlashcards = ({ completedFlashcards }) => {
   function makeHeap() {
     return completedFlashcards.map((card, i) => {
+      const multiplier = completedFlashcards.length > 10 ? 2.5 : 5.25;
       return (
         <>
           <div
             className="CompletedFlashcards__heapFrame"
-            style={{ top: `${0 - i * 5.25}px`, right: `${0 - i * 5.5}px` }}
+            style={{
+              top: `${0 - i * multiplier}px`,
+              right: `${0 - i * multiplier}px`,
+            }}
           ></div>
         </>
       );
