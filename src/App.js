@@ -183,6 +183,9 @@ function App() {
     <div className="App">
       <header className="Header">Flashcards</header>
       <main className="Main">
+        <div className="Aside">
+          <ModalBtns setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
+        </div>
         <div className="Centerstage">
           {isLoading ? (
             <div style={{ fontSize: "120px" }}>Loading...</div>
@@ -199,9 +202,6 @@ function App() {
               <CompletedFlashcards completedFlashcards={completedFlashcards} />
             </>
           )}
-        </div>
-        <div className="Aside">
-          <ModalBtns setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         </div>
         {modalOpen && (
           <Modals
