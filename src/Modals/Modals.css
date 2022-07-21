@@ -25,7 +25,12 @@
     width: 100%;
     margin-bottom: auto;
 }
-.Modal__btn {
+.Modal__containerBtns__container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #fff;
     cursor: pointer;
     /* color: #fff; */
     border-radius: 3px;
@@ -37,6 +42,12 @@
     border: none;
     width: 6rem;
     padding: 0.25rem;
+}
+.Modal__containerBtns__container__btn {
+   background-color: #fff;
+   width: 100%;
+   opacity: 0.8;
+   height: 25%;
 }
 .Flashcards__form__container {
 }
