@@ -9,33 +9,42 @@ export const Flashcards = ({ flashcards, setFlashcards }) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
   console.log(flashcards);
+  function shuffleHard(flashcards) {
+    const wasFirst = flashcards.shift();
+    let moveBy = Math.floor(flashcards.length / 3);
+    let randomizer = randomIntFromInterval(-2, 0);
+    if (flashcards.length > 4) {
+      moveBy += randomizer;
+    }
+    flashcards.splice(moveBy, 0, wasFirst);
+  }
+  function shuffleMedium(flashcards) {
+    const wasFirst = flashcards.shift();
+    let moveBy = Math.floor(flashcards.length / 2);
+    let randomizer = randomIntFromInterval(-2, 2);
+    if (flashcards.length > 4) {
+      moveBy += randomizer;
+    }
+    flashcards.splice(moveBy, 0, wasFirst);
+  }
+  function shuffleEasy(flashcards) {
+    const wasFirst = flashcards.shift();
+    let moveBy = flashcards.length - Math.floor(flashcards.length / 3);
+    let randomizer = randomIntFromInterval(0, 3);
+    if (flashcards.length > 4) {
+      moveBy += randomizer;
+    }
+    flashcards.splice(moveBy, 0, wasFirst);
+  }
   function shuffleCard() {
     if (difficulty === 3) {
-      const wasFirst = flashcards.shift();
-      let moveBy = Math.floor(flashcards.length / 3);
-      let randomizer = randomIntFromInterval(-2, 0);
-      if (flashcards.length > 4) {
-        moveBy += randomizer;
-      }
-      flashcards.splice(moveBy, 0, wasFirst);
+      shuffleHard(flashcards);
     }
     if (difficulty === 2) {
-      const wasFirst = flashcards.shift();
-      let moveBy = Math.floor(flashcards.length / 2);
-      let randomizer = randomIntFromInterval(-2, 2);
-      if (flashcards.length > 4) {
-        moveBy += randomizer;
-      }
-      flashcards.splice(moveBy, 0, wasFirst);
+      shuffleMedium(flashcards);
     }
     if (difficulty === 1) {
-      const wasFirst = flashcards.shift();
-      let moveBy = flashcards.length - Math.floor(flashcards.length / 3);
-      let randomizer = randomIntFromInterval(0, 3);
-      if (flashcards.length > 4) {
-        moveBy += randomizer;
-      }
-      flashcards.splice(moveBy, 0, wasFirst);
+      shuffleEasy(flashcards);
     }
     let updated = cloneDeep(flashcards);
     setFlashcards(updated);
