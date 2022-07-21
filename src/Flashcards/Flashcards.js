@@ -63,55 +63,65 @@ export const Flashcards = ({
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   return (
-    <div className="Flashcards">
-      <div key={uuidv4()}>
-        <div className="Flashcard__number">fcards num</div>
-        <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
-      </div>
-      <div className="Flashcards__btns">
-        <div className="Flashcards__btns__difficulty">
-          <input
-            type="button"
-            className={`Flashcards__btns__difficulty__instance ${
-              difficulty === 3 ? "--rating" : ""
-            }`}
-            onClick={() => setDifficulty(3)}
-            value={levels[3]}
-          />
-          <input
-            type="button"
-            className={`Flashcards__btns__difficulty__instance ${
-              difficulty === 2 ? "--rating" : ""
-            }`}
-            onClick={() => setDifficulty(2)}
-            value={levels[2]}
-          />
-          <input
-            type="button"
-            className={`Flashcards__btns__difficulty__instance ${
-              difficulty === 1 ? "--rating" : ""
-            }`}
-            onClick={() => setDifficulty(1)}
-            value={levels[1]}
-          />
-          <input
-            type="button"
-            className={`Flashcards__btns__difficulty__instance ${
-              difficulty === 0 ? "--rating" : ""
-            }`}
-            onClick={() => setDifficulty(0)}
-            value={levels[0]}
-          />
+    <>
+      {flashcards.length > 0 ? (
+        <div className="Flashcards">
+          <div>
+            <div className="Flashcard__number">fcards num</div>
+            <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
+          </div>
+          <div className="Flashcards__btns">
+            <div className="Flashcards__btns__difficulty">
+              <input
+                type="button"
+                className={`Flashcards__btns__difficulty__instance ${
+                  difficulty === 3 ? "--rating" : ""
+                }`}
+                onClick={() => setDifficulty(3)}
+                value={levels[3]}
+              />
+              <input
+                type="button"
+                className={`Flashcards__btns__difficulty__instance ${
+                  difficulty === 2 ? "--rating" : ""
+                }`}
+                onClick={() => setDifficulty(2)}
+                value={levels[2]}
+              />
+              <input
+                type="button"
+                className={`Flashcards__btns__difficulty__instance ${
+                  difficulty === 1 ? "--rating" : ""
+                }`}
+                onClick={() => setDifficulty(1)}
+                value={levels[1]}
+              />
+              <input
+                type="button"
+                className={`Flashcards__btns__difficulty__instance ${
+                  difficulty === 0 ? "--rating" : ""
+                }`}
+                onClick={() => setDifficulty(0)}
+                value={levels[0]}
+              />
+            </div>
+            <button
+              className="Flashcards__btns__next"
+              key={uuidv4()}
+              onClick={shuffleCard}
+            >
+              <span className="Flashcards__btn__next__text">Next</span>{" "}
+              <img className="Flashcards__btn__next__image" src={img} />
+            </button>
+          </div>
         </div>
-        <button
-          className="Flashcards__btns__next"
-          key={uuidv4()}
-          onClick={shuffleCard}
-        >
-          <span className="Flashcards__btn__next__text">Next</span>{" "}
-          <img className="Flashcards__btn__next__image" src={img} />
-        </button>
-      </div>
-    </div>
+      ) : (
+        <div className="Flashcards__completedMessage">
+          <div className="Flashcards__completedMessage__title">
+            Deck completed.
+          </div>
+        </div>
+      )}
+    </>
   );
 };

@@ -82,3 +82,14 @@
     border: 3px solid #fff;
 }
 
+.Flashcards__completedMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.Flashcards__completedMessage__title {
+    font-size: 6rem;
+    word-wrap: break-word;
+    font-weight: bold;
+}
