@@ -11,14 +11,37 @@ export const Flashcards = ({ flashcards, setFlashcards }) => {
   console.log(flashcards);
   function shuffleCard() {
     if (difficulty === 3) {
-      // index 0 -> index 3
       const wasFirst = flashcards.shift();
-      // index 1 2 3 4 are all - 1
-      flashcards.splice(3, 0, wasFirst);
-      // in effect 0 is new 4, 4-1 are 0-3
-      let updated = cloneDeep(flashcards);
-      setFlashcards(updated);
+      let moveBy = Math.floor(flashcards.length / 3);
+      let randomizer = randomIntFromInterval(-2, 0);
+      if (flashcards.length > 4) {
+        moveBy += randomizer;
+      }
+      flashcards.splice(moveBy, 0, wasFirst);
     }
+    if (difficulty === 2) {
+      const wasFirst = flashcards.shift();
+      let moveBy = Math.floor(flashcards.length / 2);
+      let randomizer = randomIntFromInterval(-2, 2);
+      if (flashcards.length > 4) {
+        moveBy += randomizer;
+      }
+      flashcards.splice(moveBy, 0, wasFirst);
+    }
+    if (difficulty === 1) {
+      const wasFirst = flashcards.shift();
+      let moveBy = flashcards.length - Math.floor(flashcards.length / 3);
+      let randomizer = randomIntFromInterval(0, 3);
+      if (flashcards.length > 4) {
+        moveBy += randomizer;
+      }
+      flashcards.splice(moveBy, 0, wasFirst);
+    }
+    let updated = cloneDeep(flashcards);
+    setFlashcards(updated);
+  }
+  function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
   return (
     <div className="Flashcards">
