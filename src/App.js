@@ -5,6 +5,7 @@ import { Flashcards } from "./Flashcards/Flashcards";
 import { CompletedFlashcards } from "./Flashcards/CompletedFlashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
 import { uuidv4 } from "@firebase/util";
+import { Deck } from "./Decks/Deck";
 import {
   getStorage,
   ref,
@@ -190,17 +191,10 @@ function App() {
           {isLoading ? (
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
-            <>
-              <Flashcards
-                flashcards={flashcards}
-                setFlashcards={(flashcards) => setFlashcards(flashcards)}
-                completedFlashcards={completedFlashcards}
-                setCompletedFlashcards={(completedFlashcards) =>
-                  setCompletedFlashcards(completedFlashcards)
-                }
-              />
-              <CompletedFlashcards completedFlashcards={completedFlashcards} />
-            </>
+            <Deck
+              flashcards={flashcards}
+              completedFlashcards={completedFlashcards}
+            />
           )}
         </div>
         {modalOpen && (
