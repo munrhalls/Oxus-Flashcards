@@ -20,6 +20,7 @@ function App() {
   const [image, setImage] = useState(
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
+  const [decks, setDecks] = useState([]);
   const [completedFlashcards, setCompletedFlashcards] = useState([]);
 
   const [flashcards, setFlashcards] = useState([
@@ -153,7 +154,23 @@ function App() {
       },
     },
   ]);
+  function MOCK__generateDecks() {
+    let decks = [];
+    for (let i = 0; i < 10; i++) {
+      let deck = {
+        id: uuidv4(),
+        flashcards: flashcards,
+      };
+      decks.push(deck);
+    }
+    return decks;
+  }
+  useEffect(() => {
+    let decks = MOCK__generateDecks();
+    setDecks(decks);
+  }, []);
 
+  console.log(decks);
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
