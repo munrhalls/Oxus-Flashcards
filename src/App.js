@@ -170,16 +170,15 @@ function App() {
       });
   }
 
-  function addFlashcard(flashcard) {
-    setFlashcards([...flashcards, flashcard]);
-  }
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   function closeModal() {
     setModalOpen(false);
   }
-
+  function addFlashcard(flashcard) {
+    setFlashcards([...flashcards, flashcard]);
+  }
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
@@ -193,7 +192,11 @@ function App() {
           ) : (
             <Deck
               flashcards={flashcards}
+              setFlashcards={(flashcards) => setFlashcards(flashcards)}
               completedFlashcards={completedFlashcards}
+              setCompletedFlashcards={(completedFlashcards) =>
+                setCompletedFlashcards(completedFlashcards)
+              }
             />
           )}
         </div>
