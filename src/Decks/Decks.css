@@ -1,0 +1,11 @@
+.Deck {
+}
+
+.Deck__title {
+    padding: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.Deck__decks {
+    display: flex;
+}

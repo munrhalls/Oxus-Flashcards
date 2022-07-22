@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './Flashcards/Flashcards.css';
 @import './Modals/Modals.css';
+@import './Decks/Decks.css';
 
 * {
     box-sizing: border-box;
