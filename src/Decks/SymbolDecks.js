@@ -2,12 +2,18 @@ import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
 import { uuidv4 } from "@firebase/util";
 
-export const SymbolDecks = ({ decks, setModalOpen }) => {
+export const SymbolDecks = ({ decks, setModalOpen, setActiveDeck }) => {
   return (
     <div className="SymbolDecks">
       {decks.length ? (
         decks.map((deck) => {
-          return <SymbolDeck key={uuidv4()} deck={deck} />;
+          return (
+            <SymbolDeck
+              key={uuidv4()}
+              deck={deck}
+              setActiveDeck={setActiveDeck}
+            />
+          );
         })
       ) : (
         <div className="SymbolDecks__noDecks">
