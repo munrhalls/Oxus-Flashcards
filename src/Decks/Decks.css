@@ -11,3 +11,30 @@
     display: flex;
     justify-content: space-between;
 }
+
+.SymbolDecks {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.SymbolDecks__deck {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.SymbolDecks__deck__img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.SymbolDecks__deck__title {
+    width: 10rem;
+    font-size: 1.5rem;
+    text-align: center;
+}

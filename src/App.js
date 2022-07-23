@@ -5,7 +5,7 @@ import { Flashcards } from "./Flashcards/Flashcards";
 import { CompletedFlashcards } from "./Flashcards/CompletedFlashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
 import { uuidv4 } from "@firebase/util";
-import { Deck } from "./Decks/Deck";
+import { SymbolDecks } from "./Decks/SymbolDecks";
 import {
   getStorage,
   ref,
@@ -21,6 +21,7 @@ function App() {
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
   const [decks, setDecks] = useState([]);
+  const [activeDeck, setActiveDeck] = useState(false);
   const [completedFlashcards, setCompletedFlashcards] = useState([]);
 
   const [flashcards, setFlashcards] = useState([
@@ -159,6 +160,7 @@ function App() {
     for (let i = 0; i < 10; i++) {
       let deck = {
         id: uuidv4(),
+        name: i,
         flashcards: flashcards,
       };
       decks.push(deck);
@@ -204,18 +206,19 @@ function App() {
           <ModalBtns setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         </div>
         <div className="Centerstage">
-          {isLoading ? (
+          {!activeDeck ? <SymbolDecks decks={decks} /> : ""}
+          {/* {isLoading ? 
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
             <Deck
-              flashcards={flashcards}
+              flashcards={activeDeck.flashcards}
               setFlashcards={(flashcards) => setFlashcards(flashcards)}
               completedFlashcards={completedFlashcards}
               setCompletedFlashcards={(completedFlashcards) =>
                 setCompletedFlashcards(completedFlashcards)
               }
             />
-          )}
+          )} */}
         </div>
         {modalOpen && (
           <Modals
@@ -230,6 +233,9 @@ function App() {
         By Munrhalls. 2022.
         <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
           Arrow icons created by Freepik - Flaticon
+        </a>
+        <a href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438">
+          Card icons by https://icon-library.com/.
         </a>
       </footer>
     </div>
