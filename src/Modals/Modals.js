@@ -1,5 +1,6 @@
 import React from "react";
 import { AddFlashcard } from "./AddFlashcard";
+import { AddDeck } from "./AddDeck";
 
 export const Modals = ({
   sortedFlashcards,
@@ -20,7 +21,7 @@ export const Modals = ({
       )}
       {modalOpen === "EditFlashcard" ? <div>EDIT MODAL</div> : ""}
       {modalOpen === "DeleteFlashcard" ? <div>DELETE MODAL</div> : ""}
-      {modalOpen === "SortFlashcards" ? <div>SORT MODAL</div> : ""}
+      {modalOpen === "AddDeck" ? <AddDeck /> : ""}
     </div>
   );
 };

@@ -51,6 +51,31 @@
    text-transform: capitalize;
    color: #000;
 }
+
+.AddDeck {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.AddDeck__submit__container {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.AddDeck__submit {
+    cursor: pointer;
+    width: 16rem;   
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+}
 .Flashcards__form__container {
 }
 
