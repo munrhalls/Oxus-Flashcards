@@ -3,7 +3,6 @@ import { SymbolDeck } from "./SymbolDeck";
 import { uuidv4 } from "@firebase/util";
 
 export const SymbolDecks = ({ decks }) => {
-  decks = [];
   return (
     <div className="SymbolDecks">
       {decks.length ? (
@@ -12,7 +11,7 @@ export const SymbolDecks = ({ decks }) => {
         })
       ) : (
         <div className="SymbolDecks__noDecks">
-          <div clasName="SymbolDecks__noDecksMsg">
+          <div className="SymbolDecks__noDecksMsg">
             <h1 className="SymbolDecks__noDecksMsg">
               Flashcards repository empty.
             </h1>
