@@ -29,6 +29,10 @@
     justify-content: center;
     align-items: center;
 }
+.SymbolDecks__deck:hover {
+    background-color: #dddddd;
+    opacity: 0.8;
+}
 .SymbolDecks__deck__img {
     width: 10rem;
     height: 10rem;
