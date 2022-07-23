@@ -1,10 +1,13 @@
 import React from "react";
 
-export const ModalBtns = ({ setModalOpen }) => {
+export const ModalBtns = ({ setModalOpen, setActiveDeck }) => {
   return (
     <div className="Modal__containerBtns">
       <div className="Modal__containerBtns__container">
-        <button className="Modal__containerBtns__container__btn">
+        <button
+          className="Modal__containerBtns__container__btn"
+          onClick={() => setActiveDeck(false)}
+        >
           SHOW ALL DECKS
         </button>
       </div>
