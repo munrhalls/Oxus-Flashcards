@@ -1,3 +1,52 @@
 .EditDeck {
-    
+
+}
+.EditDeck__btn__close {
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 12rem;   
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+.EditDeck__noDeckSelectedMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.EditDeck__noDeckSelectedMsg__title {
+    padding: 1rem;
+    font-size: 2rem;
+
+}
+.EditDeck__noDeckSelectedMsg__btn__select {
+    cursor: pointer;
+    width: 12rem;   
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+.EditDeck__noDeckSelectedMsg__btn__close {
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 12rem;   
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
 }
