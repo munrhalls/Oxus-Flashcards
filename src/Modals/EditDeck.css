@@ -4,6 +4,14 @@
 .EditDeck__deckName {
     text-align: center;
 }
+.EditDeck__flashcards {
+    display: flex;
+    overflow: hidden;
+}
+.EditDeck__flashcardContainer {
+    height: 10rem;
+    width: 5rem;
+}
 .EditDeck__btn__close {
     margin-top: 1rem;
     cursor: pointer;

@@ -12,9 +12,21 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
         <>
           {/* <AddFlashcard /> */}
           <h1 className="EditDeck__deckName">{activeDeck.name}</h1>
-          {activeDeck.flashcards.map((card) => {
-            return <Flashcard key={uuidv4()} flashcard={card} />;
-          })}
+          <div className="EditDeck__flashcards">
+            {activeDeck.flashcards.map((card) => {
+              return (
+                <div className="EditDeck__flashcardContainer">
+                  <Flashcard key={uuidv4()} flashcard={card} />
+                </div>
+              );
+            })}
+          </div>
+          <div>
+            Add flashcard
+            <div>
+              <AddFlashcard />
+            </div>
+          </div>
           <button className="EditDeck__btn__close" onClick={() => closeModal()}>
             CLOSE
           </button>

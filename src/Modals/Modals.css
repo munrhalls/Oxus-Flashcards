@@ -53,6 +53,8 @@
 }
 
 .Flashcards__form__container {
+    max-width: 30rem;
+    max-height: 15rem;
 }
 
 .Flashcards__form__titleRibbon {
