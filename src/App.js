@@ -162,6 +162,7 @@ function App() {
         id: uuidv4(),
         name: i,
         flashcards: cloneDeep(flashcards),
+        completedFlashcards: cloneDeep(completedFlashcards),
       };
       decks.push(deck);
     }
