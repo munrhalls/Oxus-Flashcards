@@ -2,6 +2,7 @@
 @import './Flashcards/Flashcards.css';
 @import './Modals/Modals.css';
 @import './Decks/Decks.css';
+@import './Modals/AddDeck.css';
 
 * {
     box-sizing: border-box;

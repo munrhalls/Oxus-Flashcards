@@ -15,9 +15,14 @@ export const AddDeck = ({ decks, setDecks, closeModal }) => {
   }
   return (
     <div className="AddDeck">
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className="AddDeck__form" onSubmit={(e) => handleSubmit(e)}>
+        <label className="AddDeck__nameLabel" for="deckName">
+          DECK NAME:
+        </label>
         <input
           type="text"
+          name="deckName"
+          id="deckName"
           value={deckName}
           onChange={(e) => setDeckName(e.target.value)}
         />
