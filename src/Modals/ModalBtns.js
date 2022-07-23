@@ -20,7 +20,10 @@ export const ModalBtns = ({ setModalOpen, setActiveDeck }) => {
         </button>
       </div>
       <div className="Modal__containerBtns__container">
-        <button className="Modal__containerBtns__container__btn">
+        <button
+          className="Modal__containerBtns__container__btn"
+          onClick={() => setModalOpen("EditDeck")}
+        >
           EDIT DECK
         </button>
       </div>
