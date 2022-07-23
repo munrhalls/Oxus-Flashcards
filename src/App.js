@@ -23,7 +23,6 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeck, setActiveDeck] = useState(false);
   const [completedFlashcards, setCompletedFlashcards] = useState([]);
-
   const [flashcards, setFlashcards] = useState([
     {
       id: uuidv4(),
@@ -206,7 +205,14 @@ function App() {
           <ModalBtns setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         </div>
         <div className="Centerstage">
-          {!activeDeck ? <SymbolDecks decks={decks} /> : ""}
+          {!activeDeck ? (
+            <SymbolDecks
+              decks={decks}
+              setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+            />
+          ) : (
+            ""
+          )}
           {/* {isLoading ? 
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
@@ -222,6 +228,7 @@ function App() {
         </div>
         {modalOpen && (
           <Modals
+            decks={decks}
             flashcards={flashcards}
             modalOpen={modalOpen}
             addFlashcard={(flashcard) => addFlashcard(flashcard)}

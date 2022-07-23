@@ -2,7 +2,8 @@ import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
 import { uuidv4 } from "@firebase/util";
 
-export const SymbolDecks = ({ decks }) => {
+export const SymbolDecks = ({ decks, setModalOpen }) => {
+  decks = [];
   return (
     <div className="SymbolDecks">
       {decks.length ? (
@@ -16,7 +17,10 @@ export const SymbolDecks = ({ decks }) => {
               Flashcards repository empty.
             </h1>
           </div>
-          <button className="SymbolDecks__noDecksMsg__addBtn">
+          <button
+            className="SymbolDecks__noDecksMsg__addBtn"
+            onClick={setModalOpen("AddDeck")}
+          >
             ADD NEW DECK
           </button>
         </div>
