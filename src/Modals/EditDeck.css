@@ -1,6 +1,9 @@
 .EditDeck {
 
 }
+.EditDeck__deckName {
+    text-align: center;
+}
 .EditDeck__btn__close {
     margin-top: 1rem;
     cursor: pointer;
