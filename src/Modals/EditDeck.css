@@ -16,32 +16,31 @@
     text-align: center;
 }
 .EditDeck__flashcards {
-    height: 10rem;
+    height: 15rem;
     display: flex;
 }
 .EditDeck__flashcards__list {
-    height: 10rem;
+    height: 15rem;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap; 
 }
-.EditDeck__flashcards__list__scrollBtn {
-    cursor: pointer;
-    height: 100%;
-    width: 3rem;
-    background: #000;
-}
-.EditDeck__flashcards__list__scrollBtn--left {
 
-}
-.EditDeck__flashcards__list__scrollBtn--right {
-
-}
 .EditDeck__flashcardContainer {
-    height: 10rem;
-    width: 5rem;
+    height: 15rem;
+    width: 12rem;
     flex-shrink: 0;
+    display: flex;
+}
+.EditDeck__flashcardContainer__num {
+    height: 100%;
+    width: 2rem;    
+    background-color: #777;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .EditDeck__btn__close {
     margin-top: 1rem;
