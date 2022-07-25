@@ -13,6 +13,8 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           {/* <AddFlashcard /> */}
           <h1 className="EditDeck__deckName">{activeDeck.name}</h1>
           <div className="EditDeck__flashcards">
+            <button className="EditDeck__flashcards__list__scrollBtn --left"></button>
+
             <div className="EditDeck__flashcards__list">
               {activeDeck.flashcards.map((card) => {
                 return (
@@ -22,6 +24,7 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                 );
               })}
             </div>
+            <button className="EditDeck__flashcards__list__scrollBtn  --right"></button>
           </div>
           <div>
             Add flashcard
