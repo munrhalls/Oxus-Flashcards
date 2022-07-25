@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Deck } from "../Decks/Deck";
 import { Flashcard } from "../Flashcards/Flashcard";
 import { AddFlashcard } from "./AddFlashcard";
 import { uuidv4 } from "@firebase/util";
 
 export const EditDeck = ({ closeModal, activeDeck }) => {
-  console.log(activeDeck);
   return (
     <div className="EditDeck">
       {activeDeck ? (
@@ -13,8 +12,6 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           {/* <AddFlashcard /> */}
           <h1 className="EditDeck__deckName">{activeDeck.name}</h1>
           <div className="EditDeck__flashcards">
-            <button className="EditDeck__flashcards__list__scrollBtn --left"></button>
-
             <div className="EditDeck__flashcards__list">
               {activeDeck.flashcards.map((card) => {
                 return (
@@ -24,7 +21,6 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                 );
               })}
             </div>
-            <button className="EditDeck__flashcards__list__scrollBtn  --right"></button>
           </div>
           <div>
             Add flashcard
