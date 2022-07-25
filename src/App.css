@@ -9,6 +9,38 @@
     box-sizing: border-box;
 }
 
+
+::-webkit-scrollbar {
+    width: 3vw;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: rgb(12, 12, 12);
+    border: 1px solid #777;
+    border-color: 2px solid #fff;
+    border-radius: 30px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: rgb(12, 12, 12);
+    border-color: 2px solid #fff;
+    border-radius: 30px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(92, 92, 92);
+    border-color: 2px solid #fff;
+    border-radius: 30px;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background-color: rgb(101, 101, 101);
+    border-color: 2px solid #fff;
+    border-radius: 30px;
+  }
+  
 .App {
     height: 100vh;
     display: flex;
