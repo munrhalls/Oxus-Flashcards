@@ -4,12 +4,14 @@
     right: 0;
     top: 0;
     bottom: 0;
+    border-radius: 10px;
+    background-color: #000;
+    border: 10px solid #000;
 }
 .EditDeck {
     scrollbar-width: normal;
     scrollbar-color: rgb(18, 18, 18) rgb(128, 127, 127);
-    border-color: 2px solid #fff;
-    border-radius: 30px;
+    border-color: 2px solid #aaa;
     background-color: #000;
   }
 
