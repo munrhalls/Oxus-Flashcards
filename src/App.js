@@ -212,7 +212,6 @@ function App() {
             setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
           />
         </div>
-        <div>git</div>
         <div className="Centerstage">
           {!activeDeck ? (
             <SymbolDecks
