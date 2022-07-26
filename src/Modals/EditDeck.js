@@ -56,10 +56,9 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
               })}
             </div>
           </div>
-          <div>
+          {/* <div>
             Add flashcard
-            <div>{/* <AddFlashcard /> */}</div>
-          </div>
+          </div> */}
         </>
       ) : (
         <div className="EditDeck__noDeckSelectedMsg">
