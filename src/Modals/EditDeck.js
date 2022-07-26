@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { Deck } from "../Decks/Deck";
 import { Flashcard } from "../Flashcards/Flashcard";
 import { AddFlashcard } from "./AddFlashcard";
@@ -7,6 +7,7 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 
 export const EditDeck = ({ closeModal, activeDeck }) => {
+  const [deckName, setDeckName] = useState(activeDeck ? activeDeck.name : "");
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submit");
@@ -14,7 +15,7 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
   return (
     <div className="EditDeck">
       {activeDeck ? (
-        <form className="EditDeck__form" onSubit={handleSubmit}>
+        <form className="EditDeck__form" onSubmit={handleSubmit}>
           {/* <AddFlashcard /> */}
           <div className="EditDeck__form__topBar">
             <div className="EditDeck__form__topBar__line --first">
