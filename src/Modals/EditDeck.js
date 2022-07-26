@@ -60,8 +60,10 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                     key={uuidv4()}
                     className="EditDeck__form__flashcardContainer"
                   >
-                    <div className="EditDeck__form__flashcardContainer__num">
-                      {i}
+                    <div className="EditDeck__form__flashcardContainer__numContainer">
+                      <div className="EditDeck__form__flashcardContainer__numContainer__num">
+                        {i}
+                      </div>
                     </div>
                     <Flashcard key={uuidv4()} flashcard={card} />
                   </div>
