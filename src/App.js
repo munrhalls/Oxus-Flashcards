@@ -244,18 +244,12 @@ function App() {
         )}
       </main>
       <footer className="Footer">
-        By Munrhalls. 2022.
+        <h6 className="Footer__author">By Munrhalls. 2022.</h6>
         <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
           Arrow icons created by Freepik - Flaticon
         </a>
-        <a href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438">
-          Card icons by https://icon-library.com/.
-        </a>
-      </footer>
-      <footer className="Footer">
-        By Munrhalls. 2022.
-        <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
-          Arrow icons created by Freepik - Flaticon
+        <a href="https://www.flaticon.com/free-icons/close" title="close icons">
+          Close icons created by ariefstudio - Flaticon
         </a>
         <a href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438">
           Card icons by https://icon-library.com/.
