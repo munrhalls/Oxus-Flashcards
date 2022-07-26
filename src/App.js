@@ -254,6 +254,9 @@ function App() {
         <a href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438">
           Card icons by https://icon-library.com/.
         </a>
+        <a href="https://www.flaticon.com/free-icons/edit" title="edit icons">
+          Edit icons created by Kiranshastry - Flaticon
+        </a>
       </footer>
     </div>
   );
