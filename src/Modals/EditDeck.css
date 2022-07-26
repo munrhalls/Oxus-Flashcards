@@ -32,6 +32,7 @@
     background-color: #222;
     height: 3rem;
     border-top: 3px solid #444;
+    border-bottom: 3px solid #444;
 }
 .EditDeck__topBar__line__title {
     display: flex;

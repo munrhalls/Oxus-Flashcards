@@ -230,18 +230,18 @@ function App() {
               }
             />
           )}
+          {modalOpen && (
+            <Modals
+              activeDeck={activeDeck}
+              decks={decks}
+              setDecks={(decks) => setDecks(decks)}
+              flashcards={flashcards}
+              modalOpen={modalOpen}
+              addFlashcard={(flashcard) => addFlashcard(flashcard)}
+              closeModal={() => closeModal()}
+            />
+          )}
         </div>
-        {modalOpen && (
-          <Modals
-            activeDeck={activeDeck}
-            decks={decks}
-            setDecks={(decks) => setDecks(decks)}
-            flashcards={flashcards}
-            modalOpen={modalOpen}
-            addFlashcard={(flashcard) => addFlashcard(flashcard)}
-            closeModal={() => closeModal()}
-          />
-        )}
       </main>
       <footer className="Footer">
         <h6 className="Footer__author">By Munrhalls. 2022.</h6>
