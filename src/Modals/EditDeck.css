@@ -135,6 +135,58 @@
     flex-shrink: 0;
     display: flex;
 }
+.EditDeck__form__flashcardContainer.--addBtn {
+    background-color: #222;
+    border: 3px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.EditDeck__form__flashcardContainer__btn {
+    border-radius: 50%;
+    width: 60%;
+    height: 60%;
+    cursor: pointer;
+
+}
+.EditDeck__form__flashcardContainer__btn.--addBtn {
+    background-color: rgb(5, 72, 49);
+   margin-top: 15%;
+   cursor: pointer;
+    
+}
+.EditDeck__form__flashcardContainer__btn__addImg {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+
+}
+.EditDeck__form__flashcardContainer__addBtnTextContainer {
+    border-top: 9px solid transparent;
+    height: 3rem;
+    width: 80%;
+    cursor: pointer;
+
+}
+.EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText {
+    border-top: 9px solid #000;
+    background-color: #777;
+    height: 100%;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+.EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText {
+}
 .EditDeck__form__flashcardContainer__numContainer {
     height: 100%;
     width: 2rem;    

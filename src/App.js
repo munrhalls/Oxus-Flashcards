@@ -243,7 +243,9 @@ function App() {
         </div>
       </main>
       <footer className="Footer">
-        <h6 className="Footer__author">By Munrhalls. 2022.</h6>
+        <h6 className="Footer__author">App by: Munrhalls. 2022.</h6>
+        <h6 className="Footer__author">Design by: Munrhalls. 2022.</h6>
+
         <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
           Arrow icons created by Freepik - Flaticon
         </a>
@@ -255,6 +257,9 @@ function App() {
         </a>
         <a href="https://www.flaticon.com/free-icons/edit" title="edit icons">
           Edit icons created by Kiranshastry - Flaticon
+        </a>
+        <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">
+          Plus icons created by Freepik - Flaticon
         </a>
       </footer>
     </div>
