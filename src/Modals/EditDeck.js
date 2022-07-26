@@ -97,11 +97,19 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                     <div className="EditDeck__form__flashcardContainer__elements">
                       <Flashcard key={uuidv4()} flashcard={card} />
                       <div className="EditDeck__form__flashcardContainer__elements__btns">
-                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn">
-                          EDIT
+                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn --edit">
+                          <img
+                            className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                            src={IMG__EDIT}
+                            alt="EDIT"
+                          />
                         </button>
-                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn">
-                          DELETE
+                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn --delete">
+                          <img
+                            className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                            src={IMG__CLOSE}
+                            alt="DELETE"
+                          />
                         </button>
                       </div>
                     </div>
