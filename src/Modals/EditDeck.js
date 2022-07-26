@@ -7,7 +7,9 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 
 export const EditDeck = ({ closeModal, activeDeck }) => {
+  const [isEditDeckName, setIsEditDeckName] = useState(false);
   const [deckName, setDeckName] = useState(activeDeck ? activeDeck.name : "");
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submit");
@@ -35,12 +37,22 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
               </button>
             </div>
             <div className="EditDeck__form__topBar__line --second">
-              <h1 className="EditDeck__form__topBar__line__deckName">
-                {activeDeck.name}
-              </h1>
+              {isEditDeckName ? (
+                <input
+                  type="text"
+                  
+                  value={deckName}
+                  onChange={(e) => setDeckName(e.target.value)}
+                />
+              ) : (
+                <h1 className="EditDeck__form__topBar__line__deckName">
+                  {deckName}
+                </h1>
+              )}
+
               <button
                 className="EditDeck__form__topBar__line__btn"
-                onClick={() => closeModal()}
+                onClick={() => setIsEditDeckName(!isEditDeckName)}
               >
                 <span className="EditDeck__form__topBar__line__btn__text">
                   Edit
