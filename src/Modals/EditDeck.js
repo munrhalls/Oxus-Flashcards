@@ -94,7 +94,17 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                         {i}
                       </div>
                     </div>
-                    <Flashcard key={uuidv4()} flashcard={card} />
+                    <div className="EditDeck__form__flashcardContainer__elements">
+                      <Flashcard key={uuidv4()} flashcard={card} />
+                      <div className="EditDeck__form__flashcardContainer__elements__btns">
+                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn">
+                          EDIT
+                        </button>
+                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn">
+                          DELETE
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 );
               })}
