@@ -7,10 +7,14 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 
 export const EditDeck = ({ closeModal, activeDeck }) => {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("submit");
+  }
   return (
     <div className="EditDeck">
       {activeDeck ? (
-        <>
+        <form onSubit={handleSubmit}>
           {/* <AddFlashcard /> */}
           <div className="EditDeck__topBar">
             <div className="EditDeck__topBar__line --first">
@@ -59,7 +63,8 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           {/* <div>
             Add flashcard
           </div> */}
-        </>
+          <input type="submit" value="SUBMIT CHANGES" />
+        </form>
       ) : (
         <div className="EditDeck__noDeckSelectedMsg">
           <h1 className="EditDeck__noDeckSelectedMsg__title">
