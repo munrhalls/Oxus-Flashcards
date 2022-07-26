@@ -50,20 +50,35 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                   {deckName}
                 </h1>
               )}
-
-              <button
-                className="EditDeck__form__topBar__line__btn"
-                onClick={() => setIsEditDeckName(!isEditDeckName)}
-              >
-                <span className="EditDeck__form__topBar__line__btn__text">
-                  Edit
-                </span>
-                <img
-                  className="EditDeck__form__topBar__line__btn__icon"
-                  src={IMG__EDIT}
-                  alt="CLOSE"
-                />
-              </button>
+              {!isEditDeckName ? (
+                <button
+                  className="EditDeck__form__topBar__line__btn"
+                  onClick={() => setIsEditDeckName(!isEditDeckName)}
+                >
+                  <span className="EditDeck__form__topBar__line__btn__text">
+                    Edit
+                  </span>
+                  <img
+                    className="EditDeck__form__topBar__line__btn__icon"
+                    src={IMG__EDIT}
+                    alt="CLOSE"
+                  />
+                </button>
+              ) : (
+                <button
+                  className="EditDeck__form__topBar__line__btn"
+                  onClick={() => setIsEditDeckName(!isEditDeckName)}
+                >
+                  <span className="EditDeck__form__topBar__line__btn__text">
+                    Close
+                  </span>
+                  <img
+                    className="EditDeck__form__topBar__line__btn__icon"
+                    src={IMG__CLOSE}
+                    alt="CLOSE"
+                  />
+                </button>
+              )}
             </div>
           </div>
           <div className="EditDeck__form__flashcards">
