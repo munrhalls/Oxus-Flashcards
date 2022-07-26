@@ -65,10 +65,13 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .EditDeck__form__topBar__line__deckName.--input {
-    padding-left: 1rem;
     padding: 5px;
+    padding-left: 1rem;
     height: calc(100% - 5px);
     max-width: 75%;
     margin-right: auto;
@@ -155,7 +158,18 @@
     font-size: 1.05rem;
     font-weight: bold;
 }
+.EditDeck__form__flashcardContainer__elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.EditDeck__form__flashcardContainer__elements__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
 .EditDeck__form__btn__close {
     margin-top: 1rem;
     cursor: pointer;
