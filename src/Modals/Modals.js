@@ -29,7 +29,12 @@ export const Modals = ({
         ""
       )}
       {modalOpen === "EditDeck" ? (
-        <EditDeck activeDeck={activeDeck} closeModal={closeModal} />
+        <EditDeck
+          activeDeck={activeDeck}
+          closeModal={closeModal}
+          decks={decks}
+          setDecks={setDecks}
+        />
       ) : (
         ""
       )}
