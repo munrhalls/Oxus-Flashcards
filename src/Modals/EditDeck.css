@@ -254,6 +254,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 .EditDeck__form__flashcardContainer__deleteContainer__btn {
     font-weight: bold;
