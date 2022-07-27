@@ -15,7 +15,7 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
   console.log(isDelConfirmId);
   function handleSubmit(e) {
     e.preventDefault();
-    setDecks([]);
+    setDecks((decks) => []);
   }
   function deleteCard(delId) {
     setEditedCards((editedCards) =>
