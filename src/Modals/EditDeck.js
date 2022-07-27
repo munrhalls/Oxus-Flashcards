@@ -10,6 +10,7 @@ import IMG__PLUS from "./../Assets/plus.png";
 export const EditDeck = ({ closeModal, activeDeck }) => {
   const [isEditDeckName, setIsEditDeckName] = useState(false);
   const [deckName, setDeckName] = useState(activeDeck ? activeDeck.name : "");
+  const [isDelConfirm, setIsDelConfirm] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -95,25 +96,43 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                         {i}
                       </div>
                     </div>
-                    <div className="EditDeck__form__flashcardContainer__elements">
-                      <Flashcard key={uuidv4()} flashcard={card} />
-                      <div className="EditDeck__form__flashcardContainer__elements__btns">
-                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn --edit">
-                          <img
-                            className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
-                            src={IMG__EDIT}
-                            alt="EDIT"
-                          />
+                    {!isDelConfirm ? (
+                      <div className="EditDeck__form__flashcardContainer__elements">
+                        <Flashcard key={uuidv4()} flashcard={card} />
+                        <div className="EditDeck__form__flashcardContainer__elements__btns">
+                          <button className="EditDeck__form__flashcardContainer__elements__btns__btn --edit">
+                            <img
+                              className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                              src={IMG__EDIT}
+                              alt="EDIT"
+                            />
+                          </button>
+
+                          <button
+                            onClick={setIsDelConfirm(() => true)}
+                            className="EditDeck__form__flashcardContainer__elements__btns__btn --delete"
+                          >
+                            <img
+                              className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                              src={IMG__CLOSE}
+                              alt="DELETE"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="EditDeck__form__flashcardContainer__deleteContainer">
+                        <h3 className="EditDeck__form__flashcardContainer__deleteContainer__question">
+                          Are you sure?
+                        </h3>
+                        <button className="EditDeck__form__flashcardContainer__deleteContainer__btn --delete">
+                          DELETE
                         </button>
-                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn --delete">
-                          <img
-                            className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
-                            src={IMG__CLOSE}
-                            alt="DELETE"
-                          />
+                        <button className="EditDeck__form__flashcardContainer__deleteContainer__btn --back">
+                          BACK
                         </button>
                       </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
@@ -136,7 +155,7 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           {/* <div>
             Add flashcard
           </div> */}
-          <input className="" type="submit" value="SUBMIT CHANGES" />
+          {/* <input className="" type="submit" value="SUBMIT CHANGES" /> */}
         </form>
       ) : (
         <div className="EditDeck__form__noDeckSelectedMsg">
