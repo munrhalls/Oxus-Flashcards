@@ -10,8 +10,8 @@ import IMG__PLUS from "./../Assets/plus.png";
 export const EditDeck = ({ closeModal, activeDeck }) => {
   const [isEditDeckName, setIsEditDeckName] = useState(false);
   const [deckName, setDeckName] = useState(activeDeck ? activeDeck.name : "");
-  const [isDelConfirm, setIsDelConfirm] = useState(undefined);
-  console.log(isDelConfirm);
+  const [isDelConfirmId, setisDelConfirmId] = useState(null);
+  console.log(isDelConfirmId);
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submit");
@@ -97,7 +97,7 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                       </div>
                     </div>
 
-                    {isDelConfirm && isDelConfirm === card.id ? (
+                    {isDelConfirmId && isDelConfirmId === card.id ? (
                       <div className="EditDeck__form__flashcardContainer__deleteContainer">
                         <h3 className="EditDeck__form__flashcardContainer__deleteContainer__question">
                           Are you sure?
@@ -105,36 +105,38 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                         <button className="EditDeck__form__flashcardContainer__deleteContainer__btn --delete">
                           DELETE
                         </button>
-                        <button className="EditDeck__form__flashcardContainer__deleteContainer__btn --back">
+                        <button
+                          onClick={() => setisDelConfirmId(null)}
+                          className="EditDeck__form__flashcardContainer__deleteContainer__btn --back"
+                        >
                           BACK
                         </button>
                       </div>
                     ) : (
-                      ""
-                    )}
-                    <div className="EditDeck__form__flashcardContainer__elements">
-                      <Flashcard key={uuidv4()} flashcard={card} />
-                      <div className="EditDeck__form__flashcardContainer__elements__btns">
-                        <button className="EditDeck__form__flashcardContainer__elements__btns__btn --edit">
-                          <img
-                            className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
-                            src={IMG__EDIT}
-                            alt="EDIT"
-                          />
-                        </button>
+                      <div className="EditDeck__form__flashcardContainer__elements">
+                        <Flashcard key={uuidv4()} flashcard={card} />
+                        <div className="EditDeck__form__flashcardContainer__elements__btns">
+                          <button className="EditDeck__form__flashcardContainer__elements__btns__btn --edit">
+                            <img
+                              className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                              src={IMG__EDIT}
+                              alt="EDIT"
+                            />
+                          </button>
 
-                        <button
-                          onClick={() => setIsDelConfirm(card.id)}
-                          className="EditDeck__form__flashcardContainer__elements__btns__btn --delete"
-                        >
-                          <img
-                            className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
-                            src={IMG__CLOSE}
-                            alt="DELETE"
-                          />
-                        </button>
+                          <button
+                            onClick={() => setisDelConfirmId(card.id)}
+                            className="EditDeck__form__flashcardContainer__elements__btns__btn --delete"
+                          >
+                            <img
+                              className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                              src={IMG__CLOSE}
+                              alt="DELETE"
+                            />
+                          </button>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
