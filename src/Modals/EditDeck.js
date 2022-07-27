@@ -125,7 +125,7 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
 
                         <button
                           onClick={() => setIsDelConfirm(card.id)}
-                          className="EditDeck__form__flashcardContainer__elegit add ments__btns__btn --delete"
+                          className="EditDeck__form__flashcardContainer__elements__btns__btn --delete"
                         >
                           <img
                             className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
