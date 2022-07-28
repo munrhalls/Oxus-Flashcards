@@ -243,24 +243,50 @@ function App() {
         </div>
       </main>
       <footer className="Footer">
-        <h6 className="Footer__author">App by: Munrhalls. 2022.</h6>
-        <h6 className="Footer__author">Design by: Munrhalls. 2022.</h6>
-
-        <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">
-          Arrow icons created by Freepik - Flaticon
-        </a>
-        <a href="https://www.flaticon.com/free-icons/close" title="close icons">
-          Close icons created by ariefstudio - Flaticon
-        </a>
-        <a href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438">
-          Card icons by https://icon-library.com/.
-        </a>
-        <a href="https://www.flaticon.com/free-icons/edit" title="edit icons">
-          Edit icons created by Kiranshastry - Flaticon
-        </a>
-        <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">
-          Plus icons created by Freepik - Flaticon
-        </a>
+        <div className="Footer__authorContainer">
+          <h6 className="Footer__authorContainer__author">
+            App by: Munrhalls. 2022.
+          </h6>
+          <h6 className="Footer__authorContainer__author">
+            Design by: Munrhalls. 2022.
+          </h6>
+        </div>
+        <div className="Footer__attribs">
+          <span>Icons: </span>
+          <a
+            className="Footer__attribs__link"
+            href="https://www.flaticon.com/free-icons/arrow"
+            title="arrow icons"
+          >
+            Arrow icons created by Freepik - Flaticon
+          </a>
+          <a
+            href="https://www.flaticon.com/free-icons/close"
+            title="close icons"
+          >
+            Close icons created by ariefstudio - Flaticon <span> /// </span>
+          </a>
+          <a
+            className="Footer__attribs__link"
+            href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438"
+          >
+            Card icons by https://icon-library.com/. <span> /// </span>
+          </a>
+          <a
+            className="Footer__attribs__link"
+            href="https://www.flaticon.com/free-icons/edit"
+            title="edit icons"
+          >
+            Edit icons created by Kiranshastry - Flaticon <span> /// </span>
+          </a>
+          <a
+            className="Footer__attribs__link"
+            href="https://www.flaticon.com/free-icons/plus"
+            title="plus icons"
+          >
+            Plus icons created by Freepik - Flaticon
+          </a>
+        </div>
       </footer>
     </div>
   );
