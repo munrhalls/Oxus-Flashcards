@@ -16,15 +16,7 @@ import {
 import cloneDeep from "lodash.clonedeep";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [image, setImage] = useState(
-    "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
-  );
-  const [decks, setDecks] = useState([]);
-  const [activeDeck, setActiveDeck] = useState(false);
-  const [completedFlashcards, setCompletedFlashcards] = useState([]);
-  const [flashcards, setFlashcards] = useState([
+  let mock = [
     {
       id: uuidv4(),
       unturned: {
@@ -154,26 +146,35 @@ function App() {
         image: "",
       },
     },
-  ]);
+  ];
+  const [isLoading, setIsLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [image, setImage] = useState(
+    "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
+  );
+  const [decks, setDecks] = useState([]);
+  const [activeDeck, setActiveDeck] = useState(false);
+  const [completedFlashcards, setCompletedFlashcards] = useState([]);
+  const [flashcards, setFlashcards] = useState();
   function MOCK__generateDecks() {
     let decks = [];
     for (let i = 0; i < 10; i++) {
       let deck = {
         id: uuidv4(),
         name: i,
-        flashcards: cloneDeep(flashcards),
-        completedFlashcards: cloneDeep(completedFlashcards),
+        flashcards: [],
+        completedFlashcards: [],
       };
       decks.push(deck);
     }
     return decks;
   }
-  useEffect(() => {
-    let decks = MOCK__generateDecks();
-    setDecks(decks);
-  }, []);
+  // useEffect(() => {
+  //   let decks = MOCK__generateDecks();
+  //   setDecks(decks);
+  // }, []);
 
-  console.log(activeDeck);
+  console.log(decks);
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -203,7 +204,7 @@ function App() {
     <div className="App">
       <header className="Header">
         Flashcards
-        <h6>|| PROTOTYPE: APP IN CONSTRUCTION.</h6>
+        <h6>&nbsp;&nbsp;&nbsp; /// PROTOTYPE: APP IN CONSTRUCTION.</h6>
       </header>
       <main className="Main">
         <div className="Aside">
