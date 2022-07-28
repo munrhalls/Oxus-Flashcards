@@ -1,3 +1,4 @@
+import { Header } from "./Header/Header";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Modals } from "./Modals/Modals";
@@ -200,10 +201,7 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="Header">
-        Flashcards
-        <h6>&nbsp;&nbsp;&nbsp; /// PROTOTYPE: APP IN CONSTRUCTION.</h6>
-      </header>
+      <Header />
       <main className="Main">
         <div className="Aside">
           <ModalBtns
