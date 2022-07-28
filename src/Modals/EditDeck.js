@@ -8,21 +8,23 @@ import IMG__CLOSE from "./../Assets/close.png";
 import IMG__PLUS from "./../Assets/plus.png";
 import cloneDeep from "lodash.clonedeep";
 
-export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
-  const deck = decks.filter((instance) => instance.id === activeDeck.id)[0];
-  const [isEditDeckName, setIsEditDeckName] = useState(false);
-  const [deckName, setDeckName] = useState(deck ? deck.name : "");
+export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
+  const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
+  console.log("EDIT RUN AWAYSSA  WQ RQW RQW");
+  const [isEditDeckName, setIsEditDeckName] = useState(null);
+  const [deckName, setDeckName] = useState(deck.name);
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
-  const [editedCards, setEditedCards] = useState(activeDeck.flashcards);
+  const [editedCards, setEditedCards] = useState(deck.flashcards);
 
   function handleSubmit(e) {
+    console.log("EDIT DECK RUNS");
     e.preventDefault();
     setDecks(() =>
       decks.map((instance) => {
         if (instance.id === deck.id) {
           return { id: deck.id, name: deckName, flashcards: editedCards };
         } else {
-          return deck;
+          return instance;
         }
       })
     );

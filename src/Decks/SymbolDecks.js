@@ -2,7 +2,7 @@ import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
 import { uuidv4 } from "@firebase/util";
 
-export const SymbolDecks = ({ decks, setModalOpen, setActiveDeck }) => {
+export const SymbolDecks = ({ decks, setModalOpen, setactiveDeckId }) => {
   return (
     <div className="SymbolDecks">
       {decks.length ? (
@@ -11,7 +11,7 @@ export const SymbolDecks = ({ decks, setModalOpen, setActiveDeck }) => {
             <SymbolDeck
               key={uuidv4()}
               deck={deck}
-              setActiveDeck={setActiveDeck}
+              setactiveDeckId={setactiveDeckId}
             />
           );
         })
