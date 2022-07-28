@@ -2,8 +2,6 @@ import { Header } from "./Header/Header";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Modals } from "./Modals/Modals";
-import { Flashcards } from "./Flashcards/Flashcards";
-import { CompletedFlashcards } from "./Flashcards/CompletedFlashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
 import { uuidv4 } from "@firebase/util";
 import { SymbolDecks } from "./Decks/SymbolDecks";
@@ -15,7 +13,6 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "./Firebase/Firebase";
-import cloneDeep from "lodash.clonedeep";
 
 function App() {
   let mock = [
@@ -149,13 +146,9 @@ function App() {
       },
     },
   ];
-  const [isLoading, setIsLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [image, setImage] = useState(
-    "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
-  );
   const [decks, setDecks] = useState([]);
-  const [activeDeck, setActiveDeck] = useState(false);
+  const [activeDeck, setActiveDeck] = useState(null);
+  const [modalOpen, setModalOpen] = useState(null);
   const [completedFlashcards, setCompletedFlashcards] = useState([]);
   const [flashcards, setFlashcards] = useState();
   function MOCK__generateDecks() {
@@ -188,7 +181,8 @@ function App() {
       .then(() => {
         getDownloadURL(ref(storage, img.name)).then((url) => {
           console.log(url);
-          setImage(url);
+          // setImage(url);
+          // hook
         });
       });
   }
