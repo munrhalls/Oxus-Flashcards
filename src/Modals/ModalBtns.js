@@ -1,4 +1,7 @@
 import React from "react";
+import IMG__EDIT from "./../Assets/edit.png";
+import IMG__CLOSE from "./../Assets/close.png";
+import IMG__PLUS from "./../Assets/plus.png";
 
 export const ModalBtns = ({ setModalOpen, setActiveDeck }) => {
   return (
@@ -8,7 +11,7 @@ export const ModalBtns = ({ setModalOpen, setActiveDeck }) => {
           className="Modal__containerBtns__container__btn"
           onClick={() => setActiveDeck(false)}
         >
-          SHOW ALL DECKS
+          EXIT
         </button>
       </div>
       <div className="Modal__containerBtns__container">
@@ -17,6 +20,14 @@ export const ModalBtns = ({ setModalOpen, setActiveDeck }) => {
           onClick={() => setModalOpen("AddDeck")}
         >
           ADD DECK
+        </button>
+      </div>
+      <div className="Modal__containerBtns__container">
+        <button
+          className="Modal__containerBtns__container__btn"
+          onClick={() => setModalOpen("EditDeck")}
+        >
+          DELETE DECK
         </button>
       </div>
       <div className="Modal__containerBtns__container">
