@@ -147,9 +147,8 @@ function App() {
     },
   ];
   const [decks, setDecks] = useState([]);
-  const [activeDeck, setActiveDeck] = useState(null);
+  const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-  console.log(decks);
   function getDecks() {
     let decks = [];
     for (let i = 0; i < 10; i++) {
@@ -184,35 +183,39 @@ function App() {
   }
 
   useEffect(() => {
+    console.log("overwrite????");
     let decks = getDecks();
     setDecks(decks);
   }, []);
-
   return (
     <div className="App">
       <Header />
       <main className="Main">
-        {activeDeck && (
+        {activeDeckId && (
           <div className="Aside">
             <ModalBtns
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
+              setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
             />
           </div>
         )}
         <div className="Centerstage">
-          {!activeDeck ? (
+          {activeDeckId ? (
+            <Deck
+              activeDeckId={activeDeckId}
+              decks={decks}
+              setDecks={setDecks}
+            />
+          ) : (
             <SymbolDecks
               decks={decks}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
+              setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
             />
-          ) : (
-            <Deck activeDeck={activeDeck} decks={decks} setDecks={setDecks} />
           )}
           {modalOpen && (
             <Modals
-              activeDeck={activeDeck}
+              activeDeckId={activeDeckId}
               decks={decks}
               setDecks={(decks) => setDecks(decks)}
               modalOpen={modalOpen}

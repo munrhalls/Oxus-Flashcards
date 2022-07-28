@@ -9,7 +9,7 @@ export const Modals = ({
   closeModal,
   decks,
   setDecks,
-  activeDeck,
+  activeDeckId,
 }) => {
   return (
     <div className="Modals">
@@ -30,7 +30,7 @@ export const Modals = ({
       )}
       {modalOpen === "EditDeck" ? (
         <EditDeck
-          activeDeck={activeDeck}
+          activeDeckId={activeDeckId}
           closeModal={closeModal}
           decks={decks}
           setDecks={setDecks}
