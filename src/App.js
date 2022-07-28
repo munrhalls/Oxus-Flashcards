@@ -149,9 +149,8 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeck, setActiveDeck] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-  const [completedFlashcards, setCompletedFlashcards] = useState([]);
-  const [flashcards, setFlashcards] = useState();
-  function MOCK__generateDecks() {
+
+  function getDecks() {
     let decks = [];
     for (let i = 0; i < 10; i++) {
       let deck = {
@@ -165,11 +164,10 @@ function App() {
     return decks;
   }
   useEffect(() => {
-    let decks = MOCK__generateDecks();
+    let decks = getDecks();
     setDecks(decks);
   }, []);
 
-  console.log(decks);
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -190,9 +188,9 @@ function App() {
   function closeModal() {
     setModalOpen(false);
   }
-  function addFlashcard(flashcard) {
-    setFlashcards([...flashcards, flashcard]);
-  }
+  // function addFlashcard(flashcard) {
+  //   setFlashcards([...flashcards, flashcard]);
+  // }
   return (
     <div className="App">
       <Header />
@@ -211,23 +209,14 @@ function App() {
               setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
             />
           ) : (
-            <Deck
-              flashcards={activeDeck.flashcards}
-              setFlashcards={(flashcards) => setFlashcards(flashcards)}
-              completedFlashcards={completedFlashcards}
-              setCompletedFlashcards={(completedFlashcards) =>
-                setCompletedFlashcards(completedFlashcards)
-              }
-            />
+            <Deck activeDeck={activeDeck} decks={decks} setDecks={setDecks} />
           )}
           {modalOpen && (
             <Modals
               activeDeck={activeDeck}
               decks={decks}
               setDecks={(decks) => setDecks(decks)}
-              flashcards={flashcards}
               modalOpen={modalOpen}
-              addFlashcard={(flashcard) => addFlashcard(flashcard)}
               closeModal={() => closeModal()}
             />
           )}
