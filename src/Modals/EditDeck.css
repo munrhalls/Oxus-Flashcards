@@ -15,13 +15,13 @@
     background-color: #000;
   }
 
-  .EditDeck__form {
+  .Form {
     height: 100%;
     display: flex;
     flex-direction: column;
 
   }
-  .EditDeck__form__submitBtnContainer {
+  .Form__submitBtnContainer {
     position: absolute;
     left: 0;
     right: 0;
@@ -35,7 +35,7 @@
     z-index: 10;
     cursor: pointer;
   }
-  .EditDeck__form__submitBtnContainer__submitBtn {
+  .Form__submitBtnContainer__submitBtn {
     cursor: pointer;
     width: 16rem;   
     height: 3rem;
@@ -51,7 +51,7 @@
     cursor: pointer;
   }
 
-.EditDeck__form__topBar {
+.Form__topBar {
     display: flex;
     background-color: #222;
     display: flex;
@@ -59,33 +59,33 @@
     height: 5rem;
     border-top: 9px solid #444;
 }
-.EditDeck__form__topBar__line {
+.Form__topBar__line {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.EditDeck__form__topBar__line.--first {
+.Form__topBar__line.--first {
     background-color: #000;
     height: 3rem;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
 }
-.EditDeck__form__topBar__line.--second {
+.Form__topBar__line.--second {
     background-color: #222;
     height: 3rem;
     border-top: 3px solid #444;
     border-bottom: 3px solid #444;
 }
-.EditDeck__form__topBar__line__title {
+.Form__topBar__line__title {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.75rem;
     flex: 1;
 }
-.EditDeck__form__topBar__line__btn {
+.Form__topBar__line__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +95,7 @@
     cursor: pointer;
 
 }
-.EditDeck__form__topBar__line__deckName {
+.Form__topBar__line__deckName {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -105,7 +105,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.EditDeck__form__topBar__line__deckName.--input {
+.Form__topBar__line__deckName.--input {
     padding: 5px;
     padding-left: 1rem;
     height: calc(100% - 5px);
@@ -114,7 +114,7 @@
     margin-left: auto;
     text-align: center;
 }
-.EditDeck__form__topBar__line__btn__text {
+.Form__topBar__line__btn__text {
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -126,11 +126,11 @@
     color: #222;
     cursor: pointer;
 }
-.EditDeck__form__topBar__line__btn__icon {
+.Form__topBar__line__btn__icon {
     height: 100%;
     cursor: pointer;
 }
-.EditDeck__form__deckName {
+.Form__deckName {
     background-color: #222;
     font-size: 1.5rem;
     color: #fff;
@@ -147,14 +147,14 @@
     align-items: center;
 
 }
-.EditDeck__form__flashcards {
+.Form__flashcards {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     top: 6.5rem;
 }
-.EditDeck__form__flashcards__list {
+.Form__flashcards__list {
     position: absolute;
     left: 0;
     right: 0;
@@ -166,13 +166,13 @@
     white-space: nowrap;
 }
 
-.EditDeck__form__flashcardContainer {
+.Form__flashcardContainer {
     height: 15rem;
     width: 12rem;
     flex-shrink: 0;
     display: flex;
 }
-.EditDeck__form__flashcardContainer.--addBtn {
+.Form__flashcardContainer.--addBtn {
     background-color: #222;
     border: 3px solid #000;
     display: flex;
@@ -183,33 +183,33 @@
     align-items: center;
     cursor: pointer;
 }
-.EditDeck__form__flashcardContainer__btn {
+.Form__flashcardContainer__btn {
     border-radius: 50%;
     width: 60%;
     height: 60%;
     cursor: pointer;
 
 }
-.EditDeck__form__flashcardContainer__btn.--addBtn {
+.Form__flashcardContainer__btn.--addBtn {
     background-color: rgb(5, 72, 49);
    margin-top: 15%;
    cursor: pointer;
     
 }
-.EditDeck__form__flashcardContainer__btn__addImg {
+.Form__flashcardContainer__btn__addImg {
     width: 4rem;
     height: 4rem;
     cursor: pointer;
 
 }
-.EditDeck__form__flashcardContainer__addBtnTextContainer {
+.Form__flashcardContainer__addBtnTextContainer {
     border-top: 9px solid transparent;
     height: 3rem;
     width: 80%;
     cursor: pointer;
 
 }
-.EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText {
+.Form__flashcardContainer__addBtnTextContainer__addBtnText {
     border-top: 9px solid #000;
     background-color: #777;
     height: 100%;
@@ -220,9 +220,9 @@
     font-size: 0.5rem;
     text-transform: uppercase;
 }
-.EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText {
+.Form__flashcardContainer__addBtnTextContainer__addBtnText {
 }
-.EditDeck__form__flashcardContainer__numContainer {
+.Form__flashcardContainer__numContainer {
     height: 100%;
     width: 2rem;    
     background-color: #777;
@@ -231,7 +231,7 @@
     justify-content: center;
     align-items: center;
 }
-.EditDeck__form__flashcardContainer__numContainer__num {
+.Form__flashcardContainer__numContainer__num {
     height: 40%;
     width: 1.5rem;   
     border-radius: 50px;
@@ -245,14 +245,14 @@
     font-size: 1.05rem;
     font-weight: bold;
 }
-.EditDeck__form__flashcardContainer__elements {
+.Form__flashcardContainer__elements {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.EditDeck__form__flashcardContainer__elements__btns {
+.Form__flashcardContainer__elements__btns {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -263,20 +263,20 @@
     height: 3rem;
 
 }
-.EditDeck__form__flashcardContainer__elements__btns__btn {
+.Form__flashcardContainer__elements__btns__btn {
     border: 3px solid #222;
     background-color: #fff;
     font-weight: bold;
     cursor: pointer;
     border-radius: 100%;
 }
-.EditDeck__form__flashcardContainer__elements__btns__btn.--edit {
+.Form__flashcardContainer__elements__btns__btn.--edit {
     background-color: rgb(147, 134, 159);
 }
-.EditDeck__form__flashcardContainer__elements__btns__btn.--delete {
+.Form__flashcardContainer__elements__btns__btn.--delete {
     background-color: rgb(79, 0, 0);
 }
-.EditDeck__form__flashcardContainer__elements__btns__btn__img {
+.Form__flashcardContainer__elements__btns__btn__img {
     height: 1rem;
     width: 1rem;
     border: 1.5px solid transparent;
@@ -284,24 +284,24 @@
 }
 
 
-.EditDeck__form__flashcardContainer__deleteContainer {
+.Form__flashcardContainer__deleteContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.EditDeck__form__flashcardContainer__deleteContainer__btn {
+.Form__flashcardContainer__deleteContainer__btn {
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
 }
-.EditDeck__form__flashcardContainer__deleteContainer__question {
+.Form__flashcardContainer__deleteContainer__question {
     margin-top: 1rem;
 }
-.EditDeck__form__flashcardContainer__deleteContainer__btn.--delete {
+.Form__flashcardContainer__deleteContainer__btn.--delete {
     margin-top: 1rem;
     height: 6rem;
     width: 6rem;
@@ -311,7 +311,7 @@
     cursor: pointer;
     border: 1px solid #fff;
 }
-.EditDeck__form__flashcardContainer__deleteContainer__btn.--back {
+.Form__flashcardContainer__deleteContainer__btn.--back {
     margin-top: auto;
     cursor: pointer;
     border: 1px solid #222;
@@ -320,7 +320,7 @@
 }
 
 
-.EditDeck__form__btn__close {
+.Form__btn__close {
     margin-top: 1rem;
     cursor: pointer;
     width: 12rem;   
@@ -334,18 +334,18 @@
     background-color: #fff;
 }
 
-.EditDeck__form__noDeckSelectedMsg {
+.Form__noDeckSelectedMsg {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.EditDeck__form__noDeckSelectedMsg__title {
+.Form__noDeckSelectedMsg__title {
     padding: 1rem;
     font-size: 2rem;
 
 }
-.EditDeck__form__noDeckSelectedMsg__btn__select {
+.Form__noDeckSelectedMsg__btn__select {
     cursor: pointer;
     width: 12rem;   
     background-color: transparent;
@@ -357,7 +357,7 @@
     text-transform: uppercase;
     background-color: #fff;
 }
-.EditDeck__form__noDeckSelectedMsg__btn__close {
+.Form__noDeckSelectedMsg__btn__close {
     margin-top: 1rem;
     cursor: pointer;
     width: 12rem;   
