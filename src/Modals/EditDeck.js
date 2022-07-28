@@ -25,6 +25,7 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
         }
       })
     );
+    closeModal();
   }
   function deleteCard(delId) {
     setEditedCards((editedCards) =>
@@ -34,51 +35,45 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
   return (
     <div className="EditDeck">
       {activeDeck ? (
-        <form className="EditDeck__form" onSubmit={handleSubmit}>
+        <form className="Form" onSubmit={handleSubmit}>
           {/* <AddFlashcard /> */}
-          <div className="EditDeck__form__topBar">
-            <div className="EditDeck__form__topBar__line --first">
-              <h2 className="EditDeck__form__topBar__line__title">EDIT DECK</h2>
+          <div className="Form__topBar">
+            <div className="Form__topBar__line --first">
+              <h2 className="Form__topBar__line__title">EDIT DECK</h2>
               <button
                 type="button"
-                className="EditDeck__form__topBar__line__btn"
+                className="Form__topBar__line__btn"
                 onClick={() => closeModal()}
               >
-                <span className="EditDeck__form__topBar__line__btn__text">
-                  Close
-                </span>
+                <span className="Form__topBar__line__btn__text">Close</span>
                 <img
-                  className="EditDeck__form__topBar__line__btn__icon"
+                  className="Form__topBar__line__btn__icon"
                   src={IMG__CLOSE}
                   alt="CLOSE"
                 />
               </button>
             </div>
-            <div className="EditDeck__form__topBar__line --second">
+            <div className="Form__topBar__line --second">
               {isEditDeckName ? (
                 <input
-                  className="EditDeck__form__topBar__line__deckName --input"
+                  className="Form__topBar__line__deckName --input"
                   placeholder="type new deck name..."
                   type="text"
                   value={deckName}
                   onChange={(e) => setDeckName(e.target.value)}
                 />
               ) : (
-                <h1 className="EditDeck__form__topBar__line__deckName">
-                  {deckName}
-                </h1>
+                <h1 className="Form__topBar__line__deckName">{deckName}</h1>
               )}
               {!isEditDeckName ? (
                 <button
                   type="button"
-                  className="EditDeck__form__topBar__line__btn"
+                  className="Form__topBar__line__btn"
                   onClick={() => setIsEditDeckName(!isEditDeckName)}
                 >
-                  <span className="EditDeck__form__topBar__line__btn__text">
-                    Edit
-                  </span>
+                  <span className="Form__topBar__line__btn__text">Edit</span>
                   <img
-                    className="EditDeck__form__topBar__line__btn__icon"
+                    className="Form__topBar__line__btn__icon"
                     src={IMG__EDIT}
                     alt="CLOSE"
                   />
@@ -86,14 +81,12 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
               ) : (
                 <button
                   type="button"
-                  className="EditDeck__form__topBar__line__btn"
+                  className="Form__topBar__line__btn"
                   onClick={() => setIsEditDeckName(!isEditDeckName)}
                 >
-                  <span className="EditDeck__form__topBar__line__btn__text">
-                    Close
-                  </span>
+                  <span className="Form__topBar__line__btn__text">Close</span>
                   <img
-                    className="EditDeck__form__topBar__line__btn__icon"
+                    className="Form__topBar__line__btn__icon"
                     src={IMG__CLOSE}
                     alt="CLOSE"
                   />
@@ -101,50 +94,47 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
               )}
             </div>
           </div>
-          <div className="EditDeck__form__flashcards">
-            <div className="EditDeck__form__flashcards__list">
+          <div className="Form__flashcards">
+            <div className="Form__flashcards__list">
               {editedCards.map((card, i) => {
                 return (
-                  <div
-                    key={uuidv4()}
-                    className="EditDeck__form__flashcardContainer"
-                  >
-                    <div className="EditDeck__form__flashcardContainer__numContainer">
-                      <div className="EditDeck__form__flashcardContainer__numContainer__num">
+                  <div key={uuidv4()} className="Form__flashcardContainer">
+                    <div className="Form__flashcardContainer__numContainer">
+                      <div className="Form__flashcardContainer__numContainer__num">
                         {i}
                       </div>
                     </div>
 
                     {isDelConfirmId && isDelConfirmId === card.id ? (
-                      <div className="EditDeck__form__flashcardContainer__deleteContainer">
-                        <h3 className="EditDeck__form__flashcardContainer__deleteContainer__question">
+                      <div className="Form__flashcardContainer__deleteContainer">
+                        <h3 className="Form__flashcardContainer__deleteContainer__question">
                           Are you sure?
                         </h3>
                         <button
                           type="button"
                           onClick={() => deleteCard(card.id)}
-                          className="EditDeck__form__flashcardContainer__deleteContainer__btn --delete"
+                          className="Form__flashcardContainer__deleteContainer__btn --delete"
                         >
                           DELETE
                         </button>
                         <button
                           type="button"
                           onClick={() => setisDelConfirmId(null)}
-                          className="EditDeck__form__flashcardContainer__deleteContainer__btn --back"
+                          className="Form__flashcardContainer__deleteContainer__btn --back"
                         >
                           BACK
                         </button>
                       </div>
                     ) : (
-                      <div className="EditDeck__form__flashcardContainer__elements">
+                      <div className="Form__flashcardContainer__elements">
                         <Flashcard key={uuidv4()} flashcard={card} />
-                        <div className="EditDeck__form__flashcardContainer__elements__btns">
+                        <div className="Form__flashcardContainer__elements__btns">
                           <button
                             type="button"
-                            className="EditDeck__form__flashcardContainer__elements__btns__btn --edit"
+                            className="Form__flashcardContainer__elements__btns__btn --edit"
                           >
                             <img
-                              className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                              className="Form__flashcardContainer__elements__btns__btn__img"
                               src={IMG__EDIT}
                               alt="EDIT"
                             />
@@ -153,10 +143,10 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
                           <button
                             type="button"
                             onClick={() => setisDelConfirmId(card.id)}
-                            className="EditDeck__form__flashcardContainer__elements__btns__btn --delete"
+                            className="Form__flashcardContainer__elements__btns__btn --delete"
                           >
                             <img
-                              className="EditDeck__form__flashcardContainer__elements__btns__btn__img"
+                              className="Form__flashcardContainer__elements__btns__btn__img"
                               src={IMG__CLOSE}
                               alt="DELETE"
                             />
@@ -167,19 +157,19 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
                   </div>
                 );
               })}
-              <div className="EditDeck__form__flashcardContainer --addBtn">
+              <div className="Form__flashcardContainer --addBtn">
                 <button
                   type="button"
-                  className="EditDeck__form__flashcardContainer__btn --addBtn"
+                  className="Form__flashcardContainer__btn --addBtn"
                 >
                   <img
-                    className="EditDeck__form__flashcardContainer__btn__addImg"
+                    className="Form__flashcardContainer__btn__addImg"
                     src={IMG__PLUS}
                     alt="ADD"
                   />
                 </button>
-                <div className="EditDeck__form__flashcardContainer__addBtnTextContainer">
-                  <h6 className="EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText">
+                <div className="Form__flashcardContainer__addBtnTextContainer">
+                  <h6 className="Form__flashcardContainer__addBtnTextContainer__addBtnText">
                     ADD NEW FLASHCARD
                   </h6>
                 </div>
@@ -189,28 +179,28 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
           {/* <div>
             Add flashcard
           </div> */}
-          <div className="EditDeck__form__submitBtnContainer">
+          <div className="Form__submitBtnContainer">
             <input
-              className="EditDeck__form__submitBtnContainer__submitBtn"
+              className="Form__submitBtnContainer__submitBtn"
               type="submit"
-              value="SUBMIT CHANGES"
+              value="SAVE"
             />
           </div>
         </form>
       ) : (
-        <div className="EditDeck__form__noDeckSelectedMsg">
-          <h1 className="EditDeck__form__noDeckSelectedMsg__title">
+        <div className="Form__noDeckSelectedMsg">
+          <h1 className="Form__noDeckSelectedMsg__title">
             SELECT A DECK TO EDIT
           </h1>
           <button
             type="button"
-            className="EditDeck__form__noDeckSelectedMsg__btn__select"
+            className="Form__noDeckSelectedMsg__btn__select"
           >
             SELECT DECK
           </button>
           <button
             type="button"
-            className="EditDeck__form__noDeckSelectedMsg__btn__close"
+            className="Form__noDeckSelectedMsg__btn__close"
             onClick={() => closeModal()}
           >
             EXIT
