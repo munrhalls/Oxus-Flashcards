@@ -9,17 +9,18 @@ import IMG__PLUS from "./../Assets/plus.png";
 import cloneDeep from "lodash.clonedeep";
 
 export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
+  const deck = decks.filter((instance) => instance.id === activeDeck.id)[0];
   const [isEditDeckName, setIsEditDeckName] = useState(false);
-  const [deckName, setDeckName] = useState(activeDeck ? activeDeck.name : "");
+  const [deckName, setDeckName] = useState(deck ? deck.name : "");
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
   const [editedCards, setEditedCards] = useState(activeDeck.flashcards);
 
   function handleSubmit(e) {
     e.preventDefault();
     setDecks(() =>
-      decks.map((deck) => {
-        if (deck.id === activeDeck.id) {
-          return { id: activeDeck.id, name: deckName, flashcards: editedCards };
+      decks.map((instance) => {
+        if (instance.id === deck.id) {
+          return { id: deck.id, name: deckName, flashcards: editedCards };
         } else {
           return deck;
         }
@@ -34,7 +35,7 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
   }
   return (
     <div className="EditDeck">
-      {activeDeck ? (
+      {deck ? (
         <form className="Form" onSubmit={handleSubmit}>
           {/* <AddFlashcard /> */}
           <div className="Form__topBar">

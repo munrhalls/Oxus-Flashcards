@@ -149,7 +149,7 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeck, setActiveDeck] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-
+  console.log(decks);
   function getDecks() {
     let decks = [];
     for (let i = 0; i < 10; i++) {
@@ -163,11 +163,6 @@ function App() {
     }
     return decks;
   }
-  useEffect(() => {
-    let decks = getDecks();
-    setDecks(decks);
-  }, []);
-
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -184,23 +179,27 @@ function App() {
         });
       });
   }
-
   function closeModal() {
     setModalOpen(false);
   }
-  // function addFlashcard(flashcard) {
-  //   setFlashcards([...flashcards, flashcard]);
-  // }
+
+  useEffect(() => {
+    let decks = getDecks();
+    setDecks(decks);
+  }, []);
+
   return (
     <div className="App">
       <Header />
       <main className="Main">
-        <div className="Aside">
-          <ModalBtns
-            setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-            setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
-          />
-        </div>
+        {activeDeck && (
+          <div className="Aside">
+            <ModalBtns
+              setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+              setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
+            />
+          </div>
+        )}
         <div className="Centerstage">
           {!activeDeck ? (
             <SymbolDecks
