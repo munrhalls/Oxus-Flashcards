@@ -264,27 +264,27 @@ function App() {
             href="https://www.flaticon.com/free-icons/close"
             title="close icons"
           >
-            Close icons created by ariefstudio - Flaticon <span> /// </span>
+            <span> /// </span> Close icons created by ariefstudio - Flaticon
           </a>
           <a
             className="Footer__attribs__link"
             href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438"
           >
-            Card icons by https://icon-library.com/. <span> /// </span>
+            <span> /// </span> Card icons by https://icon-library.com/.
           </a>
           <a
             className="Footer__attribs__link"
             href="https://www.flaticon.com/free-icons/edit"
             title="edit icons"
           >
-            Edit icons created by Kiranshastry - Flaticon <span> /// </span>
+            <span> /// </span> Edit icons created by Kiranshastry - Flaticon
           </a>
           <a
             className="Footer__attribs__link"
             href="https://www.flaticon.com/free-icons/plus"
             title="plus icons"
           >
-            Plus icons created by Freepik - Flaticon
+            <span> ///</span> Plus icons created by Freepik - Flaticon
           </a>
         </div>
       </footer>
