@@ -6,16 +6,14 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
     return completedFlashcards.map((card, i) => {
       const multiplier = completedFlashcards.length > 10 ? 2.5 : 5.25;
       return (
-        <>
-          <div
-            key={uuidv4()}
-            className="CompletedFlashcards__heapFrame"
-            style={{
-              top: `${0 - i * multiplier}px`,
-              right: `${0 - i * multiplier}px`,
-            }}
-          ></div>
-        </>
+        <div
+          key={uuidv4()}
+          className="CompletedFlashcards__heapFrame"
+          style={{
+            top: `${0 - i * multiplier}px`,
+            right: `${0 - i * multiplier}px`,
+          }}
+        ></div>
       );
     });
   }
@@ -39,7 +37,7 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
         {heapEffect}
       </div>
       <h3 className="CompletedFlashcards__title">
-        COMPLETED CARDS:{" "}
+        COMPLETED CARDS:
         <span className="CompletedFlashcards__title__number">
           {completedFlashcards.length}
         </span>
