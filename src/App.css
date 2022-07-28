@@ -51,7 +51,7 @@
     height: 225px;
     border: 1px solid black;
     background-position: center;
-    background-size: cover;
+    background-size: cover; 
   }
 .Header {
     height: 3rem;
@@ -130,6 +130,8 @@
   padding-bottom: 0.5rem;
   flex-wrap: wrap;
   overflow-x: auto;
+  overflow-y: hidden;
+
 }
 .Footer a {
   font-size: 7px;

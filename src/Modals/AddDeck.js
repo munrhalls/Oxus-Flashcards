@@ -12,11 +12,12 @@ export const AddDeck = ({ decks, setDecks, closeModal }) => {
     };
 
     setDecks([...decks, deck]);
+    closeModal();
   }
   return (
     <div className="AddDeck">
       <form className="AddDeck__form" onSubmit={(e) => handleSubmit(e)}>
-        <label className="AddDeck__nameLabel" for="deckName">
+        <label className="AddDeck__nameLabel" htmlFor="deckName">
           DECK NAME:
         </label>
         <input
