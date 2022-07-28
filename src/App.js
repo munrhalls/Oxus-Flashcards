@@ -162,17 +162,17 @@ function App() {
       let deck = {
         id: uuidv4(),
         name: i,
-        flashcards: [],
+        flashcards: mock,
         completedFlashcards: [],
       };
       decks.push(deck);
     }
     return decks;
   }
-  // useEffect(() => {
-  //   let decks = MOCK__generateDecks();
-  //   setDecks(decks);
-  // }, []);
+  useEffect(() => {
+    let decks = MOCK__generateDecks();
+    setDecks(decks);
+  }, []);
 
   console.log(decks);
   async function fileTest(e) {
