@@ -205,6 +205,15 @@ function App() {
       });
     });
   }
+  function updateDeckCompletedFlashcards(completedFlashcards) {
+    setDecks((decks) => {
+      return decks.map((deck) => {
+        return deck.id === activeDeckId
+          ? { ...deck, completedFlashcards: completedFlashcards }
+          : deck;
+      });
+    });
+  }
 
   useEffect(() => {
     console.log("overwrite????");
@@ -229,6 +238,9 @@ function App() {
               activeDeck={activeDeck}
               updateDeckFlashcards={(flashcards) =>
                 updateDeckFlashcards(flashcards)
+              }
+              updateDeckCompletedFlashcards={(completedFlashcards) =>
+                updateDeckCompletedFlashcards(completedFlashcards)
               }
             />
           ) : (
