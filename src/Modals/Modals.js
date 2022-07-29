@@ -30,6 +30,7 @@ export const Modals = ({
       )}
       {modalOpen === "EditDeck" ? (
         <EditDeck
+          modalOpen={modalOpen}
           activeDeckId={activeDeckId}
           closeModal={closeModal}
           decks={decks}

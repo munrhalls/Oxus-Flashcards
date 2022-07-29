@@ -3,7 +3,7 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__PLUS from "./../Assets/plus.png";
 
-export const ModalBtns = ({ setModalOpen, setactiveDeckId }) => {
+export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   return (
     <div className="Modal__containerBtns">
       <div className="Modal__containerBtns__container">
@@ -30,9 +30,15 @@ export const ModalBtns = ({ setModalOpen, setactiveDeckId }) => {
           DELETE DECK
         </button>
       </div>
-      <div className="Modal__containerBtns__container">
+      <div
+        className={`Modal__containerBtns__container ${
+          modalOpen === "EditDeck" && " --open"
+        }`}
+      >
         <button
-          className="Modal__containerBtns__container__btn"
+          className={`Modal__containerBtns__container__btn ${
+            modalOpen === "EditDeck" && " --open"
+          }`}
           onClick={() => setModalOpen("EditDeck")}
         >
           EDIT DECK
