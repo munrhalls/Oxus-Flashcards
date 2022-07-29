@@ -47,6 +47,13 @@ export const Footer = () => {
           {" "}
           <span> ///</span> Save icons created by Freepik - Flaticon
         </a>
+        <a
+          href="https://www.flaticon.com/free-icons/return"
+          title="return icons"
+        >
+          {" "}
+          <span> ///</span> Return icons created by Freepik - Flaticon
+        </a>
       </div>
     </footer>
   );
