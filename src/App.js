@@ -185,16 +185,7 @@ function App() {
   function closeModal() {
     setModalOpen(false);
   }
-  function updateDecks(flashcards, completedFlashcards) {
-    console.log("app, update ", activeDeck);
-    activeDeck.flashcards = flashcards;
-    activeDeck.completedFlashcards = completedFlashcards;
-    setDecks(
-      decks.map((el) => {
-        return el.id === activeDeck.id ? cloneDeep(activeDeck) : el;
-      })
-    );
-  }
+
   console.log(activeDeck ? activeDeck.flashcards : "");
   function shuffleDeckFlashcards(flashcards) {
     setDecks((decks) => {
