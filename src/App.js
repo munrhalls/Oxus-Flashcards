@@ -7,6 +7,7 @@ import { uuidv4 } from "@firebase/util";
 import { SymbolDecks } from "./Decks/SymbolDecks";
 import { Deck } from "./Decks/Deck.js";
 import { Footer } from "./Footer/Footer";
+import cloneDeep from "lodash.clonedeep";
 import {
   getStorage,
   ref,
@@ -149,6 +150,9 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
+  const activeDeck = activeDeckId
+    ? decks.filter((deck) => deck.id === activeDeckId)[0]
+    : null;
   function getDecks() {
     let decks = [];
     for (let i = 0; i < 10; i++) {
@@ -181,6 +185,26 @@ function App() {
   function closeModal() {
     setModalOpen(false);
   }
+  function updateDecks(flashcards, completedFlashcards) {
+    console.log("app, update ", activeDeck);
+    activeDeck.flashcards = flashcards;
+    activeDeck.completedFlashcards = completedFlashcards;
+    setDecks(
+      decks.map((el) => {
+        return el.id === activeDeck.id ? cloneDeep(activeDeck) : el;
+      })
+    );
+  }
+  console.log(activeDeck ? activeDeck.flashcards : "");
+  function updateDeckFlashcards(flashcards) {
+    setDecks((decks) => {
+      return decks.map((deck) => {
+        return deck.id === activeDeckId
+          ? { ...deck, flashcards: flashcards }
+          : deck;
+      });
+    });
+  }
 
   useEffect(() => {
     console.log("overwrite????");
@@ -200,11 +224,12 @@ function App() {
           </div>
         )}
         <div className="Centerstage">
-          {activeDeckId ? (
+          {activeDeck ? (
             <Deck
-              activeDeckId={activeDeckId}
-              decks={decks}
-              setDecks={setDecks}
+              activeDeck={activeDeck}
+              updateDeckFlashcards={(flashcards) =>
+                updateDeckFlashcards(flashcards)
+              }
             />
           ) : (
             <SymbolDecks
