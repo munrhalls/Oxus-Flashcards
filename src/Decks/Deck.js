@@ -5,8 +5,8 @@ import cloneDeep from "lodash.clonedeep";
 
 export const Deck = ({
   activeDeck,
-  updateDeckFlashcards,
-  updateDeckCompletedFlashcards,
+  shuffleDeckFlashcards,
+  moveDeckFlashcardToCompleted,
 }) => {
   return (
     <div className="Deck">
@@ -15,8 +15,8 @@ export const Deck = ({
         <Flashcards
           flashcards={activeDeck.flashcards}
           completedFlashcards={activeDeck.completedFlashcards}
-          updateDeckFlashcards={updateDeckFlashcards}
-          updateDeckCompletedFlashcards={updateDeckCompletedFlashcards}
+          shuffleDeckFlashcards={shuffleDeckFlashcards}
+          moveDeckFlashcardToCompleted={moveDeckFlashcardToCompleted}
         />
         <CompletedFlashcards
           completedFlashcards={activeDeck.completedFlashcards}

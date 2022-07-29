@@ -196,7 +196,7 @@ function App() {
     );
   }
   console.log(activeDeck ? activeDeck.flashcards : "");
-  function updateDeckFlashcards(flashcards) {
+  function shuffleDeckFlashcards(flashcards) {
     setDecks((decks) => {
       return decks.map((deck) => {
         return deck.id === activeDeckId
@@ -205,7 +205,7 @@ function App() {
       });
     });
   }
-  function updateDeckCompletedFlashcards(completedFlashcards) {
+  function moveDeckFlashcardToCompleted(completedFlashcards) {
     setDecks((decks) => {
       return decks.map((deck) => {
         return deck.id === activeDeckId
@@ -236,11 +236,11 @@ function App() {
           {activeDeck ? (
             <Deck
               activeDeck={activeDeck}
-              updateDeckFlashcards={(flashcards) =>
-                updateDeckFlashcards(flashcards)
+              shuffleDeckFlashcards={(flashcards) =>
+                shuffleDeckFlashcards(flashcards)
               }
-              updateDeckCompletedFlashcards={(completedFlashcards) =>
-                updateDeckCompletedFlashcards(completedFlashcards)
+              moveDeckFlashcardToCompleted={(completedFlashcards) =>
+                moveDeckFlashcardToCompleted(completedFlashcards)
               }
             />
           ) : (
