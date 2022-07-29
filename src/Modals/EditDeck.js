@@ -18,11 +18,12 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
   function handleSubmit(e) {
     e.preventDefault();
     setDecks(() =>
-      decks.map((instance) => {
-        if (instance.id === deck.id) {
-          return { id: deck.id, name: deckName, flashcards: editedCards };
+      decks.map((el) => {
+        if (el.id === deck.id) {
+          console.log({ ...deck, name: deckName, flashcards: editedCards });
+          return { ...deck, name: deckName, flashcards: editedCards };
         } else {
-          return instance;
+          return el;
         }
       })
     );
