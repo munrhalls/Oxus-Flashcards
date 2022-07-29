@@ -218,6 +218,7 @@ function App() {
         {activeDeckId && (
           <div className="Aside">
             <ModalBtns
+              modalOpen={modalOpen}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
               setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
             />
