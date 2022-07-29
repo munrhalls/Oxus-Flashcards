@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Deck } from "../Decks/Deck";
 import { Flashcard } from "../Flashcards/Flashcard";
-import { AddFlashcard } from "./AddFlashcard";
 import { uuidv4 } from "@firebase/util";
 import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";

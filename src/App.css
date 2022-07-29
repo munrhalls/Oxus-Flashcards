@@ -4,6 +4,7 @@
 @import './Decks/Decks.css';
 @import './Modals/AddDeck.css';
 @import './Modals/EditDeck.css';
+@import './Modals/DeleteDeck.css';
 
 * {
     box-sizing: border-box;

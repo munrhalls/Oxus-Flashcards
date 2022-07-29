@@ -2,6 +2,7 @@ import React from "react";
 import { AddFlashcard } from "./AddFlashcard";
 import { AddDeck } from "./AddDeck";
 import { EditDeck } from "./EditDeck";
+import { DeleteDeck } from "./DeleteDeck";
 
 export const Modals = ({
   updateFlashcards,
@@ -22,12 +23,24 @@ export const Modals = ({
         ""
       )}
       {modalOpen === "EditFlashcard" ? <div>EDIT MODAL</div> : ""}
-      {modalOpen === "DeleteFlashcard" ? <div>DELETE MODAL</div> : ""}
+      {modalOpen === "DeleteDeck" ? (
+        <DeleteDeck
+          modalOpen={modalOpen}
+          activeDeckId={activeDeckId}
+          closeModal={closeModal}
+          decks={decks}
+          setDecks={setDecks}
+        />
+      ) : (
+        ""
+      )}
+
       {modalOpen === "AddDeck" ? (
         <AddDeck decks={decks} setDecks={setDecks} closeModal={closeModal} />
       ) : (
         ""
       )}
+
       {modalOpen === "EditDeck" ? (
         <EditDeck
           modalOpen={modalOpen}
