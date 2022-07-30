@@ -54,13 +54,15 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
     closeModal();
   }
   return (
-    <div className="Form__flashcards__container">
-      <div className="Form__flashcards__titleRibbon">
-        <span className="Form__flashcards__title">Add new flashcard.</span>
+    <div className="Form__manageflashcard">
+      <div className="Form__manageflashcards__titleRibbon">
+        <span className="Form__manageflashcards__title">
+          Add new flashcard.
+        </span>
       </div>
-      <form className="Flashcard__form" onSubmit={handleSubmit}>
-        <div className="Flashcard__form__elementsContainer">
-          <div className="Flashcard__form__elements">
+      <form className="Form__manageflashcard" onSubmit={handleSubmit}>
+        <div className="Form__manageflashcard__elementsContainer">
+          <div className="Form__manageflashcard__elements">
             {side ? (
               <TurnedFlashcard
                 flashcard={flashcard}
@@ -79,7 +81,7 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
               />
             )}
           </div>
-          <div className="Flashcard__form__frame">
+          <div className="Form__manageflashcard__frame">
             {side ? (
               <>
                 <div className="Flascard__form__frameTitle">TURNED PREVIEW</div>
@@ -100,15 +102,15 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
             </div>
           </div>
         </div>
-        <div className="Flashcard__form__submitContainer">
+        <div className="Form__manageflashcard__submitContainer">
           <button
             onClick={(e) => handleExit(e)}
-            className="Flashcard__form__close"
+            className="Form__manageflashcard__close"
           >
             EXIT
           </button>
           <input
-            className="Flashcard__form__submit"
+            className="Form__manageflashcard__submit"
             type="submit"
             value="SAVE"
           />
