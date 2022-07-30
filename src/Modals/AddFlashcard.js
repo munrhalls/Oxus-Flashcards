@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
-import { Preview } from "./Preview";
-import { UnturnedFlashcard } from "./UnturnedFlashcard";
-import { TurnedFlashcard } from "./TurnedFlashcard";
+import { Preview } from "./AddFlashcard/Preview";
+import { UnturnedFlashcard } from "./AddFlashcard/UnturnedFlashcard";
+import { TurnedFlashcard } from "./AddFlashcard/TurnedFlashcard";
 import { Flashcards } from "../Flashcards/Flashcards";
 const { v4: uuidv4 } = require("uuid");
 
@@ -54,15 +54,13 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
     closeModal();
   }
   return (
-    <div className="Form__manageflashcard">
-      <div className="Form__manageflashcard__titleRibbon">
-        <span className="Form__manageflashcards__title">
-          Add new flashcard.
-        </span>
+    <div className="Form__flashcard">
+      <div className="Form__flashcard__titleRibbon">
+        <span className="Form__flashcards__title">Add new flashcard.</span>
       </div>
-      <form className="Form__manageflashcard" onSubmit={handleSubmit}>
-        <div className="Form__manageflashcard__elementsContainer">
-          <div className="Form__manageflashcard__elements">
+      <form className="Form__flashcard" onSubmit={handleSubmit}>
+        <div className="Form__flashcard__elementsContainer">
+          <div className="Form__flashcard__elements">
             {side ? (
               <TurnedFlashcard
                 flashcard={flashcard}
@@ -81,7 +79,7 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
               />
             )}
           </div>
-          <div className="Form__manageflashcard__frame">
+          <div className="Form__flashcard__frame">
             {side ? (
               <>
                 <div className="Flascard__form__frameTitle">TURNED PREVIEW</div>
@@ -102,15 +100,15 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
             </div>
           </div>
         </div>
-        <div className="Form__manageflashcard__submitContainer">
+        <div className="Form__flashcard__submitContainer">
           <button
             onClick={(e) => handleExit(e)}
-            className="Form__manageflashcard__close"
+            className="Form__flashcard__close"
           >
             EXIT
           </button>
           <input
-            className="Form__manageflashcard__submit"
+            className="Form__flashcard__submit"
             type="submit"
             value="SAVE"
           />

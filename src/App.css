@@ -3,7 +3,8 @@
 @import './Modals/Modals.css';
 @import './Decks/Decks.css';
 @import './Modals/Form.css';
-@import './Modals/Form__manageFlashcard.css';
+@import './Modals/FormTopbar.css';
+@import './Modals/FormFlashcard.css';
 @import './Modals/AddDeck/AddDeck.css';
 @import './Modals//EditDeck/EditDeck.css';
 @import './Modals/DeleteDeck/DeleteDeck.css';

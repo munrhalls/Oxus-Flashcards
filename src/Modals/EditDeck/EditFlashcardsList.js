@@ -21,47 +21,47 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
   }
 
   return (
-    <div className="Form__manageflashcardslist">
-      <div className="Form__manageflashcardslist__list">
+    <div className="Form__flashcardslist">
+      <div className="Form__flashcardslist__list">
         {[...flashcards, ...completedFlashcards].map((card, i) => {
           return (
-            <div key={uuidv4()} className="Form__manageflashcardContainer">
-              <div className="Form__manageflashcardContainer__numContainer">
-                <div className="Form__manageflashcardContainer__numContainer__num">
+            <div key={uuidv4()} className="Form__flashcardContainer">
+              <div className="Form__flashcardContainer__numContainer">
+                <div className="Form__flashcardContainer__numContainer__num">
                   {i}
                 </div>
               </div>
 
               {isDelConfirmId && isDelConfirmId === card.id ? (
-                <div className="Form__manageflashcardContainer__deleteContainer">
-                  <h3 className="Form__manageflashcardContainer__deleteContainer__question">
+                <div className="Form__flashcardContainer__deleteContainer">
+                  <h3 className="Form__flashcardContainer__deleteContainer__question">
                     Are you sure?
                   </h3>
                   <button
                     type="button"
                     onClick={() => deleteCard(card.id)}
-                    className="Form__manageflashcardContainer__deleteContainer__btn --delete"
+                    className="Form__flashcardContainer__deleteContainer__btn --delete"
                   >
                     DELETE
                   </button>
                   <button
                     type="button"
                     onClick={() => setisDelConfirmId(null)}
-                    className="Form__manageflashcardContainer__deleteContainer__btn --back"
+                    className="Form__flashcardContainer__deleteContainer__btn --back"
                   >
                     BACK
                   </button>
                 </div>
               ) : (
-                <div className="Form__manageflashcardContainer__elements">
+                <div className="Form__flashcardContainer__elements">
                   <Flashcard key={uuidv4()} flashcard={card} />
-                  <div className="Form__manageflashcardContainer__elements__btns">
+                  <div className="Form__flashcardContainer__elements__btns">
                     <button
                       type="button"
-                      className="Form__manageflashcardContainer__elements__btns__btn --edit"
+                      className="Form__flashcardContainer__elements__btns__btn --edit"
                     >
                       <img
-                        className="Form__manageflashcardContainer__elements__btns__btn__img"
+                        className="Form__flashcardContainer__elements__btns__btn__img"
                         src={IMG__EDIT}
                         alt="EDIT"
                       />
@@ -72,10 +72,10 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
                       onClick={() => {
                         setisDelConfirmId(card.id);
                       }}
-                      className="Form__manageflashcardContainer__elements__btns__btn --delete"
+                      className="Form__flashcardContainer__elements__btns__btn --delete"
                     >
                       <img
-                        className="Form__manageflashcardContainer__elements__btns__btn__img"
+                        className="Form__flashcardContainer__elements__btns__btn__img"
                         src={IMG__CLOSE}
                         alt="DELETE"
                       />
@@ -86,19 +86,19 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
             </div>
           );
         })}
-        <div className="Form__manageflashcardContainer --addBtn">
+        <div className="Form__flashcardContainer --addBtn">
           <button
             type="button"
-            className="Form__manageflashcardContainer__btn --addBtn"
+            className="Form__flashcardContainer__btn --addBtn"
           >
             <img
-              className="Form__manageflashcardContainer__btn__addImg"
+              className="Form__flashcardContainer__btn__addImg"
               src={IMG__PLUS}
               alt="ADD"
             />
           </button>
-          <div className="Form__manageflashcardContainer__addBtnTextContainer">
-            <h6 className="Form__manageflashcardContainer__addBtnTextContainer__addBtnText">
+          <div className="Form__flashcardContainer__addBtnTextContainer">
+            <h6 className="Form__flashcardContainer__addBtnTextContainer__addBtnText">
               ADD NEW FLASHCARD
             </h6>
           </div>
