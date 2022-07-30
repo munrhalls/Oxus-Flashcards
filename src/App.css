@@ -1,7 +1,8 @@
 @import './reset.css';
 @import './Flashcards/Flashcards.css';
-@import './Modals/Modals.css';
 @import './Decks/Decks.css';
+@import './Modals/Modals.css';
+@import './Modals/ModalBtns/ModalBtns.css';
 @import './Modals/FormDeck.css';
 @import './Modals/FormDeckTopbar.css';
 @import './Modals/FormFlashcard.css';
