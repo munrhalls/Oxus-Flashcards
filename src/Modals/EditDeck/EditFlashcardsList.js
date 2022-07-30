@@ -13,7 +13,7 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
   function deleteCard(delId) {
     setEditedDeck({
       ...editedDeck,
-      flashcards: flashcards.filter((card) => card.id !== delId),
+      flashcards: editedDeck.flashcards.filter((card) => card.id !== delId),
       completedFlashcards: completedFlashcards.filter(
         (card) => card.id !== delId
       ),
