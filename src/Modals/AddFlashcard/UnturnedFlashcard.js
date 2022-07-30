@@ -21,17 +21,17 @@ export const UnturnedFlashcard = ({
   return (
     <div className="Flashcard_form_cell">
       <div className="Flashcard_form_label">UNTURNED</div>
-      <div className="Form__flashcard__inputContainer">
-        <span className="Form__flashcard__inputTitle">Add text</span>
+      <div className="FormFlashcard__inputContainer">
+        <span className="FormFlashcard__inputTitle">Add text</span>
         <textarea
-          className="Form__flashcard__textArea"
+          className="FormFlashcard__textArea"
           placeholder="Type..."
           value={flashcard.unturned.text}
           onChange={changeUnturnedText}
         />
-        <span className="Form__flashcard__inputTitle --image">Add image</span>
+        <span className="FormFlashcard__inputTitle --image">Add image</span>
         <label
-          className="Form__flashcard__imageInput"
+          className="FormFlashcard__imageInput"
           htmlFor="changeUnturnedImg"
         >
           UPLOAD IMAGE

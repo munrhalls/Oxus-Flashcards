@@ -1,19 +1,19 @@
-import { Header } from "./Header/Header";
-import "./App.css";
 import { useEffect, useState } from "react";
-import { Modals } from "./Modals/Modals";
-import { ModalBtns } from "./Modals/ModalBtns";
 import { uuidv4 } from "@firebase/util";
-import { SymbolDecks } from "./Decks/SymbolDecks";
-import { Deck } from "./Decks/Deck.js";
-import { Footer } from "./Footer/Footer";
-import cloneDeep from "lodash.clonedeep";
 import {
   getStorage,
   ref,
   uploadBytes,
   getDownloadURL,
 } from "./Firebase/Firebase";
+
+import "./App.css";
+import { Header } from "./Header/Header";
+import { Modals } from "./Modals/Modals";
+import { ModalBtns } from "./Modals/ModalBtns";
+import { SymbolDecks } from "./Decks/SymbolDecks";
+import { Deck } from "./Decks/Deck.js";
+import { Footer } from "./Footer/Footer";
 
 function App() {
   let mock = [
@@ -186,26 +186,6 @@ function App() {
     setModalOpen(null);
   }
 
-  console.log(activeDeck ? activeDeck.flashcards : "");
-  function shuffleDeckFlashcards(flashcards) {
-    setDecks((decks) => {
-      return decks.map((deck) => {
-        return deck.id === activeDeckId
-          ? { ...deck, flashcards: flashcards }
-          : deck;
-      });
-    });
-  }
-  function moveDeckFlashcardToCompleted(completedFlashcards) {
-    setDecks((decks) => {
-      return decks.map((deck) => {
-        return deck.id === activeDeckId
-          ? { ...deck, completedFlashcards: completedFlashcards }
-          : deck;
-      });
-    });
-  }
-
   useEffect(() => {
     console.log("overwrite????");
     let decks = getDecks();
@@ -229,12 +209,8 @@ function App() {
           {activeDeck ? (
             <Deck
               activeDeck={activeDeck}
-              shuffleDeckFlashcards={(flashcards) =>
-                shuffleDeckFlashcards(flashcards)
-              }
-              moveDeckFlashcardToCompleted={(completedFlashcards) =>
-                moveDeckFlashcardToCompleted(completedFlashcards)
-              }
+              decks={decks}
+              setDecks={(decks) => setDecks(decks)}
             />
           ) : (
             <SymbolDecks
