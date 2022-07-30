@@ -14,47 +14,39 @@ export const Modals = ({
 }) => {
   return (
     <div className="Modals">
-      {modalOpen === "AddFlashcard" ? (
+      {modalOpen === "AddFlashcard" && (
         <AddFlashcard
           setModalOpen={setModalOpen}
           updateFlashcards={updateFlashcards}
         />
-      ) : (
-        ""
       )}
-      {modalOpen === "EditFlashcard" ? <div>EDIT MODAL</div> : ""}
-      {modalOpen === "DeleteDeck" ? (
+
+      {modalOpen === "EditFlashcard" && <div>EDIT FLASHCARDMODAL</div>}
+
+      {modalOpen === "DeleteDeck" && (
         <DeleteDeck
-          modalOpen={modalOpen}
-          activeDeckId={activeDeckId}
           setModalOpen={setModalOpen}
+          activeDeckId={activeDeckId}
           decks={decks}
           setDecks={setDecks}
         />
-      ) : (
-        ""
       )}
 
-      {modalOpen === "AddDeck" ? (
+      {modalOpen === "AddDeck" && (
         <AddDeck
           decks={decks}
           setDecks={setDecks}
           setModalOpen={setModalOpen}
         />
-      ) : (
-        ""
       )}
 
-      {modalOpen === "EditDeck" ? (
+      {modalOpen === "EditDeck" && (
         <EditDeck
-          modalOpen={modalOpen}
-          activeDeckId={activeDeckId}
           setModalOpen={setModalOpen}
+          activeDeckId={activeDeckId}
           decks={decks}
           setDecks={setDecks}
         />
-      ) : (
-        ""
       )}
     </div>
   );
