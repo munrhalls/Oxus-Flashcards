@@ -183,7 +183,7 @@ function App() {
       });
   }
   function closeModal() {
-    setModalOpen(false);
+    setModalOpen(null);
   }
 
   console.log(activeDeck ? activeDeck.flashcards : "");
@@ -219,6 +219,7 @@ function App() {
           <div className="Aside">
             <ModalBtns
               modalOpen={modalOpen}
+              closeModal={() => closeModal()}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
               setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
             />
