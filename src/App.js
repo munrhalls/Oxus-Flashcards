@@ -5,7 +5,7 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
-} from "./Firebase/Firebase";
+} from "./Data/Firebase/Firebase";
 
 import "./App.css";
 import { Header } from "./Header/Header";

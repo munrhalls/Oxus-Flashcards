@@ -1,8 +1,9 @@
 import { uuidv4 } from "@firebase/util";
-import React, { useState, useEffect } from "react";
-import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
 import cloneDeep from "lodash.clonedeep";
+
+import React, { useState, useEffect } from "react";
+import { Flashcard } from "./Flashcard";
 
 export const Flashcards = ({
   flashcards,
@@ -13,19 +14,19 @@ export const Flashcards = ({
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
 
-  function REFACTORshuffleCard(divideDeckBy, rndFrom, rndTo) {
-    let shuffleDistance = Math.floor(flashcards.length / divideDeckBy);
+  function shuffleCard(divideDeckBy, rndFrom, rndTo) {
+    let shuffleBy = Math.floor(flashcards.length / divideDeckBy);
     if (flashcards.length > 4)
-      shuffleDistance += randomIntFromInterval(rndFrom, rndTo);
-    flashcards.splice(shuffleDistance, 0, flashcards.shift());
+      shuffleBy += randomIntFromInterval(rndFrom, rndTo);
+    flashcards.splice(shuffleBy, 0, flashcards.shift());
   }
 
-  function shuffleCard() {
-    if (difficulty === 3) REFACTORshuffleCard(3, -2, 0);
+  function shuffleDeck() {
+    if (difficulty === 3) shuffleCard(3, -2, 0);
 
-    if (difficulty === 2) REFACTORshuffleCard(2, -2, 2);
+    if (difficulty === 2) shuffleCard(2, -2, 2);
 
-    if (difficulty === 1) REFACTORshuffleCard(3, 0, 3);
+    if (difficulty === 1) shuffleCard(3, 0, 3);
 
     if (difficulty === 0 && flashcards.length)
       moveDeckFlashcardToCompleted([
@@ -88,7 +89,7 @@ export const Flashcards = ({
             <button
               className="Flashcards__btns__next"
               key={uuidv4()}
-              onClick={shuffleCard}
+              onClick={shuffleDeck}
             >
               <span className="Flashcards__btn__next__text">Next</span>{" "}
               <img className="Flashcards__btn__next__image" src={img} />
