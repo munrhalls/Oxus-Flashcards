@@ -7,7 +7,7 @@ import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
 export const Modals = ({
   updateFlashcards,
   modalOpen,
-  closeModal,
+  setModalOpen,
   decks,
   setDecks,
   activeDeckId,
@@ -16,7 +16,7 @@ export const Modals = ({
     <div className="Modals">
       {modalOpen === "AddFlashcard" ? (
         <AddFlashcard
-          closeModal={closeModal}
+          setModalOpen={setModalOpen}
           updateFlashcards={updateFlashcards}
         />
       ) : (
@@ -27,7 +27,7 @@ export const Modals = ({
         <DeleteDeck
           modalOpen={modalOpen}
           activeDeckId={activeDeckId}
-          closeModal={closeModal}
+          setModalOpen={setModalOpen}
           decks={decks}
           setDecks={setDecks}
         />
@@ -36,7 +36,11 @@ export const Modals = ({
       )}
 
       {modalOpen === "AddDeck" ? (
-        <AddDeck decks={decks} setDecks={setDecks} closeModal={closeModal} />
+        <AddDeck
+          decks={decks}
+          setDecks={setDecks}
+          setModalOpen={setModalOpen}
+        />
       ) : (
         ""
       )}
@@ -45,7 +49,7 @@ export const Modals = ({
         <EditDeck
           modalOpen={modalOpen}
           activeDeckId={activeDeckId}
-          closeModal={closeModal}
+          setModalOpen={setModalOpen}
           decks={decks}
           setDecks={setDecks}
         />

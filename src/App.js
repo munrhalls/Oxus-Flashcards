@@ -150,9 +150,7 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-  const activeDeck = activeDeckId
-    ? decks.filter((deck) => deck.id === activeDeckId)[0]
-    : null;
+
   function getDecks() {
     let decks = [];
     for (let i = 0; i < 10; i++) {
@@ -182,15 +180,11 @@ function App() {
         });
       });
   }
-  function closeModal() {
-    setModalOpen(null);
-  }
-
   useEffect(() => {
-    console.log("overwrite????");
     let decks = getDecks();
     setDecks(decks);
   }, []);
+
   return (
     <div className="App">
       <Header />
@@ -199,16 +193,15 @@ function App() {
           <div className="Aside">
             <ModalBtns
               modalOpen={modalOpen}
-              closeModal={() => closeModal()}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
               setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
             />
           </div>
         )}
         <div className="Centerstage">
-          {activeDeck ? (
+          {activeDeckId ? (
             <Deck
-              activeDeck={activeDeck}
+              activeDeckId={activeDeckId}
               decks={decks}
               setDecks={(decks) => setDecks(decks)}
             />
@@ -225,7 +218,7 @@ function App() {
               decks={decks}
               setDecks={(decks) => setDecks(decks)}
               modalOpen={modalOpen}
-              closeModal={() => closeModal()}
+              setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
             />
           )}
         </div>
