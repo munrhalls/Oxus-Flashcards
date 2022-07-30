@@ -2,7 +2,6 @@ import { uuidv4 } from "@firebase/util";
 import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
-import { dblClick } from "@testing-library/user-event/dist/click";
 import cloneDeep from "lodash.clonedeep";
 
 export const Flashcards = ({
@@ -45,13 +44,14 @@ export const Flashcards = ({
 
     if (difficulty === 1) shuffleEasy(flashcards);
 
-    if (difficulty === 0 && flashcards.length) {
-      const passCard = flashcards.shift();
-      moveDeckFlashcardToCompleted([...completedFlashcards, passCard]);
-    }
-    let flashcardsUpdate = cloneDeep(flashcards);
-    // setFlashcards(updated);
-    shuffleDeckFlashcards(flashcardsUpdate);
+    if (difficulty === 0 && flashcards.length)
+      moveDeckFlashcardToCompleted([
+        ...completedFlashcards,
+        flashcards.shift(),
+      ]);
+
+    let flashcardsCloned = cloneDeep(flashcards);
+    shuffleDeckFlashcards(flashcardsCloned);
   }
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
