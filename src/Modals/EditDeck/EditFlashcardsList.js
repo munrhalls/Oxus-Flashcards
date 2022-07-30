@@ -1,31 +1,29 @@
-import { EditFlashcardsList } from "./EditFlashcardsList";
-import React from "react";
-export function EditFlashcardsList({
-  card,
-  i,
-  uuidv4,
-  isDelConfirmId,
-  deleteCard,
-  setisDelConfirmId,
-  IMG__EDIT,
-  IMG__CLOSE,
-  IMG__PLUS,
-}) {
-  <EditFlashcardsList
-    card={card}
-    i={i}
-    uuidv4={uuidv4}
-    isDelConfirmId={isDelConfirmId}
-    deleteCard={deleteCard}
-    setisDelConfirmId={setisDelConfirmId}
-    IMG__EDIT={IMG__EDIT}
-    IMG__CLOSE={IMG__CLOSE}
-    IMG__PLUS={IMG__PLUS}
-  />;
+import React, { useState } from "react";
+import { Flashcard } from "../../Flashcards/Flashcard";
+import { uuidv4 } from "@firebase/util";
+import IMG__CLOSE from "./../../Assets/close.png";
+import IMG__PLUS from "./../../Assets/plus.png";
+import IMG__EDIT from "./../../Assets/edit.png";
+
+export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
+  const [isDelConfirmId, setisDelConfirmId] = useState(null);
+  let flashcards = editedDeck.flashcards;
+  let completedFlashcards = editedDeck.completedFlashcards;
+
+  function deleteCard(delId) {
+    setEditedDeck({
+      ...editedDeck,
+      flashcards: flashcards.filter((card) => card.id !== delId),
+      completedFlashcards: completedFlashcards.filter(
+        (card) => card.id !== delId
+      ),
+    });
+  }
+
   return (
-    <div className="Form__manageflashcards">
-      <div className="Form__manageflashcards__list">
-        {[...editedCards, ...editedCompletedCards].map((card, i) => {
+    <div className="Form__manageflashcardslist">
+      <div className="Form__manageflashcardslist__list">
+        {[...flashcards, ...completedFlashcards].map((card, i) => {
           return (
             <div key={uuidv4()} className="Form__manageflashcardContainer">
               <div className="Form__manageflashcardContainer__numContainer">
@@ -71,7 +69,9 @@ export function EditFlashcardsList({
 
                     <button
                       type="button"
-                      onClick={() => setisDelConfirmId(card.id)}
+                      onClick={() => {
+                        setisDelConfirmId(card.id);
+                      }}
                       className="Form__manageflashcardContainer__elements__btns__btn --delete"
                     >
                       <img

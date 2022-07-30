@@ -55,7 +55,7 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
   }
   return (
     <div className="Form__manageflashcard">
-      <div className="Form__manageflashcards__titleRibbon">
+      <div className="Form__manageflashcard__titleRibbon">
         <span className="Form__manageflashcards__title">
           Add new flashcard.
         </span>
