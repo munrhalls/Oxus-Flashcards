@@ -16,24 +16,21 @@ export const Flashcards = ({
   function shuffleHard(flashcards) {
     const wasFirst = flashcards.shift();
     let moveBy = Math.floor(flashcards.length / 3);
-    let randomizer = randomIntFromInterval(-2, 0);
-    if (flashcards.length > 4) moveBy += randomizer;
+    if (flashcards.length > 4) moveBy += randomIntFromInterval(-2, 0);
 
     flashcards.splice(moveBy, 0, wasFirst);
   }
   function shuffleMedium(flashcards) {
     const wasFirst = flashcards.shift();
     let moveBy = Math.floor(flashcards.length / 2);
-    let randomizer = randomIntFromInterval(-2, 2);
-    if (flashcards.length > 4) moveBy += randomizer;
+    if (flashcards.length > 4) moveBy += randomIntFromInterval(-2, 2);
 
     flashcards.splice(moveBy, 0, wasFirst);
   }
   function shuffleEasy(flashcards) {
     const wasFirst = flashcards.shift();
     let moveBy = flashcards.length - Math.floor(flashcards.length / 3);
-    let randomizer = randomIntFromInterval(0, 3);
-    if (flashcards.length > 4) moveBy += randomizer;
+    if (flashcards.length > 4) moveBy += randomIntFromInterval(0, 3);
 
     flashcards.splice(moveBy, 0, wasFirst);
   }
@@ -50,8 +47,7 @@ export const Flashcards = ({
         flashcards.shift(),
       ]);
 
-    let flashcardsCloned = cloneDeep(flashcards);
-    shuffleDeckFlashcards(flashcardsCloned);
+    shuffleDeckFlashcards(cloneDeep(flashcards));
   }
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
