@@ -1,5 +1,5 @@
 import React from "react";
-import { AddFlashcard } from "./AddFlashcard";
+import { AddFlashcard } from "./AddFlashcard/AddFlashcard";
 import { AddDeck } from "./AddDeck/AddDeck";
 import { EditDeck } from "./EditDeck/EditDeck";
 import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
