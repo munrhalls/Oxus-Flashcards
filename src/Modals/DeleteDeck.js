@@ -5,6 +5,7 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__PLUS from "./../Assets/plus.png";
 import IMG__SAVE from "./../Assets/save.png";
+import IMG__BACK from "./../Assets/go-back-arrow.png";
 
 export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
@@ -104,8 +105,8 @@ export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
                             >
                               <img
                                 className="Form__flashcardContainer__elements__btns__btn__img"
-                                src={IMG__CLOSE}
-                                alt="DELETE"
+                                src={IMG__BACK}
+                                alt="BACK"
                               />
                             </button>
                           </div>
@@ -140,13 +141,11 @@ export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
                 className="Form__exitBtnsContainer__btn"
                 onClick={() => closeModal()}
               >
-                <span className="Form__exitBtnsContainer__btn__text">
-                  Back
-                </span>
+                <span className="Form__exitBtnsContainer__btn__text">Back</span>
                 <img
                   className="Form__exitBtnsContainer__btn__img"
-                  src={IMG__CLOSE}
-                  alt="CLOSE"
+                  src={IMG__BACK}
+                  alt="BACK"
                 />
               </button>
             </div>
