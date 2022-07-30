@@ -25,7 +25,6 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
     <div className="EditDeck">
       <button>T E S T</button>
       <form className="Form" onSubmit={handleSubmit}>
-        {/* <AddFlashcard /> */}
         <div className="Form__topBar">
           <div className="Form__topBar__line --first">
             <h2 className="Form__topBar__line__title">EDIT DECK</h2>
