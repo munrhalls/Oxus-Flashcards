@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
 
-export const AddDeck = ({ decks, setDecks, closeModal }) => {
+export const AddDeck = ({ decks, setDecks, setModalOpen }) => {
   const [deckName, setDeckName] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
@@ -9,11 +9,13 @@ export const AddDeck = ({ decks, setDecks, closeModal }) => {
       id: uuidv4(),
       name: deckName,
       flashcards: [],
+      completedFlashcards: [],
     };
 
     setDecks([...decks, deck]);
-    closeModal();
+    setModalOpen(null);
   }
+
   return (
     <div className="AddDeck">
       <form className="AddDeck__form" onSubmit={(e) => handleSubmit(e)}>
@@ -29,11 +31,12 @@ export const AddDeck = ({ decks, setDecks, closeModal }) => {
         />
         <input className="AddDeck__submit" type="submit" />
       </form>
+
       <button
         className="AddDeck__closeBtn"
         onClick={(e) => {
           e.preventDefault();
-          closeModal();
+          setModalOpen(null);
         }}
       >
         EXIT
