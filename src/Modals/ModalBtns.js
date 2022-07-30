@@ -3,19 +3,14 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__PLUS from "./../Assets/plus.png";
 
-export const ModalBtns = ({
-  modalOpen,
-  setModalOpen,
-  setactiveDeckId,
-  closeModal,
-}) => {
+export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   return (
     <div className="Modal__containerBtns">
       <div className="Modal__containerBtns__container">
         <button
           className="Modal__containerBtns__container__btn"
           onClick={() => {
-            closeModal();
+            setModalOpen(null);
             setactiveDeckId(null);
           }}
         >

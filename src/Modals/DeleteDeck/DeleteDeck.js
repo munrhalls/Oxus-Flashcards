@@ -7,7 +7,7 @@ import IMG__PLUS from "./../../Assets/plus.png";
 import IMG__SAVE from "./../../Assets/save.png";
 import IMG__BACK from "./../../Assets/go-back-arrow.png";
 
-export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
+export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
 
   function handleSubmit(e) {
@@ -17,7 +17,7 @@ export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
         return el.id === deck.id;
       })
     );
-    closeModal();
+    setModalOpen(null);
   }
   return (
     <div>
@@ -40,7 +40,7 @@ export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
               <button
                 type="button"
                 className="FormDeck__exitBtnsContainer__btn"
-                onClick={() => closeModal()}
+                onClick={() => setModalOpen(null)}
               >
                 <span className="FormDeck__exitBtnsContainer__btn__text">
                   Back
@@ -67,7 +67,7 @@ export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
             <button
               type="button"
               className="FormDeck__noDeckSelectedMsg__btn__close"
-              onClick={() => closeModal()}
+              onClick={() => setModalOpen(null)}
             >
               EXIT
             </button>

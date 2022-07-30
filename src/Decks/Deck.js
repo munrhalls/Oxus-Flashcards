@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Flashcards } from "../Flashcards/Flashcards";
 import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
-import cloneDeep from "lodash.clonedeep";
 
-export const Deck = ({ activeDeck, setDecks, decks }) => {
+export const Deck = ({ activeDeckId, setDecks, decks }) => {
+  const activeDeck = decks.filter((deck) => deck.id === activeDeckId)[0];
+
   function shuffleDeckFlashcards(flashcards) {
     setDecks((decks) => {
       return decks.map((deck) => {
-        return deck.id === activeDeck.id
+        return deck.id === activeDeckId
           ? { ...deck, flashcards: flashcards }
           : deck;
       });
@@ -16,7 +17,7 @@ export const Deck = ({ activeDeck, setDecks, decks }) => {
   function moveDeckFlashcardToCompleted(completedFlashcards) {
     setDecks((decks) => {
       return decks.map((deck) => {
-        return deck.id === activeDeck.id
+        return deck.id === activeDeckId
           ? { ...deck, completedFlashcards: completedFlashcards }
           : deck;
       });
