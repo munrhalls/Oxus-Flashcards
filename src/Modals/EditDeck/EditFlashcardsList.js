@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Flashcard } from "../../Flashcards/Flashcard";
+import { DeleteFlashcard } from "./DeleteFlashcard";
 import { uuidv4 } from "@firebase/util";
 import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__PLUS from "./../../Assets/plus.png";
@@ -33,25 +34,11 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
               </div>
 
               {isDelConfirmId && isDelConfirmId === card.id ? (
-                <div className="FormFlashcardContainer__deleteContainer">
-                  <h3 className="FormFlashcardContainer__deleteContainer__question">
-                    Are you sure?
-                  </h3>
-                  <button
-                    type="button"
-                    onClick={() => deleteCard(card.id)}
-                    className="FormFlashcardContainer__deleteContainer__btn --delete"
-                  >
-                    DELETE
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setisDelConfirmId(null)}
-                    className="FormFlashcardContainer__deleteContainer__btn --back"
-                  >
-                    BACK
-                  </button>
-                </div>
+                <DeleteFlashcard
+                  deleteCard={deleteCard}
+                  setisDelConfirmId={setisDelConfirmId}
+                  delId={card.id}
+                />
               ) : (
                 <div className="FormFlashcardContainer__elements">
                   <Flashcard key={uuidv4()} flashcard={card} />
