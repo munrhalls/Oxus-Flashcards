@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { uuidv4 } from "@firebase/util";
 import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__CLOSE from "./../../Assets/close.png";
-import IMG__PLUS from "./../../Assets/plus.png";
 import IMG__SAVE from "./../../Assets/save.png";
 import { EditFlashcardsList } from "./EditFlashcardsList";
 

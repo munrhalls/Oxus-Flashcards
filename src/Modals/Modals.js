@@ -1,8 +1,8 @@
 import React from "react";
 import { AddFlashcard } from "./AddFlashcard";
-import { AddDeck } from "./AddDeck";
+import { AddDeck } from "./AddDeck/AddDeck";
 import { EditDeck } from "./EditDeck/EditDeck";
-import { DeleteDeck } from "./DeleteDeck";
+import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
 
 export const Modals = ({
   updateFlashcards,
