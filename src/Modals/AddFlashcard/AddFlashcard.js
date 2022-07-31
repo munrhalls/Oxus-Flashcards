@@ -6,7 +6,7 @@ import { TurnedFlashcard } from "./TurnedFlashcard";
 import { Flashcards } from "../../Flashcards/Flashcards";
 const { v4: uuidv4 } = require("uuid");
 
-export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
+export const AddFlashcard = ({ flashcards, addFlashcard, setModalOpen }) => {
   const [side, setSide] = useState(false);
   const [turnedImg, setTurnedImg] = useState("");
   const [unturnedImg, setUnturnedImg] = useState("");
@@ -51,7 +51,7 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
     });
   function handleExit(e) {
     e.preventDefault();
-    closeModal();
+    setModalOpen("EditDeck");
   }
   return (
     <div className="FormFlashcard">

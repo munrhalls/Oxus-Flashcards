@@ -16,3 +16,15 @@
     border-radius: 5px;
     z-index: 100;
 }
+
+.Flashcard__form__frameNoImage {
+    height: 30rem;
+    width: 15rem;
+    border: 6px solid #fff;
+    border-radius: 5px;
+}
+
+.Flashcard_form_cell {
+    height: 30rem;
+    width: 15rem; 
+}

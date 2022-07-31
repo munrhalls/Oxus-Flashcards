@@ -6,7 +6,11 @@ import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__PLUS from "./../../Assets/plus.png";
 import IMG__EDIT from "./../../Assets/edit.png";
 
-export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
+export function EditFlashcardsList({
+  editedDeck,
+  setEditedDeck,
+  setModalOpen,
+}) {
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
   let flashcards = editedDeck?.flashcards;
   let completedFlashcards = editedDeck?.completedFlashcards;
@@ -75,7 +79,10 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
               </div>
             );
           })}
-        <div className="FormFlashcardContainer --addBtn">
+        <div
+          onClick={() => setModalOpen("AddFlashcard")}
+          className="FormFlashcardContainer --addBtn"
+        >
           <button
             type="button"
             className="FormFlashcardContainer__btn --addBtn"
