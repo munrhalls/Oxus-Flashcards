@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
 
-export const AddDeck = ({ decks, setDecks, setModalOpen }) => {
+export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
   const [deckName, setDeckName] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,7 +13,8 @@ export const AddDeck = ({ decks, setDecks, setModalOpen }) => {
     };
 
     setDecks([...decks, deck]);
-    setModalOpen(null);
+    setactiveDeckId(deck.id);
+    setModalOpen("EditDeck");
   }
 
   return (

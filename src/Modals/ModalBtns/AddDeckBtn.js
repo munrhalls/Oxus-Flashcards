@@ -5,7 +5,7 @@ export const AddDeckBtn = ({ setModalOpen }) => {
     <div className="ModalBtns__container">
       <button
         className="ModalBtns__container__btn"
-        onClick={() => setModalOpen("EditDeck")}
+        onClick={() => setModalOpen("AddDeck")}
       >
         ADD DECK
       </button>

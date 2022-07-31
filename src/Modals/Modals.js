@@ -11,6 +11,7 @@ export const Modals = ({
   decks,
   setDecks,
   activeDeckId,
+  setactiveDeckId,
 }) => {
   return (
     <div className="Modals">
@@ -37,6 +38,7 @@ export const Modals = ({
           decks={decks}
           setDecks={setDecks}
           setModalOpen={setModalOpen}
+          setactiveDeckId={setactiveDeckId}
         />
       )}
 

@@ -215,6 +215,7 @@ function App() {
           {modalOpen && (
             <Modals
               activeDeckId={activeDeckId}
+              setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
               decks={decks}
               setDecks={(decks) => setDecks(decks)}
               modalOpen={modalOpen}
