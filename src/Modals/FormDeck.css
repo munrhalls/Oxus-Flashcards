@@ -96,7 +96,8 @@
 
 }
 .FormFlashcardContainer__btn.--addBtn {
-    background-color: rgb(5, 72, 49);
+    /* background-color: rgb(5, 72, 49); */
+    border: 12px solid #000;
    margin-top: 15%;
    cursor: pointer;
     
