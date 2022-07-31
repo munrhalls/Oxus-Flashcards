@@ -1,10 +1,13 @@
+import { uuidv4 } from "@firebase/util";
+
 import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
-import { uuidv4 } from "@firebase/util";
+import { AddDeckBtn } from "./../Modals/ModalBtns/AddDeckBtn";
 
 export const SymbolDecks = ({ decks, setModalOpen, setactiveDeckId }) => {
   return (
     <div className="SymbolDecks">
+      <AddDeckBtn setModalOpen={setModalOpen} />
       {decks.length ? (
         decks.map((deck) => {
           return (
