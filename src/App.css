@@ -45,11 +45,45 @@
     border-color: 2px solid #fff;
     border-radius: 30px;
   }
-  
+
 .App {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+.WelcomeShade {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1.25s ease-in-out;
+  z-index: 100;
+
+}
+.WelcomeShade.--hidden {
+  color: #000;
+  height: 0;
+}
+
+.WelcomeShade__title {
+  font-size: 5rem;
+  transition: 1s ease-in-out;
+}
+.WelcomeShade__title.--hidden {
+  opacity: 0;
+  height: 0;
+  font-size: 140rem;
+}
+.WelcomeShade__subtitle {
+  margin-top: 1rem;
+  font-size: 1.25rem;
 }
 #display-image{
     width: 400px;
