@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
+import IMG__EDIT from "./../../Assets/edit.png";
+import IMG__CLOSE from "./../../Assets/close.png";
+import IMG__SAVE from "./../../Assets/save.png";
 
 export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
   const [deckName, setDeckName] = useState("");
@@ -19,29 +22,54 @@ export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
 
   return (
     <div className="AddDeck">
-      <form className="AddDeck__form" onSubmit={(e) => handleSubmit(e)}>
-        <label className="AddDeck__nameLabel" htmlFor="deckName">
-          DECK NAME:
-        </label>
-        <input
-          type="text"
-          name="deckName"
-          id="deckName"
-          value={deckName}
-          onChange={(e) => setDeckName(e.target.value)}
-        />
-        <input className="AddDeck__submit" type="submit" />
-      </form>
+      <form className="Form" onSubmit={(e) => handleSubmit(e)}>
+        <div className="FormDeck__topBar">
+          <div className="FormDeck__topBar__line --first">
+            <h2 className="FormDeck__topBar__line__title">ADD DECK</h2>
+          </div>
+          <div className="FormDeck__topBar__line --second"></div>
+        </div>
 
-      <button
-        className="AddDeck__closeBtn"
-        onClick={(e) => {
-          e.preventDefault();
-          setModalOpen(null);
-        }}
-      >
-        EXIT
-      </button>
+        <div className="AddDeck__container">
+          <label className="AddDeck__container__nameLabel" htmlFor="deckName">
+            DECK NAME
+          </label>
+          <input
+            className="AddDeck__container__nameInput"
+            type="text"
+            name="deckName"
+            placeholder="Type here..."
+            id="deckName"
+            value={deckName}
+            onChange={(e) => setDeckName(e.target.value)}
+          />
+        </div>
+
+        <div className="FormDeck__exitBtnsContainer">
+          <button
+            type="button"
+            className="FormDeck__exitBtnsContainer__btn"
+            onClick={() => setModalOpen(null)}
+          >
+            <span className="FormDeck__exitBtnsContainer__btn__text">
+              Close
+            </span>
+            <img
+              className="FormDeck__exitBtnsContainer__btn__img"
+              src={IMG__CLOSE}
+              alt="CLOSE"
+            />
+          </button>
+          <button className="FormDeck__exitBtnsContainer__btn" type="submit">
+            <span className="FormDeck__exitBtnsContainer__btn__text">Save</span>
+            <img
+              className="FormDeck__exitBtnsContainer__btn__img"
+              src={IMG__SAVE}
+              alt="SAVE"
+            />
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

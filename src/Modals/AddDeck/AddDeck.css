@@ -1,8 +1,4 @@
 .AddDeck {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     left: 0;
     right: 0;
@@ -12,43 +8,29 @@
     background-color: #000;
     border: 10px solid #000;
 }
-.AddDeck__form {
+.AddDeck__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    bottom: 4rem;
+    top: 7rem;
+    left: 0;
+    right: 0;
+    height: calc(100% - 11rem);
 }
-.AddDeck__nameLabel {
-    font-size: 1.5rem;
-    color: #fff;
+
+.AddDeck__container__nameLabel {
+    font-size: 3.5rem;
 }
-.AddDeck__submit__container {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.AddDeck__container__nameInput {
+    margin-top: 1rem;
+    height: 6rem;
+    width: 65%;
+    font-size: 1rem;
+    text-align: center;
 }
-.AddDeck__submit {
-    cursor: pointer;
-    width: 16rem;   
-    background-color: transparent;
-    background: transparent;
-    border-radius: 3px;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: #fff;
-}
-.AddDeck__closeBtn {
-    cursor: pointer;
-    width: 8rem;   
-    background-color: transparent;
-    background: transparent;
-    border-radius: 3px;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: #fff;
+
+.AddDeck__container__nameInput[placeholder] {
+    font-size: 1.25rem;
 }
