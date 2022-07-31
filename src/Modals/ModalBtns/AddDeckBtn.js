@@ -4,13 +4,8 @@ import IMG__CARDS from "./../../Assets/cards.png";
 
 export const AddDeckBtn = ({ setModalOpen }) => {
   return (
-    <div className="AddDeckBtn">
-      <button
-        className="AddDeckBtn__btn"
-        onClick={() => setModalOpen("AddDeck")}
-      >
-        ADD DECK
-      </button>
+    <div onClick={() => setModalOpen("AddDeck")} className="AddDeckBtn">
+      <button className="AddDeckBtn__btn">ADD DECK</button>
       <img
         className="AddDeckBtn__imgPlus"
         src={IMG__PLUS}
