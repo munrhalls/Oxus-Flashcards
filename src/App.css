@@ -69,7 +69,7 @@
 }
 .WelcomeShade.--hidden {
   color: #000;
-  height: 0;
+  width: 0;
 }
 
 .WelcomeShade__title {
