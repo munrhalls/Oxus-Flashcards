@@ -5,7 +5,7 @@ import IMG__SAVE from "./../../Assets/save.png";
 import { EditFlashcardsList } from "./EditFlashcardsList";
 
 export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
-  const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
+  const deck = decks.filter((instance) => instance.id === activeDeckId)?.[0];
   const [editedDeck, setEditedDeck] = useState(deck);
   const [isEditDeckName, setIsEditDeckName] = useState(null);
 
@@ -40,7 +40,7 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
               />
             ) : (
               <h1 className="FormDeck__topBar__line__deckName">
-                {editedDeck.name}
+                {editedDeck?.name}
               </h1>
             )}
             {!isEditDeckName ? (
