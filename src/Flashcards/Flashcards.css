@@ -18,6 +18,11 @@
     cursor: pointer;
     position: relative;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .Flashcard__image {
@@ -30,8 +35,15 @@
 .Flashcard__unturned,
 .Flashcard__turned, 
 .Flashcard__text {
-    position: absolute;
+    max-width: 80%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
+    height: 80%;
 }
 
 .Flashcards__btns {
