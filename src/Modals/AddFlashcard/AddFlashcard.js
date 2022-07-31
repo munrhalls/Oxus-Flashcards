@@ -4,9 +4,14 @@ import { Preview } from "./Preview";
 import { UnturnedFlashcard } from "./UnturnedFlashcard";
 import { TurnedFlashcard } from "./TurnedFlashcard";
 import { Flashcards } from "../../Flashcards/Flashcards";
-const { v4: uuidv4 } = require("uuid");
+import { uuidv4 } from "@firebase/util";
 
-export const AddFlashcard = ({ flashcards, addFlashcard, setModalOpen }) => {
+export const AddFlashcard = ({
+  activeDeckId,
+  setDecks,
+  decks,
+  setModalOpen,
+}) => {
   const [side, setSide] = useState(false);
   const [turnedImg, setTurnedImg] = useState("");
   const [unturnedImg, setUnturnedImg] = useState("");
@@ -14,20 +19,36 @@ export const AddFlashcard = ({ flashcards, addFlashcard, setModalOpen }) => {
     unturned: { text: "", image: unturnedImg },
     turned: { text: "", image: turnedImg },
   });
-  console.log(unturnedImg);
+  const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
   function getNumOfLvlHardCards() {
-    return flashcards.filter((card) => card.difficulty === 3).length;
+    return (
+      deck?.flashcards?.filter((card) => card.difficulty === 3)?.length || 1
+    );
   }
   function handleSubmit(e) {
     e.preventDefault();
-    addFlashcard({
-      id: uuidv4(),
+    let newFlashcard = {
+      // id: uuidv4(),
       difficulty: 3,
-      orderNum: getNumOfLvlHardCards() + 1,
-      unturned: { text: flashcard.unturned.text, image: unturnedImg },
-      turned: { text: flashcard.turned.text, image: turnedImg },
-    });
+      orderNum: getNumOfLvlHardCards(deck.flashcards.length),
+      unturned: {
+        text: flashcard.unturned.text,
+        image: flashcard.unturned.image,
+      },
+      turned: {
+        text: flashcard.turned.text,
+        image: flashcard.turned.image,
+      },
+    };
+    setDecks((decks) =>
+      decks.map((deck) => {
+        return deck.id === activeDeckId
+          ? { ...deck, flashcards: [...deck.flashcards, newFlashcard] }
+          : { ...deck };
+      })
+    );
     resetForm();
+    setModalOpen("EditDeck");
   }
   function resetForm() {
     setSide(false);

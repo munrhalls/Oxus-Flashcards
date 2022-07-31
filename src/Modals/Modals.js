@@ -5,7 +5,6 @@ import { EditDeck } from "./EditDeck/EditDeck";
 import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
 
 export const Modals = ({
-  updateFlashcards,
   modalOpen,
   setModalOpen,
   decks,
@@ -18,7 +17,9 @@ export const Modals = ({
       {modalOpen === "AddFlashcard" && (
         <AddFlashcard
           setModalOpen={setModalOpen}
-          updateFlashcards={updateFlashcards}
+          activeDeckId={activeDeckId}
+          decks={decks}
+          setDecks={setDecks}
         />
       )}
 
