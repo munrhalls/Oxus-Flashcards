@@ -1,0 +1,40 @@
+.AddDeckBtn {
+    cursor: pointer;
+    position: relative;
+    width: 12rem;
+    height: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AddDeckBtn__btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 2rem;
+    bottom: 0;
+    background-color: #000;
+    color: #fff;
+    height: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 0.15rem;
+    font-size: 1.25rem;
+}
+.AddDeckBtn__imgPlus {
+    cursor: pointer;
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    bottom: 3rem;
+    border: 12px solid #000;
+    border-radius: 100%;
+}
+
+.AddDeckBtn__imgCards {
+    cursor: pointer;
+    position: absolute;
+    top: -1rem;
+    right: -2.5%;
+    width: 60%;
+    height: 60%;
+}
