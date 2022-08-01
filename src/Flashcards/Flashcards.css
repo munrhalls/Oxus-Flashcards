@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+    height: 100%;
 }
 .Flashcard__container {
-    width: 25rem;
-    height: 35rem;
+    width: 75%;
+    height: 80%;
 }
 .Flashcard {
     border: 3px solid #000;
@@ -47,7 +47,8 @@
 }
 
 .Flashcards__btns {
-    width: 25rem;
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
 
 }
