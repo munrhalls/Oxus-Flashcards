@@ -1,5 +1,8 @@
 .Deck {
-    width: 100%;    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .Deck__title {
@@ -7,7 +10,8 @@
     font-size: 2.5rem;
 }
 
-.Deck__decks {
+.Deck__instance {
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
