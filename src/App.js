@@ -20,11 +20,132 @@ function App() {
     {
       id: uuidv4(),
       unturned: {
-        text: "Example flashcard. 2 + 2 = ?",
+        text: 'How\'s  \n"Hey\n" in Spanish?',
         image: "",
       },
       turned: {
-        text: "9000.",
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: "Hey in French?",
+        image: "",
+      },
+      turned: {
+        text: "Bonjour!",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: "Hey in German?!",
+        image: "",
+      },
+      turned: {
+        text: "Tschüss!",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: "Hey in Polish?",
+        image: "",
+      },
+      turned: {
+        text: "SIEMA.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Japanese?',
+        image: "",
+      },
+      turned: {
+        text: "Kon'nichiwa",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Korean?',
+        image: "",
+      },
+      turned: {
+        text: "Annyeong",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Chinese?',
+        image: "",
+      },
+      turned: {
+        text: "Nǐ hǎo",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Turkish?',
+        image: "",
+      },
+      turned: {
+        text: "Merhaba",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Turkish?',
+        image: "",
+      },
+      turned: {
+        text: "Merhaba",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Serbia?',
+        image: "",
+      },
+      turned: {
+        text: "Zdravo",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in South Africa?',
+        image: "",
+      },
+      turned: {
+        text: "Heita",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s \n"Hey\n" in Greenland?',
+        image: "",
+      },
+      turned: {
+        text: "Aluu",
         image: "",
       },
     },
@@ -38,7 +159,7 @@ function App() {
     let decks = [];
     let deck = {
       id: uuidv4(),
-      name: "Example deck.",
+      name: "Learn how to greet someone in over 10 different languages! (Example deck)",
       flashcards: mock,
       completedFlashcards: [],
     };
