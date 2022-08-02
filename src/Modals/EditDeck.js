@@ -108,6 +108,11 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                   </div>
                 );
               })}
+              <div className="EditDeck__form__flashcardContainer">
+                <button className="EditDeck__form__flashcardContainer__btn">
+                  ADD NEW FLASHCARD
+                </button>
+              </div>
             </div>
           </div>
           {/* <div>
