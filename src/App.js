@@ -161,7 +161,7 @@ function App() {
       let deck = {
         id: uuidv4(),
         name: i,
-        flashcards: flashcards,
+        flashcards: cloneDeep(flashcards),
       };
       decks.push(deck);
     }
@@ -200,10 +200,16 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="Header">Flashcards</header>
+      <header className="Header">
+        Flashcards
+        <h6>|| PROTOTYPE: APP IN CONSTRUCTION.</h6>
+      </header>
       <main className="Main">
         <div className="Aside">
-          <ModalBtns setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
+          <ModalBtns
+            setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+            setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
+          />
         </div>
         <div className="Centerstage">
           {!activeDeck ? (
