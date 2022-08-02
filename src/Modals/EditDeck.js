@@ -7,16 +7,24 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
     <div className="EditDeck">
       {activeDeck ? (
         <>
-          <AddFlashcard />
-          <button onClick={() => closeModal()}>CLOSE</button>
+          {/* <AddFlashcard /> */}
+          <h1 className="EditDeck__deckName">{activeDeck.name}</h1>
+
+          <button className="EditDeck__btn__close" onClick={() => closeModal()}>CLOSE</button>
         </>
       ) : (
         <div className="EditDeck__noDeckSelectedMsg">
           <h1 className="EditDeck__noDeckSelectedMsg__title">
             SELECT A DECK TO EDIT
           </h1>
-          <button className="EditDeck__noDeckSelectedMsg__btn">
+          <button className="EditDeck__noDeckSelectedMsg__btn__select">
             SELECT DECK
+          </button>
+          <button
+            className="EditDeck__noDeckSelectedMsg__btn__close"
+            onClick={() => closeModal()}
+          >
+            EXIT
           </button>
         </div>
       )}
