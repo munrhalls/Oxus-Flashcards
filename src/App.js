@@ -2,10 +2,16 @@ import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
-import { getStorage, ref, uploadBytes } from "./Firebase/Firebase";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "./Firebase/Firebase";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [image, setImage] = useState("");
   const [fcards, setFcards] = useState([
     {
       unturned: {
@@ -18,13 +24,22 @@ function App() {
       },
     },
   ]);
-  function fileTest(e) {
-    console.log(e.target.files[0]);
+
+  async function fileTest(e) {
+    debugger;
+    let img = e.target.files[0];
     const storage = getStorage();
-    const imageRef = ref(storage, e.target.files[0].name);
-    uploadBytes(imageRef, e.target.files[0]).then((snapshot) => {
-      console.log("Uploaded a blob or file!");
-    });
+    const imageRef = ref(storage, img.name);
+    uploadBytes(imageRef, img)
+      .then((snapshot) => {
+        console.log("Uploaded a blob or file!");
+      })
+      .then(() => {
+        getDownloadURL(ref(storage, img.name)).then((url) => {
+          console.log(url);
+          setImage(url);
+        });
+      });
   }
   function onAddFcard(fcard) {}
 
@@ -32,7 +47,8 @@ function App() {
     <div className="App">
       <header className="Header">Flashcards</header>
       <main className="Main">
-        <input type="file" onChange={fileTest} />
+        <input type="file" name="file" onChange={fileTest} />
+        <img src={image} alt="image here" />
         {isLoading ? (
           <div style={{ fontSize: "120px" }}>Loading...</div>
         ) : (
