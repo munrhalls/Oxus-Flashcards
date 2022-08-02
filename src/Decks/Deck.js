@@ -10,15 +10,18 @@ export const Deck = ({
 }) => {
   return (
     <div className="Deck">
-      <Flashcards
-        flashcards={flashcards}
-        setFlashcards={(flashcards) => setFlashcards(flashcards)}
-        completedFlashcards={completedFlashcards}
-        setCompletedFlashcards={(completedFlashcards) =>
-          setCompletedFlashcards(completedFlashcards)
-        }
-      />
-      <CompletedFlashcards completedFlashcards={completedFlashcards} />
+      <h3 className="Deck__title">INITIAL DECK TITLE</h3>
+      <div className="Deck__decks">
+        <Flashcards
+          flashcards={flashcards}
+          setFlashcards={(flashcards) => setFlashcards(flashcards)}
+          completedFlashcards={completedFlashcards}
+          setCompletedFlashcards={(completedFlashcards) =>
+            setCompletedFlashcards(completedFlashcards)
+          }
+        />
+        <CompletedFlashcards completedFlashcards={completedFlashcards} />
+      </div>
     </div>
   );
 };
