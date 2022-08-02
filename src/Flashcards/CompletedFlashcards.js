@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 
-export const CompletedFlashcards = ({ flashcards }) => {
-  // const passCards = flashcards.filter((card) => card.hasOwnPropery('pass'));
+export const CompletedFlashcards = ({ completedFlashcards }) => {
+  function makeHeap() {
+    return completedFlashcards.map((card, i) => {
+      return (
+        <>
+          <div
+            className="CompletedFlashcards__heapFrame"
+            style={{ top: `${0 - i * 5.25}px`, right: `${0 - i * 5.5}px` }}
+          ></div>
+        </>
+      );
+    });
+  }
+  const heapEffect = makeHeap();
   return (
     <div className="CompletedFlashcards">
-      {/* <h3 className="CompletedFlashcards__title">
+      <div className="CompletedFlashcards__frontCard">{heapEffect}</div>
+      <h3 className="CompletedFlashcards__title">
         COMPLETED CARDS:{" "}
         <span className="CompletedFlashcards__title__number">
-          {passCards.length}
+          {completedFlashcards.length}
         </span>
       </h3>
-      <div className="CompletedFlashcards__card__frame">
-        {passCards.map((card) => (
-          <div className="CompletedFlashcards__card"></div>
-        ))}
-      </div> */}
     </div>
   );
 };
