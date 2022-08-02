@@ -128,6 +128,55 @@
     flex: 7;
     position: relative;
 }
+.WelcomeMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+  width: 45%;
+  border: 3px solid #000;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  padding: 3rem;
+}
+.WelcomeMessage__title {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.WelcomeMessage__subtitle {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.WelcomeMessage__btnContainer {
+  margin-top: auto;
+}
+.WelcomeMessage__btnContainer__btn {
+  margin-bottom: auto;
+    cursor: pointer;
+    width: 16rem;   
+    height: 6rem;
+    background-color: transparent;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.WelcomeMessage__list {
+
+}
+.WelcomeMessage__list__item {
+
+}
 .Aside {
     display: flex;
     flex-direction: column;
