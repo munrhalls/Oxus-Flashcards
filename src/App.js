@@ -6,23 +6,10 @@ import { flashcardsCol, getDocs, doc } from "./Firebase/Firebase";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [fcards, setfcards] = useState([
-    {
-      unturned: "Example fcard",
-      turned: "Not a fuck you card",
-    },
-    {
-      unturned: "Example fcard",
-      turned: "Not a fuck you card",
-    },
-    {
-      unturned: "Example fcard",
-      turned: "Not a fuck you card",
-    },
-  ]);
+  const [fcards, setfcards] = useState("");
 
   function onAddFcard(fcard) {
-    setfcards(() => [...fcards, fcard]);
+    // setfcards(() => );
   }
   async function getFlashcards() {
     const flashcardSnapshot = await getDocs(flashcardsCol);
