@@ -4,6 +4,7 @@ import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
 
 function App() {
+  //comment
   const [fcards, setfcards] = useState([
     {
       unturned: "Example fcard",
@@ -34,7 +35,6 @@ function App() {
           })}
         </div>
         <div className="Flashcards__form__container">
-          
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
         </div>
       </main>
