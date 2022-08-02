@@ -26,6 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 .Flashcards__form__title {
@@ -127,9 +128,15 @@
     justify-content: space-between;
 }
 
+.Flashcard__form__submitContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 .Flashcard__form__submit {
+    cursor: pointer;
     width: 16rem;   
-    margin-top: 1rem;
     background-color: transparent;
     background: transparent;
     border-radius: 3px;
@@ -137,6 +144,7 @@
     padding: 0.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    background-color: #fff;
 }
 
 .Flashcard__form__frame {

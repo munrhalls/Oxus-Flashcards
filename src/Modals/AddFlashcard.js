@@ -145,7 +145,7 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
           <input
             className="Flashcard__form__submit"
             type="submit"
-            value="Add FLASHCARD"
+            value="SAVE"
           />
         </div>
       </form>
