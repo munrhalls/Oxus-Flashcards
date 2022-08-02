@@ -45,6 +45,10 @@
     height: 4.25rem;
     text-transform: uppercase;
 }
+.Flashcards__btns__difficulty__instance.--rating {
+    background-color: #000;
+    color: green
+}
 .Flashcards__btns__next {
     height: 4.25rem;
     cursor: pointer;
