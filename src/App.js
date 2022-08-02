@@ -26,7 +26,7 @@ function App() {
       },
     },
   ]);
-  const [modalOpen, setModalOpen] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   async function fileTest(e) {
     let img = e.target.files[0];
@@ -48,7 +48,7 @@ function App() {
     console.log(flashcards);
   }
   function closeModal() {
-    setModalOpen(null);
+    setModalOpen(false);
   }
 
   return (
