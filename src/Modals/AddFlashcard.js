@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
 import { Preview } from "./Preview";
 
-export const AddFlashcard = ({ updateFlashcards }) => {
+export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
   const [side, setSide] = useState(false);
   const [turnedImg, setTurnedImg] = useState("");
   const [unturnedImg, setUnturnedImg] = useState("");
@@ -49,13 +49,18 @@ export const AddFlashcard = ({ updateFlashcards }) => {
     let str = await getBase64(e.target.files[0]);
     setTurnedImg(() => str);
   }
-  const getBase64 = (file) =>
+  const getBase64 = (file) => {
     new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => resolve(reader.result);
       reader.onerror = (error) => reject(error);
     });
+  };
+  function handleExit(e) {
+    e.preventDefault();
+    closeModal();
+  }
   return (
     <div className="Flashcards__form__container">
       <div className="Flashcards__form__titleRibbon">
@@ -148,10 +153,17 @@ export const AddFlashcard = ({ updateFlashcards }) => {
           </div>
         </div>
         <div className="Flashcard__form__submitContainer">
+          <button
+            onClick={(e) => handleExit(e)}
+            className="Flashcard__form__close"
+          >
+            EXIT
+          </button>
           <input
             className="Flashcard__form__submit"
             type="submit"
             value="SAVE"
+            s
           />
         </div>
       </form>
