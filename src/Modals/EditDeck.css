@@ -1,16 +1,26 @@
 .EditDeck {
-
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 .EditDeck__deckName {
     text-align: center;
 }
 .EditDeck__flashcards {
+    height: 10rem;
     display: flex;
-    overflow: hidden;
+}
+.EditDeck__flashcards__list {
+    overflow-x: hidden;
+    height: 10rem;
+    display: flex;
 }
 .EditDeck__flashcardContainer {
     height: 10rem;
     width: 5rem;
+    flex-shrink: 0;
 }
 .EditDeck__btn__close {
     margin-top: 1rem;
