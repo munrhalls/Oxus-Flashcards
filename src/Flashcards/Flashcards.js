@@ -20,16 +20,24 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
     const cardsInLevel = sortedFlashcards.filter(
       (card) => card.difficulty === difficulty
     );
-    if (cardsInLevel.length === 1) {
-      let rndTurnsWaitNum = randomIntFromInterval(2, 4);
-      setWaitIds(() => [
-        ...waitIds,
-        { id: wasFirst.id, turnesWaited: rndTurnsWaitNum },
-      ]);
+    if (cardsInLevel.length === 1 && !isInWaitLobby(cardsInLevel[0].id)) {
+      addIdToWaitLobby(cardsInLevel[0].id);
     }
     wasFirst.orderNum = cardsInLevel.length;
     updateFlashcard(wasFirst);
     setReviewCount(() => reviewCount + 1);
+  }
+  function addIdToWaitLobby(newWaitId) {
+    let rndTurnsWaitNum = randomIntFromInterval(2, 4);
+    setWaitIds(() => [
+      ...waitIds,
+      { id: newWaitId, turnesWaited: rndTurnsWaitNum },
+    ]);
+  }
+  function isInWaitLobby(id) {
+    return waitIds.filter((waitingId) => waitingId.id === id).length > 0
+      ? true
+      : false;
   }
   function handleWaitLobby() {
     console.log(waitIds);
