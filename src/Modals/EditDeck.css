@@ -8,12 +8,6 @@
     background-color: #000;
     border: 10px solid #000;
 }
-.EditDeck {
-    scrollbar-width: normal;
-    scrollbar-color: rgb(18, 18, 18) rgb(128, 127, 127);
-    border-color: 2px solid #aaa;
-    background-color: #000;
-  }
 
   .Form {
     height: 100%;
