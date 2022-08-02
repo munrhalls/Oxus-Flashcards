@@ -34,7 +34,9 @@ export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
                 </h1>
               </div>
             </div>
-            <div className="FormDeck__"></div>
+            <div className="FormDeck__">
+              
+            </div>
 
             <div className="FormDeck__exitBtnsContainer">
               <button
