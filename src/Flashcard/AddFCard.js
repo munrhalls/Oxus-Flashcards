@@ -22,46 +22,10 @@ export const AddFcard = ({ onAddFcard }) => {
     change.unturned.text = e.target.value;
     setFcard(change);
   }
-  function changeUnturnedImage(e) {
-    e.preventDefault();
-    let change = cloneDeep(fcard);
-    change.unturned.image = e.target.files[0];
-    setFcard(change);
-  }
   function changeTurnedText(e) {
     let change = cloneDeep(fcard);
     change.turned.text = e.target.value;
     setFcard(change);
-  }
-  function changeTurnedImage(e) {
-    e.preventDefault();
-    let change = cloneDeep(fcard);
-    change.turned.image = e.target.files[0];
-    setFcard(change);
-  }
-  function changeUnturned(e) {
-    e.preventDefault();
-    debugger;
-    setFcard(() => {
-      return {
-        unturned: {
-          text: e.target.value ? e.target.value : fcard.turned.text,
-          image: e.target.files[0],
-        },
-      };
-    });
-  }
-  function changeTurned(e) {
-    e.preventDefault();
-
-    setFcard(() => {
-      return {
-        turned: {
-          text: e.target.value ? e.target.value : fcard.turned.text,
-          image: e.target.files[0],
-        },
-      };
-    });
   }
   return (
     <form className="Flashcard__form" onSubmit={handleSubmit}>
