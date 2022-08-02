@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
-import { Preview } from "./AddFlashcard/Preview";
-import { UnturnedFlashcard } from "./AddFlashcard/UnturnedFlashcard";
-import { TurnedFlashcard } from "./AddFlashcard/TurnedFlashcard";
-import { Flashcards } from "../Flashcards/Flashcards";
+import { Preview } from "./Preview";
+import { UnturnedFlashcard } from "./UnturnedFlashcard";
+import { TurnedFlashcard } from "./TurnedFlashcard";
+import { Flashcards } from "../../Flashcards/Flashcards";
 const { v4: uuidv4 } = require("uuid");
 
 export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
@@ -54,13 +54,13 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
     closeModal();
   }
   return (
-    <div className="Form__flashcard">
-      <div className="Form__flashcard__titleRibbon">
-        <span className="Form__flashcards__title">Add new flashcard.</span>
+    <div className="FormFlashcard">
+      <div className="FormFlashcard__titleRibbon">
+        <span className="FormFlashcards__title">Add new flashcard.</span>
       </div>
-      <form className="Form__flashcard" onSubmit={handleSubmit}>
-        <div className="Form__flashcard__elementsContainer">
-          <div className="Form__flashcard__elements">
+      <form className="FormFlashcard" onSubmit={handleSubmit}>
+        <div className="FormFlashcard__elementsContainer">
+          <div className="FormFlashcard__elements">
             {side ? (
               <TurnedFlashcard
                 flashcard={flashcard}
@@ -79,15 +79,17 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
               />
             )}
           </div>
-          <div className="Form__flashcard__frame">
+          <div className="FormFlashcard__frame">
             {side ? (
               <>
-                <div className="Flascard__form__frameTitle">TURNED PREVIEW</div>
+                <div className="Flascard__formdeck__frameTitle">
+                  TURNED PREVIEW
+                </div>
                 <Preview src={turnedImg} />
               </>
             ) : (
               <>
-                <div className="Flascard__form__frameTitle">
+                <div className="Flascard__formdeck__frameTitle">
                   UNTURNED PREVIEW
                 </div>
                 <Preview src={unturnedImg} />
@@ -100,18 +102,14 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
             </div>
           </div>
         </div>
-        <div className="Form__flashcard__submitContainer">
+        <div className="FormFlashcard__submitContainer">
           <button
             onClick={(e) => handleExit(e)}
-            className="Form__flashcard__close"
+            className="FormFlashcard__close"
           >
             EXIT
           </button>
-          <input
-            className="Form__flashcard__submit"
-            type="submit"
-            value="SAVE"
-          />
+          <input className="FormFlashcard__submit" type="submit" value="SAVE" />
         </div>
       </form>
     </div>
