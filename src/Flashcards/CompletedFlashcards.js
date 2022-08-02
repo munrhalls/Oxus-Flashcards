@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { uuidv4 } from "@firebase/util";
 
 export const CompletedFlashcards = ({ completedFlashcards }) => {
   function makeHeap() {
@@ -7,6 +8,7 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
       return (
         <>
           <div
+            key={uuidv4()}
             className="CompletedFlashcards__heapFrame"
             style={{
               top: `${0 - i * multiplier}px`,
@@ -23,7 +25,10 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
       <div className="CompletedFlashcards__frontCard">
         {completedFlashcards.map((card) => {
           return (
-            <div className="CompletedFlashcards__frontCard__container">
+            <div
+              key={uuidv4()}
+              className="CompletedFlashcards__frontCard__container"
+            >
               <span className="CompletedFlashcards__frontCard__container__text">
                 {card.unturned.text}
               </span>
