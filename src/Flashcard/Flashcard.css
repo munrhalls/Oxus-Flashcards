@@ -77,6 +77,15 @@
     align-items: center;
     justify-content: center;
 }
+.Flascard__form__frameTitle {
+    border: 3px solid #000;
+    width: 14rem;
+    padding: 0.25rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .Flashcard__form__frameImage {
     border: 3px solid #000;
     border-radius: 5px;
