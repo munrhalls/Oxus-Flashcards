@@ -8,8 +8,8 @@ import cloneDeep from "lodash.clonedeep";
 export const Flashcards = ({
   flashcards,
   completedFlashcards,
-  updateDeckFlashcards,
-  updateDeckCompletedFlashcards,
+  shuffleDeckFlashcards,
+  moveDeckFlashcardToCompleted,
 }) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
@@ -47,11 +47,11 @@ export const Flashcards = ({
 
     if (difficulty === 0 && flashcards.length) {
       const passCard = flashcards.shift();
-      updateDeckCompletedFlashcards([...completedFlashcards, passCard]);
+      moveDeckFlashcardToCompleted([...completedFlashcards, passCard]);
     }
     let flashcardsUpdate = cloneDeep(flashcards);
     // setFlashcards(updated);
-    updateDeckFlashcards(flashcardsUpdate);
+    shuffleDeckFlashcards(flashcardsUpdate);
   }
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);

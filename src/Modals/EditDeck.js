@@ -19,12 +19,9 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
     e.preventDefault();
     setDecks(() =>
       decks.map((el) => {
-        if (el.id === deck.id) {
-          console.log({ ...deck, name: deckName, flashcards: editedCards });
-          return { ...deck, name: deckName, flashcards: editedCards };
-        } else {
-          return el;
-        }
+        return el.id === deck.id
+          ? { ...deck, name: deckName, flashcards: editedCards }
+          : el;
       })
     );
     closeModal();
