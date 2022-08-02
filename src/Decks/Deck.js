@@ -26,7 +26,7 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
   return (
     <div className="Deck">
       <h3 className="Deck__title">DECK: {activeDeck.name}.</h3>
-      <div className="Deck__decks">
+      <div className="Deck__instance">
         <Flashcards
           flashcards={activeDeck.flashcards}
           completedFlashcards={activeDeck.completedFlashcards}

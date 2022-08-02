@@ -1,0 +1,52 @@
+.Footer {
+    display: flex;
+    max-height: 3rem;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin-top: auto;
+    background-color: rgb(6, 1, 27);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 0.5rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .Footer__authorContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .Footer__attribs {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  
+  }
+  .Footer a {
+    font-size: 7px;
+    font-weight: lighter;
+    padding: 0.25rem;
+    width: fit-content
+  }
+  .Footer__author {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;;
+  }
