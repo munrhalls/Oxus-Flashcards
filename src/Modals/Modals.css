@@ -6,13 +6,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 100%;
     height: 100%;
     margin-left: auto; 
     margin-right: auto; 
     margin-top: auto;
     margin-bottom: auto;
-    border: 9px solid #fff;
+    border: 9px solid #111;
     border-radius: 5px;
     z-index: 100;
 }
