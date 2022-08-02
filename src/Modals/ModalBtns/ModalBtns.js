@@ -2,10 +2,10 @@ import React from "react";
 
 export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   return (
-    <div className="Modal__containerBtns">
-      <div className="Modal__containerBtns__container">
+    <div className="ModalBtns">
+      <div className="ModalBtns__container">
         <button
-          className="Modal__containerBtns__container__btn"
+          className="ModalBtns__container__btn"
           onClick={() => {
             setModalOpen(null);
             setactiveDeckId(null);
@@ -15,9 +15,9 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         </button>
       </div>
 
-      <div className="Modal__containerBtns__container">
+      <div className="ModalBtns__container">
         <button
-          className="Modal__containerBtns__container__btn"
+          className="ModalBtns__container__btn"
           onClick={() => setModalOpen("AddDeck")}
         >
           ADD DECK
@@ -25,12 +25,12 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
       </div>
 
       <div
-        className={`Modal__containerBtns__container ${
+        className={`ModalBtns__container ${
           modalOpen === "DeleteDeck" ? " --open" : ""
         }`}
       >
         <button
-          className={`Modal__containerBtns__container__btn ${
+          className={`ModalBtns__container__btn ${
             modalOpen === "DeleteDeck" ? " --open" : ""
           }`}
           onClick={() => setModalOpen("DeleteDeck")}
@@ -40,13 +40,13 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
       </div>
 
       <div
-        className={`Modal__containerBtns__container ${
+        className={`ModalBtns__container ${
           modalOpen === "EditDeck" ? " --open" : ""
         }`}
         onClick={() => setModalOpen("EditDeck")}
       >
         <button
-          className={`Modal__containerBtns__container__btn ${
+          className={`ModalBtns__container__btn ${
             modalOpen === "EditDeck" ? " --open" : ""
           }`}
         >

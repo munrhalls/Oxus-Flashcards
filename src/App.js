@@ -10,7 +10,7 @@ import {
 import "./App.css";
 import { Header } from "./Header/Header";
 import { Modals } from "./Modals/Modals";
-import { ModalBtns } from "./Modals/ModalBtns";
+import { ModalBtns } from "./Modals/ModalBtns/ModalBtns";
 import { SymbolDecks } from "./Decks/SymbolDecks";
 import { Deck } from "./Decks/Deck.js";
 import { Footer } from "./Footer/Footer";

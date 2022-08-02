@@ -11,6 +11,7 @@ export const Footer = () => {
           Design by: Munrhalls. 2022.
         </h6>
       </div>
+
       <div className="Footer__attribs">
         <span>Icons: </span>
         <a
