@@ -163,11 +163,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .EditDeck__form__flashcardContainer__elements__btns {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-top: 3px solid #fff;
+    height: 3rem;
+
+}
+.EditDeck__form__flashcardContainer__elements__btns__btn {
+    border: 3px solid #222;
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.EditDeck__form__flashcardContainer__elements__btns__btn.--edit {
+    background-color: rgb(147, 134, 159);
+}
+.EditDeck__form__flashcardContainer__elements__btns__btn.--delete {
+    background-color: rgb(79, 0, 0);
+}
+.EditDeck__form__flashcardContainer__elements__btns__btn__img {
+    height: 1rem;
+    width: 1rem;
+    border: 1.5px solid transparent;
+    border-top: 3px solid transparent;
 
 }
 .EditDeck__form__btn__close {
@@ -183,6 +209,7 @@
     text-transform: uppercase;
     background-color: #fff;
 }
+
 .EditDeck__form__noDeckSelectedMsg {
     display: flex;
     flex-direction: column;
