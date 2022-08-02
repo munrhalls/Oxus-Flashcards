@@ -7,14 +7,20 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__PLUS from "./../Assets/plus.png";
 
-export const EditDeck = ({ closeModal, activeDeck }) => {
+export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
   const [isEditDeckName, setIsEditDeckName] = useState(false);
   const [deckName, setDeckName] = useState(activeDeck ? activeDeck.name : "");
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
+  const [editedCards, setEditedCards] = useState(activeDeck.flashcards);
   console.log(isDelConfirmId);
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submit");
+    setDecks([]);
+  }
+  function deleteCard(delId) {
+    setEditedCards((editedCards) =>
+      editedCards.filter((card) => card.id !== delId)
+    );
   }
   return (
     <div className="EditDeck">
@@ -85,7 +91,7 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           </div>
           <div className="EditDeck__form__flashcards">
             <div className="EditDeck__form__flashcards__list">
-              {activeDeck.flashcards.map((card, i) => {
+              {editedCards.map((card, i) => {
                 return (
                   <div
                     key={uuidv4()}
@@ -102,7 +108,10 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                         <h3 className="EditDeck__form__flashcardContainer__deleteContainer__question">
                           Are you sure?
                         </h3>
-                        <button className="EditDeck__form__flashcardContainer__deleteContainer__btn --delete">
+                        <button
+                          onClick={() => deleteCard(card.id)}
+                          className="EditDeck__form__flashcardContainer__deleteContainer__btn --delete"
+                        >
                           DELETE
                         </button>
                         <button
@@ -159,7 +168,13 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           {/* <div>
             Add flashcard
           </div> */}
-          {/* <input className="" type="submit" value="SUBMIT CHANGES" /> */}
+          <div className="EditDeck__form__submitBtnContainer">
+            <input
+              className="EditDeck__form__submitBtnContainer__submitBtn"
+              type="submit"
+              value="SUBMIT CHANGES"
+            />
+          </div>
         </form>
       ) : (
         <div className="EditDeck__form__noDeckSelectedMsg">
