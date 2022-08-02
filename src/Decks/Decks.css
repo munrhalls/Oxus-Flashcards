@@ -23,6 +23,7 @@
 }
 
 .SymbolDecks__deck {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +39,14 @@
     font-size: 1.5rem;
     text-align: center;
 }
-
+.SymbolDecks__openDeckBtn {
+    cursor: pointer;
+    width: 10rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: transparent;
+}
 .SymbolDecks__noDecks {
     width: 100%;
     height: 100%;

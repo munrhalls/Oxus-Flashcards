@@ -3,16 +3,16 @@ import { AddFlashcard } from "./AddFlashcard";
 import { AddDeck } from "./AddDeck";
 
 export const Modals = ({
-  sortedFlashcards,
   updateFlashcards,
   modalOpen,
   closeModal,
+  decks,
+  setDecks,
 }) => {
   return (
     <div className="Modals">
       {modalOpen === "AddFlashcard" ? (
         <AddFlashcard
-          sortedFlashcards={sortedFlashcards}
           closeModal={closeModal}
           updateFlashcards={updateFlashcards}
         />
@@ -21,7 +21,11 @@ export const Modals = ({
       )}
       {modalOpen === "EditFlashcard" ? <div>EDIT MODAL</div> : ""}
       {modalOpen === "DeleteFlashcard" ? <div>DELETE MODAL</div> : ""}
-      {modalOpen === "AddDeck" ? <AddDeck /> : ""}
+      {modalOpen === "AddDeck" ? (
+        <AddDeck decks={decks} setDecks={setDecks} closeModal={closeModal} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

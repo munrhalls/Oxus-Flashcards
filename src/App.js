@@ -209,6 +209,7 @@ function App() {
             <SymbolDecks
               decks={decks}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+              setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
             />
           ) : (
             ""
@@ -229,6 +230,7 @@ function App() {
         {modalOpen && (
           <Modals
             decks={decks}
+            setDecks={(decks) => setDecks(decks)}
             flashcards={flashcards}
             modalOpen={modalOpen}
             addFlashcard={(flashcard) => addFlashcard(flashcard)}
