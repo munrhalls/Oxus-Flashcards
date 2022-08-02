@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './Flashcard/Flashcard.css';
+@import './Modals/Modals.css';
 
 * {
     box-sizing: border-box;
@@ -35,6 +36,7 @@
     flex: 1;
     padding: 1rem;
     display: flex;
+    position: relative;
 }
 .Centerstage {
     flex: 4;
@@ -47,6 +49,7 @@
     flex: 1;
     background-color: #000;
 }
+
 .Modal__containerBtns {
     display: flex;
     flex-direction: column;
