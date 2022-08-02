@@ -33,8 +33,15 @@
 
 .Main {
     padding: 1rem;
+    display: flex;
 }
-
+.Centerstage {
+    flex: 4;
+}
+.Aside {
+    flex: 1;
+    background-color: #000;
+}
 .Footer {
     align-self: flex-end;
     margin-top: auto;
