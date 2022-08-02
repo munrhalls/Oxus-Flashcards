@@ -5,6 +5,7 @@ import { AddFlashcard } from "./AddFlashcard";
 import { uuidv4 } from "@firebase/util";
 import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
+import IMG__PLUS from "./../Assets/plus.png";
 
 export const EditDeck = ({ closeModal, activeDeck }) => {
   const [isEditDeckName, setIsEditDeckName] = useState(false);
@@ -116,10 +117,19 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
                   </div>
                 );
               })}
-              <div className="EditDeck__form__flashcardContainer">
-                <button className="EditDeck__form__flashcardContainer__btn">
-                  ADD NEW FLASHCARD
+              <div className="EditDeck__form__flashcardContainer --addBtn">
+                <button className="EditDeck__form__flashcardContainer__btn --addBtn">
+                  <img
+                    className="EditDeck__form__flashcardContainer__btn__addImg"
+                    src={IMG__PLUS}
+                    alt="ADD"
+                  />
                 </button>
+                <div className="EditDeck__form__flashcardContainer__addBtnTextContainer">
+                  <h6 className="EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText">
+                    ADD NEW FLASHCARD
+                  </h6>
+                </div>
               </div>
             </div>
           </div>
