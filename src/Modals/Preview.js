@@ -2,11 +2,7 @@ import React from "react";
 
 export const Preview = ({ src }) => {
   return src ? (
-    <img
-      className="Flashcard__form__frameImage"
-      src={src}
-      alt="Add flashcard image. Edit here."
-    />
+    <img className="Flashcard__form__frameImage" src={src} />
   ) : (
     <div className="Flashcard__form__frameNoImage">
       <span className="Flashcard__form__frameNoImageTitle">
