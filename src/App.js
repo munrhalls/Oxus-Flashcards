@@ -173,7 +173,7 @@ function App() {
     setDecks(decks);
   }, []);
 
-  console.log(decks);
+  console.log(activeDeck);
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -232,6 +232,7 @@ function App() {
         </div>
         {modalOpen && (
           <Modals
+            activeDeck={activeDeck}
             decks={decks}
             setDecks={(decks) => setDecks(decks)}
             flashcards={flashcards}
