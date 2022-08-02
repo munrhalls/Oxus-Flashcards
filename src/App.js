@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
-      <main>
+      <main className="Main">
         <div className="Flashcards">
           {fcards.map((fcard) => {
             return <Flashcard key={Math.random()} fcard={fcard} />;
@@ -37,7 +37,7 @@ function App() {
           <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
         </div>
       </main>
-      <footer>footer</footer>
+      <footer className="Footer">Footer</footer>
     </div>
   );
 }

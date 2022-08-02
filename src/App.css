@@ -1,7 +1,14 @@
 @import './reset.css';
 @import './Flashcard/Flashcard.css';
 
+* {
+    box-sizing: border-box;
+}
+
 .App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .Header {
@@ -16,4 +23,23 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: bold;
+}
+
+.Main {
+    padding: 1rem;
+}
+
+.Footer {
+    align-self: flex-end;
+    margin-top: auto;
+    background-color: rgb(6, 1, 27);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 1.25rem;
+    width: 100%;
 }
