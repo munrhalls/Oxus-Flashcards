@@ -147,6 +147,7 @@ function App() {
       },
     },
   ];
+  const [isWelcome, setIsWelcome] = useState(true);
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
@@ -185,8 +186,23 @@ function App() {
     setDecks(decks);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsWelcome(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="App">
+      <div className={`WelcomeShade ${isWelcome ? "" : "--hidden"}`}>
+        <h1 className={`WelcomeShade__title ${isWelcome ? "" : "--hidden"}`}>
+          OXUS
+        </h1>
+        <h2 className="WelcomeShade__subtitle">
+          Simple, no-nonsense flashcards.
+        </h2>
+      </div>
       <Header />
       <main className="Main">
         {activeDeckId && (
