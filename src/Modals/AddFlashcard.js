@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
+import { AddFlashcardImg } from "./AddFlashcardImg";
 
 export const AddFlashcard = ({ onAddFlashcard }) => {
   const [side, setSide] = useState(false);
@@ -104,35 +105,12 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
             {side ? (
               <>
                 <div className="Flascard__form__frameTitle">TURNED IMAGE</div>
-                {turnedImg ? (
-                  <img
-                    className="Flashcard__form__frameImage"
-                    src={turnedImg}
-                    alt="Add flashcard image. Edit here."
-                  />
-                ) : (
-                  <div className="Flashcard__form__frameNoImage">
-                    <span className="Flashcard__form__frameNoImageTitle">
-                      Want image in flashcard?
-                    </span>
-                    <span className="Flashcard__form__frameNoImageTitle">
-                      Click "choose file" and select an image from your
-                      computer.
-                    </span>
-                    <span className="Flashcard__form__frameNoImageTitle">
-                      You can edit it here.
-                    </span>
-                  </div>
-                )}
+                <AddFlashcardImg src={turnedImg} />
               </>
             ) : (
               <>
                 <div className="Flascard__form__frameTitle">UNTURNED IMAGE</div>
-                <img
-                  className="Flashcard__form__frameImage"
-                  src={unturnedImg}
-                  alt="Add flashcard image. Edit here."
-                />
+                <AddFlashcardImg src={unturnedImg} />
               </>
             )}
           </div>
