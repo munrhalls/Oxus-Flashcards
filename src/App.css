@@ -11,7 +11,7 @@
 @import './Modals//EditDeck/EditDeck.css';
 @import './Modals/DeleteDeck/DeleteDeck.css';
 
-* {
+*, :hover, :after {
     box-sizing: border-box;
 }
 

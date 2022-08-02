@@ -32,6 +32,8 @@
 .SymbolDecks__deck:hover {
     background-color: #dddddd;
     opacity: 0.8;
+    transform: scale(1.1);
+    margin: 1rem;
 }
 .SymbolDecks__deck__img {
     width: 10rem;
