@@ -43,7 +43,10 @@ function App() {
         });
       });
   }
-  function onAddFcard(fcard) {}
+  function onAddFcard(fcard) {
+    setFcards([...fcards, fcard]);
+    console.log(fcards);
+  }
 
   return (
     <div className="App">
