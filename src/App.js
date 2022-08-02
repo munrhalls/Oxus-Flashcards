@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modals } from "./Modals/Modals";
 import { Flashcards } from "./Flashcards/Flashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
@@ -9,7 +9,7 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "./Firebase/Firebase";
-import { ordered } from "./mock";
+// import { ordered, filtered } from "./mock";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +19,8 @@ function App() {
   const [flashcards, setFlashcards] = useState([
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 1,
+      difficulty: 3,
+      orderNum: 1,
       unturned: {
         text: "Question 1",
         image:
@@ -32,7 +33,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 2,
+      difficulty: 3,
+      orderNum: 2,
       unturned: {
         text: "Question 3",
         image: "",
@@ -44,7 +46,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 3,
+      difficulty: 2,
+      orderNum: 3,
       unturned: {
         text: "Question 4",
         image: "",
@@ -56,7 +59,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 4,
+      difficulty: 0,
+      orderNum: 4,
       unturned: {
         text: "Question",
         image: "",
@@ -68,7 +72,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 6,
+      difficulty: 1,
+      orderNum: 6,
       unturned: {
         text: "Question",
         image:
@@ -81,7 +86,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 7,
+      difficulty: 1,
+      orderNum: 7,
       unturned: {
         text: "Question 7",
         image:
@@ -94,7 +100,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 8,
+      difficulty: 1,
+      orderNum: 8,
       unturned: {
         text: "Question 8",
         image:
@@ -107,7 +114,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 9,
+      difficulty: 3,
+      orderNum: 9,
       unturned: {
         text: "Question 9",
         image:
@@ -120,7 +128,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 10,
+      difficulty: 2,
+      orderNum: 1,
       unturned: {
         text: "Question 10",
         image:
@@ -133,7 +142,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 11,
+      difficulty: 3,
+      orderNum: 1,
       unturned: {
         text: "Question 11",
         image:
@@ -146,7 +156,8 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 12,
+      difficulty: 3,
+      orderNum: 2,
       unturned: {
         text: "Question 12",
         image:
@@ -158,8 +169,30 @@ function App() {
       },
     },
   ]);
+  const [sortedFlashcards, setSortedFlashcards] = useState();
   const [modalOpen, setModalOpen] = useState(false);
-  console.log(ordered);
+  const numOfLevels = 4;
+  console.log(sortedFlashcards);
+  useEffect(() => {
+    let sorted = aggregateSortedLevels(flashcards, numOfLevels);
+    setSortedFlashcards(sorted);
+  }, [flashcards]);
+  function sortWithinLevel(arr, difficulty) {
+    let sorted = arr
+      .filter((instance) => instance.difficulty === difficulty)
+      .sort((a, b) => (a.orderNum < b.orderNum ? -1 : 1));
+
+    return sorted;
+  }
+
+  function aggregateSortedLevels(data, numOfLevels) {
+    let aggregate = [];
+    for (let i = 0; i < numOfLevels; i++) {
+      let part = sortWithinLevel(data, i);
+      aggregate = [...aggregate, ...part];
+    }
+    return aggregate;
+  }
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();

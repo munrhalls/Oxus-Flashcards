@@ -2,7 +2,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 2,
-    orderNum: 1,
+    orderNum: 2,
     unturned: {
       text: "Question 1",
       image:
@@ -42,7 +42,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 3,
-    orderNum: 1,
+    orderNum: 4,
     unturned: {
       text: "Question",
       image: "",
@@ -55,7 +55,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 3,
-    orderNum: 1,
+    orderNum: 3,
     unturned: {
       text: "Question",
       image:
@@ -69,7 +69,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 3,
-    orderNum: 1,
+    orderNum: 2,
     unturned: {
       text: "Question 7",
       image:
@@ -83,7 +83,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 3,
-    orderNum: 1,
+    orderNum: 5,
     unturned: {
       text: "Question 8",
       image:
@@ -97,7 +97,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 3,
-    orderNum: 1,
+    orderNum: 7,
     unturned: {
       text: "Question 9",
       image:
@@ -111,7 +111,7 @@ let mock = [
   {
     id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
     difficulty: 3,
-    orderNum: 1,
+    orderNum: 6,
     unturned: {
       text: "Question 10",
       image:
@@ -150,10 +150,70 @@ let mock = [
       image: "",
     },
   },
+  {
+    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+    difficulty: 0,
+    orderNum: 3,
+    unturned: {
+      text: "Question 12",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+    },
+    turned: {
+      text: "12.",
+      image: "",
+    },
+  },
+  {
+    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+    difficulty: 0,
+    orderNum: 2,
+    unturned: {
+      text: "Question 12",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+    },
+    turned: {
+      text: "12.",
+      image: "",
+    },
+  },
+  {
+    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+    difficulty: 0,
+    orderNum: 4,
+    unturned: {
+      text: "Question 12",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+    },
+    turned: {
+      text: "12.",
+      image: "",
+    },
+  },
 ];
 
+function sortWithinLevel(arr, difficulty) {
+  let sorted = arr
+    .filter((instance) => instance.difficulty === difficulty)
+    .sort((a, b) => (a.orderNum < b.orderNum ? -1 : 1));
+
+  return sorted;
+}
+
+function aggregateSortedLevels(data, numOfLevels) {
+  let aggregate = [];
+  for (let i = 0; i < numOfLevels; i++) {
+    let part = sortWithinLevel(data, i);
+    aggregate = [...aggregate, ...part];
+  }
+  return aggregate;
+}
+
+let filtered = aggregateSortedLevels(mock, 4);
 let ordered = mock.sort((a, b) => (a.difficulty > b.difficulty ? -1 : 1));
 
 console.log(ordered);
 
-export { ordered };
+export { ordered, filtered };
