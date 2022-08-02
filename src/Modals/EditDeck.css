@@ -139,7 +139,8 @@
     height: 100%;
     cursor: pointer;
 }
-.Form__deckName {
+/* if not anywhere, del later */
+/* .Form__deckName {
     background-color: #222;
     font-size: 1.5rem;
     color: #fff;
@@ -154,8 +155,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+} */
 
-}
 .Form__flashcards {
     position: absolute;
     left: 0;

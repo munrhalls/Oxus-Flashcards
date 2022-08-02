@@ -54,9 +54,9 @@ export const AddFlashcard = ({ flashcards, addFlashcard, closeModal }) => {
     closeModal();
   }
   return (
-    <div className="Flashcards__form__container">
-      <div className="Flashcards__form__titleRibbon">
-        <span className="Flashcards__form__title">Add new flashcard.</span>
+    <div className="Form__flashcards__container">
+      <div className="Form__flashcards__titleRibbon">
+        <span className="Form__flashcards__title">Add new flashcard.</span>
       </div>
       <form className="Flashcard__form" onSubmit={handleSubmit}>
         <div className="Flashcard__form__elementsContainer">
