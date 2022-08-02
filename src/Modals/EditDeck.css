@@ -118,7 +118,7 @@
     flex-shrink: 0;
     display: flex;
 }
-.EditDeck__form__flashcardContainer__num {
+.EditDeck__form__flashcardContainer__numContainer {
     height: 100%;
     width: 2rem;    
     background-color: #777;
@@ -127,6 +127,21 @@
     justify-content: center;
     align-items: center;
 }
+.EditDeck__form__flashcardContainer__numContainer__num {
+    height: 40%;
+    width: 1.5rem;   
+    border-radius: 50px;
+    background-color: #222;
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
 .EditDeck__form__btn__close {
     margin-top: 1rem;
     cursor: pointer;
