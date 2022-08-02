@@ -66,7 +66,9 @@ export const Flashcards = ({
         <div className="Flashcards">
           <div>
             <div className="Flashcard__number">fcards num</div>
-            <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
+            <div className="Flashcard__container">
+              <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
+            </div>
           </div>
           <div className="Flashcards__btns">
             <div className="Flashcards__btns__difficulty">
