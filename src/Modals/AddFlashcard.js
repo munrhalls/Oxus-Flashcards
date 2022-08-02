@@ -3,9 +3,10 @@ import cloneDeep from "lodash.clonedeep";
 import { Preview } from "./Preview";
 import { UnturnedFlashcard } from "./UnturnedFlashcard";
 import { TurnedFlashcard } from "./TurnedFlashcard";
+import { Flashcards } from "../Flashcards/Flashcards";
 const { v4: uuidv4 } = require("uuid");
 
-export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
+export const AddFlashcard = ({ flashcards, updateFlashcards, closeModal }) => {
   const [side, setSide] = useState(false);
   const [turnedImg, setTurnedImg] = useState("");
   const [unturnedImg, setUnturnedImg] = useState("");
@@ -15,9 +16,11 @@ export const AddFlashcard = ({ updateFlashcards, closeModal }) => {
   });
   console.log(unturnedImg);
   function handleSubmit(e) {
+    debugger;
     e.preventDefault();
     updateFlashcards({
       id: uuidv4(),
+      order: flashcards.length + 1,
       unturned: { text: flashcard.unturned.text, image: unturnedImg },
       turned: { text: flashcard.turned.text, image: turnedImg },
     });
