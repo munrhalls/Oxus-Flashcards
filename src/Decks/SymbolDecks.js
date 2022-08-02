@@ -19,7 +19,7 @@ export const SymbolDecks = ({ decks, setModalOpen, setActiveDeck }) => {
         <div className="SymbolDecks__noDecks">
           <div className="SymbolDecks__noDecksMsg">
             <h1 className="SymbolDecks__noDecksMsg">
-              Flashcards repository empty.
+              Decks repository is empty.
             </h1>
           </div>
           <button
