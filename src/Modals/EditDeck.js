@@ -14,46 +14,55 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
   return (
     <div className="EditDeck">
       {activeDeck ? (
-        <form onSubit={handleSubmit}>
+        <form className="EditDeck__form" onSubit={handleSubmit}>
           {/* <AddFlashcard /> */}
-          <div className="EditDeck__topBar">
-            <div className="EditDeck__topBar__line --first">
-              <h2 className="EditDeck__topBar__line__title">EDIT DECK</h2>
+          <div className="EditDeck__form__topBar">
+            <div className="EditDeck__form__topBar__line --first">
+              <h2 className="EditDeck__form__topBar__line__title">EDIT DECK</h2>
               <button
-                className="EditDeck__topBar__line__btn"
+                className="EditDeck__form__topBar__line__btn"
                 onClick={() => closeModal()}
               >
-                <span className="EditDeck__topBar__line__btn__text">Close</span>
+                <span className="EditDeck__form__topBar__line__btn__text">
+                  Close
+                </span>
                 <img
-                  className="EditDeck__topBar__line__btn__icon"
+                  className="EditDeck__form__topBar__line__btn__icon"
                   src={IMG__CLOSE}
                   alt="CLOSE"
                 />
               </button>
             </div>
-            <div className="EditDeck__topBar__line --second">
-              <h1 className="EditDeck__topBar__line__deckName">
+            <div className="EditDeck__form__topBar__line --second">
+              <h1 className="EditDeck__form__topBar__line__deckName">
                 {activeDeck.name}
               </h1>
               <button
-                className="EditDeck__topBar__line__btn"
+                className="EditDeck__form__topBar__line__btn"
                 onClick={() => closeModal()}
               >
-                <span className="EditDeck__topBar__line__btn__text">Edit</span>
+                <span className="EditDeck__form__topBar__line__btn__text">
+                  Edit
+                </span>
                 <img
-                  className="EditDeck__topBar__line__btn__icon"
+                  className="EditDeck__form__topBar__line__btn__icon"
                   src={IMG__EDIT}
                   alt="CLOSE"
                 />
               </button>
             </div>
           </div>
-          <div className="EditDeck__flashcards">
-            <div className="EditDeck__flashcards__list">
+          <div className="EditDeck__form__flashcards">
+            <div className="EditDeck__form__flashcards__list">
               {activeDeck.flashcards.map((card, i) => {
                 return (
-                  <div key={uuidv4()} className="EditDeck__flashcardContainer">
-                    <div className="EditDeck__flashcardContainer__num">{i}</div>
+                  <div
+                    key={uuidv4()}
+                    className="EditDeck__form__flashcardContainer"
+                  >
+                    <div className="EditDeck__form__flashcardContainer__num">
+                      {i}
+                    </div>
                     <Flashcard key={uuidv4()} flashcard={card} />
                   </div>
                 );
@@ -63,18 +72,18 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
           {/* <div>
             Add flashcard
           </div> */}
-          <input type="submit" value="SUBMIT CHANGES" />
+          <input className="" type="submit" value="SUBMIT CHANGES" />
         </form>
       ) : (
-        <div className="EditDeck__noDeckSelectedMsg">
-          <h1 className="EditDeck__noDeckSelectedMsg__title">
+        <div className="EditDeck__form__noDeckSelectedMsg">
+          <h1 className="EditDeck__form__noDeckSelectedMsg__title">
             SELECT A DECK TO EDIT
           </h1>
-          <button className="EditDeck__noDeckSelectedMsg__btn__select">
+          <button className="EditDeck__form__noDeckSelectedMsg__btn__select">
             SELECT DECK
           </button>
           <button
-            className="EditDeck__noDeckSelectedMsg__btn__close"
+            className="EditDeck__form__noDeckSelectedMsg__btn__close"
             onClick={() => closeModal()}
           >
             EXIT
