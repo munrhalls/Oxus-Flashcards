@@ -6,6 +6,8 @@ import { uuidv4 } from "@firebase/util";
 import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__PLUS from "./../Assets/plus.png";
+import IMG__SAVE from "./../Assets/save.png";
+
 import cloneDeep from "lodash.clonedeep";
 
 export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
@@ -50,18 +52,6 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
           <div className="Form__topBar">
             <div className="Form__topBar__line --first">
               <h2 className="Form__topBar__line__title">EDIT DECK</h2>
-              <button
-                type="button"
-                className="Form__topBar__line__btn"
-                onClick={() => closeModal()}
-              >
-                <span className="Form__topBar__line__btn__text">Close</span>
-                <img
-                  className="Form__topBar__line__btn__icon"
-                  src={IMG__CLOSE}
-                  alt="CLOSE"
-                />
-              </button>
             </div>
             <div className="Form__topBar__line --second">
               {isEditDeckName ? (
@@ -189,12 +179,28 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
           {/* <div>
             Add flashcard
           </div> */}
-          <div className="Form__submitBtnContainer">
-            <input
-              className="Form__submitBtnContainer__submitBtn"
-              type="submit"
-              value="SAVE"
-            />
+
+          <div className="Form__exitBtnsContainer">
+            <button
+              type="button"
+              className="Form__exitBtnsContainer__btn"
+              onClick={() => closeModal()}
+            >
+              <span className="Form__exitBtnsContainer__btn__text">Close</span>
+              <img
+                className="Form__exitBtnsContainer__btn__img"
+                src={IMG__CLOSE}
+                alt="CLOSE"
+              />
+            </button>
+            <button className="Form__exitBtnsContainer__btn" type="submit">
+              <span className="Form__exitBtnsContainer__btn__text">Save</span>
+              <img
+                className="Form__exitBtnsContainer__btn__img"
+                src={IMG__SAVE}
+                alt="SAVE"
+              />
+            </button>
           </div>
         </form>
       ) : (

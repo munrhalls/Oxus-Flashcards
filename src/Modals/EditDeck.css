@@ -21,7 +21,7 @@
     flex-direction: column;
 
   }
-  .Form__submitBtnContainer {
+  .Form__exitBtnsContainer {
     position: absolute;
     left: 0;
     right: 0;
@@ -35,7 +35,10 @@
     z-index: 10;
     cursor: pointer;
   }
-  .Form__submitBtnContainer__submitBtn {
+  .Form__exitBtnsContainer {
+
+  }
+  .Form__exitBtnsContainer__btn {
     cursor: pointer;
     width: 16rem;   
     height: 3rem;
@@ -49,7 +52,19 @@
     background-color: #fff;
     z-index: 10;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  .Form__exitBtnsContainer__btn__text {
+    margin-left: 1.5rem;
+
+  }
+  .Form__exitBtnsContainer__btn__img {
+    height: 80%;
+    margin-left: 1.5rem;
+  }
+  
 
 .Form__topBar {
     display: flex;
