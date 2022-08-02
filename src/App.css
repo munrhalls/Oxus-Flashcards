@@ -91,6 +91,10 @@
 
 .Footer {
     align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: auto;
     background-color: rgb(6, 1, 27);
     color: #fff;
@@ -101,6 +105,13 @@
     letter-spacing: 3px;
     font-weight: bold;
     text-transform: uppercase;
-    height: 1.25rem;
     width: 100%;
+}
+.Footer__author {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;;
+}
+.Footer a {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;;
 }
