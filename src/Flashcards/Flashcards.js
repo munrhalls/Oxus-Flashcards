@@ -4,68 +4,66 @@ import { Flashcard } from "./Flashcard";
 import img from "./../Assets/right-long-black-arrow.png";
 import { dblClick } from "@testing-library/user-event/dist/click";
 
-export const Flashcards = ({ sortedFlashcards }) => {
-  const [orderNum, setOrderNum] = useState(1);
+export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
   const [difficulty, setDifficulty] = useState(3);
-  const [rating, setRating] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
+  function putAwayCard() {
+    let wasFirst = sortedFlashcards[0];
+    wasFirst.difficulty = difficulty;
+    wasFirst.orderNum =
+      sortedFlashcards.filter((card) => card.difficulty === difficulty)
+        .length || 1;
+    updateFlashcard(wasFirst);
+  }
 
-  function showNext() {}
-  function updateRating(e) {
-    setRating(() => levels.indexOf(e.target.value));
+  function updateDifficulty(e) {
+    setDifficulty(() => levels.indexOf(e.target.value));
   }
   return (
     <div className="Flashcards">
-      {sortedFlashcards.map((flashcard) => {
-        return flashcard.difficulty === difficulty &&
-          flashcard.orderNum === orderNum ? (
-          <div key={uuidv4()}>
-            <div className="Flashcard__number">{flashcard.order}</div>
-            <Flashcard key={uuidv4()} flashcard={flashcard} />
-          </div>
-        ) : (
-          ""
-        );
-      })}
+      <div key={uuidv4()}>
+        <div className="Flashcard__number">{sortedFlashcards[0].orderNum}</div>
+        <Flashcard key={uuidv4()} flashcard={sortedFlashcards[0]} />
+      </div>
       <div className="Flashcards__btns">
         <div className="Flashcards__btns__difficulty">
           <input
             type="button"
             className={`Flashcards__btns__difficulty__instance ${
-              rating === 3 ? "--rating" : ""
+              difficulty === 3 ? "--rating" : ""
             }`}
-            onClick={updateRating}
+            onClick={updateDifficulty}
             value={levels[3]}
           />
           <input
             type="button"
             className={`Flashcards__btns__difficulty__instance ${
-              rating === 2 ? "--rating" : ""
+              difficulty === 2 ? "--rating" : ""
             }`}
-            onClick={updateRating}
+            onClick={updateDifficulty}
             value={levels[2]}
           />
           <input
             type="button"
             className={`Flashcards__btns__difficulty__instance ${
-              rating === 1 ? "--rating" : ""
+              difficulty === 1 ? "--rating" : ""
             }`}
-            onClick={updateRating}
+            onClick={updateDifficulty}
             value={levels[1]}
           />
           <input
             type="button"
             className={`Flashcards__btns__difficulty__instance ${
-              rating === 0 ? "--rating" : ""
+              difficulty === 0 ? "--rating" : ""
             }`}
-            onClick={updateRating}
+            onClick={updateDifficulty}
             value={levels[0]}
           />
         </div>
         <button
           className="Flashcards__btns__next"
           key={uuidv4()}
-          onClick={showNext}
+          onClick={putAwayCard}
         >
           <span className="Flashcards__btn__next__text">Next</span>{" "}
           <img className="Flashcards__btn__next__image" src={img} />
