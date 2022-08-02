@@ -1,11 +1,11 @@
 import React from "react";
 import { AddFlashcard } from "./AddFlashcard";
 
-export const Modals = ({ setFlashcards, modalOpen }) => {
+export const Modals = ({ updateFlashcards, modalOpen }) => {
   return (
     <div className="Modals">
       {modalOpen === "AddFlashcard" ? (
-        <AddFlashcard setFlashcards={setFlashcards} />
+        <AddFlashcard updateFlashcards={updateFlashcards} />
       ) : (
         ""
       )}
