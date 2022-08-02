@@ -19,6 +19,8 @@ function App() {
   const [image, setImage] = useState(
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
+  const [completedFlashcards, setCompletedFlashcards] = useState([]);
+
   const [flashcards, setFlashcards] = useState([
     {
       id: uuidv4(),
@@ -189,8 +191,12 @@ function App() {
               <Flashcards
                 flashcards={flashcards}
                 setFlashcards={(flashcards) => setFlashcards(flashcards)}
+                completedFlashcards={completedFlashcards}
+                setCompletedFlashcards={(completedFlashcards) =>
+                  setCompletedFlashcards(completedFlashcards)
+                }
               />
-              <CompletedFlashcards flashcards={flashcards} />
+              <CompletedFlashcards completedFlashcards={completedFlashcards} />
             </>
           )}
         </div>
