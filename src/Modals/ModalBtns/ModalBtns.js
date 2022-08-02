@@ -15,15 +15,6 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         </button>
       </div>
 
-      <div className="ModalBtns__container">
-        <button
-          className="ModalBtns__container__btn"
-          onClick={() => setModalOpen("AddDeck")}
-        >
-          ADD DECK
-        </button>
-      </div>
-
       <div
         className={`ModalBtns__container ${
           modalOpen === "DeleteDeck" ? " --open" : ""
