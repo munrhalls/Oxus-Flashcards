@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Flashcards } from "../Flashcards/Flashcards";
 import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
+import cloneDeep from "lodash.clonedeep";
 
-export const Deck = ({ activeDeck, decks, setDecks }) => {
-  const deck = decks.filter((deck) => deck.id === activeDeck.id)[0];
+export const Deck = ({ activeDeckId, decks, setDecks }) => {
+  const deck = decks.filter((deck) => deck.id === activeDeckId)[0];
   const [flashcards, setFlashcards] = useState(deck.flashcards);
   const [completedFlashcards, setCompletedFlashcards] = useState(
     deck.completedFlashcards
   );
   deck.flashcards = flashcards;
   deck.completedFlashcards = completedFlashcards;
+
   useEffect(
     () => () => {
       return setDecks(
         decks.map((instance) => {
-          if (instance.id === deck.id) {
+          if (instance.id === activeDeckId) {
+            console.log(decks, "2");
             return deck;
           } else {
             return instance;
