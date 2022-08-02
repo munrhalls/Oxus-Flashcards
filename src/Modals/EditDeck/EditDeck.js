@@ -6,7 +6,7 @@ import { EditFlashcardsList } from "./EditFlashcardsList";
 
 export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
   const deck = decks?.filter((instance) => instance?.id === activeDeckId)?.[0];
-  
+
   const [editedDeck, setEditedDeck] = useState(deck);
   const [isEditDeckName, setIsEditDeckName] = useState(null);
 
@@ -74,6 +74,7 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
           </div>
         </div>
         <EditFlashcardsList
+          setModalOpen={setModalOpen}
           editedDeck={editedDeck}
           setEditedDeck={(editedDeck) => setEditedDeck(editedDeck)}
         />
