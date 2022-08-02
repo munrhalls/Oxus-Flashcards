@@ -13,33 +13,19 @@ export const Flashcards = ({
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["pass", "easy", "medium", "hard"];
 
-  function shuffleHard(flashcards) {
-    const wasFirst = flashcards.shift();
-    let moveBy = Math.floor(flashcards.length / 3);
-    if (flashcards.length > 4) moveBy += randomIntFromInterval(-2, 0);
-
-    flashcards.splice(moveBy, 0, wasFirst);
+  function REFACTORshuffleCard(divideDeckBy, rndFrom, rndTo) {
+    let shuffleDistance = Math.floor(flashcards.length / divideDeckBy);
+    if (flashcards.length > 4)
+      shuffleDistance += randomIntFromInterval(rndFrom, rndTo);
+    flashcards.splice(shuffleDistance, 0, flashcards.shift());
   }
-  function shuffleMedium(flashcards) {
-    const wasFirst = flashcards.shift();
-    let moveBy = Math.floor(flashcards.length / 2);
-    if (flashcards.length > 4) moveBy += randomIntFromInterval(-2, 2);
 
-    flashcards.splice(moveBy, 0, wasFirst);
-  }
-  function shuffleEasy(flashcards) {
-    const wasFirst = flashcards.shift();
-    let moveBy = flashcards.length - Math.floor(flashcards.length / 3);
-    if (flashcards.length > 4) moveBy += randomIntFromInterval(0, 3);
-
-    flashcards.splice(moveBy, 0, wasFirst);
-  }
   function shuffleCard() {
-    if (difficulty === 3) shuffleHard(flashcards);
+    if (difficulty === 3) REFACTORshuffleCard(3, -2, 0);
 
-    if (difficulty === 2) shuffleMedium(flashcards);
+    if (difficulty === 2) REFACTORshuffleCard(2, -2, 2);
 
-    if (difficulty === 1) shuffleEasy(flashcards);
+    if (difficulty === 1) REFACTORshuffleCard(3, 0, 3);
 
     if (difficulty === 0 && flashcards.length)
       moveDeckFlashcardToCompleted([
