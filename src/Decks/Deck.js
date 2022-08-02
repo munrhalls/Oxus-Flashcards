@@ -14,11 +14,9 @@ export const Deck = ({
       <div className="Deck__decks">
         <Flashcards
           flashcards={flashcards}
-          setFlashcards={(flashcards) => setFlashcards(flashcards)}
+          setFlashcards={setFlashcards}
           completedFlashcards={completedFlashcards}
-          setCompletedFlashcards={(completedFlashcards) =>
-            setCompletedFlashcards(completedFlashcards)
-          }
+          setCompletedFlashcards={setCompletedFlashcards}
         />
         <CompletedFlashcards completedFlashcards={completedFlashcards} />
       </div>
