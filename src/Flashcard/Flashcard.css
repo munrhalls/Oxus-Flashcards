@@ -14,23 +14,36 @@
 .Flashcards__form__container{
     padding-top: 3rem;
 }
+.Flashcard__form {
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-
+.Flashcard_form_cell {
+    
+}
 
 .Flashcard_form_label {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    padding: 0.25rem;
 }
 .Flashcard__form__inputs {
     display: flex;
+    justify-content: space-between;
 }
 
 .Flashcard__form__submit {
+    width: 16rem;   
+    margin-top: 1rem;
     background-color: transparent;
     background: transparent;
     border-radius: 3px;
     font-size: 1.5rem;
     padding: 0.5rem;
     font-weight: bold;
+    text-transform: uppercase;
 }
