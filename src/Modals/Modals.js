@@ -1,7 +1,7 @@
 import React from "react";
 import { AddFlashcard } from "./AddFlashcard";
 import { AddDeck } from "./AddDeck";
-import { EditDeck } from "./EditDeck";
+import { EditDeck } from "./EditDeck/EditDeck";
 import { DeleteDeck } from "./DeleteDeck";
 
 export const Modals = ({
