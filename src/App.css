@@ -65,7 +65,8 @@
   width: 100%;
   background-color: #000;
   color: #fff;
-  transition: 0.7s ease-in-out;
+  transition: 0.25s ease-in-out;
+  transition-duration: 1s;
 }
 .WelcomeShade.--hidden {
   color: #000;
