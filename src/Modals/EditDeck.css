@@ -73,9 +73,10 @@
     padding: 5px;
     padding-left: 1rem;
     height: calc(100% - 5px);
-    max-width: 75%;
+    max-width: 60%;
     margin-right: auto;
-    margin-left: 1rem;
+    margin-left: auto;
+    text-align: center;
 }
 .EditDeck__form__topBar__line__btn__text {
     text-transform: uppercase;
@@ -182,8 +183,6 @@
     align-items: center;
     font-size: 0.5rem;
     text-transform: uppercase;
-    
-
 }
 .EditDeck__form__flashcardContainer__addBtnTextContainer__addBtnText {
 }
