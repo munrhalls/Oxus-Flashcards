@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AddFlashcardImg = ({ src }) => {
+export const Preview = ({ src }) => {
   return src ? (
     <img
       className="Flashcard__form__frameImage"

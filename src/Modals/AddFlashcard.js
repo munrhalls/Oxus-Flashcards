@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cloneDeep from "lodash.clonedeep";
-import { AddFlashcardImg } from "./AddFlashcardImg";
+import { Preview } from "./Preview";
 
 export const AddFlashcard = ({ onAddFlashcard }) => {
   const [side, setSide] = useState(false);
@@ -58,11 +58,6 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
       <form className="Flashcard__form" onSubmit={handleSubmit}>
         <div className="Flashcard__form__elementsContainer">
           <div className="Flashcard__form__elements">
-            <div className="Flashcard__turnBtnContainer">
-              <button className="Flashcard__turnBtn" onClick={turnCard}>
-                Turn.
-              </button>
-            </div>
             <div className="Flashcard__form__inputs">
               {!side ? (
                 <div className="Flashcard_form_cell">
@@ -104,15 +99,22 @@ export const AddFlashcard = ({ onAddFlashcard }) => {
           <div className="Flashcard__form__frame">
             {side ? (
               <>
-                <div className="Flascard__form__frameTitle">TURNED IMAGE</div>
-                <AddFlashcardImg src={turnedImg} />
+                <div className="Flascard__form__frameTitle">TURNED PREVIEW</div>
+                <Preview src={turnedImg} />
               </>
             ) : (
               <>
-                <div className="Flascard__form__frameTitle">UNTURNED IMAGE</div>
-                <AddFlashcardImg src={unturnedImg} />
+                <div className="Flascard__form__frameTitle">
+                  UNTURNED PREVIEW
+                </div>
+                <Preview src={unturnedImg} />
               </>
             )}
+            <div className="Flashcard__turnBtnContainer">
+              <button className="Flashcard__turnBtn" onClick={turnCard}>
+                Turn side.
+              </button>
+            </div>
           </div>
         </div>
         <div className="Flashcard__form__submitContainer">
