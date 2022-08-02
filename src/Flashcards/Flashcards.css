@@ -29,6 +29,46 @@
     z-index: 10;
 }
 
+.Flashcards__btns {
+    width: 25rem;
+    display: flex;
+
+}
+.Flashcards__btns__difficulty {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Flashcards__btns__difficulty__instance {
+    height: 100%;
+    width: 4rem;
+    height: 4.25rem;
+}
+.Flashcards__btns__next {
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    align-self: flex-end;
+}
+.Flashcards__btns__next__image {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.Flashcards__btn__next__text {
+    margin-right: 0.75rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: -1px;
+}
 .Flashcard.--form {
     border: 3px solid #fff;
 }
