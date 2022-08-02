@@ -3,6 +3,7 @@
 @import './Modals/Modals.css';
 @import './Decks/Decks.css';
 @import './Modals/AddDeck.css';
+@import './Modals/EditDeck.css';
 
 * {
     box-sizing: border-box;
