@@ -4,7 +4,7 @@ import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__SAVE from "./../../Assets/save.png";
 import { EditFlashcardsList } from "./EditFlashcardsList";
 
-export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
+export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
   const [editedDeck, setEditedDeck] = useState(deck);
   const [isEditDeckName, setIsEditDeckName] = useState(null);
@@ -16,7 +16,7 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
         return el.id === deck.id ? { ...editedDeck } : el;
       })
     );
-    closeModal();
+    setModalOpen(null);
   }
 
   return (
@@ -80,7 +80,7 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
           <button
             type="button"
             className="FormDeck__exitBtnsContainer__btn"
-            onClick={() => closeModal()}
+            onClick={() => setModalOpen(null)}
           >
             <span className="FormDeck__exitBtnsContainer__btn__text">
               Close
