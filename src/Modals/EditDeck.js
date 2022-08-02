@@ -10,14 +10,12 @@ import cloneDeep from "lodash.clonedeep";
 
 export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
-  console.log("EDIT RUN AWAYSSA  WQ RQW RQW");
   const [isEditDeckName, setIsEditDeckName] = useState(null);
-  const [deckName, setDeckName] = useState(deck.name);
+  const [deckName, setDeckName] = useState(() => deck.name);
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
-  const [editedCards, setEditedCards] = useState(deck.flashcards);
+  const [editedCards, setEditedCards] = useState(() => deck.flashcards);
 
   function handleSubmit(e) {
-    console.log("EDIT DECK RUNS");
     e.preventDefault();
     setDecks(() =>
       decks.map((instance) => {
