@@ -40,6 +40,7 @@
     align-items: center;
 }
 .Flashcards__btns__difficulty__instance {
+    cursor: pointer;
     height: 100%;
     width: 4rem;
     height: 4.25rem;

@@ -3,13 +3,13 @@ import { useState } from "react";
 import { Modals } from "./Modals/Modals";
 import { Flashcards } from "./Flashcards/Flashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
-
 import {
   getStorage,
   ref,
   uploadBytes,
   getDownloadURL,
 } from "./Firebase/Firebase";
+import { ordered } from "./mock";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +68,7 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-      order: 5,
+      order: 6,
       unturned: {
         text: "Question",
         image:
@@ -79,8 +79,87 @@ function App() {
         image: "",
       },
     },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 7,
+      unturned: {
+        text: "Question 7",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "Seven.Seven. Seven.Seven.Seven.Seven.Seven.Seven.Seven. Seven.",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 8,
+      unturned: {
+        text: "Question 8",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "That's 8.",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 9,
+      unturned: {
+        text: "Question 9",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "That's nine. 9..... 9.",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 10,
+      unturned: {
+        text: "Question 10",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "Ten ten ten.",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 11,
+      unturned: {
+        text: "Question 11",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "11n.",
+        image: "",
+      },
+    },
+    {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 12,
+      unturned: {
+        text: "Question 12",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      },
+      turned: {
+        text: "12.",
+        image: "",
+      },
+    },
   ]);
   const [modalOpen, setModalOpen] = useState(false);
+  console.log(ordered);
   async function fileTest(e) {
     let img = e.target.files[0];
     const storage = getStorage();
@@ -102,7 +181,6 @@ function App() {
   function closeModal() {
     setModalOpen(false);
   }
-  console.log(flashcards);
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
