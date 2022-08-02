@@ -34,12 +34,12 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         className={`Modal__containerBtns__container ${
           modalOpen === "EditDeck" && " --open"
         }`}
+        onClick={() => setModalOpen("EditDeck")}
       >
         <button
           className={`Modal__containerBtns__container__btn ${
             modalOpen === "EditDeck" && " --open"
           }`}
-          onClick={() => setModalOpen("EditDeck")}
         >
           EDIT DECK
         </button>
