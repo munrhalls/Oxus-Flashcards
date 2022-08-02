@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 70%;
+    height: 100%;
     margin-left: auto; 
     margin-right: auto; 
     margin-top: auto;
@@ -17,7 +17,6 @@
 }
 
 .Flashcards__form__container {
-    margin-top: 1.5rem;
 }
 
 .Flashcards__form__titleRibbon {
@@ -27,7 +26,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 .Flashcards__form__title {
@@ -67,6 +65,10 @@
     letter-spacing: 3px;
     padding: 0.25rem;
     color: #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .Flashcard_form_cell {
