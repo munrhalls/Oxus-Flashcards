@@ -63,7 +63,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 1.25s ease-in-out;
+  transition: 0.5s ease-out;
   z-index: 100;
 
 }
