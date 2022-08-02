@@ -147,14 +147,14 @@
 } */
 
 
-.Form__manageflashcards {
+.Form__manageflashcardslist {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    top: 6.5rem;
+    bottom: 4rem;
+    top: 7.2rem;
 }
-.Form__manageflashcards__list {
+.Form__manageflashcardslist__list {
     position: absolute;
     left: 0;
     right: 0;
