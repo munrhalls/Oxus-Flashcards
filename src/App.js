@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
-import { AddFcard } from "./Flashcard/AddFCard";
+import { AddFlashcard } from "./Flashcard/AddFlashcard";
 import { Modals } from "./Modals/Modals";
 import {
   getStorage,
@@ -15,7 +15,7 @@ function App() {
   const [image, setImage] = useState(
     "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4"
   );
-  const [fcards, setFcards] = useState([
+  const [flashcards, setflashcards] = useState([
     {
       unturned: {
         text: "Example flash card.",
@@ -45,9 +45,9 @@ function App() {
         });
       });
   }
-  function onAddFcard(fcard) {
-    setFcards([...fcards, fcard]);
-    console.log(fcards);
+  function onAddFlashcard(fcard) {
+    setflashcards([...flashcards, fcard]);
+    console.log(flashcards);
   }
 
   return (
@@ -59,13 +59,13 @@ function App() {
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
             <div className="Flashcards">
-              {fcards.map((fcard) => {
+              {flashcards.map((fcard) => {
                 return <Flashcard key={Math.random()} fcard={fcard} />;
               })}
             </div>
           )}
-          {/* <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} /> */}
-          <Modals />
+          {/* <AddFlashcard onAddFlashcard={(fcard) => onAddFlashcard(fcard)} /> */}
+          <Modals setflashcards={() => setflashcards(flashcards)} />
         </div>
         <div className="Aside">
           <div className="Modal__containerBtns">
