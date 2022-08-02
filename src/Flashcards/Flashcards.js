@@ -6,6 +6,7 @@ import { dblClick } from "@testing-library/user-event/dist/click";
 
 export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
   const [difficulty, setDifficulty] = useState(3);
+  const [reviewCount, setReviewCount] = useState(0);
   const levels = ["pass", "easy", "medium", "hard"];
   function putAwayCard() {
     let wasFirst = sortedFlashcards[0];
@@ -14,6 +15,7 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
       sortedFlashcards.filter((card) => card.difficulty === difficulty)
         .length || 1;
     updateFlashcard(wasFirst);
+    setReviewCount(() => reviewCount + 1);
   }
 
   function updateDifficulty(e) {
@@ -22,7 +24,9 @@ export const Flashcards = ({ sortedFlashcards, updateFlashcard }) => {
   return (
     <div className="Flashcards">
       <div key={uuidv4()}>
-        <div className="Flashcard__number">{sortedFlashcards[0].orderNum}</div>
+        <div className="Flashcard__number">
+          {reviewCount} / {sortedFlashcards.length}
+        </div>
         <Flashcard key={uuidv4()} flashcard={sortedFlashcards[0]} />
       </div>
       <div className="Flashcards__btns">
