@@ -227,12 +227,36 @@ function App() {
     setFlashcards([...flashcards, flashcard]);
   }
   function updateFlashcard(flashcard) {
-    console.log(flashcard);
     let cards = cloneDeep(flashcards);
     let card = cards.find((card) => flashcard.id === card.id);
     card.difficulty = flashcard.difficulty;
     card.orderNum = flashcard.orderNum;
+    card = determineCardQueue(card);
+    console.log(card, "card in updateFlashcard in App");
     setFlashcards(() => cards);
+  }
+  function determineCardQueue(card) {
+    var cardsInLevel = sortedFlashcards.filter(
+      (instance) => instance.difficulty === card.difficulty
+    );
+    if (cardsInLevel.length === 1) {
+      if (card.hasOwnProperty("queue")) {
+        if (card.queue >= 0) {
+          card.queue = card.queue - 1;
+        }
+        if (card.queue < 0) {
+          delete card.queue;
+        }
+      }
+      if (!card.hasOwnProperty("queue")) {
+        card.queue = randomIntFromInterval(2, 4);
+      }
+    }
+    return card;
+  }
+  function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
   function closeModal() {
     setModalOpen(false);
