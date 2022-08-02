@@ -6,6 +6,7 @@ import { CompletedFlashcards } from "./Flashcards/CompletedFlashcards";
 import { ModalBtns } from "./Modals/ModalBtns";
 import { uuidv4 } from "@firebase/util";
 import { SymbolDecks } from "./Decks/SymbolDecks";
+import { Deck } from "./Decks/Deck.js";
 import {
   getStorage,
   ref,
@@ -212,11 +213,6 @@ function App() {
               setActiveDeck={(activeDeck) => setActiveDeck(activeDeck)}
             />
           ) : (
-            ""
-          )}
-          {/* {isLoading ? 
-            <div style={{ fontSize: "120px" }}>Loading...</div>
-          ) : (
             <Deck
               flashcards={activeDeck.flashcards}
               setFlashcards={(flashcards) => setFlashcards(flashcards)}
@@ -225,7 +221,7 @@ function App() {
                 setCompletedFlashcards(completedFlashcards)
               }
             />
-          )} */}
+          )}
         </div>
         {modalOpen && (
           <Modals
