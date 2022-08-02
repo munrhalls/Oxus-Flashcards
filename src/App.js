@@ -19,6 +19,7 @@ function App() {
   const [flashcards, setFlashcards] = useState([
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 1,
       unturned: {
         text: "Question 1",
         image:
@@ -31,6 +32,7 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 2,
       unturned: {
         text: "Question 3",
         image: "",
@@ -42,6 +44,7 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 3,
       unturned: {
         text: "Question 4",
         image: "",
@@ -53,6 +56,7 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 4,
       unturned: {
         text: "Question",
         image: "",
@@ -64,6 +68,7 @@ function App() {
     },
     {
       id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
+      order: 5,
       unturned: {
         text: "Question",
         image:
