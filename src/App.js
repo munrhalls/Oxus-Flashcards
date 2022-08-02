@@ -9,7 +9,6 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "./Firebase/Firebase";
-// import { ordered, filtered } from "./mock";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -169,20 +168,28 @@ function App() {
       },
     },
   ]);
-  const [sortedFlashcards, setSortedFlashcards] = useState();
+  const [sortedFlashcards, setSortedFlashcards] = useState(flashcards);
   const [modalOpen, setModalOpen] = useState(false);
   const numOfLevels = 4;
-  console.log(sortedFlashcards);
   useEffect(() => {
     let sorted = aggregateSortedLevels(flashcards, numOfLevels);
-    setSortedFlashcards(sorted);
+    setSortedFlashcards(() => sorted);
   }, [flashcards]);
+  console.log(sortedFlashcards);
+  function smoothOrderNums(cards, difficulty) {
+    const range = cards.filter((card) => card.difficulty === difficulty);
+    const smoothOrderNums = range.map((card, i) => {
+      card.orderNum = i + 1;
+      return card;
+    });
+    return smoothOrderNums;
+  }
   function sortWithinLevel(arr, difficulty) {
     let sorted = arr
       .filter((instance) => instance.difficulty === difficulty)
       .sort((a, b) => (a.orderNum < b.orderNum ? -1 : 1));
-
-    return sorted;
+    let smoothened = smoothOrderNums(sorted, difficulty);
+    return smoothened;
   }
 
   function aggregateSortedLevels(data, numOfLevels) {
@@ -222,7 +229,7 @@ function App() {
           {isLoading ? (
             <div style={{ fontSize: "120px" }}>Loading...</div>
           ) : (
-            <Flashcards flashcards={flashcards} />
+            <Flashcards sortedFlashcards={sortedFlashcards} />
           )}
         </div>
         <div className="Aside">
@@ -230,7 +237,7 @@ function App() {
         </div>
         {modalOpen && (
           <Modals
-            flashcards={flashcards}
+            sortedFlashcards={sortedFlashcards}
             modalOpen={modalOpen}
             updateFlashcards={(flashcard) => updateFlashcards(flashcard)}
             closeModal={() => closeModal()}
