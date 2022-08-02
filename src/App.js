@@ -188,6 +188,8 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      // add check if 1st time user
+      // add option to click-disappears instantly
       setIsWelcome(false);
     }, 1000);
     return () => clearTimeout(timer);
@@ -199,7 +201,7 @@ function App() {
         <h1 className={`WelcomeShade__title ${isWelcome ? "" : "--hidden"}`}>
           OXUS
         </h1>
-        <h2 className="WelcomeShade__subtitle">
+        <h2 className={`WelcomeShade__subtitle ${isWelcome ? "" : "--hidden"}`}>
           Simple, no-nonsense flashcards.
         </h2>
       </div>

@@ -2,6 +2,7 @@
 @import './Flashcards/Flashcards.css';
 @import './Decks/Decks.css';
 @import './Modals/Modals.css';
+@import './Modals/ModalBtns/AddDeckBtn.css';
 @import './Modals/ModalBtns/ModalBtns.css';
 @import './Modals/FormDeck.css';
 @import './Modals/FormDeckTopbar.css';
@@ -63,7 +64,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 0.5s ease-out;
+  transition: 0.25s ease-out;
   z-index: 100;
 
 }
@@ -73,25 +74,32 @@
 }
 
 .WelcomeShade__title {
+  position: absolute;
   font-size: 5rem;
   transition: 1s ease-in-out;
 }
 .WelcomeShade__title.--hidden {
   opacity: 0;
-  height: 0;
+  width: 0;
   font-size: 140rem;
 }
 .WelcomeShade__subtitle {
+  position: absolute;
   margin-top: 1rem;
   font-size: 1.25rem;
 }
-#display-image{
+.WelcomeShade__subtitle.--hidden {
+  opacity: 0;
+  width: 0;
+}
+
+/* #display-image{
     width: 400px;
     height: 225px;
     border: 1px solid black;
     background-position: center;
     background-size: cover; 
-  }
+  } */
 .Header {
     height: 3rem;
     width: 100%;
