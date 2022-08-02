@@ -16,7 +16,7 @@ export const TurnedFlashcard = ({
   async function changeTurnedImg(e) {
     e.preventDefault();
     let str = await getBase64(e.target.files[0]);
-    setTurnedImg(() => str);
+    setTurnedImg(str);
   }
   return (
     <div className="Flashcard_form_cell">
