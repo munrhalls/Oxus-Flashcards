@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Flashcard } from "../Flashcards/Flashcard";
+import { Flashcard } from "../../Flashcards/Flashcard";
 import { uuidv4 } from "@firebase/util";
-import IMG__EDIT from "./../Assets/edit.png";
-import IMG__CLOSE from "./../Assets/close.png";
-import IMG__PLUS from "./../Assets/plus.png";
-import IMG__SAVE from "./../Assets/save.png";
-import IMG__BACK from "./../Assets/go-back-arrow.png";
+import IMG__EDIT from "./../../Assets/edit.png";
+import IMG__CLOSE from "./../../Assets/close.png";
+import IMG__PLUS from "./../../Assets/plus.png";
+import IMG__SAVE from "./../../Assets/save.png";
+import IMG__BACK from "./../../Assets/go-back-arrow.png";
 
 export const DeleteDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
