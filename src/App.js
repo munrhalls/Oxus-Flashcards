@@ -18,13 +18,16 @@ function App() {
   );
   const [flashcards, setFlashcards] = useState([
     {
+      id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
       unturned: {
         text: "Example flash card.",
-        image: "src",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
       },
       turned: {
         text: "Not an f u card.",
-        image: "src",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
       },
     },
   ]);
@@ -50,7 +53,7 @@ function App() {
   function closeModal() {
     setModalOpen(false);
   }
-
+  console.log(flashcards);
   return (
     <div className="App">
       <header className="Header">Flashcards</header>
