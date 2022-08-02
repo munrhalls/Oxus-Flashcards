@@ -19,8 +19,9 @@ function App() {
     },
   ]);
 
-  function addFcard() {
-    // setfcards(...fcards, fcard);
+  function onAddFcard(fcard) {
+    console.log(fcard);
+    setfcards(() => [...fcards, fcard]);
   }
 
   return (
@@ -30,7 +31,7 @@ function App() {
         {fcards.map((fcard) => {
           return <Flashcard key={Math.random()} fcard={fcard} />;
         })}
-        <AddFcard />
+        <AddFcard onAddFcard={(fcard) => onAddFcard(fcard)} />
       </main>
       <footer>footer</footer>
     </div>
