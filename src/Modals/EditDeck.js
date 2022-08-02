@@ -14,13 +14,21 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
   const [deckName, setDeckName] = useState(() => deck.name);
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
   const [editedCards, setEditedCards] = useState(() => deck.flashcards);
+  const [editedCompletedCards, setEditedCompletedCards] = useState(
+    () => deck.completedFlashcards
+  );
 
   function handleSubmit(e) {
     e.preventDefault();
     setDecks(() =>
       decks.map((el) => {
         return el.id === deck.id
-          ? { ...deck, name: deckName, flashcards: editedCards }
+          ? {
+              ...deck,
+              name: deckName,
+              flashcards: editedCards,
+              completedFlashcards: editedCompletedCards,
+            }
           : el;
       })
     );
@@ -29,6 +37,9 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
   function deleteCard(delId) {
     setEditedCards((editedCards) =>
       editedCards.filter((card) => card.id !== delId)
+    );
+    setEditedCompletedCards((editedCompletedCards) =>
+      editedCompletedCards.filter((card) => card.id !== delId)
     );
   }
   return (
@@ -95,7 +106,7 @@ export const EditDeck = ({ closeModal, activeDeckId, decks, setDecks }) => {
           </div>
           <div className="Form__flashcards">
             <div className="Form__flashcards__list">
-              {editedCards.map((card, i) => {
+              {[...editedCards, ...editedCompletedCards].map((card, i) => {
                 return (
                   <div key={uuidv4()} className="Form__flashcardContainer">
                     <div className="Form__flashcardContainer__numContainer">
