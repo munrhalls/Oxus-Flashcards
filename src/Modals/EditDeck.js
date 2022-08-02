@@ -39,8 +39,9 @@ export const EditDeck = ({ closeModal, activeDeck }) => {
             <div className="EditDeck__form__topBar__line --second">
               {isEditDeckName ? (
                 <input
+                  className="EditDeck__form__topBar__line__deckName --input"
+                  placeholder="type new deck name..."
                   type="text"
-                  
                   value={deckName}
                   onChange={(e) => setDeckName(e.target.value)}
                 />
