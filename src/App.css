@@ -77,6 +77,7 @@
     justify-content: center;
     align-items: center;
     flex: 7;
+    position: relative;
 }
 .Aside {
     display: flex;
