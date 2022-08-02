@@ -19,11 +19,10 @@
 .Modal__containerBtns {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 90%;
     width: 100%;
-    margin-bottom: auto;
 }
 .Modal__containerBtns__container {
     flex: 1;
