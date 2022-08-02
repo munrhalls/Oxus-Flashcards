@@ -1,11 +1,12 @@
 .AddDeckBtn {
     cursor: pointer;
     position: relative;
-    width: 12rem;
-    height: 13rem;
+    width: 14rem;
+    height: 16rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 3rem;
 }
 .AddDeckBtn:hover {
     background-color: #777;
@@ -29,6 +30,7 @@
     letter-spacing: 1px;
     margin-top: 0.15rem;
     font-size: 1.25rem;
+    border-radius: 5px;
 }
 .AddDeckBtn__imgPlus {
     cursor: pointer;
