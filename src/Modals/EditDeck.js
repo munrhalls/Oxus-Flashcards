@@ -16,14 +16,10 @@ export const EditDeck = ({ closeModal, activeDeck, decks, setDecks }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const editDeck = decks.filter((deck) => deck.id === activeDeck.id)[0];
-    editDeck.name = deckName;
-    editDeck.flashcards = editedCards;
     setDecks(() =>
       decks.map((deck) => {
-        console.log(deck, "deck", "//////", editDeck);
-        if (deck.id === editDeck.id) {
-          return editDeck;
+        if (deck.id === activeDeck.id) {
+          return { id: activeDeck.id, name: deckName, flashcards: editedCards };
         } else {
           return deck;
         }
