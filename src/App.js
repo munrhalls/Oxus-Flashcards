@@ -2,14 +2,25 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard/Flashcard";
 import { AddFcard } from "./Flashcard/AddFCard";
-import { flashcardsCol, getDocs, doc } from "./Firebase/Firebase";
+import {
+  flashcardsCol,
+  getDocs,
+  doc,
+  getStorage,
+  ref,
+  uploadBytes,
+} from "./Firebase/Firebase";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [fcards, setfcards] = useState("");
 
   function onAddFcard(fcard) {
-    // setfcards(() => );
+    const storage = getStorage();
+    const storageRef = ref(storage, "flashcards");
+    uploadBytes(storageRef, fcard).then((snapshot) => {
+      console.log("Uploaded a blob or file!");
+    });
   }
   async function getFlashcards() {
     const flashcardSnapshot = await getDocs(flashcardsCol);
