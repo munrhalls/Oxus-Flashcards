@@ -43,8 +43,10 @@
     height: 100%;
     width: 4rem;
     height: 4.25rem;
+    text-transform: uppercase;
 }
 .Flashcards__btns__next {
+    height: 4.25rem;
     cursor: pointer;
     border: none;
     font-weight: bold;
