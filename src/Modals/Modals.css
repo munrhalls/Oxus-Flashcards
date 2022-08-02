@@ -79,6 +79,9 @@
 .Flashcard__form__elementsContainer {
     display: flex;
 }
+.class {
+    
+}
 .Flashcard__form__elements {
     width: 16rem;
     display: flex;
