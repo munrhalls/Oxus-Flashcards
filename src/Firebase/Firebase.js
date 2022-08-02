@@ -1,14 +1,13 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  doc,
-  setDoc,
-  getDocs,
-  addDoc,
-} from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, addDoc } from "firebase/firestore";
 
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDNaOxF_mwBcC1_bJiqonyqjpvDFEhSpgg",
   authDomain: "oxus-9ce02.firebaseapp.com",
@@ -18,21 +17,7 @@ const firebaseConfig = {
   appId: "1:158474502364:web:ff1ee63e4fdd2671cdf419",
 };
 
-const firebase = initializeApp(firebaseConfig);
-const db = getFirestore(firebase);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-const flashcardsCol = collection(db, "flashcards");
-
-export {
-  flashcardsCol,
-  addDoc,
-  setDoc,
-  getDocs,
-  doc,
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  collection,
-  db,
-};
+export { app, getStorage, ref, uploadBytes };
