@@ -23,9 +23,9 @@ export const AddFcard = ({ onAddFcard }) => {
     change.unturned.text = e.target.value;
     setFcard(change);
   }
-  function changeUnturnedImg(e) {
+  async function changeUnturnedImg(e) {
     e.preventDefault();
-    let str = getBase64(e.target.files[0]);
+    let str = await getBase64(e.target.files[0]);
     setUnturnedImg(str);
   }
   function changeTurnedText(e) {
@@ -33,21 +33,18 @@ export const AddFcard = ({ onAddFcard }) => {
     change.turned.text = e.target.value;
     setFcard(change);
   }
-  function changeTurnedImg(e) {
+  async function changeTurnedImg(e) {
     e.preventDefault();
-    let str = getBase64(e.target.files[0]);
-    setTurnedImg(str);
+    let str = await getBase64(e.target.files[0]);
+    setTurnedImg(() => str);
   }
-  function getBase64(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      return reader.result;
-    };
-    reader.onerror = function (error) {
-      return null;
-    };
-  }
+  const getBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
   return (
     <form className="Flashcard__form" onSubmit={handleSubmit}>
       <div className="Flashcard__form__elementsContainer">
