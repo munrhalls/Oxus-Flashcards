@@ -5,12 +5,12 @@
 }
 
 .Deck__title {
-    padding: 0.5rem;
-    font-size: 2.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
 }
 
 .Deck__instance {
-    height: 100%;
+    flex: 1;
     display: flex;
     justify-content: space-between;
 }
