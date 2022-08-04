@@ -189,6 +189,7 @@ function App() {
 
   return (
     <div className="App">
+      <Welcome.Shade />
       <Header />
       <main className="Main">
         {activeDeckId && (
