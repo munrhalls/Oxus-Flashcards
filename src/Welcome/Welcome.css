@@ -1,0 +1,77 @@
+.WelcomeShade {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  transition: 0.25s ease-in-out;
+  transition-duration: 1s;
+}
+.WelcomeShade.--hidden {
+  color: #000;
+  height: 0;
+  z-index: -1;
+}
+
+.WelcomeShade__title {
+  position: absolute;
+  font-size: 7rem;
+  margin-top: -7.5rem;
+  transition: 1s ease-in-out;
+}
+.WelcomeShade__title.--hidden {
+  opacity: 0;
+  height: 0;
+  font-size: 140rem;
+}
+.WelcomeShade__subtitle {
+  position: absolute;
+  font-size: 1.25rem;
+}
+/* .WelcomeShade__subtitle.--hidden {
+  opacity: 0;
+  width: 0;
+} */
+
+/* #display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover; 
+  } */
+
+
+  
+
+
+.WelcomeMessage {
+    width: 50%;
+    margin: auto;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .WelcomeMessage__title {
+  }
+  
+  .WelcomeMessage__subtitle {
+  }
+  .WelcomeMessage__btnContainer {
+  }
+  .WelcomeMessage__btnContainer__btn {
+  }
+  .WelcomeMessage__list {
+  
+  }
+  .WelcomeMessage__list__item {
+  
+  }
