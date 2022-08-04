@@ -2,8 +2,8 @@ import React from "react";
 export function Header({}) {
   return (
     <header className="Header">
-      Flashcards
-      <h6>&nbsp;&nbsp;&nbsp; /// PROTOTYPE: APP IN CONSTRUCTION.</h6>
+      <h6 className="Header__title">Flashcards</h6>
+      <h6 className="Header__title">/// PROTOTYPE: APP IN CONSTRUCTION.</h6>
     </header>
   );
 }
