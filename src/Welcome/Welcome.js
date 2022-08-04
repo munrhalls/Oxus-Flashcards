@@ -35,13 +35,16 @@ export const Welcome = {
               simple and highly effective learning tool: flashcards.
             </h2>
             <h2 className="WelcomeMessage__subtitle --link">
-              <a href="https://en.wikipedia.org/wiki/Flashcard">
+              <a href="https://en.wikipedia.org/wiki/Flashcard" target="_blank">
                 What are flashcards?&nbsp;
               </a>
             </h2>
             <h2 className="WelcomeMessage__subtitle --link">
               <div>
-                <a href="https://en.wikipedia.org/wiki/Flashcard">
+                <a
+                  href="https://en.wikipedia.org/wiki/Flashcard"
+                  target="_blank"
+                >
                   Click to read Wikipedia article.
                 </a>
               </div>
