@@ -46,41 +46,36 @@ export const Welcome = {
                 </a>
               </div>
             </h2>
-            <h2 className="WelcomeMessage__subtitle">In this app you can:</h2>
             <ul className="WelcomeMessage__list">
-              <li className="WelcomeMessage__list__item">Create named decks</li>
               <li className="WelcomeMessage__list__item">
-                Make and insert flashcards into a deck you choose
+                To start, first click the "ADD NEW DECK" button.
               </li>
               <li className="WelcomeMessage__list__item">
-                View flashcards in a deck, one by one
+                In the add deck window, type deck name.
               </li>
               <li className="WelcomeMessage__list__item">
-                View question on one side, answer on another
+                Next, you'll be taken to deck edition window. There, you can add
+                flashcards. You can also delete and edit flashcards in this
+                window.
               </li>
               <li className="WelcomeMessage__list__item">
-                Mark difficulty level and shuffle each flashcard accordingly -
-                difficult cards go to the beginning of the deck, medium to the
-                middle and easy to the end.
-              </li>
-              <li className="WelcomeMessage__list__item">
-                See the deck of completed flashcards.
+                To add a flashcard, click the "ADD FLASHCARD" button in the edit
+                deck window. To delete, click "X". To edit, click the edition
+                icon.
               </li>
             </ul>
             <h2 className="WelcomeMessage__subtitle">
-              You can check the already prepared example deck, to see how a deck
-              works.
+              Add as many flashcards as you want to a deck. You can also create
+              as many different decks with different flashcards as you want.
             </h2>
             <h2 className="WelcomeMessage__subtitle">
-              To make your own first deck - simply click the "ADD NEW DECK"
-              button.
+              To turn a flashcard, click it. To go to the next flashcard, mark
+              how hard the flashcard was, and click "NEXT".
             </h2>
             <h2 className="WelcomeMessage__subtitle">
-              2-3 clicks later, you'll be looking at your first deck.
+              Simple, practical, no-nonsense.
             </h2>
-            <h2 className="WelcomeMessage__subtitle">
-              Simple. Practical. No nonsense.
-            </h2>
+            <h2 className="WelcomeMessage__subtitle">Enjoy Oxus Flashcards!</h2>
             <div
               onClick={() => setIsMessage((message) => false)}
               className="WelcomeMessage__btnContainer"

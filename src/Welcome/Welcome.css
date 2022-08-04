@@ -51,7 +51,7 @@
 
 
 .WelcomeMessage {
-    width: 50%;
+    width: 75%;
     margin: auto;
     padding-top: 2rem;
   
@@ -64,20 +64,34 @@
   .WelcomeMessage__title {
     font-size: 3rem;
     font-weight: bold;
+    margin-bottom: 1.5rem;
   }
   
   .WelcomeMessage__subtitle {
+    margin-top: 1.5rem;
     font-size: 1.5rem;
-    padding-top: 0.5rem;
   }
   .WelcomeMessage__btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
   .WelcomeMessage__btnContainer__btn {
+    margin: 1.5rem;
+    color: #fff;
+    padding: 2.5rem;
+    font-size: 2.5rem;
+    background-color: #000;
+    border-radius: 5px;
+    cursor: pointer;
   }
   .WelcomeMessage__list {
+    margin-top: 1.5rem;
   
   }
   .WelcomeMessage__list__item {
-    list-style-type: circle;
-
+    list-style-type: space-counter;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
