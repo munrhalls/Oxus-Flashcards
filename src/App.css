@@ -60,18 +60,17 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
   
 }
 
 
 
 .Main {
-    flex: 1;
     display: flex;
     position: relative;
-    max-height: calc(100vh - 6rem);
+    overflow: auto;
 }
 .Centerstage {
     position: relative;

@@ -31,30 +31,40 @@ export const Welcome = {
           <div className="WelcomeMessage">
             <h1 className="WelcomeMessage__title">Welcome to flashcards!</h1>
             <h2 className="WelcomeMessage__subtitle">
-              This app is an electronic version of the famous, simple and
-              effective learning tool, used and loved by many: flashcards.
+              This app is an electronic version of the well-known, popular,
+              simple and highly effective learning tool: flashcards.
+            </h2>
+            <h2 className="WelcomeMessage__subtitle --link">
+              <a href="https://en.wikipedia.org/wiki/Flashcard">
+                What are flashcards?&nbsp;
+              </a>
+            </h2>
+            <h2 className="WelcomeMessage__subtitle --link">
+              <div>
+                <a href="https://en.wikipedia.org/wiki/Flashcard">
+                  Click to read Wikipedia article.
+                </a>
+              </div>
             </h2>
             <h2 className="WelcomeMessage__subtitle">In this app you can:</h2>
             <ul className="WelcomeMessage__list">
+              <li className="WelcomeMessage__list__item">Create named decks</li>
               <li className="WelcomeMessage__list__item">
-                - Create named decks
+                Make and insert flashcards into a deck you choose
               </li>
               <li className="WelcomeMessage__list__item">
-                - Make and insert flashcards into a deck you choose
+                View flashcards in a deck, one by one
               </li>
               <li className="WelcomeMessage__list__item">
-                - View flashcards in a deck, one by one
+                View question on one side, answer on another
               </li>
               <li className="WelcomeMessage__list__item">
-                - View question on one side, answer on another
-              </li>
-              <li className="WelcomeMessage__list__item">
-                - Mark difficulty level and shuffle each flashcard accordingly -
+                Mark difficulty level and shuffle each flashcard accordingly -
                 difficult cards go to the beginning of the deck, medium to the
                 middle and easy to the end.
               </li>
               <li className="WelcomeMessage__list__item">
-                - See the deck of completed flashcards.
+                See the deck of completed flashcards.
               </li>
             </ul>
             <h2 className="WelcomeMessage__subtitle">
