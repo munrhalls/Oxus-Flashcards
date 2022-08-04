@@ -1,7 +1,7 @@
 .Footer {
     display: flex;
-    max-height: 3rem;
-    min-height: 3rem;
+    max-height: 5rem;
+    min-height: 5rem;
     flex-basis: 3rem;
     align-self: flex-end;
     align-items: center;
@@ -13,20 +13,26 @@
     color: #fff;
     align-items: center;
     font-size: 0.5rem;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     font-weight: bold;
     text-transform: uppercase;
     width: 100%;
+    font-size: 0.8rem;
   }
   .Footer__authorContainer {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    flex-wrap: wrap;
     height: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
+  .Footer__authorContainer__author {
+    
+  }
+
   .Footer__attribs {
     flex: 2;
     display: flex;
