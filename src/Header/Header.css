@@ -1,12 +1,8 @@
 .Header {
     height: 3rem;
     min-height: 3rem;
-    flex-basis: 3rem;
     background-color: #000;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
