@@ -3,9 +3,6 @@
     position: relative;
     width: 14rem;
     height: 16rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-right: 4rem;
 }
 .AddDeckBtn:hover {
