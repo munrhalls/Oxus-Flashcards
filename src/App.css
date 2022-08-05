@@ -69,11 +69,14 @@
 
 .Main {
     display: flex;
+
     position: relative;
     overflow: auto;
+    width: 100%
 }
 .Centerstage {
     position: relative;
+    flex: 1;
 }
 
 .Aside {
