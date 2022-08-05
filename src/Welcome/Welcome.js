@@ -84,7 +84,7 @@ export const Welcome = {
               className="WelcomeMessage__btnContainer"
             >
               <button className="WelcomeMessage__btnContainer__btn">
-                Click me to close this message.
+                Close this message.
               </button>
             </div>
           </div>

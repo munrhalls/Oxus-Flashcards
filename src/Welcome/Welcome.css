@@ -11,6 +11,7 @@
   color: #fff;
   transition: 0.25s ease-in-out;
   transition-duration: 1s;
+  
 }
 .WelcomeShade.--hidden {
   color: #000;
@@ -31,7 +32,7 @@
 }
 .WelcomeShade__subtitle {
   position: absolute;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 /* .WelcomeShade__subtitle.--hidden {
   opacity: 0;
@@ -51,9 +52,10 @@
 
 
 .WelcomeMessage {
-    width: 75%;
+    width: calc(100% - 5rem);
     margin: auto;
     padding-top: 2rem;
+    max-width: 60rem;
   
     display: flex;
     flex-direction: column;
