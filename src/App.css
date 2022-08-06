@@ -71,9 +71,11 @@
     display: flex;
 
     position: relative;
-    overflow: auto;
+    overflow-y: auto;
     width: 100%;
     flex: 1;
+
+    min-height: 0;
 }
 .Centerstage {
     position: relative;
@@ -86,6 +88,9 @@
     justify-content: center;
     align-items: center;
     flex: 1;
+    min-height: 0;
+    height: 100%;
+    max-width: 8rem;
     background-color: #000;
 }
 

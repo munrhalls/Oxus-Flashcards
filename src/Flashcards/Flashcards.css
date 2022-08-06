@@ -1,18 +1,13 @@
 
 .Flashcards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     flex-wrap: wrap;
-    flex: 1 1 25rem;
 }
 .Flashcard__container {
-    min-width: 12rem;
-    min-height: 20rem;
+    min-height: 0;
 }
 .Flashcard {
-    min-height: 100%;
+    min-height: 0;
     border: 3px solid #000;
     border-radius: 5px;
     padding: 0.25rem;
@@ -49,7 +44,7 @@
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
-    flex-basis: 3rem;
+    flex-wrap: wrap;
 
 }
 .Flashcards__btns__difficulty {
@@ -60,8 +55,6 @@
 .Flashcards__btns__difficulty__instance {
     cursor: pointer;
     text-transform: uppercase;
-    min-height: 100%;
-    min-width: 4rem;
     
 }
 .Flashcards__btns__difficulty__instance.--rating {
@@ -71,7 +64,6 @@
     font-weight: bold;
 }
 .Flashcards__btns__next {
-    height: 4.25rem;
     cursor: pointer;
     border: none;
     font-weight: bold;
@@ -83,13 +75,9 @@
     align-self: flex-end;
 }
 .Flashcards__btns__next__image {
-    height: 2.5rem;
-    width: 2.5rem;
 }
 .Flashcards__btn__next__text {
     margin-right: 0.75rem;
-    height: 2.5rem;
-    width: 2.5rem;
     font-size: 1.25rem;
     display: flex;
     justify-content: center;
@@ -104,7 +92,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 .Flashcards__completedMessage__title {
     font-size: 6rem;
@@ -113,14 +100,11 @@
 }
 
 .CompletedFlashcards {
-    flex: 1 1 15rem;
 }
 
 .CompletedFlashcards__frontCard {
     border: 5px solid #000;
     border-radius: 5px;
-    width: 15rem;
-    height: 25rem;
     padding: 0.25rem;
     cursor: pointer;
     z-index: 10;
@@ -136,7 +120,6 @@
     width: 60%;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -168,8 +151,6 @@
 .CompletedFlashcards__heapFrame {
     border: 3px solid #000;
     border-radius: 5px;
-    width: 15rem;
-    height: 25rem;
     padding: 0.25rem;
     cursor: pointer;
     z-index: 10;
