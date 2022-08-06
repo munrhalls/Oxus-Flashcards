@@ -49,22 +49,28 @@ export const Welcome = {
                 </a>
               </div>
             </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              In this app, all flashcards are managed within decks. When you add, delete or edit 
+            </h2>
             <ul className="WelcomeMessage__list">
               <li className="WelcomeMessage__list__item">
                 To start, first click the "ADD NEW DECK" button.
               </li>
               <li className="WelcomeMessage__list__item">
-                In the add deck window, type deck name.
+                Type deck name, press "SAVE".
               </li>
               <li className="WelcomeMessage__list__item">
-                Next, you'll be taken to deck edition window. There, you can add
-                flashcards. You can also delete and edit flashcards in this
-                window.
+                This'll open deck edition menu. Click "ADD FLASHCARD". Fill question and answer on the flashcard, click "SAVE".  
               </li>
               <li className="WelcomeMessage__list__item">
-                To add a flashcard, click the "ADD FLASHCARD" button in the edit
-                deck window. To delete, click "X". To edit, click the edition
-                icon.
+                To start, first click the "ADD NEW DECK" button. Type deck name,
+                press "SAVE", you'll be taken to deck edition window, where you
+                can add and edit deck's flashcards.
+              </li>
+              <li className="WelcomeMessage__list__item">
+                To start, first click the "ADD NEW DECK" button. Type deck name,
+                press "SAVE", you'll be taken to deck edition window, where you
+                can add and edit deck's flashcards.
               </li>
             </ul>
             <h2 className="WelcomeMessage__subtitle">

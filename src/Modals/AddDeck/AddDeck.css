@@ -13,11 +13,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    bottom: 4rem;
-    top: 7rem;
-    left: 0;
-    right: 0;
-    height: calc(100% - 11rem);
 }
 
 .AddDeck__container__nameLabel {
