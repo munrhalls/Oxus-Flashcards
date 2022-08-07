@@ -15,7 +15,6 @@ import { SymbolDecks } from "./Decks/SymbolDecks";
 import { Deck } from "./Decks/Deck.js";
 import { Footer } from "./Footer/Footer";
 import { Welcome } from "./Welcome/Welcome";
-import useMobileCheck from "./Hooks/useMobileCheck";
 
 function App() {
   let mock = [
@@ -182,8 +181,6 @@ function App() {
         });
       });
   }
-  const isMobile = useMobileCheck();
-  console.log(isMobile);
   useEffect(() => {
     let decks = getDecks();
     setDecks(decks);
