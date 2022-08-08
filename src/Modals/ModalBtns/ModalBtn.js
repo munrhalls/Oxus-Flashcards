@@ -14,8 +14,16 @@ export function ModalBtn({ name, icon, open, setModalOpen, setactiveDeckId }) {
           }
         }}
       >
-        {!isMobile && name}
-        {icon && <img src={icon} alt={`Icon: ${name}`} />}
+        {!isMobile && (
+          <span className="ModalBtns__container__btn__text">{name}</span>
+        )}
+        {icon && (
+          <img
+            src={icon}
+            className="ModalBtns__container__btn__icon"
+            alt={`Icon: ${name}`}
+          />
+        )}
       </button>
     </div>
   );

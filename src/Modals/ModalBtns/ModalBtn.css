@@ -49,3 +49,8 @@
     font-weight: bold;
     box-shadow: 0px 0px 45px #fff;
 }
+
+.ModalBtns__container__btn__icon {
+    max-width: 2rem;
+    max-height: 2rem;
+}
