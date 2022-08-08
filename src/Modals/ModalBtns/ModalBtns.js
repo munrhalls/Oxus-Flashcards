@@ -1,22 +1,17 @@
+import { ModalBtn } from "./ModalBtn";
 import React from "react";
 import useMobileCheck from "../../Hooks/useMobileCheck";
 
 export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   const isMobile = useMobileCheck();
-  console.log(isMobile);
 
   return (
     <div className="ModalBtns">
       <div className="ModalBtns__container">
-        <button
-          className="ModalBtns__container__btn"
-          onClick={() => {
-            setModalOpen(null);
-            setactiveDeckId(null);
-          }}
-        >
-          EXIT
-        </button>
+        <ModalBtn
+          setModalOpen={setModalOpen}
+          setactiveDeckId={setactiveDeckId}
+        />
       </div>
 
       <div
@@ -51,3 +46,17 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
     </div>
   );
 };
+
+function undefined({ setModalOpen, setactiveDeckId }) {
+  return (
+    <button
+      className="ModalBtns__container__btn"
+      onClick={() => {
+        setModalOpen(null);
+        setactiveDeckId(null);
+      }}
+    >
+      EXIT
+    </button>
+  );
+}

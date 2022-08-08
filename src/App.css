@@ -83,14 +83,5 @@
 }
 
 .Aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    min-height: 0;
-    height: 100%;
-    max-width: 8rem;
-    background-color: #000;
 }
 
