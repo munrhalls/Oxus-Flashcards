@@ -73,6 +73,10 @@
     max-height: 2rem;
 }
 
+.ModalBtns__container__btn__text {
+    margin-right: 0.15rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     .ModalBtns__container__btn {
