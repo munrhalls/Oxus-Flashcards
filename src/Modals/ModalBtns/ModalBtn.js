@@ -1,15 +1,19 @@
 import React from "react";
 
-export function ModalBtn({ setModalOpen, setactiveDeckId }) {
+export function ModalBtn({ name, open, setModalOpen, setactiveDeckId }) {
   return (
-    <button
-      className="ModalBtns__container__btn"
-      onClick={() => {
-        setModalOpen(null);
-        setactiveDeckId(null);
-      }}
-    >
-      EXIT
-    </button>
+    <div className="ModalBtns__container">
+      <button
+        className="ModalBtns__container__btn"
+        onClick={() => {
+          setModalOpen("DeleteDeck");
+          {
+            setactiveDeckId && setactiveDeckId(null);
+          }
+        }}
+      >
+        {name}
+      </button>
+    </div>
   );
 }

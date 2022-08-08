@@ -23,7 +23,7 @@ export const Welcome = {
     );
   },
   Message: function Message(props) {
-    const [message, setIsMessage] = useState(true);
+    const [message, setIsMessage] = useState(false);
 
     return (
       <>
@@ -50,7 +50,8 @@ export const Welcome = {
               </div>
             </h2>
             <h2 className="WelcomeMessage__subtitle">
-              In this app, all flashcards are managed within decks. When you add, delete or edit 
+              In this app, all flashcards are managed within decks. When you
+              add, delete or edit
             </h2>
             <ul className="WelcomeMessage__list">
               <li className="WelcomeMessage__list__item">
@@ -60,7 +61,8 @@ export const Welcome = {
                 Type deck name, press "SAVE".
               </li>
               <li className="WelcomeMessage__list__item">
-                This'll open deck edition menu. Click "ADD FLASHCARD". Fill question and answer on the flashcard, click "SAVE".  
+                This'll open deck edition menu. Click "ADD FLASHCARD". Fill
+                question and answer on the flashcard, click "SAVE".
               </li>
               <li className="WelcomeMessage__list__item">
                 To start, first click the "ADD NEW DECK" button. Type deck name,

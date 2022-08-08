@@ -7,14 +7,19 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
 
   return (
     <div className="ModalBtns">
-      <div className="ModalBtns__container">
-        <ModalBtn
-          setModalOpen={setModalOpen}
-          setactiveDeckId={setactiveDeckId}
-        />
-      </div>
+      <ModalBtn
+        name="EXIT"
+        setModalOpen={() => setModalOpen(null)}
+        setactiveDeckId={() => setactiveDeckId(null)}
+      />
+      <ModalBtn
+        name="DELETE DECK"
+        open={modalOpen === "DeleteDeck"}
+        setModalOpen={setModalOpen}
+        setactiveDeckId={null}
+      />
 
-      <div
+      {/* <div
         className={`ModalBtns__container ${
           modalOpen === "DeleteDeck" ? " --open" : ""
         }`}
@@ -27,7 +32,7 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         >
           DELETE DECK
         </button>
-      </div>
+      </div> */}
 
       <div
         className={`ModalBtns__container ${
