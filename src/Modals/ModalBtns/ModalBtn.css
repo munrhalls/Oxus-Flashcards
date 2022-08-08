@@ -12,7 +12,6 @@
     letter-spacing: 1.5px;
     box-shadow: 0px 0px 15px #fff;
     border: none;
-    width: 6rem;
     padding: 0.25rem;
 }
 .ModalBtns__container__btn {
@@ -29,11 +28,12 @@
     letter-spacing: 1.5px;
     box-shadow: 0px 0px 15px #fff;
     border: none;
-    width: 6rem;
     padding: 0.75rem 0.3rem;
+    max-width: 5rem;
+    margin: 1.5rem;
 }
 .ModalBtns__container__btn.--open {
-    background-color: #000;
+    background-color: #777;
     opacity: .95;
     color: #fff;
     font-size: 0.75rem;
@@ -54,3 +54,14 @@
     max-width: 2rem;
     max-height: 2rem;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .ModalBtns__container__btn {
+        max-width: 5rem;
+    }
+    .ModalBtns__container__btn__icon {
+        max-width: 1.75rem;
+        max-height: 1.75rem;
+    }
+  }

@@ -14,14 +14,14 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         icon={IMG__DOOR}
       />
       <ModalBtn
-        name="DELETE DECK"
+        name="DELETE"
         open={modalOpen === "DeleteDeck"}
         setModalOpen={() => setModalOpen("DeleteDeck")}
         icon={IMG__CLOSE}
       />
 
       <ModalBtn
-        name="EDIT DECK"
+        name="EDIT"
         open={modalOpen === "EditDeck"}
         setModalOpen={() => setModalOpen("EditDeck")}
         icon={IMG__EDIT}
