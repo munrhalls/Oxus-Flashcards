@@ -1,6 +1,7 @@
 import { ModalBtn } from "./ModalBtn";
 import React from "react";
 import IMG_EDIT from "./../../Assets/edit.png";
+import IMG_CLOSE from "./../../Assets/close.png";
 
 export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   return (
@@ -14,6 +15,7 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         name="DELETE DECK"
         open={modalOpen === "DeleteDeck"}
         setModalOpen={() => setModalOpen("DeleteDeck")}
+        icon={IMG_CLOSE}
       />
 
       <ModalBtn
