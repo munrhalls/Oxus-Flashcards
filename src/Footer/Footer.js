@@ -44,15 +44,16 @@ export const Footer = () => {
           <span> ///</span> Plus icons created by Freepik - Flaticon
         </a>
         <a href="https://www.flaticon.com/free-icons/save" title="save icons">
-          {" "}
           <span> ///</span> Save icons created by Freepik - Flaticon
         </a>
         <a
           href="https://www.flaticon.com/free-icons/return"
           title="return icons"
         >
-          {" "}
           <span> ///</span> Return icons created by Freepik - Flaticon
+        </a>
+        <a href="https://www.flaticon.com/free-icons/door" title="door icons">
+          <span> ///</span> Door icons created by Freepik - Flaticon
         </a>
       </div>
     </footer>
