@@ -17,7 +17,7 @@
     border: none;
     padding: 0.25rem;
     max-width: 100%;
-    min-width: 0;
+    min-width: 6rem;
 }
 .ModalBtns__container__btn {
      /* flex: 1; */
@@ -39,8 +39,13 @@
 
 
 
+    width: 3rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+
+
     max-width: 100%;
-    min-width: 3rem;
+    min-width: 6rem;
     width: 3rem;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -71,7 +76,10 @@
 
 @media only screen and (max-width: 600px) {
     .ModalBtns__container__btn {
-        max-width: 5rem;
+        min-width: 3rem;
+        width: 3rem;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
     }
     .ModalBtns__container__btn__icon {
         max-width: 1.75rem;
