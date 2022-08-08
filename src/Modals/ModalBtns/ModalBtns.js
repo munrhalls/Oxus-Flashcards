@@ -1,5 +1,6 @@
 import { ModalBtn } from "./ModalBtn";
 import React from "react";
+import IMG_EDIT from "./../../Assets/edit.png";
 
 export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   return (
@@ -19,6 +20,7 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
         name="EDIT DECK"
         open={modalOpen === "EditDeck"}
         setModalOpen={() => setModalOpen("EditDeck")}
+        icon={IMG_EDIT}
       />
     </div>
   );
