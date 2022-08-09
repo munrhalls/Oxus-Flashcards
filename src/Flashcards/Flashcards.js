@@ -67,8 +67,8 @@ export const Flashcards = ({
               key={uuidv4()}
               onClick={shuffleDeck}
             >
-              <span className="Flashcards__btn__next__text">Next</span>{" "}
-              <img className="Flashcards__btn__next__image" src={img} />
+              <span className="Flashcards__btns__next__text">Next</span>{" "}
+              <img className="Flashcards__btns__next__image" src={img} />
             </button>
           </div>
         </div>
