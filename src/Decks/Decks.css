@@ -85,11 +85,44 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .Deck {
+        padding: 0.5rem;
+    }
     .Deck__instance {
         flex: 1 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         min-height: 0;
+    }
+    .Deck__titleContainer {
+        display: flex;
+    }
+    .Deck__titleContainer__title {
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold
+    }
+    .Deck__titleContainer__metaContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 3px solid #000;
+        border-radius: 5px;
+        padding: 0.5rem;
+    }
+    .Deck__titleContainer__metaContainer__metaTitle {
+        font-weight: bold;
+    }
+    .Deck__titleContainer__metaContainer__metaIcon {
+        max-width: 1.75rem;
+        max-height: 1.75rem;
+        margin-left: 0.5rem;
+    }
+    .Deck__titleContainer__metaContainer__metaColon {
+        font-weight: bold;
     }
 }

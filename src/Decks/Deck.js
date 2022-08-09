@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Flashcards } from "../Flashcards/Flashcards";
 import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
+import IMG__CARDS from "./../Assets/cards.png";
 
 export const Deck = ({ activeDeckId, setDecks, decks }) => {
   const activeDeck = decks.filter((deck) => deck.id === activeDeckId)[0];
@@ -25,7 +26,23 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
   }
   return (
     <div className="Deck">
-      <h3 className="Deck__title">DECK: {activeDeck.name}.</h3>
+      <div className="Deck__titleContainer">
+        <div className="Deck__titleContainer__metaContainer">
+          <h2 className="Deck__titleContainer__metaContainer__metaTitle">
+            DECK
+          </h2>
+          <img
+            className="Deck__titleContainer__metaContainer__metaIcon"
+            src={IMG__CARDS}
+            alt="Cards image."
+          />
+          <span className="Deck__titleContainer__metaContainer__metaColon">
+            :
+          </span>
+        </div>
+
+        <h3 className="Deck__titleContainer__title">{activeDeck.name}.</h3>
+      </div>
       <div className="Deck__instance">
         <Flashcards
           flashcards={activeDeck.flashcards}
