@@ -211,10 +211,35 @@
       margin-bottom: initial;
     }
     .Flashcards__btns__difficulty {
+        flex: 1;
         justify-content: space-between;
         flex-direction: column;
         margin-top: initial;
         margin-bottom: initial; 
+    }
+    .Flashcards__btns__difficulty__instance  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+
+        
+        border-radius: 3px;
+        margin-top: 0.75rem;
+        font-weight: bold;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        box-shadow: 0px 0px 15px #fff;
+        border: none;
+
+
+
+        padding: 0.75rem 0.3rem;
+        width: 3rem;
+        min-width: 3rem;
+        min-height: 0;
+        height: 21px;
     }
 
 }

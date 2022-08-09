@@ -1,9 +1,9 @@
 import { uuidv4 } from "@firebase/util";
 import img from "./../Assets/right-long-black-arrow.png";
 import cloneDeep from "lodash.clonedeep";
-
 import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
+import DifficultyBtn from "./DifficultyBtn";
 
 export const Flashcards = ({
   flashcards,
@@ -50,7 +50,19 @@ export const Flashcards = ({
           </div>
           <div className="Flashcards__btns">
             <div className="Flashcards__btns__difficulty">
-              <input
+              {levels.map((lvlName, index) => {
+                return (
+                  <DifficultyBtn
+                    key={uuidv4()}
+                    lvlName={lvlName}
+                    difficulty={difficulty}
+                    setDifficulty={() => setDifficulty(() => index)}
+                    lvlNum={index}
+                  />
+                );
+              })}
+
+              {/* <input
                 type="button"
                 className={`Flashcards__btns__difficulty__instance ${
                   difficulty === 3 ? "--rating" : ""
@@ -81,7 +93,7 @@ export const Flashcards = ({
                 }`}
                 onClick={() => setDifficulty(0)}
                 value={levels[0]}
-              />
+              /> */}
             </div>
             <button
               className="Flashcards__btns__next"
