@@ -1,11 +1,13 @@
-
 .Flashcards {
     display: flex;
     flex-wrap: wrap;
 }
+
+
 .Flashcard__container {
     min-height: 0;
 }
+
 .Flashcard {
     min-height: 0;
     border: 3px solid #000;
@@ -173,3 +175,46 @@
   }
   
 
+  @media only screen and (max-width: 600px) {
+    .Flashcards {
+        display: flex;
+        flex-wrap: nowrap
+    }
+    .Flashcard__container {
+        margin: 0.75rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .Flashcard {
+        flex: 1;
+    }
+    .Flashcard__number {
+        background-color: #aaa;
+        opacity: .51;
+        height: 1.25rem;
+        margin-bottom: 0.75rem;
+        padding: 0.25rem;
+        color: #000;
+        border: 1px solid #777;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .Flashcards__btns {
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: initial;
+      margin-bottom: initial;
+    }
+    .Flashcards__btns__difficulty {
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: initial;
+        margin-bottom: initial; 
+    }
+
+}
