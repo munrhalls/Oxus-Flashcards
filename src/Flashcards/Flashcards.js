@@ -63,14 +63,14 @@ export const Flashcards = ({
                 );
               })}
             </div>
-            <button
+            <div
               className="Flashcards__btns__next"
               key={uuidv4()}
               onClick={shuffleDeck}
             >
-              <span className="Flashcards__btns__next__text">Next</span>{" "}
+              <span className="Flashcards__btns__next__text">Next</span>
               <img className="Flashcards__btns__next__image" src={img} />
-            </button>
+            </div>
           </div>
         </div>
       ) : (

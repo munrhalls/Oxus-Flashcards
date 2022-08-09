@@ -69,7 +69,7 @@
     font-weight: bold;
 }
 .Flashcards__btns__next {
-    cursor: pointer;
+    /* cursor: pointer;
     border: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -79,7 +79,7 @@
     margin-left: auto;
     align-self: flex-end;
     flex: 1;
-    min-width: 0;
+    min-width: 0; */
 }
 .Flashcards__btns__next__image {
     flex: 1;
