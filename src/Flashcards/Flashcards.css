@@ -192,7 +192,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-width: 15rem;
+        flex: 1;
+        min-width: 12rem;
     }
     .Flashcard {
         flex: 1;
