@@ -186,7 +186,9 @@
   @media only screen and (max-width: 600px) {
     .Flashcards {
         display: flex;
-        flex-wrap: nowrap
+        flex-wrap: nowrap;
+        min-height: 15rem;
+        flex: 3;
     }
     .Flashcard__container {
         display: flex;
@@ -240,7 +242,12 @@
 
     }
     .Flashcards__btns__next__image {
-  
+        max-width: 1.75rem;
     }
 
+
+    .CompletedFlashcards {
+        min-height: 5rem;
+        flex: 1;
+    }
 }
