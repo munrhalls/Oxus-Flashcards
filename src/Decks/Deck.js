@@ -36,12 +36,10 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
             src={IMG__CARDS}
             alt="Cards image."
           />
-          <span className="Deck__titleContainer__metaContainer__metaColon">
-            :
-          </span>
         </div>
-
-        <h3 className="Deck__titleContainer__title">{activeDeck.name}.</h3>
+        <div className="Deck__titleContainer__titleContainer">
+          <h3 className="Deck__titleContainer__title">{activeDeck.name}.</h3>
+        </div>
       </div>
       <div className="Deck__instance">
         <Flashcards
