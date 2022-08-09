@@ -204,16 +204,17 @@
         background-color: #aaa;
         opacity: .51;
         height: 1.25rem;
-        margin-bottom: 0.75rem;
         padding: 0.25rem;
         color: #000;
         border: 1px solid #777;
-        border-radius: 5px;
+        border-radius: 3px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         font-weight: bold;
+        width: 100%;
+        margin-bottom: 1rem;
     }
 
     .Flashcards__btns {
@@ -229,10 +230,25 @@
         margin-top: initial;
         margin-bottom: initial; 
         flex-wrap: nowrap;
-        background-color: #000;
         min-height: 8rem;
 
         flex: 4;
+    }
+    .Flashcards__btns__difficulty__title {
+        color: #fff;
+        background-color: #aaa;
+        opacity: .51;
+        height: 1.25rem;
+        padding: 0.25rem;
+        color: #000;
+        border: 1px solid #777;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
     }
     .Flashcards__btns__difficulty__container  {
         

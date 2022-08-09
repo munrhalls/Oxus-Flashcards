@@ -45,10 +45,11 @@ export const Flashcards = ({
       {flashcards.length > 0 ? (
         <div className="Flashcards">
           <div className="Flashcard__container">
-            <div className="Flashcard__number">fcards num</div>
+            <h3 className="Flashcard__number">fcards num</h3>
             <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
           </div>
           <div className="Flashcards__btns">
+            <h3 className="Flashcards__btns__difficulty__title">DIFFICULTY</h3>
             <div className="Flashcards__btns__difficulty">
               {levels.reverse().map((lvlName, index) => {
                 return (
