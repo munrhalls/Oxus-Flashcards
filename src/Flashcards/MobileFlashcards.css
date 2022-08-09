@@ -3,7 +3,7 @@
         display: flex;
         flex-wrap: nowrap;
         min-height: 15rem;
-        flex: 4;
+        flex: 5;
     }
     .Flashcard__container {
         display: flex;
