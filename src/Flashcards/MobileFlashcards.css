@@ -47,6 +47,10 @@
         margin-bottom: initial; 
         flex-wrap: nowrap;
         min-height: 8rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #000;
+        padding-top: 1rem;
+        border-top: 3px solid #000;
 
         flex: 4;
     }
@@ -88,10 +92,12 @@
     .Flashcards__btns__next {
         flex: 1;
         min-height: 2rem;
+        background-color: transparent;
 
     }
     .Flashcards__btns__next__image {
         max-width: 1.75rem;
+        margin-left: 0.5rem;
     }
 
 
