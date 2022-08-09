@@ -21,6 +21,7 @@
     align-items: center;
     font-size: 1.25rem;
     font-weight: bold;
+    min-width: 100%;
 }
 
 .Flashcard__image {
@@ -53,6 +54,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #777;
+    border-radius: 5px;
 }
 .Flashcards__btns__difficulty__container {
     cursor: pointer;
@@ -60,9 +63,9 @@
     
 }
 .Flashcards__btns__difficulty__container.--rating {
-    background-color: #000;
+    background-color: #fff;
     color: #fff;
-    box-shadow: inset 0px 0px 20px #fff;
+    box-shadow: 0px 0px 20px #fff;
     font-weight: bold;
 }
 .Flashcards__btns__next {
@@ -75,8 +78,12 @@
     align-items: center;
     margin-left: auto;
     align-self: flex-end;
+    flex: 1;
+    min-width: 0;
 }
 .Flashcards__btns__next__image {
+    flex: 1;
+    min-width: 0;
 }
 .Flashcards__btn__next__text {
     margin-right: 0.75rem;
@@ -181,9 +188,11 @@
         flex-wrap: nowrap
     }
     .Flashcard__container {
-        margin: 0.75rem;
+        margin: 0 0.75rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        min-width: 15rem;
     }
     .Flashcard {
         flex: 1;
@@ -205,17 +214,15 @@
     }
 
     .Flashcards__btns {
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: initial;
-      margin-bottom: initial;
+        
     }
     .Flashcards__btns__difficulty {
-        flex: 1;
+        display: flex;
         justify-content: space-between;
         flex-direction: column;
         margin-top: initial;
         margin-bottom: initial; 
+        flex-wrap: nowrap;
     }
     .Flashcards__btns__difficulty__container  {
         display: flex;
@@ -230,23 +237,23 @@
         border: none;
 
         padding: 0.75rem 0.3rem;
-        width: 3rem;
-        min-width: 8rem;
         min-height: 0;
         flex: 1;
         cursor: pointer;
     }
     .Flashcards__btns__difficulty__container__instance {
-        font-weight: bold;
         font-size: 0.75rem;
         letter-spacing: 1.5px;
         height: 36px;
         background-color: #000;
         color: #fff;
-        min-width: 7rem;
         border-radius: 5px;
         border: 1px solid #fff;
         cursor: pointer;
+        text-transform: uppercase;
+    }
+    .Flashcards__btns__difficulty__container__instance.--rating {
+        font-weight: bold;
     }
 
 }
