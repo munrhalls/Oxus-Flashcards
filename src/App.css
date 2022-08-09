@@ -15,6 +15,8 @@
 @import './Modals/DeleteDeck/DeleteDeck.css';
 @import './Footer/Footer.css';
 
+@import './Flashcards/MobileFlashcards.css';
+
 *, :hover, :after {
     box-sizing: border-box;
 }

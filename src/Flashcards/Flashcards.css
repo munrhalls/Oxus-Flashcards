@@ -55,7 +55,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #777;
     border-radius: 5px;
 }
 .Flashcards__btns__difficulty__container {
@@ -183,94 +182,4 @@
   }
   
 
-  @media only screen and (max-width: 600px) {
-    .Flashcards {
-        display: flex;
-        flex-wrap: nowrap;
-        min-height: 15rem;
-        flex: 3;
-    }
-    .Flashcard__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 4;
-        min-width: 12rem;
-    }
-    .Flashcard {
-        flex: 1;
-    }
-    .Flashcard__number {
-        background-color: #aaa;
-        opacity: .51;
-        height: 1.25rem;
-        padding: 0.25rem;
-        color: #000;
-        border: 1px solid #777;
-        border-radius: 3px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .Flashcards__btns {
-        flex: 1;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .Flashcards__btns__difficulty {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        margin-top: initial;
-        margin-bottom: initial; 
-        flex-wrap: nowrap;
-        min-height: 8rem;
-
-        flex: 4;
-    }
-    .Flashcards__btns__difficulty__title {
-        color: #fff;
-        background-color: #aaa;
-        opacity: .51;
-        height: 1.25rem;
-        padding: 0.25rem;
-        color: #000;
-        border: 1px solid #777;
-        border-radius: 5px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-    .Flashcards__btns__difficulty__container  {
-        
-    }
-    .Flashcards__btns__difficulty__container__instance {
-
-    }
-    .Flashcards__btns__difficulty__container__instance.--rating {
-    }
-
-    .Flashcards__btns__next {
-        flex: 1;
-        min-height: 2rem;
-
-    }
-    .Flashcards__btns__next__image {
-        max-width: 1.75rem;
-    }
-
-
-    .CompletedFlashcards {
-        min-height: 5rem;
-        flex: 1;
-    }
-}
+  
