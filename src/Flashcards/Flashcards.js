@@ -50,7 +50,7 @@ export const Flashcards = ({
           </div>
           <div className="Flashcards__btns">
             <div className="Flashcards__btns__difficulty">
-              {levels.map((lvlName, index) => {
+              {levels.reverse().map((lvlName, index) => {
                 return (
                   <DifficultyBtn
                     key={uuidv4()}
@@ -61,39 +61,6 @@ export const Flashcards = ({
                   />
                 );
               })}
-
-              {/* <input
-                type="button"
-                className={`Flashcards__btns__difficulty__instance ${
-                  difficulty === 3 ? "--rating" : ""
-                }`}
-                onClick={() => setDifficulty(3)}
-                value={levels[3]}
-              />
-              <input
-                type="button"
-                className={`Flashcards__btns__difficulty__instance ${
-                  difficulty === 2 ? "--rating" : ""
-                }`}
-                onClick={() => setDifficulty(2)}
-                value={levels[2]}
-              />
-              <input
-                type="button"
-                className={`Flashcards__btns__difficulty__instance ${
-                  difficulty === 1 ? "--rating" : ""
-                }`}
-                onClick={() => setDifficulty(1)}
-                value={levels[1]}
-              />
-              <input
-                type="button"
-                className={`Flashcards__btns__difficulty__instance ${
-                  difficulty === 0 ? "--rating" : ""
-                }`}
-                onClick={() => setDifficulty(0)}
-                value={levels[0]}
-              /> */}
             </div>
             <button
               className="Flashcards__btns__next"

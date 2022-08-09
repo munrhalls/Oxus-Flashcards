@@ -54,12 +54,12 @@
     justify-content: space-between;
     align-items: center;
 }
-.Flashcards__btns__difficulty__instance {
+.Flashcards__btns__difficulty__container {
     cursor: pointer;
     text-transform: uppercase;
     
 }
-.Flashcards__btns__difficulty__instance.--rating {
+.Flashcards__btns__difficulty__container.--rating {
     background-color: #000;
     color: #fff;
     box-shadow: inset 0px 0px 20px #fff;
@@ -217,29 +217,36 @@
         margin-top: initial;
         margin-bottom: initial; 
     }
-    .Flashcards__btns__difficulty__instance  {
+    .Flashcards__btns__difficulty__container  {
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
 
-
-        
         border-radius: 3px;
         margin-top: 0.75rem;
-        font-weight: bold;
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
+       
         box-shadow: 0px 0px 15px #fff;
         border: none;
 
-
-
         padding: 0.75rem 0.3rem;
         width: 3rem;
-        min-width: 3rem;
+        min-width: 8rem;
         min-height: 0;
-        height: 21px;
+        flex: 1;
+        cursor: pointer;
+    }
+    .Flashcards__btns__difficulty__container__instance {
+        font-weight: bold;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        height: 36px;
+        background-color: #000;
+        color: #fff;
+        min-width: 7rem;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        cursor: pointer;
     }
 
 }

@@ -7,13 +7,19 @@ export default function DifficultyBtn({
   setDifficulty,
 }) {
   return (
-    <input
-      type="button"
-      className={`Flashcards__btns__difficulty__instance ${
+    <div
+      onClick={() => setDifficulty()}
+      className={`Flashcards__btns__difficulty__container ${
         difficulty === lvlNum ? "--rating" : ""
       }`}
-      onClick={() => setDifficulty()}
-      value={lvlName}
-    />
+    >
+      <input
+        type="button"
+        className={`Flashcards__btns__difficulty__container__instance ${
+          difficulty === lvlNum ? "--rating" : ""
+        }`}
+        value={lvlName}
+      />
+    </div>
   );
 }
