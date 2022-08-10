@@ -46,7 +46,7 @@
     overflow-y: hidden;
   
   }
-  .Footer a {
+  .Footer__attribs__link {
     font-size: 7px;
     font-weight: lighter;
     padding: 0.25rem;

@@ -1,0 +1,33 @@
+@media only screen and (max-width: 600px) { 
+    .Footer {
+        display: flex;
+        max-height: 3.5rem;
+        min-height: 3.5rem;
+        flex-basis: 3.5rem;
+        padding: 0.5rem;
+    }
+    .Footer__authorContainer {
+        flex-direction: column;
+        padding: 0;
+        flex-wrap: nowrap;
+        min-height: 100%;
+    }
+    .Footer__authorContainer__author {
+        font-size: .5rem;
+        padding-bottom: .1rem;
+        letter-spacing: 2px;
+    }
+    .Footer__attribs {
+        padding-bottom: 1rem;
+    }
+    .Footer__attribs__title {
+        font-size: .5rem;
+    }
+    .Footer__attribs__link {
+        font-size: 0.5rem;
+    }
+    ::-webkit-scrollbar {
+        width: 1vw;
+        height: 2vh;
+      }
+}

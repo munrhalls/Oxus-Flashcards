@@ -12,7 +12,7 @@ export const Footer = () => {
       </div>
 
       <div className="Footer__attribs">
-        <span>Icons: </span>
+        <span className="Footer__attribs__title">Icons: </span>
         <a
           className="Footer__attribs__link"
           href="https://www.flaticon.com/free-icons/arrow"
@@ -20,7 +20,11 @@ export const Footer = () => {
         >
           Arrow icons created by Freepik - Flaticon
         </a>
-        <a href="https://www.flaticon.com/free-icons/close" title="close icons">
+        <a
+          className="Footer__attribs__link"
+          href="https://www.flaticon.com/free-icons/close"
+          title="close icons"
+        >
           <span> /// </span> Close icons created by ariefstudio - Flaticon
         </a>
         <a
@@ -43,16 +47,25 @@ export const Footer = () => {
         >
           <span> ///</span> Plus icons created by Freepik - Flaticon
         </a>
-        <a href="https://www.flaticon.com/free-icons/save" title="save icons">
+        <a
+          className="Footer__attribs__link"
+          href="https://www.flaticon.com/free-icons/save"
+          title="save icons"
+        >
           <span> ///</span> Save icons created by Freepik - Flaticon
         </a>
         <a
+          className="Footer__attribs__link"
           href="https://www.flaticon.com/free-icons/return"
           title="return icons"
         >
           <span> ///</span> Return icons created by Freepik - Flaticon
         </a>
-        <a href="https://www.flaticon.com/free-icons/door" title="door icons">
+        <a
+          className="Footer__attribs__link"
+          href="https://www.flaticon.com/free-icons/door"
+          title="door icons"
+        >
           <span> ///</span> Door icons created by Freepik - Flaticon
         </a>
       </div>

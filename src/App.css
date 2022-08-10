@@ -16,6 +16,7 @@
 @import './Footer/Footer.css';
 
 @import './Flashcards/MobileFlashcards.css';
+@import './Footer/MobileFooter.css';
 
 *, :hover, :after {
     box-sizing: border-box;
