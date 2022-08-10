@@ -4,6 +4,7 @@
         flex-wrap: nowrap;
         min-height: 15rem;
         flex: 5;
+        margin-bottom: 1rem;
     }
     .Flashcard__container {
         display: flex;
@@ -16,11 +17,9 @@
         flex: 1;
     }
     .Flashcard__number {
-        background-color: #aaa;
-        opacity: .51;
         height: 1.25rem;
         padding: 0.25rem;
-        color: #000;
+        color: #fff;
         border: 1px solid #777;
         border-radius: 3px;
         text-align: center;
@@ -30,6 +29,8 @@
         font-weight: bold;
         width: 100%;
         margin-bottom: 1rem;
+        background-color: #000;
+
     }
 
     .Flashcards__btns {
@@ -38,6 +39,8 @@
         display: flex;
         flex-direction: column;
         max-width: 6rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     .Flashcards__btns__difficulty {
         display: flex;
@@ -56,11 +59,9 @@
     }
     .Flashcards__btns__difficulty__title {
         color: #fff;
-        background-color: #aaa;
-        opacity: .51;
+        background-color: #000;
         height: 1.25rem;
         padding: 0.25rem;
-        color: #000;
         border: 1px solid #777;
         border-radius: 5px;
         text-align: center;
