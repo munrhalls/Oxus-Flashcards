@@ -12,7 +12,7 @@ export const Flashcards = ({
   moveDeckFlashcardToCompleted,
 }) => {
   const [difficulty, setDifficulty] = useState(3);
-  const levels = ["pass", "easy", "medium", "hard"];
+  const levels = ["hard", "medium", "easy", "pass"];
 
   function shuffleCard(divideDeckBy, rndFrom, rndTo) {
     let shuffleBy = Math.floor(flashcards.length / divideDeckBy);
@@ -39,7 +39,7 @@ export const Flashcards = ({
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-
+  console.log(difficulty);
   return (
     <>
       {flashcards.length > 0 ? (
@@ -51,14 +51,15 @@ export const Flashcards = ({
           <div className="Flashcards__btns">
             <h3 className="Flashcards__btns__difficulty__title">DIFFICULTY</h3>
             <div className="Flashcards__btns__difficulty">
-              {levels.reverse().map((lvlName, index) => {
+              {levels.map((lvlName, index) => {
+                let lvlNum = levels.length - 1 - index;
                 return (
                   <DifficultyBtn
                     key={uuidv4()}
                     lvlName={lvlName}
                     difficulty={difficulty}
-                    setDifficulty={() => setDifficulty(() => index)}
-                    lvlNum={index}
+                    setDifficulty={() => setDifficulty(() => lvlNum)}
+                    lvlNum={lvlNum}
                   />
                 );
               })}
