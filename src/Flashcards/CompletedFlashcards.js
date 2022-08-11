@@ -4,16 +4,20 @@ import { uuidv4 } from "@firebase/util";
 
 export const CompletedFlashcards = ({ completedFlashcards }) => {
   function makeHeap() {
+    // const [heapsN, setHeapsN] = useState(0);
+
     return completedFlashcards.map((card, i) => {
-      const multiplier = 5.25;
-      const nextHeap = i % 14 === 0 ? 0 - i * multiplier : 0;
+      const multiplier = 1.1 / 2;
+      const calcRDist = 0 - (i * multiplier) / 3;
+      let j = 1;
+
       return (
         <div
           key={uuidv4()}
           className="CompletedFlashcards__heapFrame"
           style={{
-            top: `${0 - i * multiplier * 1.25}px`,
-            right: `${0 - (i * multiplier) / 3 + nextHeap}px`,
+            top: `${0 - i * multiplier * 1.25}rem`,
+            right: `${0 - (i * multiplier) / 3}rem`,
           }}
         ></div>
       );
