@@ -15,7 +15,9 @@
 @import './Modals/DeleteDeck/DeleteDeck.css';
 @import './Footer/Footer.css';
 
+
 @import './Flashcards/MobileFlashcards.css';
+@import './Flashcards/MobileCompletedFlashcards.css';
 @import './Footer/MobileFooter.css';
 
 *, :hover, :after {

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
+// import { useMobileCheck } from "./../Hooks/useMobileCheck";
 
 export const CompletedFlashcards = ({ completedFlashcards }) => {
   function makeHeap() {
     return completedFlashcards.map((card, i) => {
-      const multiplier = completedFlashcards.length > 10 ? 2.5 : 5.25;
+      const multiplier = 5.25;
+      const nextHeap = i % 14 === 0 ? 0 - i * multiplier : 0;
       return (
         <div
           key={uuidv4()}
           className="CompletedFlashcards__heapFrame"
           style={{
-            top: `${0 - i * multiplier}px`,
-            right: `${0 - i * multiplier}px`,
+            top: `${0 - i * multiplier * 1.25}px`,
+            right: `${0 - (i * multiplier) / 3 + nextHeap}px`,
           }}
         ></div>
       );

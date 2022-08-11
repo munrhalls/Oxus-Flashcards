@@ -112,10 +112,4 @@
         max-height: 3rem;
         margin-left: 0.25rem;
     }
-
-
-    .CompletedFlashcards {
-        min-height: 5rem;
-        flex: 1;
-    }
 }

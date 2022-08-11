@@ -32,6 +32,259 @@ function App() {
     {
       id: uuidv4(),
       unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
+        text: 'How\'s  \n"Hey\n" in Spanish?',
+        image: "",
+      },
+      turned: {
+        text: "Hola!.",
+        image: "",
+      },
+    },
+    {
+      id: uuidv4(),
+      unturned: {
         text: "Hey in French?",
         image: "",
       },
