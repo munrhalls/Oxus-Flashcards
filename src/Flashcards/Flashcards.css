@@ -69,6 +69,7 @@
     font-weight: bold;
 }
 .Flashcards__btns__next {
+    cursor: pointer;
     /* cursor: pointer;
     border: none;
     font-weight: bold;

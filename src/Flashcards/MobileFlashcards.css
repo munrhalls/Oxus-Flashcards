@@ -83,6 +83,7 @@
         border-radius: 5px;
         height: 2.5rem;
         width: 5rem;
+        cursor: pointer;
     }
     .Flashcards__btns__difficulty__container__instance.--rating {
         background-color: #000;
