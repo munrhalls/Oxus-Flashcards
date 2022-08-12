@@ -1,0 +1,45 @@
+.CompletedFlashcards {
+        min-height: 5rem;
+        flex: 1;
+        position: relative;
+    }
+.CompletedFlashcards__title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.CompletedFlashcards__title__text {
+    font-weight: bold;
+}
+.CompletedFlashcards__title__number {
+    margin-top: 0.5rem;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.CompletedFlashcards__heapFrame {
+    border: 3px solid #000;
+    border-radius: 5px;
+    padding: 0.25rem;
+    cursor: pointer;
+    z-index: 10;
+    margin: auto;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border: 3px solid #000;
+    z-index: 1;
+}
+
+
+.CompletedFlashcards__frontCard {
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 3rem;
+    width: 1.75rem;
+    transform: skew(-15deg, -10deg);
+    border: transparent;
+}
+.CompletedFlashcards__frontCard__container {
+    display: none;
+}

@@ -2,6 +2,7 @@
 @import './Header/Header.css';
 @import './Welcome/Welcome.css';
 @import './Flashcards/Flashcards.css';
+@import './Flashcards/CompletedFlashcards.css';
 @import './Deck/Deck.css';
 @import './Modals/Modals.css';
 @import './Modals/ModalBtns/AddDeckBtn.css';

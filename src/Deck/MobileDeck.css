@@ -9,6 +9,7 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 0;
+        flex-wrap: nowrap;
     }
     .Deck__titleContainer {
         display: flex;
