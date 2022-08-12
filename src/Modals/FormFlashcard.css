@@ -1,7 +1,11 @@
 .FormFlashcard {
-    /* max-width: 30rem;
-    max-height: 15rem; */
-}
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+align-items: center;}
 
 .FormFlashcard__titleRibbon {
     background-color: #fff;
@@ -24,12 +28,13 @@
 }
 .FormFlashcard__elementsContainer {
     display: flex;
+    flex-wrap: wrap;
 }
 .class {
     
 }
 .FormFlashcard__elements {
-    width: 16rem;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,6 +65,7 @@
 
 }
 .Flashcard_form_cell {
+    max-height: 60%;
     
 }
 
@@ -88,8 +94,8 @@
     margin-top: 1.5rem;
 }
 .FormFlashcard__textArea {
-    height: 12rem;
-    width: 8rem;
+    height: 30%;
+    min-width: 6rem;
 }
 #changeTurnedImg {
     display: none;
@@ -152,12 +158,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30rem;
-    width: 15rem;
+   
 }
 .Flascard__formdeck__frameTitle {
     border: 3px solid #fff;
-    width: 14rem;
+    width: 40%;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
     display: flex;
@@ -167,16 +172,15 @@
 .FormFlashcard__frameImage {
     border: 3px solid #fff;
     border-radius: 5px;
-    width: 14rem;
-    height: 19rem;
+    width: 40%;
+    min-height: 40%;
     padding: 0.25rem;
     cursor: pointer;
 }
 .FormFlashcard__frameNoImage {
     border: 3px solid #fff;
     border-radius: 5px;
-    width: 14rem;
-    height: 19rem;
+    min-height: 40%;
     padding: 0.25rem;
     cursor: pointer;
     display: flex;
