@@ -1,5 +1,85 @@
 @media only screen and (max-width: 600px) {
     .Flashcards {
+    
+    }
+    
+    .Flashcard__image {
+        position: absolute;
+        left: 0; top: 0; right: 0; bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    
+    .Flashcard__unturned,
+    .Flashcard__turned, 
+    .Flashcard__text {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        word-break: break-word;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+    
+    .Flashcards__btns {
+    }
+    
+    
+    .Flashcards__btns__difficulty {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .Flashcards__btns__difficulty__container {
+        cursor: pointer;
+        text-transform: uppercase;
+        
+    }
+    .Flashcards__btns__difficulty__container.--rating {
+        background-color: #fff;
+        color: #fff;
+        box-shadow: 0px 0px 20px #fff;
+        font-weight: bold;
+    }
+    .Flashcards__btns__next {
+        cursor: pointer;
+    }
+    .Flashcards__btns__next__image {
+        flex: 1;
+        min-width: 0;
+    }
+    .Flashcards__btn__next__text {
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: -1px;
+    }
+    .Flashcard.--form {
+        border: 3px solid #fff;
+    }
+    
+    .Flashcards__completedMessage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Flashcards__completedMessage__title {
+        font-size: 6rem;
+        word-wrap: break-word;
+        font-weight: bold;
+    }
+
+
+
+
+
+    .Flashcards {
         display: flex;
         flex-wrap: nowrap;
         min-height: 15rem;
@@ -15,6 +95,22 @@
     }
     .Flashcard {
         flex: 1;
+
+        min-height: 0;
+        border: 3px solid #000;
+        border-radius: 5px;
+        padding: 0.25rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+        min-width: 100%;
+        max-width: 100%;
     }
     .Flashcard__number {
         height: 1.25rem;

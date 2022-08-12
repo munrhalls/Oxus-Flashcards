@@ -1,114 +1,226 @@
-.Flashcards {
+
+    .Flashcards {
     
-}
-
-.Flashcard {
-    min-height: 0;
-    border: 3px solid #000;
-    border-radius: 5px;
-    padding: 0.25rem;
-    cursor: pointer;
-    position: relative;
-    z-index: 10;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-    font-weight: bold;
-    min-width: 100%;
-    max-width: 100%;
-}
-
-.Flashcard__image {
-    position: absolute;
-    left: 0; top: 0; right: 0; bottom: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-}
-
-
-.Flashcard__unturned,
-.Flashcard__turned, 
-.Flashcard__text {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    word-break: break-word;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.Flashcards__btns {
-}
-
-
-.Flashcards__btns__difficulty {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 5px;
-}
-.Flashcards__btns__difficulty__container {
-    cursor: pointer;
-    text-transform: uppercase;
+    }
     
-}
-.Flashcards__btns__difficulty__container.--rating {
-    background-color: #fff;
-    color: #fff;
-    box-shadow: 0px 0px 20px #fff;
-    font-weight: bold;
-}
-.Flashcards__btns__next {
-    cursor: pointer;
-}
-.Flashcards__btns__next__image {
-    flex: 1;
-    min-width: 0;
-}
-.Flashcards__btn__next__text {
-    margin-right: 0.75rem;
-    font-size: 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: -1px;
-}
-.Flashcard.--form {
-    border: 3px solid #fff;
-}
+    .Flashcard__image {
+        position: absolute;
+        left: 0; top: 0; right: 0; bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    
+    .Flashcard__unturned,
+    .Flashcard__turned, 
+    .Flashcard__text {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        word-break: break-word;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+    
+    .Flashcards__btns {
+    }
+    
+    
+    .Flashcards__btns__difficulty {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .Flashcards__btns__difficulty__container {
+        cursor: pointer;
+        text-transform: uppercase;
+        
+    }
+    .Flashcards__btns__difficulty__container.--rating {
+        background-color: #fff;
+        color: #fff;
+        box-shadow: 0px 0px 20px #fff;
+        font-weight: bold;
+    }
+    .Flashcards__btns__next {
+        cursor: pointer;
+    }
+    .Flashcards__btns__next__image {
+        flex: 1;
+        min-width: 0;
+    }
+    .Flashcards__btn__next__text {
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: -1px;
+    }
+    .Flashcard.--form {
+        border: 3px solid #fff;
+    }
+    
+    .Flashcards__completedMessage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Flashcards__completedMessage__title {
+        font-size: 6rem;
+        word-wrap: break-word;
+        font-weight: bold;
+    }
 
-.Flashcards__completedMessage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.Flashcards__completedMessage__title {
-    font-size: 6rem;
-    word-wrap: break-word;
-    font-weight: bold;
-}
-
-  
-
-  
-
-   
-.CompletedFlashcards {
-    position: relative;
-}
 
 
-.CompletedFlashcards__CSScheckMark {
-    margin-left: auto;
-    margin-top: -55%;
-    display: flex;
-    transform: rotate(45deg);
-    height: 1rem;
-    width: 0.5rem;
-    border-bottom: 2px solid #000;
-    border-right: 2px solid #000;
-  }
+
+
+    .Flashcards {
+        display: flex;
+        flex-wrap: nowrap;
+        min-height: 15rem;
+        flex: 5;
+        margin-bottom: 1rem;
+    }
+    .Flashcard__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 4;
+        min-width: 12rem;
+    }
+    .Flashcard {
+        flex: 1;
+
+        min-height: 0;
+        border: 3px solid #000;
+        border-radius: 5px;
+        padding: 0.25rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .Flashcard__number {
+        height: 1.25rem;
+        padding: 0.25rem;
+        color: #fff;
+        border: 1px solid #777;
+        border-radius: 3px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: #000;
+
+    }
+
+    .Flashcards__btns {
+        flex: 1;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        max-width: 6rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .Flashcards__btns__difficulty {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: initial;
+        margin-bottom: initial; 
+        flex-wrap: nowrap;
+        min-height: 8rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #000;
+        padding-top: 1rem;
+        border-top: 3px solid #000;
+
+        flex: 4;
+    }
+    .Flashcards__btns__difficulty__title {
+        color: #fff;
+        background-color: #000;
+        height: 1.25rem;
+        padding: 0.25rem;
+        border: 1px solid #777;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .Flashcards__btns__difficulty__container  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .Flashcards__btns__difficulty__container__instance {
+        font-weight: bold;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        height: 1.75rem;
+        width: 4rem;
+        cursor: pointer;
+    }
+    .Flashcards__btns__difficulty__container__instance.--rating {
+        background-color: #000;
+        box-shadow: 2px -2px 0px #000;
+        color: #fff;
+    }
+
+    .Flashcards__btns__next {
+        background-color: #777;
+        border-radius: 5px;
+        border: 3px solid #000;
+        flex: 1;
+        min-height: 2rem;
+        height: 2rem;
+        max-height: 4rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .Flashcards__btns__next__text {
+        display: none;
+    }
+    .Flashcards__btns__next__image {
+        width: 4rem;
+        max-height: 3rem;
+        margin-left: 0.25rem;
+    }
+    .Flashcards__completedMessage {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Flashcards__completedMessage__title {
+        font-size: 3rem;
+    }
+    .CompletedFlashcards__title__text {
+
+    }
+    .CompletedFlashcards__title__number {
+
+    }
