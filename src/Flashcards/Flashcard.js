@@ -21,14 +21,14 @@ export const Flashcard = ({ flashcard }) => {
       {turned ? (
         <>
           <div className="Flashcard__turned">
-            <span className="Flashcard__text">{flashcard.turned.text}</span>
+            <div className="Flashcard__text">{flashcard.turned.text}</div>
           </div>
           {turnedImg}
         </>
       ) : (
         <>
           <div className="Flashcard__unturned">
-            <span className="Flashcard__text">{flashcard.unturned.text}</span>
+            <div className="Flashcard__text">{flashcard.unturned.text}</div>
           </div>
           {unturnedImg}
         </>

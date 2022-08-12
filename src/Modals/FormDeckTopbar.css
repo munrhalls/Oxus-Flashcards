@@ -51,8 +51,10 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    width: auto;
     overflow: hidden;
     white-space: nowrap;
+    min-width: 0;
     text-overflow: ellipsis;
 }
 .FormDeck__topBar__line__deckName.--input {
