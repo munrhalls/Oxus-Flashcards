@@ -113,4 +113,19 @@
         max-height: 3rem;
         margin-left: 0.25rem;
     }
+    .Flashcards__completedMessage {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Flashcards__completedMessage__title {
+        font-size: 3rem;
+    }
+    .CompletedFlashcards__title__text {
+
+    }
+    .CompletedFlashcards__title__number {
+
+    }
 }
