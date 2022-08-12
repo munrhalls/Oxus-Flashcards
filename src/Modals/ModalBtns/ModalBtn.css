@@ -84,6 +84,11 @@
     font-weight: bold;
     box-shadow: 0px 0px 45px #fff;
 }
+.ModalBtns__container:last-of-type.--open { 
+    background: rgb(147, 5, 5);
+    font-weight: bold;
+    box-shadow: 0px 0px 45px  rgb(147, 5, 5);
+}
 
 .ModalBtns__container__btn__icon {
     max-width: 2rem;

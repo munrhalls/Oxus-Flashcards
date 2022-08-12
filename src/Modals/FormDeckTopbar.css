@@ -47,11 +47,11 @@
 }
 .FormDeck__topBar__line__deckName {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    text-align: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     font-size: 1.5rem;
-    width: auto;
     overflow: hidden;
     white-space: nowrap;
     min-width: 0;
