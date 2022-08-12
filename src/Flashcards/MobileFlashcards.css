@@ -218,10 +218,14 @@
     .Flashcards__completedMessage__title {
         font-size: 3rem;
     }
+    .CompletedFlashcards__title {
+        align-items: flex-end;
+        margin-right: initial;
+    }
     .CompletedFlashcards__title__text {
-
+        margin-left: auto;
     }
     .CompletedFlashcards__title__number {
-
+        margin-left: auto;
     }
 }
