@@ -21,264 +21,264 @@ function App() {
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Portugese ?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Olá",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in English, Australia?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "G’day",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Greek?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Geia (γεια)",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Serbia?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Zdravo",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Croatian?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Zdravo",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Mandarin?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Nǐ hǎo",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Cantonese?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Nǐ hǎo. Mandarin and Cantonese are very different.",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Hindi?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Namaste",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Cyprus?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Merhaba",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Slovakia?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Ahoj",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Dutch?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Hallo",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Thai?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "S̄wạs̄dī",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Hungarian?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Szia",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Czech?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Ahoj",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Bengali?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Hyālō",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Urdu (Pakistan)?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Assalam u Alaikum",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Persian?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Salām",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Swedish?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Hallå",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Afrikaans?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Hallo",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Romanian?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Bunâ",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Hebrew?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Shalom",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Armenian?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Barev",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Arabic?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Marhabaan",
         image: "",
       },
     },
     {
       id: uuidv4(),
       unturned: {
-        text: 'How\'s  \n"Hey\n" in Spanish?',
+        text: 'How\'s  \n"Hey\n" in Punjabi (spoken in India)?',
         image: "",
       },
       turned: {
-        text: "Hola!.",
+        text: "Sata Srī Akāla",
         image: "",
       },
     },
