@@ -99,6 +99,8 @@
         min-width: 12rem;
     }
     .Flashcard {
+        background-color: #fff;
+        color: #000;
         flex: 1;
 
         min-height: 0;

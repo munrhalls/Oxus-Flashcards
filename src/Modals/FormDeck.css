@@ -88,17 +88,20 @@
 }
 .FormFlashcardContainer__btn {
     border-radius: 50%;
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     cursor: pointer;
 
 }
 .FormFlashcardContainer__btn.--addBtn {
     /* background-color: rgb(5, 72, 49); */
     border: 12px solid #000;
-   margin-top: 15%;
+   margin-top: 7.5%;
    cursor: pointer;
-    
+   border-radius: 100%; 
+}
+.FormFlashcardContainer__btn:hover.--addBtn {
+    box-shadow: 0 0 50px 45px #fff;
 }
 .FormFlashcardContainer__btn__addImg {
     width: 4rem;
@@ -108,8 +111,8 @@
 }
 .FormFlashcardContainer__addBtnTextContainer {
     border-top: 9px solid transparent;
-    height: 3rem;
-    width: 80%;
+    height: 5rem;
+    width: 92.5%;
     cursor: pointer;
 
 }
@@ -121,7 +124,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
     text-transform: uppercase;
 }
 .FormFlashcardContainer__addBtnTextContainer__addBtnText {

@@ -28,6 +28,26 @@ export function EditFlashcardsList({
   return (
     <div className="FormFlashcardslist">
       <div className="FormFlashcardslist__list">
+        <div
+          onClick={() => setModalOpen("AddFlashcard")}
+          className="FormFlashcardContainer --addBtn"
+        >
+          <button
+            type="button"
+            className="FormFlashcardContainer__btn --addBtn"
+          >
+            <img
+              className="FormFlashcardContainer__btn__addImg"
+              src={IMG__PLUS}
+              alt="ADD"
+            />
+          </button>
+          <div className="FormFlashcardContainer__addBtnTextContainer">
+            <h6 className="FormFlashcardContainer__addBtnTextContainer__addBtnText">
+              ADD NEW FLASHCARD
+            </h6>
+          </div>
+        </div>
         {flashcards &&
           completedFlashcards &&
           [...flashcards, ...completedFlashcards].map((card, i) => {
@@ -79,26 +99,6 @@ export function EditFlashcardsList({
               </div>
             );
           })}
-        <div
-          onClick={() => setModalOpen("AddFlashcard")}
-          className="FormFlashcardContainer --addBtn"
-        >
-          <button
-            type="button"
-            className="FormFlashcardContainer__btn --addBtn"
-          >
-            <img
-              className="FormFlashcardContainer__btn__addImg"
-              src={IMG__PLUS}
-              alt="ADD"
-            />
-          </button>
-          <div className="FormFlashcardContainer__addBtnTextContainer">
-            <h6 className="FormFlashcardContainer__addBtnTextContainer__addBtnText">
-              ADD NEW FLASHCARD
-            </h6>
-          </div>
-        </div>
       </div>
     </div>
   );
