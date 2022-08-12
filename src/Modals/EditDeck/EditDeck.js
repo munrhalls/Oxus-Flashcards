@@ -22,7 +22,6 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
 
   return (
     <div className="EditDeck">
-      <button>T E S T</button>
       <form className="Form" onSubmit={handleSubmit}>
         <div className="FormDeck__topBar">
           <div className="FormDeck__topBar__line --first">
