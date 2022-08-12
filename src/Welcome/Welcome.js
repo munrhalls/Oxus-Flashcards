@@ -23,7 +23,7 @@ export const Welcome = {
     );
   },
   Message: function Message(props) {
-    const [message, setIsMessage] = useState(false);
+    const [message, setIsMessage] = useState(true);
 
     return (
       <>
