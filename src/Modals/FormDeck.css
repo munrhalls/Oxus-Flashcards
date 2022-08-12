@@ -74,6 +74,7 @@
     height: 15rem;
     flex: 1 1 15rem;
     display: flex;
+    margin-bottom: 0.25rem;
 }
 .FormFlashcardContainer.--addBtn {
     background-color: #222;
@@ -131,6 +132,7 @@
 .FormFlashcardContainer__addBtnTextContainer__addBtnText {
 }
 .FormFlashcardContainer__numContainer {
+    border-radius: 5px;
     height: 100%;
     width: 2rem;    
     background-color: #777;
