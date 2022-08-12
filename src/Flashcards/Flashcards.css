@@ -16,12 +16,14 @@
     cursor: pointer;
     position: relative;
     z-index: 10;
+
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.25rem;
     font-weight: bold;
     min-width: 100%;
+    max-width: 100%;
 }
 
 .Flashcard__image {
@@ -110,6 +112,7 @@
 }
 
 .CompletedFlashcards {
+    position: relative;
 }
 
 .CompletedFlashcards__frontCard {

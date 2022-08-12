@@ -2,7 +2,7 @@
 @import './Header/Header.css';
 @import './Welcome/Welcome.css';
 @import './Flashcards/Flashcards.css';
-@import './Decks/Decks.css';
+@import './Deck/Deck.css';
 @import './Modals/Modals.css';
 @import './Modals/ModalBtns/AddDeckBtn.css';
 @import './Modals/ModalBtns/ModalBtns.css';
@@ -16,6 +16,7 @@
 @import './Footer/Footer.css';
 
 
+@import './Deck/MobileDeck.css';
 @import './Flashcards/MobileFlashcards.css';
 @import './Flashcards/MobileCompletedFlashcards.css';
 @import './Footer/MobileFooter.css';

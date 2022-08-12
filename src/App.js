@@ -11,8 +11,8 @@ import { useEffect, useState } from "react";
 import { Header } from "./Header/Header";
 import { Modals } from "./Modals/Modals";
 import { ModalBtns } from "./Modals/ModalBtns/ModalBtns";
-import { SymbolDecks } from "./Decks/SymbolDecks";
-import { Deck } from "./Decks/Deck.js";
+import { SymbolDecks } from "./Deck/SymbolDecks";
+import { Deck } from "./Deck/Deck.js";
 import { Footer } from "./Footer/Footer";
 import { Welcome } from "./Welcome/Welcome";
 

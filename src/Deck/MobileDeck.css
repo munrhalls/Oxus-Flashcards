@@ -1,0 +1,48 @@
+@media only screen and (max-width: 600px) {
+    .Deck {
+        padding: 0.75rem;
+    }
+    .Deck__instance {
+        margin-top: 1rem;
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 0;
+    }
+    .Deck__titleContainer {
+        display: flex;
+        border-radius: 5px;
+        border: 3px solid #000;
+        padding: 0.5rem;
+        flex: 1;
+        max-height: 4rem;
+    }
+    .Deck__titleContainer__titleContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        flex-wrap: wrap;
+    }
+    .Deck__titleContainer__title {
+        padding-left: 0.25rem;
+        font-size: 1rem;
+        font-weight: normal;
+        max-width: 100%;
+    }
+    .Deck__titleContainer__metaContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .Deck__titleContainer__metaContainer__metaTitle {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    .Deck__titleContainer__metaContainer__metaIcon {
+        max-width: 1.75rem;
+        max-height: 1.75rem;
+        margin-left: 0.5rem;
+    }
+}
