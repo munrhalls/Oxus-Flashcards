@@ -181,6 +181,9 @@
         width: 4rem;
         cursor: pointer;
     }
+    .Flashcards__btns__difficulty__container__instance:hover {
+        transform: scale(1.5);
+    }
     .Flashcards__btns__difficulty__container__instance.--rating {
         background-color: #000;
         box-shadow: 2px -2px 0px #000;

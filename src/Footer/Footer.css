@@ -56,3 +56,8 @@
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;;
   }
+
+   ::-webkit-scrollbar {
+    width: 3vw;
+    height: 4vh;
+}

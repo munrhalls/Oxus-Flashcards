@@ -26,8 +26,8 @@
     .Footer__attribs__link {
         font-size: 0.5rem;
     }
-    ::-webkit-scrollbar {
+    .Footer__attribs ::-webkit-scrollbar {
         width: 1vw;
         height: 2vh;
-      }
+    }
 }
