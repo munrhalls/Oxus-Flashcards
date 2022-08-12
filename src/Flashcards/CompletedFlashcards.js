@@ -60,7 +60,9 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
         {heapEffect}
       </div>
       <h3 className="CompletedFlashcards__title">
-        COMPLETED CARDS:
+        <span className="CompletedFlashcards__title__text">
+          COMPLETED CARDS:
+        </span>
         <span className="CompletedFlashcards__title__number">
           {completedFlashcards.length}
         </span>
