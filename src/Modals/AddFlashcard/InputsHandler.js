@@ -1,7 +1,7 @@
 import React from "react";
 import cloneDeep from "lodash.clonedeep";
 
-export const FormFlashcard = ({ flashcard, setFlashcard }) => {
+export const InputsHandler = ({ flashcard, setFlashcard }) => {
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();

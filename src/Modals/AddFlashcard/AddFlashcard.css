@@ -1,0 +1,31 @@
+.AddFlashcard {
+    border-radius: 10px;
+    background-color: #000;
+    border: 10px solid #000;
+    height: 100%;
+    width: 100%;
+}
+.AddFlashcard__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.AddFlashcard__container__nameLabel {
+    font-size: 3.5rem;
+}
+.AddFlashcard__container__nameInput {
+    margin-top: 1rem;
+    height: 6rem;
+    width: 65%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.AddFlashcard__container__nameInput[placeholder] {
+    font-size: 1.25rem;
+    width: 21rem;
+}

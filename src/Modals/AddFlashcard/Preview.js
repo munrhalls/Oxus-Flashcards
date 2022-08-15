@@ -1,19 +1,23 @@
 import React from "react";
 
-export const Preview = ({ src }) => {
-  return src ? (
-    <img className="Flashcard__form__frameImage" src={src} />
-  ) : (
-    <div className="Flashcard__form__frameNoImage">
-      <span className="Flashcard__form__frameNoImageTitle">
-        Want image in flashcard?
-      </span>
-      <span className="Flashcard__form__frameNoImageTitle">
-        Click "choose file" and select an image from your computer.
-      </span>
-      <span className="Flashcard__form__frameNoImageTitle">
-        You can edit it here.
-      </span>
+export const Preview = ({ flashcard, setSide, side }) => {
+  function turnCard(e) {
+    e.preventDefault();
+    setSide((side) => !side);
+  }
+
+  return (
+    <div className="AddFlashcard__preview">
+      {/* <img className="Flashcard__form__frameImage" src={}/> */}
+
+      <div className="Flashcard__turnBtnContainer">
+        <button
+          className="Flashcard__turnBtn"
+          onClick={(side) => turnCard(side)}
+        >
+          Turn.
+        </button>
+      </div>
     </div>
   );
 };
