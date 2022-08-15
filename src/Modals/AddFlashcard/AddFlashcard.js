@@ -5,6 +5,7 @@ import { InputsHandler } from "./InputsHandler";
 import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__SAVE from "./../../Assets/save.png";
+import { Form } from "./../Form";
 
 export const AddFlashcard = ({
   activeDeckId,
@@ -82,7 +83,7 @@ export const AddFlashcard = ({
           />
         </div>
 
-        <div className="Form__exitBtnsContainer">
+        {/* <div className="Form__exitBtnsContainer">
           <button
             type="button"
             className="Form__exitBtnsContainer__btn"
@@ -103,7 +104,8 @@ export const AddFlashcard = ({
               alt="SAVE"
             />
           </button>
-        </div>
+        </div> */}
+        <Form.SubmitExitBtns setModalOpen={() => setModalOpen("EditDeck")} />
       </form>
     </div>
   );
