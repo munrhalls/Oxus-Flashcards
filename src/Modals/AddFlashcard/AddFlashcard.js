@@ -59,25 +59,34 @@ export const AddFlashcard = ({
     setModalOpen("EditDeck");
   }
   return (
-    <form className="FormFlashcard" onSubmit={handleSubmit}>
-      <div className="FormDeck__topBar">
-        <div className="FormDeck__topBar__line --first">
-          <h2 className="FormDeck__topBar__line__title">ADD FLASHCARD</h2>
+    <div className="AddFlashcard">
+      <form className="FormFlashcard" onSubmit={handleSubmit}>
+        <div className="FormDeck__topBar">
+          <div className="FormDeck__topBar__line --first">
+            <h2 className="FormDeck__topBar__line__title">ADD FLASHCARD</h2>
+          </div>
+          <div className="FormDeck__topBar__line --second">
+            <h1 className="FormDeck__topBar__line__deckName">
+              DECK: {deck.name}
+            </h1>
+          </div>
         </div>
-        <div className="FormDeck__topBar__line --second">
-          <h1 className="FormDeck__topBar__line__deckName">
-            DECK: {deck.name}
-          </h1>
+        <InputsHandler flashcard={flashcard} side={side} />
+        <Preview
+          side={side}
+          setSide={(side) => setSide(side)}
+          flashcard={flashcard}
+        />
+        <div className="FormFlashcard__submitContainer">
+          <button
+            onClick={(e) => handleExit(e)}
+            className="FormFlashcard__close"
+          >
+            EXIT
+          </button>
+          <input className="FormFlashcard__submit" type="submit" value="SAVE" />
         </div>
-      </div>
-      <InputsHandler flashcard={flashcard} side={side} />
-      <Preview side={side} flashcard={flashcard} />
-      <div className="FormFlashcard__submitContainer">
-        <button onClick={(e) => handleExit(e)} className="FormFlashcard__close">
-          EXIT
-        </button>
-        <input className="FormFlashcard__submit" type="submit" value="SAVE" />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
