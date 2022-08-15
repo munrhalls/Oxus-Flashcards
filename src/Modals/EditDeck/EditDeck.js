@@ -3,6 +3,7 @@ import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__SAVE from "./../../Assets/save.png";
 import { EditFlashcardsList } from "./EditFlashcardsList";
+import { Form } from "./../Form";
 
 export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
   const deck = decks?.filter((instance) => instance?.id === activeDeckId)?.[0];
@@ -77,7 +78,7 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
           editedDeck={editedDeck}
           setEditedDeck={(editedDeck) => setEditedDeck(editedDeck)}
         />
-        <div className="Form__exitBtnsContainer">
+        {/* <div className="Form__exitBtnsContainer">
           <button
             type="button"
             className="Form__exitBtnsContainer__btn"
@@ -98,7 +99,8 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
               alt="SAVE"
             />
           </button>
-        </div>
+        </div> */}
+        <Form.SubmitExitBtns setModalOpen={() => setModalOpen(null)} />
       </form>
     </div>
   );
