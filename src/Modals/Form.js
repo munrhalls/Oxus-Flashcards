@@ -1,6 +1,7 @@
 import React from "react";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__SAVE from "./../Assets/save.png";
+import IMG__EDIT from "./../Assets/edit.png";
 
 export const Form = {
   Close: function ({ closeFunction }) {
@@ -14,6 +15,22 @@ export const Form = {
         <img
           className="Form__topBar__line__btn__icon"
           src={IMG__CLOSE}
+          alt="CLOSE"
+        />
+      </button>
+    );
+  },
+  Edit: function ({ editFunction }) {
+    return (
+      <button
+        type="button"
+        className="Form__topBar__line__btn"
+        onClick={() => editFunction()}
+      >
+        <span className="Form__topBar__line__btn__text">Edit</span>
+        <img
+          className="Form__topBar__line__btn__icon"
+          src={IMG__EDIT}
           alt="CLOSE"
         />
       </button>
