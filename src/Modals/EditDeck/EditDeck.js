@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import IMG__EDIT from "./../../Assets/edit.png";
-import IMG__CLOSE from "./../../Assets/close.png";
 import { EditFlashcardsList } from "./EditFlashcardsList";
 import { Form } from "./../Form";
 
@@ -57,18 +56,9 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
                 />
               </button>
             ) : (
-              <button
-                type="button"
-                className="Form__topBar__line__btn"
-                onClick={() => setIsEditDeckName(!isEditDeckName)}
-              >
-                <span className="Form__topBar__line__btn__text">Close</span>
-                <img
-                  className="Form__topBar__line__btn__icon"
-                  src={IMG__CLOSE}
-                  alt="CLOSE"
-                />
-              </button>
+              <Form.Close
+                closeFunction={() => setIsEditDeckName(!isEditDeckName)}
+              />
             )}
           </div>
         </div>

@@ -3,6 +3,22 @@ import IMG__CLOSE from "./../Assets/close.png";
 import IMG__SAVE from "./../Assets/save.png";
 
 export const Form = {
+  Close: function ({ closeFunction }) {
+    return (
+      <button
+        type="button"
+        className="Form__topBar__line__btn"
+        onClick={() => closeFunction()}
+      >
+        <span className="Form__topBar__line__btn__text">Close</span>
+        <img
+          className="Form__topBar__line__btn__icon"
+          src={IMG__CLOSE}
+          alt="CLOSE"
+        />
+      </button>
+    );
+  },
   SubmitExitBtns: function ({ setModalOpen }) {
     return (
       <div className="Form__exitBtnsContainer">
