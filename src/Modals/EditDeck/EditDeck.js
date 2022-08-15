@@ -27,12 +27,9 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
           </div>
           <div className="Form__topBar__line --second">
             {isEditDeckName ? (
-              <input
-                className="Form__topBar__line__deckName --input"
-                placeholder="type new deck name..."
-                type="text"
-                value={editedDeck.name}
-                onChange={(e) =>
+              <Form.EditName
+                newVal={editedDeck.name}
+                onChangeFunction={(e) =>
                   setEditedDeck({ ...editedDeck, name: e.target.value })
                 }
               />

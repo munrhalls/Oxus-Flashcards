@@ -36,6 +36,17 @@ export const Form = {
       </button>
     );
   },
+  EditName: function ({ onChangeFunction, newVal }) {
+    return (
+      <input
+        className="Form__topBar__line__deckName --input"
+        placeholder="Type new deck name..."
+        type="text"
+        value={newVal}
+        onChange={(e) => onChangeFunction(e)}
+      />
+    );
+  },
   SubmitExitBtns: function ({ setModalOpen }) {
     return (
       <div className="Form__exitBtnsContainer">
