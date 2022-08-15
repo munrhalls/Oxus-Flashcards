@@ -57,10 +57,6 @@ export const AddFlashcard = ({
     });
   }
 
-  function handleExit(e) {
-    e.preventDefault();
-    setModalOpen("EditDeck");
-  }
   return (
     <div className="AddFlashcard">
       <form className="Form" onSubmit={handleSubmit}>
@@ -72,9 +68,14 @@ export const AddFlashcard = ({
             <h1 className="Form__topBar__line__deckName">DECK: {deck.name}</h1>
           </div>
         </div>
-        <div className="Form__">
-          <InputsHandler flashcard={flashcard} side={side} />
+        <div className="Form__flashcard">
+          <InputsHandler
+            className="InputsHandler"
+            flashcard={flashcard}
+            side={side}
+          />
           <Preview
+            className="Preview"
             side={side}
             setSide={(side) => setSide(side)}
             flashcard={flashcard}
