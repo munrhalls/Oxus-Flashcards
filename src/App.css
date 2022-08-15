@@ -4,10 +4,12 @@
 @import './Flashcards/Flashcards.css';
 @import './Flashcards/CompletedFlashcards.css';
 @import './Deck/Deck.css';
+
+@import './ModalBtns/AddDeckBtn.css';
+@import './ModalBtns/ModalBtns.css';
+@import './ModalBtns/ModalBtn.css';
+
 @import './Modals/Modals.css';
-@import './Modals/ModalBtns/AddDeckBtn.css';
-@import './Modals/ModalBtns/ModalBtns.css';
-@import './Modals/ModalBtns/ModalBtn.css';
 @import './Modals/Form.css';
 @import './Modals/FormTopbar.css';
 @import './Modals/FormFlashcard.css';
@@ -15,6 +17,7 @@
 @import './Modals//EditDeck/EditDeck.css';
 @import './Modals/DeleteDeck/DeleteDeck.css';
 @import './Modals/AddFlashcard/AddFlashcard.css';
+
 @import './Footer/Footer.css';
 
 
