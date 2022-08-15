@@ -1,8 +1,8 @@
 import { ModalBtn } from "./ModalBtn";
 import React from "react";
-import IMG__EDIT from "./../../Assets/edit.png";
-import IMG__CLOSE from "./../../Assets/close.png";
-import IMG__DOOR from "./../../Assets/opened-door-aperture.png";
+import IMG__EDIT from "./../Assets/edit.png";
+import IMG__CLOSE from "./../Assets/close.png";
+import IMG__DOOR from "./../Assets/opened-door-aperture.png";
 
 export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   return (

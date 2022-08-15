@@ -1,6 +1,6 @@
 import React from "react";
-import IMG__PLUS from "./../../Assets/plus.png";
-import IMG__CARDS from "./../../Assets/cards.png";
+import IMG__PLUS from "./../Assets/plus.png";
+import IMG__CARDS from "./../Assets/cards.png";
 
 export const AddDeckBtn = ({ setModalOpen }) => {
   return (
