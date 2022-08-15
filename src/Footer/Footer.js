@@ -6,13 +6,13 @@ export const Footer = () => {
       <div className="Footer__authorContainer">
         <h6 className="Footer__authorContainer__author">App by:</h6>
         <h6 className="Footer__authorContainer__author">Munrhalls. 2022.</h6>
-
+      </div>
+      <div className="Footer__authorContainer">
         <h6 className="Footer__authorContainer__author">Design by:</h6>
         <h6 className="Footer__authorContainer__author">Munrhalls. 2022.</h6>
       </div>
-
       <div className="Footer__attribs">
-        <span className="Footer__attribs__title">Icons: </span>
+        <span className="Footer__attribs__title">ICONS BY: </span>
         <a
           className="Footer__attribs__link"
           href="https://www.flaticon.com/free-icons/arrow"

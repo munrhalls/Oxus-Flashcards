@@ -1,7 +1,7 @@
 .Footer {
     display: flex;
-    max-height: 5rem;
-    min-height: 5rem;
+    max-height: 3.5rem;
+    min-height: 3.5rem;
     flex-basis: 3rem;
     align-self: flex-end;
     align-items: center;
@@ -50,6 +50,7 @@
     font-size: 7px;
     font-weight: lighter;
     padding: 0.25rem;
+    color: lightblue;
     width: fit-content
   }
   .Footer__author {
