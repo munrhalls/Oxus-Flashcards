@@ -23,8 +23,8 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
     });
   }
   return (
-    <div className="Flashcard_form_cell">
-      <div className="Flashcard_form_label">UNTURNED</div>
+    <div className="Inputs">
+      {/* <div className="Flashcard_form_label">UNTURNED</div>
       <div className="FormFlashcard__inputContainer">
         <span className="FormFlashcard__inputTitle">Add text</span>
         <textarea
@@ -45,7 +45,7 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
             onChange={changeUnturnedImg}
           />
         </label>
-      </div>
+      </div> */}
     </div>
   );
 };

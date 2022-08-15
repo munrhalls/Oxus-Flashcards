@@ -60,7 +60,7 @@ export const AddFlashcard = ({
   }
   return (
     <div className="AddFlashcard">
-      <form className="FormFlashcard" onSubmit={handleSubmit}>
+      <form className="Form" onSubmit={handleSubmit}>
         <div className="FormDeck__topBar">
           <div className="FormDeck__topBar__line --first">
             <h2 className="FormDeck__topBar__line__title">ADD FLASHCARD</h2>
@@ -71,12 +71,15 @@ export const AddFlashcard = ({
             </h1>
           </div>
         </div>
-        <InputsHandler flashcard={flashcard} side={side} />
-        <Preview
-          side={side}
-          setSide={(side) => setSide(side)}
-          flashcard={flashcard}
-        />
+        <div className="FormDeck__">
+          <InputsHandler flashcard={flashcard} side={side} />
+          <Preview
+            side={side}
+            setSide={(side) => setSide(side)}
+            flashcard={flashcard}
+          />
+        </div>
+
         <div className="FormFlashcard__submitContainer">
           <button
             onClick={(e) => handleExit(e)}
