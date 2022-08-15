@@ -1,11 +1,4 @@
-import React, { useState } from "react";
-import { Flashcard } from "../../Flashcards/Flashcard";
-import { uuidv4 } from "@firebase/util";
-import IMG__EDIT from "./../../Assets/edit.png";
-import IMG__CLOSE from "./../../Assets/close.png";
-import IMG__PLUS from "./../../Assets/plus.png";
-import IMG__SAVE from "./../../Assets/save.png";
-import IMG__BACK from "./../../Assets/go-back-arrow.png";
+import React from "react";
 import { Form } from "../Form";
 
 export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
@@ -35,21 +28,6 @@ export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
             </div>
           </div>
           <div className="Form__"></div>
-
-          {/* <div className="Form__exitBtnsContainer">
-            <button
-              type="button"
-              className="Form__exitBtnsContainer__btn"
-              onClick={() => setModalOpen(null)}
-            >
-              <span className="Form__exitBtnsContainer__btn__text">Back</span>
-              <img
-                className="Form__exitBtnsContainer__btn__img"
-                src={IMG__BACK}
-                alt="BACK"
-              />
-            </button>
-          </div> */}
           <Form.SubmitExitBtns setModalOpen={() => setModalOpen(null)} />
         </form>
       </div>
