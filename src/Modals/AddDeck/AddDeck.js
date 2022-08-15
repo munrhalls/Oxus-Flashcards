@@ -23,11 +23,11 @@ export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
   return (
     <div className="AddDeck">
       <form className="Form" onSubmit={(e) => handleSubmit(e)}>
-        <div className="FormDeck__topBar">
-          <div className="FormDeck__topBar__line --first">
-            <h2 className="FormDeck__topBar__line__title">ADD DECK</h2>
+        <div className="Form__topBar">
+          <div className="Form__topBar__line --first">
+            <h2 className="Form__topBar__line__title">ADD DECK</h2>
           </div>
-          <div className="FormDeck__topBar__line --second"></div>
+          <div className="Form__topBar__line --second"></div>
         </div>
 
         <div className="AddDeck__container">
@@ -45,25 +45,23 @@ export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
           />
         </div>
 
-        <div className="FormDeck__exitBtnsContainer">
+        <div className="Form__exitBtnsContainer">
           <button
             type="button"
-            className="FormDeck__exitBtnsContainer__btn"
+            className="Form__exitBtnsContainer__btn"
             onClick={() => setModalOpen(null)}
           >
-            <span className="FormDeck__exitBtnsContainer__btn__text">
-              Close
-            </span>
+            <span className="Form__exitBtnsContainer__btn__text">Close</span>
             <img
-              className="FormDeck__exitBtnsContainer__btn__img"
+              className="Form__exitBtnsContainer__btn__img"
               src={IMG__CLOSE}
               alt="CLOSE"
             />
           </button>
-          <button className="FormDeck__exitBtnsContainer__btn" type="submit">
-            <span className="FormDeck__exitBtnsContainer__btn__text">Save</span>
+          <button className="Form__exitBtnsContainer__btn" type="submit">
+            <span className="Form__exitBtnsContainer__btn__text">Save</span>
             <img
-              className="FormDeck__exitBtnsContainer__btn__img"
+              className="Form__exitBtnsContainer__btn__img"
               src={IMG__SAVE}
               alt="SAVE"
             />

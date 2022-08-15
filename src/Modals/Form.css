@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  .FormDeck__exitBtnsContainer {
+  .Form__exitBtnsContainer {
     background-color: #222;
     color: #000;
     height: 5rem;
@@ -18,10 +18,10 @@
     z-index: 10;
     cursor: pointer;
   }
-  .FormDeck__exitBtnsContainer {
+  .Form__exitBtnsContainer {
 
   }
-  .FormDeck__exitBtnsContainer__btn {
+  .Form__exitBtnsContainer__btn {
     cursor: pointer;
     width: 16rem;   
     height: 3rem;
@@ -39,11 +39,11 @@
     justify-content: center;
     align-items: center;
   }
-  .FormDeck__exitBtnsContainer__btn__text {
+  .Form__exitBtnsContainer__btn__text {
     margin-left: 1.5rem;
 
   }
-  .FormDeck__exitBtnsContainer__btn__img {
+  .Form__exitBtnsContainer__btn__img {
     height: 80%;
     margin-left: 1.5rem;
   }
@@ -233,7 +233,7 @@
 }
 
 
-.FormDeck__btn__close {
+.Form__btn__close {
     margin-top: 1rem;
     cursor: pointer;
     width: 12rem;   

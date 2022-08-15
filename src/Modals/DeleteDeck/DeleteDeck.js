@@ -24,31 +24,27 @@ export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
       <div className="DeleteDeck">
         {deck ? (
           <form className="Form" onSubmit={handleSubmit}>
-            <div className="FormDeck__topBar">
-              <div className="FormDeck__topBar__line --first">
-                <h2 className="FormDeck__topBar__line__title">DELETE DECK</h2>
+            <div className="Form__topBar">
+              <div className="Form__topBar__line --first">
+                <h2 className="Form__topBar__line__title">DELETE DECK</h2>
               </div>
-              <div className="FormDeck__topBar__line --second">
-                <h1 className="FormDeck__topBar__line__deckName">
+              <div className="Form__topBar__line --second">
+                <h1 className="Form__topBar__line__deckName">
                   TITLE: {deck.name}
                 </h1>
               </div>
             </div>
-            <div className="FormDeck__">
-              
-            </div>
+            <div className="Form__"></div>
 
-            <div className="FormDeck__exitBtnsContainer">
+            <div className="Form__exitBtnsContainer">
               <button
                 type="button"
-                className="FormDeck__exitBtnsContainer__btn"
+                className="Form__exitBtnsContainer__btn"
                 onClick={() => setModalOpen(null)}
               >
-                <span className="FormDeck__exitBtnsContainer__btn__text">
-                  Back
-                </span>
+                <span className="Form__exitBtnsContainer__btn__text">Back</span>
                 <img
-                  className="FormDeck__exitBtnsContainer__btn__img"
+                  className="Form__exitBtnsContainer__btn__img"
                   src={IMG__BACK}
                   alt="BACK"
                 />
@@ -56,19 +52,19 @@ export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
             </div>
           </form>
         ) : (
-          <div className="FormDeck__noDeckSelectedMsg">
-            <h1 className="FormDeck__noDeckSelectedMsg__title">
+          <div className="Form__noDeckSelectedMsg">
+            <h1 className="Form__noDeckSelectedMsg__title">
               SELECT A DECK TO EDIT
             </h1>
             <button
               type="button"
-              className="FormDeck__noDeckSelectedMsg__btn__select"
+              className="Form__noDeckSelectedMsg__btn__select"
             >
               SELECT DECK
             </button>
             <button
               type="button"
-              className="FormDeck__noDeckSelectedMsg__btn__close"
+              className="Form__noDeckSelectedMsg__btn__close"
               onClick={() => setModalOpen(null)}
             >
               EXIT

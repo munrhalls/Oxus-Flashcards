@@ -1,4 +1,4 @@
-.FormDeck__topBar {
+.Form__topBar {
     display: flex;
     background-color: #222;
     flex-direction: column;
@@ -8,34 +8,34 @@
 
 
 }
-.FormDeck__topBar__line {
+.Form__topBar__line {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.FormDeck__topBar__line.--first {
+.Form__topBar__line.--first {
     background-color: #000;
     height: 3rem;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     /* asdas */
 }
-.FormDeck__topBar__line.--second {
+.Form__topBar__line.--second {
     background-color: #222;
     height: 3rem;
     border-top: 3px solid #444;
     border-bottom: 3px solid #444;
 }
-.FormDeck__topBar__line__title {
+.Form__topBar__line__title {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.75rem;
     flex: 1;
 }
-.FormDeck__topBar__line__btn {
+.Form__topBar__line__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@
     cursor: pointer;
 
 }
-.FormDeck__topBar__line__deckName {
+.Form__topBar__line__deckName {
     flex: 1;
     display: block;
     text-align: center;
@@ -57,7 +57,7 @@
     min-width: 0;
     text-overflow: ellipsis;
 }
-.FormDeck__topBar__line__deckName.--input {
+.Form__topBar__line__deckName.--input {
     padding: 5px;
     padding-left: 1rem;
     height: calc(100% - 5px);
@@ -66,7 +66,7 @@
     margin-left: auto;
     text-align: center;
 }
-.FormDeck__topBar__line__btn__text {
+.Form__topBar__line__btn__text {
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -78,12 +78,12 @@
     color: #222;
     cursor: pointer;
 }
-.FormDeck__topBar__line__btn__icon {
+.Form__topBar__line__btn__icon {
     height: 100%;
     cursor: pointer;
 }
 /* if not anywhere, del later */
-/* .FormDeck__deckName {
+/* .Form__deckName {
     background-color: #222;
     font-size: 1.5rem;
     color: #fff;

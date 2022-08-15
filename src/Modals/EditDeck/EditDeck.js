@@ -23,14 +23,14 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
   return (
     <div className="EditDeck">
       <form className="Form" onSubmit={handleSubmit}>
-        <div className="FormDeck__topBar">
-          <div className="FormDeck__topBar__line --first">
-            <h2 className="FormDeck__topBar__line__title">EDIT DECK</h2>
+        <div className="Form__topBar">
+          <div className="Form__topBar__line --first">
+            <h2 className="Form__topBar__line__title">EDIT DECK</h2>
           </div>
-          <div className="FormDeck__topBar__line --second">
+          <div className="Form__topBar__line --second">
             {isEditDeckName ? (
               <input
-                className="FormDeck__topBar__line__deckName --input"
+                className="Form__topBar__line__deckName --input"
                 placeholder="type new deck name..."
                 type="text"
                 value={editedDeck.name}
@@ -39,19 +39,19 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
                 }
               />
             ) : (
-              <h1 className="FormDeck__topBar__line__deckName">
+              <h1 className="Form__topBar__line__deckName">
                 {editedDeck?.name}
               </h1>
             )}
             {!isEditDeckName ? (
               <button
                 type="button"
-                className="FormDeck__topBar__line__btn"
+                className="Form__topBar__line__btn"
                 onClick={() => setIsEditDeckName(!isEditDeckName)}
               >
-                <span className="FormDeck__topBar__line__btn__text">Edit</span>
+                <span className="Form__topBar__line__btn__text">Edit</span>
                 <img
-                  className="FormDeck__topBar__line__btn__icon"
+                  className="Form__topBar__line__btn__icon"
                   src={IMG__EDIT}
                   alt="CLOSE"
                 />
@@ -59,12 +59,12 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
             ) : (
               <button
                 type="button"
-                className="FormDeck__topBar__line__btn"
+                className="Form__topBar__line__btn"
                 onClick={() => setIsEditDeckName(!isEditDeckName)}
               >
-                <span className="FormDeck__topBar__line__btn__text">Close</span>
+                <span className="Form__topBar__line__btn__text">Close</span>
                 <img
-                  className="FormDeck__topBar__line__btn__icon"
+                  className="Form__topBar__line__btn__icon"
                   src={IMG__CLOSE}
                   alt="CLOSE"
                 />
@@ -77,25 +77,23 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
           editedDeck={editedDeck}
           setEditedDeck={(editedDeck) => setEditedDeck(editedDeck)}
         />
-        <div className="FormDeck__exitBtnsContainer">
+        <div className="Form__exitBtnsContainer">
           <button
             type="button"
-            className="FormDeck__exitBtnsContainer__btn"
+            className="Form__exitBtnsContainer__btn"
             onClick={() => setModalOpen(null)}
           >
-            <span className="FormDeck__exitBtnsContainer__btn__text">
-              Close
-            </span>
+            <span className="Form__exitBtnsContainer__btn__text">Close</span>
             <img
-              className="FormDeck__exitBtnsContainer__btn__img"
+              className="Form__exitBtnsContainer__btn__img"
               src={IMG__CLOSE}
               alt="CLOSE"
             />
           </button>
-          <button className="FormDeck__exitBtnsContainer__btn" type="submit">
-            <span className="FormDeck__exitBtnsContainer__btn__text">Save</span>
+          <button className="Form__exitBtnsContainer__btn" type="submit">
+            <span className="Form__exitBtnsContainer__btn__text">Save</span>
             <img
-              className="FormDeck__exitBtnsContainer__btn__img"
+              className="Form__exitBtnsContainer__btn__img"
               src={IMG__SAVE}
               alt="SAVE"
             />
