@@ -51,14 +51,14 @@
 
 
 
-.FormFlashcardslist {
+.FormFlashcardsList {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 4rem;
     top: 7.2rem;
 }
-.FormFlashcardslist__list {
+.FormFlashcardsList__list {
     position: absolute;
     left: 0;
     right: 0;

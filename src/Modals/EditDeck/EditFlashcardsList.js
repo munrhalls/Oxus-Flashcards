@@ -26,8 +26,8 @@ export function EditFlashcardsList({
   }
 
   return (
-    <div className="FormFlashcardslist">
-      <div className="FormFlashcardslist__list">
+    <div className="FormFlashcardsList">
+      <div className="FormFlashcardsList__list">
         <div
           onClick={() => setModalOpen("AddFlashcard")}
           className="FormFlashcardContainer --addBtn"

@@ -85,7 +85,7 @@ export const AddFlashcard = ({
           <button
             type="button"
             className="Form__exitBtnsContainer__btn"
-            onClick={() => setModalOpen(null)}
+            onClick={() => setModalOpen("EditDeck")}
           >
             <span className="Form__exitBtnsContainer__btn__text">Close</span>
             <img
