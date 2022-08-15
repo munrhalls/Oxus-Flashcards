@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import cloneDeep from "lodash.clonedeep";
 import { Preview } from "./Preview";
-import { UnturnedFlashcard } from "./UnturnedFlashcard";
-import { TurnedFlashcard } from "./TurnedFlashcard";
-import { Flashcards } from "../../Flashcards/Flashcards";
 import { uuidv4 } from "@firebase/util";
+import { FormFlashcard } from "./FormFlashcard";
 
 export const AddFlashcard = ({
   activeDeckId,
@@ -12,25 +9,23 @@ export const AddFlashcard = ({
   decks,
   setModalOpen,
 }) => {
-  const [side, setSide] = useState(false);
-  const [turnedImg, setTurnedImg] = useState("");
-  const [unturnedImg, setUnturnedImg] = useState("");
   const [flashcard, setFlashcard] = useState({
-    unturned: { text: "", image: unturnedImg },
-    turned: { text: "", image: turnedImg },
+    unturned: { text: "", image: "" },
+    turned: { text: "", image: "" },
   });
+  const [side, setSide] = useState(false);
   const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
-  function getNumOfLvlHardCards() {
-    return (
-      deck?.flashcards?.filter((card) => card.difficulty === 3)?.length || 1
-    );
-  }
-  function handleSubmit(e) {
+
+  function turnCard(e) {
     e.preventDefault();
+    setSide(() => !side);
+  }
+  function makeNewFlashcard() {
     let newFlashcard = {
-      // id: uuidv4(),
+      id: uuidv4(),
       difficulty: 3,
-      orderNum: getNumOfLvlHardCards(deck.flashcards.length),
+      orderNum:
+        deck?.flashcards?.filter((card) => card?.difficulty === 3)?.length || 1,
       unturned: {
         text: flashcard.unturned.text,
         image: flashcard.unturned.image,
@@ -40,6 +35,11 @@ export const AddFlashcard = ({
         image: flashcard.turned.image,
       },
     };
+    return newFlashcard;
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    let newFlashcard = makeNewFlashcard();
     setDecks((decks) =>
       decks.map((deck) => {
         return deck.id === activeDeckId
@@ -52,24 +52,12 @@ export const AddFlashcard = ({
   }
   function resetForm() {
     setSide(false);
-    setTurnedImg("");
-    setUnturnedImg("");
     setFlashcard({
       unturned: { text: "", image: "" },
       turned: { text: "", image: "" },
     });
   }
-  function turnCard(e) {
-    e.preventDefault();
-    setSide(() => !side);
-  }
-  const getBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
+
   function handleExit(e) {
     e.preventDefault();
     setModalOpen("EditDeck");
@@ -82,23 +70,23 @@ export const AddFlashcard = ({
       <form className="FormFlashcard" onSubmit={handleSubmit}>
         <div className="FormFlashcard__elementsContainer">
           <div className="FormFlashcard__elements">
-            {side ? (
-              <TurnedFlashcard
-                flashcard={flashcard}
-                setTurnedImg={(flashcard) => setTurnedImg(flashcard)}
-                getBase64={getBase64}
-                setFlashcard={(flashcard) => setFlashcard(flashcard)}
-                cloneDeep={cloneDeep}
-              />
+            <FormFlashcard flashcard={flashcard} side={side} />
+
+            {/* {side ? (
+              // <TurnedFlashcard
+              //   flashcard={flashcard}
+              //   getBase64={getBase64}
+              //   setFlashcard={(flashcard) => setFlashcard(flashcard)}
+              //   cloneDeep={cloneDeep}
+              // />
             ) : (
               <UnturnedFlashcard
+              setFlashcard={(flashcard) => setFlashcard(flashcard)}
                 flashcard={flashcard}
-                setUnturnedImg={(unturnedImg) => setUnturnedImg(unturnedImg)}
                 getBase64={getBase64}
-                setFlashcard={(flashcard) => setFlashcard(flashcard)}
                 cloneDeep={cloneDeep}
               />
-            )}
+            )} */}
           </div>
           <div className="FormFlashcard__frame">
             {side ? (
@@ -106,14 +94,14 @@ export const AddFlashcard = ({
                 <div className="Flascard__formdeck__frameTitle">
                   TURNED PREVIEW
                 </div>
-                <Preview src={turnedImg} />
+                <Preview src={flashcard.turned.image} />
               </>
             ) : (
               <>
                 <div className="Flascard__formdeck__frameTitle">
                   UNTURNED PREVIEW
                 </div>
-                <Preview src={unturnedImg} />
+                <Preview src={flashcard.unturned.image} />
               </>
             )}
             <div className="Flashcard__turnBtnContainer">

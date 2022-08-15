@@ -14,8 +14,6 @@ align-items: center;}
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 .FormFlashcards__title {
     color: #000;
@@ -29,6 +27,7 @@ align-items: center;}
 .FormFlashcard__elementsContainer {
     display: flex;
     flex-wrap: wrap;
+    max-height: 100%;
 }
 .class {
     
