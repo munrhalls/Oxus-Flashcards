@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Preview } from "./Preview";
 import { uuidv4 } from "@firebase/util";
 import { InputsHandler } from "./InputsHandler";
+import IMG__EDIT from "./../../Assets/edit.png";
+import IMG__CLOSE from "./../../Assets/close.png";
+import IMG__SAVE from "./../../Assets/save.png";
 
 export const AddFlashcard = ({
   activeDeckId,
@@ -78,14 +81,27 @@ export const AddFlashcard = ({
           />
         </div>
 
-        <div className="FormFlashcard__submitContainer">
+        <div className="Form__exitBtnsContainer">
           <button
-            onClick={(e) => handleExit(e)}
-            className="FormFlashcard__close"
+            type="button"
+            className="Form__exitBtnsContainer__btn"
+            onClick={() => setModalOpen(null)}
           >
-            EXIT
+            <span className="Form__exitBtnsContainer__btn__text">Close</span>
+            <img
+              className="Form__exitBtnsContainer__btn__img"
+              src={IMG__CLOSE}
+              alt="CLOSE"
+            />
           </button>
-          <input className="FormFlashcard__submit" type="submit" value="SAVE" />
+          <button className="Form__exitBtnsContainer__btn" type="submit">
+            <span className="Form__exitBtnsContainer__btn__text">Save</span>
+            <img
+              className="Form__exitBtnsContainer__btn__img"
+              src={IMG__SAVE}
+              alt="SAVE"
+            />
+          </button>
         </div>
       </form>
     </div>
