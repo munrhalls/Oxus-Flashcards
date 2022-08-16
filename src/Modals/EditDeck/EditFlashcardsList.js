@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Flashcard } from "../../Flashcards/Flashcard";
 import { DeleteFlashcard } from "./DeleteFlashcard";
+import EditFlashcard from "./EditFlashcard";
 import { uuidv4 } from "@firebase/util";
-import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__PLUS from "./../../Assets/plus.png";
-import IMG__EDIT from "./../../Assets/edit.png";
 
 export function EditFlashcardsList({
   editedDeck,
@@ -69,35 +68,10 @@ export function EditFlashcardsList({
                     delId={card.id}
                   />
                 ) : (
-                  <div className="FormFlashcardsList__instanceContainer__elements">
-                    <Flashcard key={uuidv4()} flashcard={card} />
-                    <div className="FormFlashcardsList__instanceContainer__elements__btns">
-                      <button
-                        type="button"
-                        className="FormFlashcardsList__instanceContainer__elements__btns__btn --edit"
-                      >
-                        <img
-                          className="FormFlashcardsList__instanceContainer__elements__btns__btn__img"
-                          src={IMG__EDIT}
-                          alt="EDIT"
-                        />
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setisDelConfirmId(card.id);
-                        }}
-                        className="FormFlashcardsList__instanceContainer__elements__btns__btn --delete"
-                      >
-                        <img
-                          className="FormFlashcardsList__instanceContainer__elements__btns__btn__img"
-                          src={IMG__CLOSE}
-                          alt="DELETE"
-                        />
-                      </button>
-                    </div>
-                  </div>
+                  <EditFlashcard
+                    card={card}
+                    setisDelConfirmId={() => setisDelConfirmId(card.id)}
+                  />
                 )}
               </div>
             );
