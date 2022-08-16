@@ -50,7 +50,7 @@
   
 
 
-
+/* 
 .FormFlashcardsList {
     position: absolute;
     left: 0;
@@ -67,7 +67,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
-}
+} */
 
 .FormFlashcardContainer {
     height: 15rem;

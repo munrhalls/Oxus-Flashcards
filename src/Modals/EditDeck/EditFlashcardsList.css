@@ -1,0 +1,17 @@
+.FormFlashcardsList {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4rem;
+    top: 7.2rem;
+}
+.FormFlashcardsList__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}

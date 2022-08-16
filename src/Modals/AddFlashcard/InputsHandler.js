@@ -23,19 +23,19 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
     });
   }
   return (
-    <div className="Inputs">
-      <div className="Flashcard_form_label">UNTURNED</div>
-      <div className="FormFlashcard__inputContainer">
-        <span className="FormFlashcard__inputTitle">Add text</span>
+    <div className="InputsHandler">
+      <div className="InputsHandler_label">UNTURNED</div>
+      <div className="InputsHandler__inputContainer">
+        <span className="InputsHandler__inputTitle">Add text</span>
         <textarea
-          className="FormFlashcard__textArea"
+          className="InputsHandler__textArea"
           placeholder="Type..."
           value={flashcard.unturned.text}
           onChange={changeUnturnedText}
         />
-        <span className="FormFlashcard__inputTitle --image">Add image</span>
+        <span className="InputsHandler__inputTitle --image">Add image</span>
         <label
-          className="FormFlashcard__imageInput"
+          className="InputsHandler__imageInput"
           htmlFor="changeUnturnedImg"
         >
           UPLOAD IMAGE
