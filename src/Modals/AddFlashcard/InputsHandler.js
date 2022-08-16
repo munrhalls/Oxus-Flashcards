@@ -25,7 +25,7 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
   return (
     <div className="InputsHandler">
       <div className="InputsHandler_label">QUESTION</div>
-      <div className="InputsHandler__inputContainer">
+      <div className="InputsHandler__inputContainer --text">
         <span className="InputsHandler__inputContainer__inputTitle">
           Type below...
         </span>
@@ -35,21 +35,23 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
           value={flashcard.unturned.text}
           onChange={changeUnturnedText}
         />
-        <span className="InputsHandler__inputContainer__inputTitle --image">
+      </div>
+      <div className="InputsHandler__inputContainer --image">
+        {/* <span className="InputsHandler__inputContainer__inputTitle --image">
           Add image
-        </span>
+        </span> */}
         <label
           className="InputsHandler__inputContainer__imageLabel"
           htmlFor="changeUnturnedImg"
         >
-          UPLOAD IMAGE
-          <input
-            className="InputsHandler__inputContainer__imageLabel__input"
-            id="changeUnturnedImg"
-            type="file"
-            onChange={changeUnturnedImg}
-          />
+          ADD IMAGE
         </label>
+        <input
+          className="InputsHandler__inputContainer__imageInput"
+          id="changeUnturnedImg"
+          type="file"
+          onChange={changeUnturnedImg}
+        />
       </div>
     </div>
   );

@@ -11,6 +11,11 @@
     padding: 1rem 0;
 }
 
+.InputsHandler_label {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .InputsHandler__inputContainer {
     flex: 1 1 0;
     max-width: 100%;
@@ -20,25 +25,56 @@
     justify-content: center;
     align-items: center;
 }
-
+.InputsHandler__inputContainer.--text {
+    flex: 4;
+    min-height: 10rem;
+}
+.InputsHandler__inputContainer.--image {
+    flex: 2;
+    min-height: 5rem;
+}
+.InputsHandler__inputContainer__inputTitle {
+    padding-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
 
 .InputsHandler__inputContainer__textArea {
     flex: 1 1 0;
-    max-height: 60%;
     max-width: 80%;
-}
-
-.InputsHandler__inputContainer__imageLabel {
-    flex: 1 1 0;
-    max-width: 80%;
-    
+    text-align: center;
+    vertical-align: middle;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 }
 
-.InputsHandler__inputContainer__imageLabel__input {
+
+
+
+.InputsHandler__inputContainer__imageLabel {
     max-width: 80%;
+    
+    cursor: pointer;
+    height: 5rem;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase; 
+    border: none;
+
+    background-color: #fff;
+    color: #000;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.InputsHandler__inputContainer__imageInput {
+    max-width: 80%;
+    display: none;
 }
