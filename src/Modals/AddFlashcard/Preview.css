@@ -29,10 +29,14 @@
     align-items: center;
 
     position: relative;
+
+    padding: 1rem;
 }
 
 .Preview__flashcard__text {
     color: #000;
+    max-width: 100%;
+   word-wrap: break-word;
 }
 .Preview__turnBtnContainer {
     min-width: 0;
