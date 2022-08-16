@@ -2,7 +2,7 @@
     height: 100%;
     flex: 1 1 0;
     min-width: 0;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,8 @@
 }
 
 .InputsHandler__inputContainer {
-    flex: 1;
+    flex: 1 1 0;
+    max-width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -18,6 +19,11 @@
     align-items: center;
 }
 
+.InputsHandler__textArea {
+    flex: 1 1 0;
+    max-height: 60%;
+    max-width: 80%;
+}
 .InputsHandler__imageInput {
     display: flex;
     flex-direction: column;
