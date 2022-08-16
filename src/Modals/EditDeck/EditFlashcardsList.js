@@ -30,7 +30,7 @@ export function EditFlashcardsList({
       <div className="FormFlashcardsList__list">
         <div
           onClick={() => setModalOpen("AddFlashcard")}
-          className="FormFlashcardsList__instanceContainer__ --addBtn"
+          className="FormFlashcardsList__instanceContainer --addBtn"
         >
           <button
             type="button"
@@ -54,7 +54,7 @@ export function EditFlashcardsList({
             return (
               <div
                 key={uuidv4()}
-                className="FormFlashcardsList__instanceContainer__"
+                className="FormFlashcardsList__instanceContainer"
               >
                 <div className="FormFlashcardsList__instanceContainer__numContainer">
                   <div className="FormFlashcardsList__instanceContainer__numContainer__num">

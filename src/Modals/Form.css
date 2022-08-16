@@ -49,33 +49,13 @@
   }
   
 
-
-/* 
-.FormFlashcardsList {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 4rem;
-    top: 7.2rem;
-}
-.FormFlashcardsList__list {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
-} */
-
-.FormFlashcardsList__instanceContainer__ {
+.FormFlashcardsList__instanceContainer {
     height: 15rem;
     flex: 1 1 15rem;
     display: flex;
     margin-bottom: 0.25rem;
 }
-.FormFlashcardsList__instanceContainer__.--addBtn {
+.FormFlashcardsList__instanceContainer.--addBtn {
     background-color: #222;
     border: 3px solid #000;
     display: flex;
