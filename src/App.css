@@ -12,16 +12,14 @@
 @import './Modals/Modals.css';
 @import './Modals/Form.css';
 @import './Modals/FormTopbar.css';
-@import './Modals/FormFlashcard.css';
+
+
 @import './Modals/AddDeck/AddDeck.css';
-
-
 @import './Modals//EditDeck/EditDeck.css';
 @import './Modals//EditDeck/EditFlashcardsList.css';
-
 @import './Modals/DeleteDeck/DeleteDeck.css';
-@import './Modals/AddFlashcard/AddFlashcard.css';
 
+@import './Modals/AddFlashcard/AddFlashcard.css';
 @import './Footer/Footer.css';
 
 
