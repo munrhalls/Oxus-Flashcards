@@ -72,6 +72,7 @@ export const AddFlashcard = ({
         <div className="InputsAndPreviewContainer">
           <InputsHandler
             className="InputsHandler"
+            setFlashcard={() => setFlashcard((flashcard) => flashcard)}
             flashcard={flashcard}
             side={side}
           />

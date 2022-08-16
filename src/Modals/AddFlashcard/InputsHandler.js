@@ -1,7 +1,7 @@
 import React from "react";
 import cloneDeep from "lodash.clonedeep";
 
-export const InputsHandler = ({ flashcard, setFlashcard }) => {
+export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -18,8 +18,7 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
     e.preventDefault();
     let str = await getBase64(e.target.files[0]);
     setFlashcard((flashcard) => {
-      flashcard.unturned.image = str;
-      return flashcard;
+      return { ...flashcard, unturned: { image: str } };
     });
   }
   return (
@@ -33,7 +32,7 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
           className="InputsHandler__inputContainer__textArea"
           placeholder="Type..."
           value={flashcard.unturned.text}
-          onChange={changeUnturnedText}
+          onChange={() => changeUnturnedText()}
         />
       </div>
       <div className="InputsHandler__inputContainer --image">
