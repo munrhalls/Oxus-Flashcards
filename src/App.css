@@ -20,6 +20,8 @@
 @import './Modals/DeleteDeck/DeleteDeck.css';
 
 @import './Modals/AddFlashcard/AddFlashcard.css';
+@import './Modals/AddFlashcard/InputsHandler.css';
+@import './Modals/AddFlashcard/Preview.css';
 @import './Footer/Footer.css';
 
 

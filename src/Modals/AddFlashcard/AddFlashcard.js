@@ -69,7 +69,7 @@ export const AddFlashcard = ({
             <h1 className="Form__topBar__line__deckName">DECK: {deck.name}</h1>
           </div>
         </div>
-        <div className="Form__flashcard">
+        <div className="InputsAndPreviewContainer">
           <InputsHandler
             className="InputsHandler"
             flashcard={flashcard}
