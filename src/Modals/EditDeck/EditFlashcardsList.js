@@ -34,16 +34,16 @@ export function EditFlashcardsList({
         >
           <button
             type="button"
-            className="FormFlashcardsList__instanceContainer____btn --addBtn"
+            className="FormFlashcardsList__instanceContainer__btn --addBtn"
           >
             <img
-              className="FormFlashcardsList__instanceContainer____btn__addImg"
+              className="FormFlashcardsList__instanceContainer__btn__addImg"
               src={IMG__PLUS}
               alt="ADD"
             />
           </button>
-          <div className="FormFlashcardsList__instanceContainer____addBtnTextContainer">
-            <h6 className="FormFlashcardsList__instanceContainer____addBtnTextContainer__addBtnText">
+          <div className="FormFlashcardsList__instanceContainer__addBtnTextContainer">
+            <h6 className="FormFlashcardsList__instanceContainer__addBtnTextContainer__addBtnText">
               ADD NEW FLASHCARD
             </h6>
           </div>
@@ -56,8 +56,8 @@ export function EditFlashcardsList({
                 key={uuidv4()}
                 className="FormFlashcardsList__instanceContainer__"
               >
-                <div className="FormFlashcardsList__instanceContainer____numContainer">
-                  <div className="FormFlashcardsList__instanceContainer____numContainer__num">
+                <div className="FormFlashcardsList__instanceContainer__numContainer">
+                  <div className="FormFlashcardsList__instanceContainer__numContainer__num">
                     {i}
                   </div>
                 </div>
@@ -69,15 +69,15 @@ export function EditFlashcardsList({
                     delId={card.id}
                   />
                 ) : (
-                  <div className="FormFlashcardsList__instanceContainer____elements">
+                  <div className="FormFlashcardsList__instanceContainer__elements">
                     <Flashcard key={uuidv4()} flashcard={card} />
-                    <div className="FormFlashcardsList__instanceContainer____elements__btns">
+                    <div className="FormFlashcardsList__instanceContainer__elements__btns">
                       <button
                         type="button"
-                        className="FormFlashcardsList__instanceContainer____elements__btns__btn --edit"
+                        className="FormFlashcardsList__instanceContainer__elements__btns__btn --edit"
                       >
                         <img
-                          className="FormFlashcardsList__instanceContainer____elements__btns__btn__img"
+                          className="FormFlashcardsList__instanceContainer__elements__btns__btn__img"
                           src={IMG__EDIT}
                           alt="EDIT"
                         />
@@ -88,10 +88,10 @@ export function EditFlashcardsList({
                         onClick={() => {
                           setisDelConfirmId(card.id);
                         }}
-                        className="FormFlashcardsList__instanceContainer____elements__btns__btn --delete"
+                        className="FormFlashcardsList__instanceContainer__elements__btns__btn --delete"
                       >
                         <img
-                          className="FormFlashcardsList__instanceContainer____elements__btns__btn__img"
+                          className="FormFlashcardsList__instanceContainer__elements__btns__btn__img"
                           src={IMG__CLOSE}
                           alt="DELETE"
                         />
