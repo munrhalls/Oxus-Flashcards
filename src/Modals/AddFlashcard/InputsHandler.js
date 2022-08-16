@@ -2,6 +2,7 @@ import React from "react";
 import cloneDeep from "lodash.clonedeep";
 
 export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
+  console.log(flashcard);
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -9,12 +10,17 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
       reader.onload = () => resolve(reader.result);
       reader.onerror = (error) => reject(error);
     });
-  function changeUnturnedText(e) {
-    let change = cloneDeep(flashcard);
-    change.unturned.text = e.target.value;
-    setFlashcard(change);
+  function updateFlashcardText(e) {
+    e.preventDefault();
+    console.log({ ...flashcard });
+    setFlashcard((flashcard) => {
+      let clone = cloneDeep(flashcard);
+      clone.unturned.text = e.target.value;
+      console.log(clone);
+      return clone;
+    });
   }
-  async function changeUnturnedImg(e) {
+  async function updateFlashcardImage(e) {
     e.preventDefault();
     let str = await getBase64(e.target.files[0]);
     setFlashcard((flashcard) => {
@@ -32,7 +38,7 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
           className="InputsHandler__inputContainer__textArea"
           placeholder="Type..."
           value={flashcard.unturned.text}
-          onChange={() => changeUnturnedText()}
+          onChange={updateFlashcardText}
         />
       </div>
       <div className="InputsHandler__inputContainer --image">
@@ -41,15 +47,15 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
         </span> */}
         <label
           className="InputsHandler__inputContainer__imageLabel"
-          htmlFor="changeUnturnedImg"
+          htmlFor="updateFlashcard"
         >
           ADD IMAGE
         </label>
         <input
           className="InputsHandler__inputContainer__imageInput"
-          id="changeUnturnedImg"
+          id="updateFlashcard"
           type="file"
-          onChange={changeUnturnedImg}
+          onChange={(e) => updateFlashcardImage(e)}
         />
       </div>
     </div>

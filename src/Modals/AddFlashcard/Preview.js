@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Preview = ({ flashcard, setSide, side }) => {
+  console.log(flashcard.unturned.text);
   function turnCard(e) {
     e.preventDefault();
     setSide((side) => !side);
@@ -9,7 +10,7 @@ export const Preview = ({ flashcard, setSide, side }) => {
   return (
     <div className="Preview">
       <div className="Preview__flashcard">
-        <p className="Preview__flashcard__text"></p>
+        <p className="Preview__flashcard__text">{flashcard.unturned.text}</p>
         <img className="Preview__flashcard__image" />
       </div>
 
