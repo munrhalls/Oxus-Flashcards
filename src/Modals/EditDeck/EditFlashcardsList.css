@@ -15,3 +15,166 @@
     flex-wrap: wrap;
     overflow-y: auto;
 }
+
+.FormFlashcardsList__instanceContainer {
+    height: 15rem;
+    flex: 1 1 15rem;
+    display: flex;
+    margin-bottom: 0.25rem;
+}
+.FormFlashcardsList__instanceContainer.--addBtn {
+    background-color: #222;
+    border: 3px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.FormFlashcardsList__instanceContainer__btn {
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+
+}
+.FormFlashcardsList__instanceContainer__btn.--addBtn {
+    /* background-color: rgb(5, 72, 49); */
+    border: 12px solid #000;
+   margin-top: 7.5%;
+   cursor: pointer;
+   border-radius: 100%; 
+}
+.FormFlashcardsList__instanceContainer__btn:hover.--addBtn {
+    box-shadow: 0 0 50px 45px #fff;
+}
+.FormFlashcardsList__instanceContainer__btn__addImg {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+
+}
+.FormFlashcardsList__instanceContainer__addBtnTextContainer {
+    border-top: 9px solid transparent;
+    height: 5rem;
+    width: 92.5%;
+    cursor: pointer;
+
+}
+.FormFlashcardsList__instanceContainer__addBtnTextContainer__addBtnText {
+    border-top: 9px solid #000;
+    background-color: #777;
+    height: 100%;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.FormFlashcardsList__instanceContainer__addBtnTextContainer__addBtnText {
+}
+.FormFlashcardsList__instanceContainer__numContainer {
+    border-radius: 5px;
+    height: 100%;
+    width: 2rem;    
+    background-color: #777;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FormFlashcardsList__instanceContainer__numContainer__num {
+    height: 40%;
+    width: 1.5rem;   
+    border-radius: 50px;
+    background-color: #222;
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+.FormFlashcardsList__instanceContainer__elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.FormFlashcardsList__instanceContainer__elements__btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-top: 3px solid #fff;
+    height: 3.5rem;
+
+}
+.FormFlashcardsList__instanceContainer__elements__btns__btn {
+    border: 3px solid #222;
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.FormFlashcardsList__instanceContainer__elements__btns__btn:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 15px 24px #fff;
+}
+.FormFlashcardsList__instanceContainer__elements__btns__btn.--edit {
+    background-color: rgb(147, 134, 159);
+}
+.FormFlashcardsList__instanceContainer__elements__btns__btn.--delete {
+    background-color: rgb(79, 0, 0);
+}
+.FormFlashcardsList__instanceContainer__elements__btns__btn__img {
+    height: 1.75rem;
+    width: 1.75rem;
+    border: 1.5px solid transparent;
+    border-top: 3px solid transparent;
+}
+
+
+.FormFlashcardsList__instanceContainer__deleteContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.FormFlashcardsList__instanceContainer__deleteContainer__btn {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.FormFlashcardsList__instanceContainer__deleteContainer__question {
+    margin-top: 1rem;
+}
+.FormFlashcardsList__instanceContainer__deleteContainer__btn.--delete {
+    margin-top: 1rem;
+    height: 6rem;
+    width: 6rem;
+    margin: auto;
+    background-color: #222;
+    color:rgb(141, 0, 0);
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+.FormFlashcardsList__instanceContainer__deleteContainer__btn.--back {
+    margin-top: auto;
+    cursor: pointer;
+    border: 1px solid #222;
+    width: 6rem;
+    height: 2rem;
+}
