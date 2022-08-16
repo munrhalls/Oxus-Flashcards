@@ -15,13 +15,11 @@ export const Preview = ({ flashcard, setSide, side }) => {
         <img className="Preview__flashcard__image" src={flashcardSide.image} />
       </div>
 
-      <div className="Preview__turnBtnContainer">
-        <button
-          className="Preview__turnBtnContainer__turnBtn"
-          onClick={(side) => turnCard(side)}
-        >
-          TURN
-        </button>
+      <div
+        className="Preview__turnBtnContainer"
+        onClick={(side) => turnCard(side)}
+      >
+        <button className="Preview__turnBtnContainer__turnBtn">TURN</button>
       </div>
     </div>
   );
