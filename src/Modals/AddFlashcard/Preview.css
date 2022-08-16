@@ -33,18 +33,31 @@
 
 .Preview__turnBtnContainer {
     min-width: 0;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    width: 6rem;
+    height: 6rem;
+    background-color: #fff;
+
+
+    transform: rotate(45deg);
+    border-radius: 5px;
+    transition: transform .8s ease-out;
+    cursor: pointer;
+}
+.Preview__turnBtnContainer:hover {
+    transform: rotate(-315deg);
 
 }
 .Preview__turnBtnContainer__turnBtn {
-    min-width: 0;
-
-     margin-top: 1.5rem;
     cursor: pointer;
-    width: 5rem;
-    height: 5rem;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
     border-radius: 3px;
     font-size: 1.5rem;
     font-weight: bold;
-    text-transform: uppercase;
-    background-color: #fff; 
+    text-transform: uppercase; 
+    transform: rotate(-45deg);
+    border: none;
 }

@@ -14,8 +14,11 @@ export const Preview = ({ flashcard, setSide, side }) => {
       </div>
 
       <div className="Preview__turnBtnContainer">
-        <button className="Preview__turnBtnContainer__turnBtn" onClick={(side) => turnCard(side)}>
-          Turn.
+        <button
+          className="Preview__turnBtnContainer__turnBtn"
+          onClick={(side) => turnCard(side)}
+        >
+          TURN
         </button>
       </div>
     </div>
