@@ -1,5 +1,5 @@
 import React from "react";
-import IMG__PLUS from "./../../Assets/plus.png";
+import IMG__PLUS from "./../Assets/plus.png";
 
 export default function AddFlashcard({ setModalOpen }) {
   return (

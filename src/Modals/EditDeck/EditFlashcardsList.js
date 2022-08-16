@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DeleteFlashcard } from "./DeleteFlashcard";
 import EditFlashcard from "./EditFlashcard";
 import { uuidv4 } from "@firebase/util";
-import AddFlashcardBtn from "./AddFlashcardBtn";
+import AddFlashcardBtn from "./../../ModalBtns/AddFlashcardBtn";
 
 export function EditFlashcardsList({
   editedDeck,
@@ -26,26 +26,6 @@ export function EditFlashcardsList({
   return (
     <div className="FormFlashcardsList">
       <div className="FormFlashcardsList__list">
-        {/* <div
-          onClick={() => setModalOpen("AddFlashcardBtn")}
-          className="FormFlashcardsList__instanceContainer --addBtn"
-        >
-          <button
-            type="button"
-            className="FormFlashcardsList__instanceContainer__btn --addBtn"
-          >
-            <img
-              className="FormFlashcardsList__instanceContainer__btn__addImg"
-              src={IMG__PLUS}
-              alt="ADD"
-            />
-          </button>
-          <div className="FormFlashcardsList__instanceContainer__addBtnTextContainer">
-            <h6 className="FormFlashcardsList__instanceContainer__addBtnTextContainer__addBtnText">
-              ADD NEW FLASHCARD
-            </h6>
-          </div>
-        </div> */}
         <AddFlashcardBtn setModalOpen={() => setModalOpen("AddFlashcard")} />
 
         {flashcards &&
