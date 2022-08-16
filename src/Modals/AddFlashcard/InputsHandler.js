@@ -24,10 +24,10 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
   }
   return (
     <div className="InputsHandler">
-      <div className="InputsHandler_label">UNTURNED</div>
+      <div className="InputsHandler_label">QUESTION</div>
       <div className="InputsHandler__inputContainer">
         <span className="InputsHandler__inputContainer__inputTitle">
-          Add text
+          Type below...
         </span>
         <textarea
           className="InputsHandler__inputContainer__textArea"

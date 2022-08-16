@@ -8,10 +8,13 @@ export const Preview = ({ flashcard, setSide, side }) => {
 
   return (
     <div className="Preview">
-      {/* <img className="Flashcard__form__frameImage" src={}/> */}
+      <div className="Preview__flashcard">
+        <p className="Preview__flashcard__text"></p>
+        <img className="Preview__flashcard__image" />
+      </div>
 
       <div className="Preview__turnBtnContainer">
-        <button className="Preview__turnBtn" onClick={(side) => turnCard(side)}>
+        <button className="Preview__turnBtnContainer__turnBtn" onClick={(side) => turnCard(side)}>
           Turn.
         </button>
       </div>

@@ -1,11 +1,50 @@
 .Preview {
-    flex: 1 1 0;
+    height: 100%;
+
+    flex: 1;
     min-width: 0;
 
-
+    
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 1rem 0;
+}
+
+.Preview__flashcard {
+    height: 60%;
+    width: 80%;
+    min-width: 0;
+    
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.Preview__turnBtnContainer {
+    min-width: 0;
+
+}
+.Preview__turnBtnContainer__turnBtn {
+    min-width: 0;
+
+     margin-top: 1.5rem;
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff; 
 }
