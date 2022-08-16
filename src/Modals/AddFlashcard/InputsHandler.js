@@ -29,7 +29,9 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
   }
   return (
     <div className="InputsHandler">
-      <div className="InputsHandler_label">QUESTION</div>
+      <div className="InputsHandler_label">
+        {side ? "ANSWER..." : "QUESTION..."}
+      </div>
       <div className="InputsHandler__inputContainer --text">
         <span className="InputsHandler__inputContainer__inputTitle">
           Type below...
