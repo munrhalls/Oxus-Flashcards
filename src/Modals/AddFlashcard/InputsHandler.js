@@ -12,12 +12,9 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
     });
   function updateFlashcardText(e) {
     e.preventDefault();
-    console.log({ ...flashcard });
     setFlashcard((flashcard) => {
-      let clone = cloneDeep(flashcard);
-      clone.unturned.text = e.target.value;
-      console.log(clone);
-      return clone;
+      flashcard.unturned.text = e.target.value;
+      return { ...flashcard };
     });
   }
   async function updateFlashcardImage(e) {
