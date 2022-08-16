@@ -26,20 +26,25 @@ export const InputsHandler = ({ flashcard, setFlashcard }) => {
     <div className="InputsHandler">
       <div className="InputsHandler_label">UNTURNED</div>
       <div className="InputsHandler__inputContainer">
-        <span className="InputsHandler__inputTitle">Add text</span>
+        <span className="InputsHandler__inputContainer__inputTitle">
+          Add text
+        </span>
         <textarea
-          className="InputsHandler__textArea"
+          className="InputsHandler__inputContainer__textArea"
           placeholder="Type..."
           value={flashcard.unturned.text}
           onChange={changeUnturnedText}
         />
-        <span className="InputsHandler__inputTitle --image">Add image</span>
+        <span className="InputsHandler__inputContainer__inputTitle --image">
+          Add image
+        </span>
         <label
-          className="InputsHandler__imageInput"
+          className="InputsHandler__inputContainer__imageLabel"
           htmlFor="changeUnturnedImg"
         >
           UPLOAD IMAGE
           <input
+            className="InputsHandler__inputContainer__imageLabel__input"
             id="changeUnturnedImg"
             type="file"
             onChange={changeUnturnedImg}
