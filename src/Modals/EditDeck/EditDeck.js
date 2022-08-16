@@ -56,7 +56,7 @@ export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
           editedDeck={editedDeck}
           setEditedDeck={(editedDeck) => setEditedDeck(editedDeck)}
         />
-        <Form.SubmitExitBtns setModalOpen={() => setModalOpen(null)} />
+        <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
       </form>
     </div>
   );

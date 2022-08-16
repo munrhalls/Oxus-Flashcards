@@ -47,7 +47,7 @@ export const Form = {
       />
     );
   },
-  SubmitExitBtns: function ({ setModalOpen }) {
+  ExitBtns: function ({ setModalOpen }) {
     return (
       <div className="Form__exitBtnsContainer">
         <button

@@ -46,7 +46,7 @@ export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
           />
         </div>
 
-        <Form.SubmitExitBtns setModalOpen={() => setModalOpen(null)} />
+        <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
       </form>
     </div>
   );

@@ -83,7 +83,7 @@ export const AddFlashcard = ({
           />
         </div>
 
-        <Form.SubmitExitBtns setModalOpen={() => setModalOpen("EditDeck")} />
+        <Form.ExitBtns setModalOpen={() => setModalOpen("EditDeck")} />
       </form>
     </div>
   );

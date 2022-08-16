@@ -28,7 +28,7 @@ export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
             </div>
           </div>
           <div className="Form__"></div>
-          <Form.SubmitExitBtns setModalOpen={() => setModalOpen(null)} />
+          <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
         </form>
       </div>
     </div>
