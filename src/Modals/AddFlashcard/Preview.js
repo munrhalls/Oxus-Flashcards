@@ -12,7 +12,7 @@ export const Preview = ({ flashcard, setSide, side }) => {
     <div className="Preview">
       <div className="Preview__flashcard">
         <p className="Preview__flashcard__text">{flashcardSide.text}</p>
-        <img className="Preview__flashcard__image" />
+        <img className="Preview__flashcard__image" src={flashcardSide.image} />
       </div>
 
       <div className="Preview__turnBtnContainer">

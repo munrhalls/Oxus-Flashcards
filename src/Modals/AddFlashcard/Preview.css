@@ -36,7 +36,16 @@
 .Preview__flashcard__text {
     color: #000;
     max-width: 100%;
-   word-wrap: break-word;
+    word-wrap: break-word;
+    z-index: 10;
+}
+
+.Preview__flashcard__image {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    z-index: 1;
 }
 .Preview__turnBtnContainer {
     min-width: 0;
