@@ -3,6 +3,7 @@ import img from "./../Assets/right-long-black-arrow.png";
 import cloneDeep from "lodash.clonedeep";
 import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
+import ResetDeckBtn from "../Deck/ResetDeckBtn";
 import DifficultyBtn from "./DifficultyBtn";
 import useCheckEnter from "../Hooks/useCheckEnter";
 
@@ -80,15 +81,7 @@ export const Flashcards = ({
           <div className="Flashcards__completedMessage__title">
             Deck completed.
           </div>
-          <div className="Flashcards__completedMessage__resetDeck">
-            <button
-              className="Flashcards__completedMessage__resetDeck__btn"
-              onClick={() => resetDeck()}
-            >
-              RESET
-            </button>
-            <img className="Flashcards__completedMessage__resetDeck__img" />
-          </div>
+          <ResetDeckBtn resetDeck={() => resetDeck()} />
         </div>
       )}
     </>
