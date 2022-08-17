@@ -2,6 +2,7 @@ import React from "react";
 import { Form } from "../Form";
 
 export const DeleteDeck = ({
+  modalOpen,
   setModalOpen,
   activeDeckId,
   setactiveDeckId,
@@ -20,6 +21,7 @@ export const DeleteDeck = ({
       })
     );
   }
+  console.log(modalOpen);
   return (
     <div>
       <div className="DeleteDeck">
@@ -35,7 +37,7 @@ export const DeleteDeck = ({
             </div>
           </div>
           <Form.ConfirmAndDelete id={activeDeckId} />
-          <Form.BackBtn setModalOpen={() => setModalOpen("EditDeck")} />
+          <Form.BackBtn setModalOpen={() => setModalOpen(null)} />
         </form>
       </div>
     </div>

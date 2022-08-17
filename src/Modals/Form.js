@@ -2,6 +2,7 @@ import React from "react";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__SAVE from "./../Assets/save.png";
 import IMG__EDIT from "./../Assets/edit.png";
+import IMG__BACK from "./../Assets/go-back-arrow.png";
 
 export const Form = {
   Close: function ({ closeFunction }) {
@@ -76,7 +77,8 @@ export const Form = {
   BackBtn: function ({ setModalOpen }) {
     return (
       <button className="Form__BackBtn" onClick={() => setModalOpen()}>
-        BACK
+        <span className="Form__BackBtn__text">BACK</span>
+        <img className="Form__BackBtn__img" src={IMG__BACK} />
       </button>
     );
   },

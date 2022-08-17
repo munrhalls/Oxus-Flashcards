@@ -27,6 +27,7 @@ export const Modals = ({
 
       {modalOpen === "DeleteDeck" && (
         <DeleteDeck
+          modalOpen={modalOpen}
           setModalOpen={setModalOpen}
           setactiveDeckId={setactiveDeckId}
           activeDeckId={activeDeckId}
