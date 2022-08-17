@@ -35,7 +35,7 @@ export const DeleteDeck = ({
             </div>
           </div>
           <Form.ConfirmAndDelete id={activeDeckId} />
-          <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
+          <Form.BackBtn setModalOpen={() => setModalOpen("EditDeck")} />
         </form>
       </div>
     </div>

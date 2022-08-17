@@ -73,11 +73,18 @@ export const Form = {
       </div>
     );
   },
+  BackBtn: function ({ setModalOpen }) {
+    return (
+      <div onClick={() => setModalOpen()}>
+        <button>BACK</button>
+      </div>
+    );
+  },
   ConfirmAndDelete: function ({ id }) {
     return (
       <div>
         Delete deck
-        <input type="submit" />
+        <input className="" type="submit" />
       </div>
     );
   },
