@@ -25,7 +25,17 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
     });
   }
   function resetDeck() {
-    console.log("reset");
+    setDecks(
+      decks.map((deck) => {
+        if (deck.id !== activeDeckId) return deck;
+
+        return {
+          ...activeDeck,
+          flashcards: [...activeDeck.completedFlashcards],
+          completedFlashcards: [],
+        };
+      })
+    );
   }
   return (
     <div className="Deck">
