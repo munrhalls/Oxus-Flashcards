@@ -3,7 +3,7 @@ import cloneDeep from "lodash.clonedeep";
 
 export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
   const flashcardSide = side ? flashcard.turned : flashcard.unturned;
-  console.log(flashcard);
+
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -13,7 +13,6 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
     });
   function updateFlashcardText(e) {
     e.preventDefault();
-    console.log({ ...flashcard });
     setFlashcard((flashcard) => {
       flashcardSide.text = e.target.value;
       return { ...flashcard, ...flashcardSide };
