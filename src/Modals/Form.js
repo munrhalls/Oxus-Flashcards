@@ -73,4 +73,12 @@ export const Form = {
       </div>
     );
   },
+  ConfirmAndDelete: function ({ id }) {
+    return (
+      <div>
+        Delete deck
+        <input type="submit" />
+      </div>
+    );
+  },
 };

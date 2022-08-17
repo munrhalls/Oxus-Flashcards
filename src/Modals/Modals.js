@@ -28,6 +28,7 @@ export const Modals = ({
       {modalOpen === "DeleteDeck" && (
         <DeleteDeck
           setModalOpen={setModalOpen}
+          setactiveDeckId={setactiveDeckId}
           activeDeckId={activeDeckId}
           decks={decks}
           setDecks={setDecks}

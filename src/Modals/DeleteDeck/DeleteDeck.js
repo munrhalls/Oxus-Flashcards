@@ -1,17 +1,24 @@
 import React from "react";
 import { Form } from "../Form";
 
-export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
+export const DeleteDeck = ({
+  setModalOpen,
+  activeDeckId,
+  setactiveDeckId,
+  decks,
+  setDecks,
+}) => {
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
 
   function handleSubmit(e) {
     e.preventDefault();
+    setModalOpen(null);
+    setactiveDeckId(null);
     setDecks(() =>
-      decks.filter((el) => {
-        return el.id === deck.id;
+      [...decks].filter((el) => {
+        return el.id !== activeDeckId;
       })
     );
-    setModalOpen(null);
   }
   return (
     <div>
@@ -27,7 +34,7 @@ export const DeleteDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
               </h1>
             </div>
           </div>
-          <div className="Form__"></div>
+          <Form.ConfirmAndDelete id={activeDeckId} />
           <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
         </form>
       </div>
