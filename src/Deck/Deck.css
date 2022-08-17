@@ -143,14 +143,21 @@
 
 }
 
-.Flashcards__completedMessage__resetDeck {
-    display: flex;
+.Deck__resetDeckBtn {
+    cursor: pointer;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
 }
-.Flashcards__completedMessage__resetDeck__btn {
+.Deck__resetDeckBtn__text {
+    margin-right: 0.5rem;
 
 }
-.Flashcards__completedMessage__resetDeck__img {
-
+.Deck__resetDeckBtn__img {
+    height: 1rem;
+    width: 1rem;
 }
 
