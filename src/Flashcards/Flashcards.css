@@ -52,6 +52,12 @@
     }
     .Flashcards__btns__next {
         cursor: pointer;
+        transition: .75s ease-in-out;
+    }
+    .Flashcards__btns__next:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px 30px #fff;
+        background-color: #fff;
     }
     .Flashcards__btns__next__image {
         flex: 1;
