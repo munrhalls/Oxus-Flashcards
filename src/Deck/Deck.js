@@ -24,6 +24,9 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
       });
     });
   }
+  function resetDeck() {
+    console.log("reset");
+  }
   return (
     <div className="Deck">
       <div className="Deck__titleContainer">
@@ -47,6 +50,7 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
           completedFlashcards={activeDeck.completedFlashcards}
           shuffleDeckFlashcards={shuffleDeckFlashcards}
           moveDeckFlashcardToCompleted={moveDeckFlashcardToCompleted}
+          resetDeck={() => resetDeck()}
         />
         <CompletedFlashcards
           completedFlashcards={activeDeck.completedFlashcards}

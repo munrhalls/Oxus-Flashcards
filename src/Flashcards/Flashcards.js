@@ -11,6 +11,7 @@ export const Flashcards = ({
   completedFlashcards,
   shuffleDeckFlashcards,
   moveDeckFlashcardToCompleted,
+  resetDeck,
 }) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["hard", "medium", "easy", "pass"];
@@ -80,7 +81,10 @@ export const Flashcards = ({
             Deck completed.
           </div>
           <div className="Flashcards__completedMessage__resetDeck">
-            <button className="Flashcards__completedMessage__resetDeck__btn">
+            <button
+              className="Flashcards__completedMessage__resetDeck__btn"
+              onClick={() => resetDeck()}
+            >
               RESET
             </button>
             <img className="Flashcards__completedMessage__resetDeck__img" />
