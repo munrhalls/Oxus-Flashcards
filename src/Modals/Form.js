@@ -99,10 +99,13 @@ export const Form = {
             className="Form__ConfirmAndDelete__submitInputContainer__img"
             src={IMG__NUCLEAR}
           />
+          <h1 className="Form__ConfirmAndDelete__submitInputContainer__text">
+            DELETE
+          </h1>
           <input
             className="Form__ConfirmAndDelete__submitInputContainer__submitInput"
             type="submit"
-            value="Delete"
+            value=""
           />
         </div>
       </div>

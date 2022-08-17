@@ -69,26 +69,65 @@
     text-transform: uppercase;
     text-align: center;
 
-    background-color: #222;
-    color:rgb(141, 0, 0);
+    background-color: #111;
     cursor: pointer;
-    letter-spacing: 3px;
-    font-size: 1.75rem;
-    border-radius: 3px;
     transition: transform 0.9s;
+    border: 3px solid #777;
+    position: relative;
+    cursor: pointer;
   }
   .Form__ConfirmAndDelete__submitInputContainer:hover {
+    cursor: pointer;
+
     transform: scale(1.3) translateY(.5rem);
-    background-color: #222;
+    background-color: #000;
+    border: 3px solid rgb(141, 0, 0);
     font-weight: bold;
   }
   .Form__ConfirmAndDelete__submitInputContainer__img {
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50% - 1.6rem);
+    height: 30%;
+    width: 30%;
+    border: none;
+
+
+    transition: transform 2s ease-in-out;
+  }
+  .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__img {
     -webkit-filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
     filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
+    transform: scale(1.4);
   }
-  .Form__ConfirmAndDelete__submitInputContainer__submitInput {
+  .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__submitInput {
+    transform: transformY(-3rem);
+  }
+  .Form__ConfirmAndDelete__submitInputContainer__text {
+    color: #B60000;
+    position: absolute;
+    left: 0; top: 35%; right: 0; bottom: 0;
+    letter-spacing: 3px;
+    font-size: 1.75rem;
+    border-radius: 3px;
 
   }
+  .Form__ConfirmAndDelete__submitInputContainer__submitInput {
+    cursor: pointer;
+
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    background: transparent;
+    transition: transform 1s ease-in-out;
+    border: none;
+
+  }
+  
   /* Component */
   .Form__exitBtnsContainer {
     background-color: #222;
