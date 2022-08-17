@@ -61,7 +61,7 @@
     cursor: grabbing;
   }
 
-  .Form__ConfirmAndDelete__submitInput {
+  .Form__ConfirmAndDelete__submitInputContainer {
     flex: 0 0 10rem;
     width: 10rem;
     justify-self: center;
@@ -69,7 +69,7 @@
     text-transform: uppercase;
     text-align: center;
 
-    background-color: #111;
+    background-color: #222;
     color:rgb(141, 0, 0);
     cursor: pointer;
     letter-spacing: 3px;
@@ -77,13 +77,18 @@
     border-radius: 3px;
     transition: transform 0.9s;
   }
-  .Form__ConfirmAndDelete__submitInput:hover {
+  .Form__ConfirmAndDelete__submitInputContainer:hover {
     transform: scale(1.3) translateY(.5rem);
-    background-color: #000;
+    background-color: #222;
     font-weight: bold;
+  }
+  .Form__ConfirmAndDelete__submitInputContainer__img {
+    -webkit-filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
+    filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
+  }
+  .Form__ConfirmAndDelete__submitInputContainer__submitInput {
 
   }
-
   /* Component */
   .Form__exitBtnsContainer {
     background-color: #222;

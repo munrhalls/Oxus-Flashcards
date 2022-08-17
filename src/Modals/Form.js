@@ -94,11 +94,17 @@ export const Form = {
             Are you sure?
           </h1>
         </div>
-        <input
-          className="Form__ConfirmAndDelete__submitInput"
-          type="submit"
-          value="Delete"
-        />
+        <div className="Form__ConfirmAndDelete__submitInputContainer">
+          <img
+            className="Form__ConfirmAndDelete__submitInputContainer__img"
+            src={IMG__NUCLEAR}
+          />
+          <input
+            className="Form__ConfirmAndDelete__submitInputContainer__submitInput"
+            type="submit"
+            value="Delete"
+          />
+        </div>
       </div>
     );
   },
