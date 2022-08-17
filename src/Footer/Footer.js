@@ -68,6 +68,14 @@ export const Footer = () => {
         >
           <span> ///</span> Door icons created by Freepik - Flaticon
         </a>
+        <a
+          className="Footer__attribs__link"
+          href="https://www.flaticon.com/free-icons/nuclear-energy"
+          title="nuclear energy icons"
+        >
+          <span> ///</span> Nuclear energy icons created by IwitoStudio -
+          Flaticon
+        </a>
       </div>
     </footer>
   );

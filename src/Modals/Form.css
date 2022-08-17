@@ -29,6 +29,8 @@
   .Form__BackBtn__img {
     width: 1rem;
     height: 1rem;
+    -webkit-filter : grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+    filter: invert(76%) sepia(30%) saturate(3461%) hue-rotate(321deg) brightness(98%) contrast(91%);
   }
   .Form__BackBtn:hover {
     transform: scale(1.3);
