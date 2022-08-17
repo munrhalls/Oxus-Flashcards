@@ -159,6 +159,8 @@
     align-items: center;
 
     padding: 1rem;
+    width: 12rem;
+    margin: auto;
 
 }
 .Deck__resetDeckBtn__text {

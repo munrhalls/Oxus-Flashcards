@@ -77,12 +77,14 @@ export const Flashcards = ({
           </div>
         </div>
       ) : (
-        <div className="Flashcards__completedMessage">
-          <div className="Flashcards__completedMessage__title">
-            Deck completed.
+        <>
+          <div className="Flashcards__completedMessage">
+            <div className="Flashcards__completedMessage__title">
+              Deck completed.
+            </div>
           </div>
           <ResetDeckBtn resetDeck={() => resetDeck()} />
-        </div>
+        </>
       )}
     </>
   );
