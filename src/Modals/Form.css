@@ -69,7 +69,7 @@
 
     background-color: #111;
     cursor: pointer;
-    transition: transform 0.9s;
+    transition: transform 1.25s;
     border: 3px solid #777;
     border-radius: 5px;
 
@@ -96,12 +96,12 @@
     border: none;
 
 
-    transition: transform 2s ease-in-out;
+    transition: transform 3s ease-in-out;
   }
   .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__img {
     -webkit-filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
     filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
-    transform: scale(1.4);
+    transform: scale(2.5) translateY(-.5rem);
   }
   .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__submitInput {
     transform: transformY(-3rem);
@@ -113,7 +113,11 @@
     letter-spacing: 3px;
     font-size: 1.75rem;
     border-radius: 3px;
+    transition: transform 5s;
 
+  }
+  .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__text {
+    transform: translateY(-3rem);
   }
   .Form__ConfirmAndDelete__submitInputContainer__submitInput {
     cursor: pointer;
@@ -124,7 +128,7 @@
     width: 100%;
     background-color: transparent;
     background: transparent;
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
     border: none;
 
   }
