@@ -75,16 +75,27 @@ export const Form = {
   },
   BackBtn: function ({ setModalOpen }) {
     return (
-      <div onClick={() => setModalOpen()}>
-        <button>BACK</button>
-      </div>
+      <button className="Form__BackBtn" onClick={() => setModalOpen()}>
+        BACK
+      </button>
     );
   },
   ConfirmAndDelete: function ({ id }) {
     return (
-      <div>
-        Delete deck
-        <input className="" type="submit" />
+      <div className="Form__ConfirmAndDelete">
+        <div className="Form__ConfirmAndDelete__textContainer">
+          <h1 className="Form__ConfirmAndDelete__textContainer__text">
+            Action not reversible.
+          </h1>
+          <h1 className="Form__ConfirmAndDelete__textContainer__text">
+            Are you sure?
+          </h1>
+        </div>
+        <input
+          className="Form__ConfirmAndDelete__submitInput"
+          type="submit"
+          value="Delete"
+        />
       </div>
     );
   },
