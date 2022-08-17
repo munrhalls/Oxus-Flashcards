@@ -28,7 +28,6 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
     setDecks(
       decks.map((deck) => {
         if (deck.id !== activeDeckId) return deck;
-
         return {
           ...activeDeck,
           flashcards: [...activeDeck.completedFlashcards],
