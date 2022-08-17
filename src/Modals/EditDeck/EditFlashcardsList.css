@@ -22,6 +22,7 @@
     display: flex;
     margin-bottom: 0.25rem;
 }
+
 .FormFlashcardsList__instanceContainer.--addBtn {
     background-color: #222;
     border: 3px solid #000;
@@ -32,7 +33,12 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    flex: 0 1 16rem;
+    border-radius: 5px;
+    margin: auto;
+    padding: 1rem;
 }
+
 .FormFlashcardsList__instanceContainer__btn {
     border-radius: 50%;
     width: 50%;
@@ -61,6 +67,7 @@
     height: 5rem;
     width: 92.5%;
     cursor: pointer;
+    border-radius: 5px;
 
 }
 .FormFlashcardsList__instanceContainer__addBtnTextContainer__addBtnText {
@@ -74,6 +81,7 @@
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+    border-radius: 5px;
 }
 .FormFlashcardsList__instanceContainer__addBtnTextContainer__addBtnText {
 }
