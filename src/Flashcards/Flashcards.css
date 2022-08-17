@@ -237,9 +237,17 @@
     .CompletedFlashcards__title__text {
 
     }
-    .Flashcards__completedMessage__resetDeckBtn {
+    .CompletedFlashcards__title__number {
+
+    }
+
+    .Flashcards__completedMessage__resetDeck {
+        display: flex;
         
     }
-    .CompletedFlashcards__title__number {
+    .Flashcards__completedMessage__resetDeck__btn {
+
+    }
+    .Flashcards__completedMessage__resetDeck__img {
 
     }

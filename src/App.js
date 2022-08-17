@@ -441,7 +441,7 @@ function App() {
 
   return (
     <div className="App">
-      <Welcome.Shade />
+      {/* <Welcome.Shade /> */}
       <Header />
       <main className="Main">
         {activeDeckId && (
@@ -454,7 +454,7 @@ function App() {
           </div>
         )}
         <div className="Centerstage">
-          <Welcome.Message />
+          {/* <Welcome.Message /> */}
           {activeDeckId ? (
             <Deck
               activeDeckId={activeDeckId}
