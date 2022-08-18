@@ -17,7 +17,10 @@ export const Flashcard = ({ flashcard }) => {
     ""
   );
   return (
-    <div className="Flashcard" onClick={() => turn()}>
+    <div
+      className={`Flashcard ${turned ? "--turned" : "--unturned"}`}
+      onClick={() => turn()}
+    >
       {turned ? (
         <>
           <div className="Flashcard__turned">

@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './Header/Header.css';
 @import './Welcome/Welcome.css';
+@import './Flashcards/Flashcard.css';
 @import './Flashcards/Flashcards.css';
 @import './Flashcards/CompletedFlashcards.css';
 @import './Deck/Deck.css';
