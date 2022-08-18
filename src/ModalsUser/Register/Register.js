@@ -6,7 +6,9 @@ export default function Register() {
     <div className="Register">
       <div className="Register__topbar">topbar title</div>
       <div className="Register__inputs">
+        <label className="Register__inputs__label">E-mail address:</label>
         <input className="Register__inputs__email"></input>
+        <label className="Register__inputs__label">Password:</label>
         <input className="Register__inputs__password"></input>
       </div>
       {/* reset pw */}
