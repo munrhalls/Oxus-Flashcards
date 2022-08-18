@@ -1,19 +1,33 @@
 .Register {
+    width: 90%;
+    height: 90%;
+    margin: auto;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .Register__topbar {
-
+    margin-bottom: auto;
 }
 .Register__inputs {
+    flex: 4;
+    width: 70%;
 
 }
 .Register__inputs__email {
+    width: 100%;
 
 }
 .Register__inputs__password {
+    width: 100%;
+
 
 }
 .Register__exit {
+    margin-bottom: auto;
+    flex: 1;
 
 }
 .Register__exit__cancel {
