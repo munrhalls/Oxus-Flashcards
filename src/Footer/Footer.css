@@ -46,8 +46,11 @@
     overflow-y: hidden;
   
   }
+  .Footer__attribs__title {
+    font-size: .75rem;
+  }
   .Footer__attribs__link {
-    font-size: 7px;
+    font-size: .75rem;
     font-weight: lighter;
     padding: 0.25rem;
     color: lightblue;

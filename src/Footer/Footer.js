@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="Footer">
       <div className="Footer__authorContainer">
-        <h6 className="Footer__authorContainer__author">App by:</h6>
+        <h6 className="Footer__authorContainer__author">App & Website by:</h6>
         <h6 className="Footer__authorContainer__author">Munrhalls. 2022.</h6>
       </div>
       <div className="Footer__authorContainer">
