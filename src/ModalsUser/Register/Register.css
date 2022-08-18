@@ -7,10 +7,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #333;
+    border-radius: 5px;
 }
 .Register__topbar {
     min-height: 2rem;
+    width: 100%;
     margin-bottom: auto;
+    text-align: center;
+}
+.Register__topbar__title {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
 }
 .Register__inputs {
     flex: 1;
@@ -27,7 +36,7 @@
     width: 100%;
 }
 .Register__inputs__label {
-    
+
 }
 .Register__exit {
 
