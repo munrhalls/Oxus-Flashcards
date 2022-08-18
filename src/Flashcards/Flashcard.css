@@ -20,12 +20,12 @@
     max-width: 100%;
 }
 .Flashcard.--unturned {
-    transition: transform 0.5s ease-in;  
-    transform: rotateY(-180deg);
+    transition: transform 0.10s ease-out;
+    transform: rotateY(-360deg);
 }
 .Flashcard.--turned {
     transform: rotateY(0deg);
-    transition: transform 0.5s ease-in;  
+    transition: transform 0.10s ease-out;  
 }
 
 .Flashcard__number {
