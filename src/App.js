@@ -451,7 +451,7 @@ function App() {
     let decks = getDecks();
     setDecks(decks);
   }, []);
-  console.log(modalUser);
+  console.log(modalOpen === "AddDeck");
 
   return (
     <div className="App">
@@ -490,10 +490,16 @@ function App() {
             />
           )}
           {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
+          {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
+          {modalOpen === "DeleteDeck" && <Modals.DeleteDeck {...modalProps} />}
+          {modalOpen === "AddFlashcard" && (
+            <Modals.AddFlashcard {...modalProps} />
+          )}
+          {modalOpen === "EditFlashcard" && (
+            <Modals.EditFlashcard {...modalProps} />
+          )}
 
-          {/* <Modals {...modalProps} /> */}
-
-          {modalUser && <ModalsUser modalUser={modalUser} />}
+          {/* {modalUser && <ModalsUser modalUser={modalUser} />} */}
         </div>
       </main>
       <Footer />

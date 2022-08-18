@@ -6,7 +6,7 @@ import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
 
 export const Modals = {
   AddDeck: function (props) {
-    <AddDeck {...props} />;
+    return <AddDeck {...props} />;
   },
   EditDeck: function (props) {
     return <EditDeck {...props} />;
