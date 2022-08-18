@@ -3,20 +3,19 @@
     min-height: 5rem;
     background-color: #000;
     color: #fff;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
+    
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 2rem;
+    padding: 0 .75rem;
 }
 
 .Header__title {
-    
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 .Header__account {
     display: flex;
@@ -26,6 +25,9 @@
 }
 
 .Header__account__btn {
+    transition: transform .15s ease-in;
+    cursor: pointer;
+
     border: 1px solid #fff;
     color: #000;
     border-radius: 5px;
@@ -33,5 +35,9 @@
     width: 5rem;
     padding: .25rem;
     margin: .25rem;
+    font-size: 1rem;
+}
 
+.Header__account__btn:hover {
+    transform: scale(1.25);
 }
