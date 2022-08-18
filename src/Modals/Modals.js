@@ -4,6 +4,9 @@ import { AddDeck } from "./AddDeck/AddDeck";
 import { EditDeck } from "./EditDeck/EditDeck";
 import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
 
+// Modals is here
+// Auth modals is exactly the same
+// 
 export const Modals = ({
   modalOpen,
   setModalOpen,
@@ -53,6 +56,8 @@ export const Modals = ({
           setDecks={setDecks}
         />
       )}
+
+      {/* auth modals import here */}
     </div>
   );
 };

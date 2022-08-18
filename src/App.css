@@ -9,11 +9,11 @@
 @import './ModalBtns/AddDeckBtn.css';
 @import './ModalBtns/ModalBtns.css';
 @import './ModalBtns/ModalBtn.css';
-
 @import './Modals/Modals.css';
 @import './Modals/Form.css';
 @import './Modals/FormTopbar.css';
 
+@import './ModalsUser/ModalsUser.css';
 
 @import './Modals/AddDeck/AddDeck.css';
 @import './Modals//EditDeck/EditDeck.css';

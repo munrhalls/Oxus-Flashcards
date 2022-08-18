@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { Header } from "./Header/Header";
 import { Modals } from "./Modals/Modals";
 import { ModalBtns } from "./ModalBtns/ModalBtns";
+import { ModalsUser } from "./ModalsUser/ModalsUser";
 import { SymbolDecks } from "./Deck/SymbolDecks";
 import { Deck } from "./Deck/Deck.js";
 import { Footer } from "./Footer/Footer";
@@ -407,6 +408,8 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
+  const [modalUser, setModalUser] = useState(null);
+
   function getDecks() {
     let decks = [];
     let deck = {
@@ -438,11 +441,11 @@ function App() {
     let decks = getDecks();
     setDecks(decks);
   }, []);
-
+  console.log(modalUser);
   return (
     <div className="App">
       {/* <Welcome.Shade /> */}
-      <Header />
+      <Header setModalUser={(modalUser) => setModalUser(modalUser)} />
       <main className="Main">
         {activeDeckId && (
           <div className="Aside">
@@ -478,6 +481,7 @@ function App() {
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
             />
           )}
+          {modalUser && <ModalsUser modalUser={modalUser} />}
         </div>
       </main>
       <Footer />
