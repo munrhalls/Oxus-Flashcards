@@ -451,7 +451,7 @@ function App() {
     let decks = getDecks();
     setDecks(decks);
   }, []);
-  console.log(modalOpen === "AddDeck");
+  console.log(modalOpen);
 
   return (
     <div className="App">
