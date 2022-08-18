@@ -5,13 +5,20 @@ export const FormUser = {
     return <div>Register</div>;
   },
   LoginBtn: function () {
-    return <button className="LoginRegisterBtn --login">Log in</button>;
+    return (
+      <button
+        className="LoginRegisterBtn --login"
+        onClick={() => setModalUser(() => "login")}
+      >
+        Log in
+      </button>
+    );
   },
   RegisterBtn: function () {
     return (
       <button
         className="LoginRegisterBtn --register"
-        // onClick={() => setModalUser(() => true)}
+        onClick={() => setModalUser(() => "register")}
       >
         Register
       </button>
