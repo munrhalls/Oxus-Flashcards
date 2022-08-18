@@ -14,6 +14,7 @@
 @import './Modals/FormTopbar.css';
 
 @import './ModalsUser/ModalsUser.css';
+@import './ModalsUser/FormUser.css';
 
 @import './Modals/AddDeck/AddDeck.css';
 @import './Modals//EditDeck/EditDeck.css';

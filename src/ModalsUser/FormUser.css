@@ -1,0 +1,18 @@
+.LoginRegisterBtn {
+    transition: transform .15s ease-in;
+    cursor: pointer;
+
+    border: 1px solid #fff;
+    color: #000;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 5rem;
+    padding: .25rem;
+    margin: .25rem;
+    font-size: 1rem;
+}
+
+.LoginRegisterBtn:hover {
+    transform: scale(1.25);
+    box-shadow: 0 0 30px 5px #fff;
+}
