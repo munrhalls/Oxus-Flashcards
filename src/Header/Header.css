@@ -3,13 +3,27 @@
     min-height: 5rem;
     background-color: #000;
     color: #fff;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    padding: 0 2rem;
+}
+
+.Header__account {
+    display: flex;
+    flex-direction: column;
+}
+
+.Header__account__logIn {
+
+}
+
+.Header__account__register {
+
 }
