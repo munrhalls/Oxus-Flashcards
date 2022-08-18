@@ -1,8 +1,8 @@
 import React from "react";
 
 export const FormUser = {
-  Register: function () {
-    return <div>Register</div>;
+  Login: function () {
+    return <div>Login</div>;
   },
   LoginBtn: function ({ setModalUser }) {
     return (
@@ -13,6 +13,9 @@ export const FormUser = {
         Log in
       </button>
     );
+  },
+  Register: function () {
+    return <div>Register</div>;
   },
   RegisterBtn: function ({ setModalUser }) {
     return (
