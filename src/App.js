@@ -9,6 +9,7 @@ import {
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Header } from "./Header/Header";
+import { FormUser } from "./ModalsUser/FormUser";
 import { Modals } from "./Modals/Modals";
 import { ModalBtns } from "./ModalBtns/ModalBtns";
 import { ModalsUser } from "./ModalsUser/ModalsUser";
@@ -445,7 +446,14 @@ function App() {
   return (
     <div className="App">
       {/* <Welcome.Shade /> */}
-      <Header setModalUser={(modalUser) => setModalUser(modalUser)} />
+      <Header>
+        <FormUser.LoginBtn
+          setModalUser={(modalUser) => setModalUser(modalUser)}
+        />
+        <FormUser.RegisterBtn
+          setModalUser={(modalUser) => setModalUser(modalUser)}
+        />
+      </Header>
       <main className="Main">
         {activeDeckId && (
           <div className="Aside">
