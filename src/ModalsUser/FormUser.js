@@ -4,7 +4,7 @@ export const FormUser = {
   Register: function () {
     return <div>Register</div>;
   },
-  LoginBtn: function () {
+  LoginBtn: function ({ setModalUser }) {
     return (
       <button
         className="LoginRegisterBtn --login"
@@ -14,7 +14,7 @@ export const FormUser = {
       </button>
     );
   },
-  RegisterBtn: function () {
+  RegisterBtn: function ({ setModalUser }) {
     return (
       <button
         className="LoginRegisterBtn --register"
