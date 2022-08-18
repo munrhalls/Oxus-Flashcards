@@ -411,6 +411,14 @@ function App() {
   const [modalOpen, setModalOpen] = useState(null);
   const [modalUser, setModalUser] = useState(null);
 
+  const modalProps = {
+    activeDeckId,
+    setactiveDeckId: (activeDeckId) => setactiveDeckId(activeDeckId),
+    decks,
+    setDecks: (decks) => setDecks(decks),
+    modalOpen,
+    setModalOpen: (modalOpen) => setModalOpen(modalOpen),
+  };
   function getDecks() {
     let decks = [];
     let deck = {
@@ -443,6 +451,7 @@ function App() {
     setDecks(decks);
   }, []);
   console.log(modalUser);
+
   return (
     <div className="App">
       {/* <Welcome.Shade /> */}
@@ -480,14 +489,15 @@ function App() {
             />
           )}
           {modalOpen && (
-            <Modals
-              activeDeckId={activeDeckId}
-              setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
-              decks={decks}
-              setDecks={(decks) => setDecks(decks)}
-              modalOpen={modalOpen}
-              setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-            />
+            <Modals {...modalProps} />
+            // <Modals
+            //   activeDeckId={activeDeckId}
+            //   setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
+            //   decks={decks}
+            //   setDecks={(decks) => setDecks(decks)}
+            //   modalOpen={modalOpen}
+            //   setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+            // />
           )}
           {modalUser && <ModalsUser modalUser={modalUser} />}
         </div>

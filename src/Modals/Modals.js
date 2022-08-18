@@ -7,14 +7,16 @@ import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
 // Modals is here
 // Auth modals is exactly the same
 //
-export const Modals = ({
-  modalOpen,
-  setModalOpen,
-  decks,
-  setDecks,
-  activeDeckId,
-  setactiveDeckId,
-}) => {
+export const Modals = (props) => {
+  const {
+    modalOpen,
+    setModalOpen,
+    setactiveDeckId,
+    activeDeckId,
+    decks,
+    setDecks,
+  } = props;
+
   return (
     <div className="Modals">
       {modalOpen === "AddFlashcard" && (
