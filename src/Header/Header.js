@@ -4,8 +4,8 @@ export function Header({}) {
     <header className="Header">
       <h6 className="Header__title">Flashcards</h6>
       <div className="Header__account">
-        <button className="Header__account__btn">Log in</button>
-        <button className="Header__account__btn">Register</button>
+        <button className="Header__account__btn --login">Log in</button>
+        <button className="Header__account__btn --register">Register</button>
       </div>
     </header>
   );
