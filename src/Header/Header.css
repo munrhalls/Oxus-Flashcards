@@ -21,7 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .Header__account__btn {
@@ -40,8 +40,4 @@
 
 .Header__account__btn:hover {
     transform: scale(1.25);
-}
-
-.Header__account__btn.--login {
-    margin-right: 0.5rem;
 }
