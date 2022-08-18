@@ -40,4 +40,5 @@
 
 .Header__account__btn:hover {
     transform: scale(1.25);
+    box-shadow: 0 0 30px 5px #fff;
 }
