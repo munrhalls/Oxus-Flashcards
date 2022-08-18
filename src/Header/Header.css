@@ -15,15 +15,23 @@
     padding: 0 2rem;
 }
 
+.Header__title {
+    
+}
 .Header__account {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.Header__account__logIn {
-
-}
-
-.Header__account__register {
+.Header__account__btn {
+    border: 1px solid #fff;
+    color: #000;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 5rem;
+    padding: .25rem;
+    margin: .25rem;
 
 }
