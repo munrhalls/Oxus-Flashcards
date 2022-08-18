@@ -1,3 +1,4 @@
+/* Component  */
 .LoginRegisterBtn {
     transition: transform .15s ease-in;
     cursor: pointer;
@@ -11,8 +12,28 @@
     margin: .25rem;
     font-size: 1rem;
 }
-
+/* Component  */
 .LoginRegisterBtn:hover {
     transform: scale(1.25);
     box-shadow: 0 0 30px 5px #fff;
+}
+/* Component  */
+.Register {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background-color: #000;
+    border: 10px solid #000;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Component  */
+.Login {
+
 }
