@@ -50,9 +50,10 @@
     font-size: .75rem;
   }
   .Footer__attribs__link {
-    font-size: .75rem;
+    font-size: .65rem;
     font-weight: lighter;
     padding: 0.25rem;
+    margin-bottom: 0.05rem;
     color: lightblue;
     width: fit-content
   }
