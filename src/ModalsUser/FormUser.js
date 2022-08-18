@@ -2,8 +2,27 @@ import React from "react";
 import { Form } from "../Modals/Form";
 
 export const FormUser = {
-  Register: function () {
-    return <div className="Register"></div>;
+  Register: function ({ handleSubmit }) {
+    return (
+      <form className="FormUser">
+        <div className="FormUser__topbar">
+          <h1 className="FormUser__topbar__title">REGISTER</h1>
+        </div>
+        <div className="FormUser__inputs">
+          <label className="FormUser__inputs__label">E-mail address:</label>
+          <input className="FormUser__inputs__email"></input>
+          <label className="FormUser__inputs__label">Password:</label>
+          <input className="FormUser__inputs__password"></input>
+        </div>
+        {/* reset pw */}
+        <div className="FormUser__exit">
+          <button className="FormUser__exit__cancel">cancel btn</button>
+          <button className="FormUser__exit__submit" onClick={handleSubmit}>
+            submit btn
+          </button>
+        </div>
+      </form>
+    );
   },
   RegisterBtn: function ({ setModalUser }) {
     return (
