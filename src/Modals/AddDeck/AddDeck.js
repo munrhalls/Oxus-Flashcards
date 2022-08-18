@@ -5,8 +5,10 @@ import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__SAVE from "./../../Assets/save.png";
 
-export const AddDeck = ({ decks, setDecks, setModalOpen, setactiveDeckId }) => {
+export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
+  const { setModalOpen, setactiveDeckId, decks, setDecks } = props;
+
   function handleSubmit(e) {
     e.preventDefault();
     let deck = {

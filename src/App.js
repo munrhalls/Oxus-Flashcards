@@ -419,6 +419,7 @@ function App() {
     modalOpen,
     setModalOpen: (modalOpen) => setModalOpen(modalOpen),
   };
+
   function getDecks() {
     let decks = [];
     let deck = {
@@ -488,17 +489,10 @@ function App() {
               setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
             />
           )}
-          {modalOpen && (
-            <Modals {...modalProps} />
-            // <Modals
-            //   activeDeckId={activeDeckId}
-            //   setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
-            //   decks={decks}
-            //   setDecks={(decks) => setDecks(decks)}
-            //   modalOpen={modalOpen}
-            //   setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-            // />
-          )}
+          {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
+
+          {/* <Modals {...modalProps} /> */}
+
           {modalUser && <ModalsUser modalUser={modalUser} />}
         </div>
       </main>

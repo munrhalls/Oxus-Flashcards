@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { EditFlashcardsList } from "./EditFlashcardsList";
 import { Form } from "./../Form";
 
-export const EditDeck = ({ setModalOpen, activeDeckId, decks, setDecks }) => {
-  const deck = decks?.filter((instance) => instance?.id === activeDeckId)?.[0];
+export const EditDeck = (props) => {
+  const { setModalOpen, activeDeckId, decks, setDecks } = props;
 
+  const deck = decks?.filter((instance) => instance?.id === activeDeckId)?.[0];
   const [editedDeck, setEditedDeck] = useState(deck);
   const [isEditDeckName, setIsEditDeckName] = useState(null);
 

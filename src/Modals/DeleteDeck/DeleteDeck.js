@@ -1,14 +1,15 @@
 import React from "react";
 import { Form } from "../Form";
 
-export const DeleteDeck = ({
-  modalOpen,
-  setModalOpen,
-  activeDeckId,
-  setactiveDeckId,
-  decks,
-  setDecks,
-}) => {
+export const DeleteDeck = (props) => {
+  const {
+    modalOpen,
+    setModalOpen,
+    setactiveDeckId,
+    activeDeckId,
+    decks,
+    setDecks,
+  } = props;
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
 
   function handleSubmit(e) {

@@ -7,17 +7,13 @@ import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__SAVE from "./../../Assets/save.png";
 import { Form } from "./../Form";
 
-export const AddFlashcard = ({
-  activeDeckId,
-  setDecks,
-  decks,
-  setModalOpen,
-}) => {
+export const AddFlashcard = (props) => {
   const [flashcard, setFlashcard] = useState({
     unturned: { text: "", image: "" },
     turned: { text: "", image: "" },
   });
   const [side, setSide] = useState(false);
+  const { setModalOpen, activeDeckId, decks, setDecks } = props;
   const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
 
   function makeNewFlashcard() {
