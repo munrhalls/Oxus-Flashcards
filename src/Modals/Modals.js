@@ -17,7 +17,7 @@ export const Modals = {
   AddFlashcard: function (props) {
     return <AddFlashcard {...props} />;
   },
-  EditFlashcard: function (props) {
-    return <AddFlashcard {...props} />;
-  },
+  // EditFlashcard: function (props) {
+  //   return <AddFlashcard {...props} />;
+  // },
 };
