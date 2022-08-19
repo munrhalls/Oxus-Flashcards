@@ -51,6 +51,7 @@ export function EditFlashcardsList({
                 ) : (
                   <EditFlashcard
                     card={card}
+                    setModalOpen={setModalOpen}
                     setisDelConfirmId={() => setisDelConfirmId(card.id)}
                   />
                 )}

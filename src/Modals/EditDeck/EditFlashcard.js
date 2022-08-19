@@ -4,7 +4,11 @@ import { uuidv4 } from "@firebase/util";
 import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__EDIT from "./../../Assets/edit.png";
 
-export default function EditFlashcard({ card, setisDelConfirmId }) {
+export default function EditFlashcard({
+  card,
+  setisDelConfirmId,
+  setModalOpen,
+}) {
   return (
     <div className="FormFlashcardsList__instanceContainer__elements">
       <Flashcard key={uuidv4()} flashcard={card} />
@@ -12,6 +16,7 @@ export default function EditFlashcard({ card, setisDelConfirmId }) {
         <button
           type="button"
           className="FormFlashcardsList__instanceContainer__elements__btns__btn --edit"
+          onClick={() => setModalOpen("EditFlashcard")}
         >
           <img
             className="FormFlashcardsList__instanceContainer__elements__btns__btn__img"
