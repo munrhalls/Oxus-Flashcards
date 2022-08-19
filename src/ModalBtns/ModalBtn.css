@@ -67,7 +67,7 @@
     transform: scale(1.3);
 
 }
-.ModalBtns__container__btn.--open {
+.ModalBtns__container__btn.--EDIT.--open {
     background-color: #777;
     opacity: .95;
     color: #fff;
@@ -79,7 +79,7 @@
     text-decoration-thickness: double;
     border: 3px solid #222;
 }
-.ModalBtns__container__btn:last-of-type.--open {
+.ModalBtns__container__btn.--DELETE.--open {
     background-color: #222;
     opacity: .95;
     color: rgb(147, 5, 5);

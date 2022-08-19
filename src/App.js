@@ -495,6 +495,9 @@ function App() {
           {modalOpen === "AddFlashcard" && (
             <Modals.AddFlashcard {...modalProps} />
           )}
+          {modalOpen === "EditFlashcard" && (
+            <Modals.EditFlashcard {...modalProps} />
+          )}
 
           {/* {modalUser && <ModalsUser modalUser={modalUser} />} */}
         </div>
