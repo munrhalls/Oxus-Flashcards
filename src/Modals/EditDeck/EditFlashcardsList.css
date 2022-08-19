@@ -4,6 +4,8 @@
     right: 0;
     bottom: 4rem;
     top: 7.2rem;
+    z-index: 10;
+    background-color: #000;
 }
 .FormFlashcardsList__list {
     position: absolute;

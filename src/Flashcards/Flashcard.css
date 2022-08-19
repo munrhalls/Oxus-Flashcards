@@ -19,11 +19,11 @@
     min-width: 100%;
     max-width: 100%;
 }
-.Flashcard.--unturned {
+.Flashcard.--unrotated {
     transition: transform 0.05s ease-out;
     transform: rotateY(-360deg);
 }
-.Flashcard.--turned {
+.Flashcard.--rotated {
     transform: rotateY(0deg);
     transition: transform 0.05s ease-out;  
 }
