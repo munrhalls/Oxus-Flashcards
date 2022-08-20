@@ -32,15 +32,6 @@ function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
 
-  const modalProps = {
-    activeDeckId,
-    setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
-    decks,
-    setDecks: (decks) => setDecks(decks),
-    modalOpen,
-    setModalOpen: (modalOpen) => setModalOpen(modalOpen),
-  };
-
   function getDecks() {
     let decks = [];
 
@@ -68,6 +59,15 @@ function App() {
     setDecks(decks);
   }, []);
 
+  const modalProps = {
+    activeDeckId,
+    setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
+    decks,
+    setDecks: (decks) => setDecks(decks),
+    modalOpen,
+    setModalOpen: (modalOpen) => setModalOpen(modalOpen),
+  };
+  
   return (
     <div className="App">
       {/* <Welcome.Shade /> */}

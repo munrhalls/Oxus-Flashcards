@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
 import { Form } from "../Form";
-import IMG__EDIT from "./../../Assets/edit.png";
-import IMG__CLOSE from "./../../Assets/close.png";
-import IMG__SAVE from "./../../Assets/save.png";
 
 export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
