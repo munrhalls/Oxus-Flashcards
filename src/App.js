@@ -12,15 +12,15 @@ import {
 import { useEffect, useState } from "react";
 import { Welcome } from "./Welcome/Welcome";
 import { Header } from "./Header/Header";
-// chapter 1
+// cluster 1
 import { ModalsUser } from "./ModalsUser/ModalsUser";
 import { FormUser } from "./ModalsUser/FormUser";
-// chapter 2
+// cluster 2
 import { Modals } from "./Modals/Modals";
 import { ModalBtns } from "./ModalBtns/ModalBtns";
-// chapter 3
+// cluster 3
 import { SymbolDecks } from "./Deck/SymbolDecks";
-// chapter 4
+// cluster 4
 import { Deck } from "./Deck/Deck.js";
 // conclusion
 import { Footer } from "./Footer/Footer";

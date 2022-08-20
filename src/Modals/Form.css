@@ -100,11 +100,11 @@
 
     position: absolute;
     bottom: 1rem;
-    left: 60%;
-    height: 1.25rem;
-    max-height: 1.25rem;
-    width: 1.25rem;
-    max-width: 1.25rem;
+    left: 2.75rem;
+    height: 3.5rem;
+    max-height: 3.5rem;
+    width: 3.5rem;
+    max-width: 3.5rem;
     border: none;
 
 
@@ -113,7 +113,7 @@
   .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__img {
     -webkit-filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
     filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
-    transform: scale(2.5) translateY(-.5rem);
+    transform: scale(1.825) translateY(-.5rem);
   }
   .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__submitInput {
     transform: transformY(-3rem);
