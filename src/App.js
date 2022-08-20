@@ -1,4 +1,4 @@
-// graphics
+// gestalting
 import "./App.css";
 // data
 import { uuidv4 } from "@firebase/util";

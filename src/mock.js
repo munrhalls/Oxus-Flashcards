@@ -1,219 +1,387 @@
 let mock = [
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 2,
-    orderNum: 2,
+    id: uuidv4(),
     unturned: {
-      text: "Question 1",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Portugese ?',
+      image: "",
     },
     turned: {
-      text: "Answer 2",
+      text: "Olá",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 2,
-    orderNum: 1,
+    id: uuidv4(),
     unturned: {
-      text: "Question 3",
+      text: 'How\'s  \n"Hey\n" in English, Australia?',
       image: "",
     },
     turned: {
-      text: "Answer is 33333333333333. 3..",
+      text: "G’day",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 1,
+    id: uuidv4(),
     unturned: {
-      text: "Question 4",
+      text: 'How\'s  \n"Hey\n" in Greek?',
       image: "",
     },
     turned: {
-      text: "That's answer 44444444444444. Four. Actually.",
+      text: "Geia (γεια)",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 4,
+    id: uuidv4(),
     unturned: {
-      text: "Question",
+      text: 'How\'s  \n"Hey\n" in Serbia?',
       image: "",
     },
     turned: {
-      text: "555555555555555555555 55 4 5 5 5 5",
-      image: "",
-    },
-  },
-  {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 3,
-    unturned: {
-      text: "Question",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
-    },
-    turned: {
-      text: "Six.",
+      text: "Zdravo",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 2,
+    id: uuidv4(),
     unturned: {
-      text: "Question 7",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Croatian?',
+      image: "",
     },
     turned: {
-      text: "Seven.Seven. Seven.Seven.Seven.Seven.Seven.Seven.Seven. Seven.",
+      text: "Zdravo",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 5,
+    id: uuidv4(),
     unturned: {
-      text: "Question 8",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Mandarin?',
+      image: "",
     },
     turned: {
-      text: "That's 8.",
+      text: "Nǐ hǎo",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 7,
+    id: uuidv4(),
     unturned: {
-      text: "Question 9",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Cantonese?',
+      image: "",
     },
     turned: {
-      text: "That's nine. 9..... 9.",
+      text: "Nǐ hǎo. Mandarin and Cantonese are very different.",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 3,
-    orderNum: 6,
+    id: uuidv4(),
     unturned: {
-      text: "Question 10",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Hindi?',
+      image: "",
     },
     turned: {
-      text: "Ten ten ten.",
+      text: "Namaste",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 1,
-    orderNum: 1,
+    id: uuidv4(),
     unturned: {
-      text: "Question 11",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Cyprus?',
+      image: "",
     },
     turned: {
-      text: "11n.",
+      text: "Merhaba",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 0,
-    orderNum: 1,
+    id: uuidv4(),
     unturned: {
-      text: "Question 12",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Slovakia?',
+      image: "",
     },
     turned: {
-      text: "12.",
+      text: "Ahoj",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 0,
-    orderNum: 3,
+    id: uuidv4(),
     unturned: {
-      text: "Question 12",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Dutch?',
+      image: "",
     },
     turned: {
-      text: "12.",
+      text: "Hallo",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 0,
-    orderNum: 2,
+    id: uuidv4(),
     unturned: {
-      text: "Question 12",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Thai?',
+      image: "",
     },
     turned: {
-      text: "12.",
+      text: "S̄wạs̄dī",
       image: "",
     },
   },
   {
-    id: "e1750c38-745d-49f2-ae93-6bc94d3c0dc4",
-    difficulty: 0,
-    orderNum: 4,
+    id: uuidv4(),
     unturned: {
-      text: "Question 12",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/oxus-9ce02.appspot.com/o/flashcards?alt=media&token=5dcb00f9-6961-432e-aa2e-0fef14c259c4",
+      text: 'How\'s  \n"Hey\n" in Hungarian?',
+      image: "",
     },
     turned: {
-      text: "12.",
+      text: "Szia",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Czech?',
+      image: "",
+    },
+    turned: {
+      text: "Ahoj",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Bengali?',
+      image: "",
+    },
+    turned: {
+      text: "Hyālō",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Urdu (Pakistan)?',
+      image: "",
+    },
+    turned: {
+      text: "Assalam u Alaikum",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Persian?',
+      image: "",
+    },
+    turned: {
+      text: "Salām",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Swedish?',
+      image: "",
+    },
+    turned: {
+      text: "Hallå",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Afrikaans?',
+      image: "",
+    },
+    turned: {
+      text: "Hallo",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Romanian?',
+      image: "",
+    },
+    turned: {
+      text: "Bunâ",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Hebrew?',
+      image: "",
+    },
+    turned: {
+      text: "Shalom",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Armenian?',
+      image: "",
+    },
+    turned: {
+      text: "Barev",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Arabic?',
+      image: "",
+    },
+    turned: {
+      text: "Marhabaan",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s  \n"Hey\n" in Punjabi (spoken in India)?',
+      image: "",
+    },
+    turned: {
+      text: "Sata Srī Akāla",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: "Hey in French?",
+      image: "",
+    },
+    turned: {
+      text: "Bonjour!",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: "Hey in German?!",
+      image: "",
+    },
+    turned: {
+      text: "Tschüss!",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: "Hey in Polish?",
+      image: "",
+    },
+    turned: {
+      text: "SIEMA.",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Japanese?',
+      image: "",
+    },
+    turned: {
+      text: "Kon'nichiwa",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Korean?',
+      image: "",
+    },
+    turned: {
+      text: "Annyeong",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Chinese?',
+      image: "",
+    },
+    turned: {
+      text: "Nǐ hǎo",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Turkish?',
+      image: "",
+    },
+    turned: {
+      text: "Merhaba",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Turkish?',
+      image: "",
+    },
+    turned: {
+      text: "Merhaba",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Serbia?',
+      image: "",
+    },
+    turned: {
+      text: "Zdravo",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in South Africa?',
+      image: "",
+    },
+    turned: {
+      text: "Heita",
+      image: "",
+    },
+  },
+  {
+    id: uuidv4(),
+    unturned: {
+      text: 'How\'s \n"Hey\n" in Greenland?',
+      image: "",
+    },
+    turned: {
+      text: "Aluu",
       image: "",
     },
   },
 ];
-
-function sortWithinLevel(arr, difficulty) {
-  let sorted = arr
-    .filter((instance) => instance.difficulty === difficulty)
-    .sort((a, b) => (a.orderNum < b.orderNum ? -1 : 1));
-
-  return sorted;
-}
-
-function aggregateSortedLevels(data, numOfLevels) {
-  let aggregate = [];
-  for (let i = 0; i < numOfLevels; i++) {
-    let part = sortWithinLevel(data, i);
-    aggregate = [...aggregate, ...part];
-  }
-  return aggregate;
-}
-
-let filtered = aggregateSortedLevels(mock, 4);
-let ordered = mock.sort((a, b) => (a.difficulty > b.difficulty ? -1 : 1));
-
-console.log(ordered);
-
-export { ordered, filtered };
