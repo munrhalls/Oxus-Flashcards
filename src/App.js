@@ -1,3 +1,6 @@
+// graphics
+import "./App.css";
+// data
 import { uuidv4 } from "@firebase/util";
 import {
   getStorage,
@@ -5,18 +8,22 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "./Data/Firebase/Firebase";
-
-import "./App.css";
+// introduction
 import { useEffect, useState } from "react";
+import { Welcome } from "./Welcome/Welcome";
 import { Header } from "./Header/Header";
+// chapter 1
+import { ModalsUser } from "./ModalsUser/ModalsUser";
 import { FormUser } from "./ModalsUser/FormUser";
+// chapter 2
 import { Modals } from "./Modals/Modals";
 import { ModalBtns } from "./ModalBtns/ModalBtns";
-import { ModalsUser } from "./ModalsUser/ModalsUser";
+// chapter 3
 import { SymbolDecks } from "./Deck/SymbolDecks";
+// chapter 4
 import { Deck } from "./Deck/Deck.js";
+// conclusion
 import { Footer } from "./Footer/Footer";
-import { Welcome } from "./Welcome/Welcome";
 
 function App() {
   let mock = [
@@ -410,7 +417,6 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-  const [modalUser, setModalUser] = useState(null);
 
   const modalProps = {
     activeDeckId,
@@ -458,10 +464,10 @@ function App() {
       {/* <Welcome.Shade /> */}
       <Header>
         <FormUser.LoginBtn
-          setModalUser={(modalUser) => setModalUser(modalUser)}
+          setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
         />
         <FormUser.RegisterBtn
-          setModalUser={(modalUser) => setModalUser(modalUser)}
+          setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
         />
       </Header>
       <main className="Main">
@@ -499,7 +505,7 @@ function App() {
             <Modals.EditFlashcard {...modalProps} />
           )}
 
-          {modalUser && <ModalsUser modalUser={modalUser} />}
+          {modalOpen && <ModalsUser modalOpen={modalOpen} />}
         </div>
       </main>
       <Footer />

@@ -28,11 +28,11 @@ export const FormUser = {
       </form>
     );
   },
-  RegisterBtn: function ({ setModalUser }) {
+  RegisterBtn: function ({ setModalOpen }) {
     return (
       <button
         className="LoginRegisterBtn --register"
-        onClick={() => setModalUser(() => "register")}
+        onClick={() => setModalOpen(() => "register")}
       >
         Register
       </button>
@@ -41,11 +41,11 @@ export const FormUser = {
   Login: function () {
     return <div className="Login">Login</div>;
   },
-  LoginBtn: function ({ setModalUser }) {
+  LoginBtn: function ({ setModalOpen }) {
     return (
       <button
         className="LoginRegisterBtn --login"
-        onClick={() => setModalUser(() => "login")}
+        onClick={() => setModalOpen(() => "login")}
       >
         Log in
       </button>

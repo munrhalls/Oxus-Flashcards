@@ -1,11 +1,11 @@
 import React from "react";
 import { FormUser } from "./FormUser";
 
-export function ModalsUser({ modalUser }) {
+export function ModalsUser({ modalOpen }) {
   return (
     <div className="ModalsUser">
-      {modalUser === "register" && <FormUser.Register />}
-      {modalUser === "login" && <FormUser.Login />}
+      {modalOpen === "register" && <FormUser.Register />}
+      {modalOpen === "login" && <FormUser.Login />}
     </div>
   );
 }
