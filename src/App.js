@@ -455,7 +455,7 @@ function App() {
 
   return (
     <div className="App">
-      <Welcome.Shade />
+      {/* <Welcome.Shade /> */}
       <Header>
         <FormUser.LoginBtn
           setModalUser={(modalUser) => setModalUser(modalUser)}
@@ -475,7 +475,7 @@ function App() {
           </div>
         )}
         <div className="Centerstage">
-          <Welcome.Message />
+          {/* <Welcome.Message /> */}
           {activeDeckId ? (
             <Deck
               activeDeckId={activeDeckId}
@@ -499,7 +499,7 @@ function App() {
             <Modals.EditFlashcard {...modalProps} />
           )}
 
-          {/* {modalUser && <ModalsUser modalUser={modalUser} />} */}
+          {modalUser && <ModalsUser modalUser={modalUser} />}
         </div>
       </main>
       <Footer />
