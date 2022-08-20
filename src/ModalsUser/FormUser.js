@@ -2,7 +2,11 @@ import React from "react";
 import { Form } from "../Modals/Form";
 
 export const FormUser = {
-  Register: function ({ handleSubmit }) {
+  Register: function () {
+    function handleSubmit(e) {
+      e.preventDefault();
+      console.log("submit");
+    }
     return (
       <form className="FormUser">
         <div className="FormUser__topbar">

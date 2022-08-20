@@ -406,6 +406,7 @@ function App() {
       },
     },
   ];
+
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setactiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
@@ -451,7 +452,6 @@ function App() {
     let decks = getDecks();
     setDecks(decks);
   }, []);
-  console.log(modalOpen);
 
   return (
     <div className="App">
