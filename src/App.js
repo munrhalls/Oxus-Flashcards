@@ -26,7 +26,7 @@ import { Deck } from "./Deck/Deck.js";
 import { Footer } from "./Footer/Footer";
 
 function App() {
-  let mock = [
+  let exampleFlashcards__helloInDifferentLanguages = [
     {
       id: uuidv4(),
       unturned: {
@@ -429,13 +429,13 @@ function App() {
 
   function getDecks() {
     let decks = [];
-    let deck = {
+    let introExampleDeck = {
       id: uuidv4(),
       name: "Learn how to greet someone in over 10 different languages! (Example deck)",
-      flashcards: mock,
+      flashcards: exampleFlashcards__helloInDifferentLanguages,
       completedFlashcards: [],
     };
-    decks.push(deck);
+    decks.push(introExampleDeck);
     return decks;
   }
   async function fileTest(e) {
