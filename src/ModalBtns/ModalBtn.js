@@ -1,7 +1,7 @@
 import React from "react";
 import useMobileCheck from "../Hooks/useMobileCheck";
 
-export function ModalBtn({ name, icon, open, setModalOpen, setactiveDeckId }) {
+export function ModalBtn({ name, icon, open, setModalOpen, setActiveDeckId }) {
   const isMobile = useMobileCheck();
   return (
     <div className={`ModalBtns__container --${name} ${open ? " --open" : ""}`}>
@@ -12,7 +12,7 @@ export function ModalBtn({ name, icon, open, setModalOpen, setactiveDeckId }) {
         onClick={() => {
           setModalOpen();
           {
-            setactiveDeckId && setactiveDeckId(null);
+            setActiveDeckId && setActiveDeckId(null);
           }
         }}
       >

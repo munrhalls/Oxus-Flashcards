@@ -4,13 +4,13 @@ import IMG__EDIT from "./../Assets/edit.png";
 import IMG__CLOSE from "./../Assets/close.png";
 import IMG__DOOR from "./../Assets/opened-door-aperture.png";
 
-export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
+export const ModalBtns = ({ modalOpen, setModalOpen, setActiveDeckId }) => {
   return (
     <div className="ModalBtns">
       <ModalBtn
         name="EXIT"
         setModalOpen={() => setModalOpen(null)}
-        setactiveDeckId={() => setactiveDeckId(null)}
+        setActiveDeckId={() => setActiveDeckId(null)}
         icon={IMG__DOOR}
       />
       <ModalBtn
@@ -29,13 +29,13 @@ export const ModalBtns = ({ modalOpen, setModalOpen, setactiveDeckId }) => {
   );
 };
 
-function undefined({ setModalOpen, setactiveDeckId }) {
+function undefined({ setModalOpen, setActiveDeckId }) {
   return (
     <button
       className="ModalBtns__container__btn"
       onClick={() => {
         setModalOpen(null);
-        setactiveDeckId(null);
+        setActiveDeckId(null);
       }}
     >
       EXIT

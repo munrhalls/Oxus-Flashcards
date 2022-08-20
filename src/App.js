@@ -415,12 +415,12 @@ function App() {
   ];
 
   const [decks, setDecks] = useState([]);
-  const [activeDeckId, setactiveDeckId] = useState(null);
+  const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
 
   const modalProps = {
     activeDeckId,
-    setactiveDeckId: (activeDeckId) => setactiveDeckId(activeDeckId),
+    setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
     decks,
     setDecks: (decks) => setDecks(decks),
     modalOpen,
@@ -476,7 +476,7 @@ function App() {
             <ModalBtns
               modalOpen={modalOpen}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
+              setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
             />
           </div>
         )}
@@ -492,7 +492,7 @@ function App() {
             <SymbolDecks
               decks={decks}
               setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              setactiveDeckId={(activeDeckId) => setactiveDeckId(activeDeckId)}
+              setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
             />
           )}
           {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}

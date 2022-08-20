@@ -5,7 +5,7 @@ export const DeleteDeck = (props) => {
   const {
     modalOpen,
     setModalOpen,
-    setactiveDeckId,
+    setActiveDeckId,
     activeDeckId,
     decks,
     setDecks,
@@ -15,7 +15,7 @@ export const DeleteDeck = (props) => {
   function handleSubmit(e) {
     e.preventDefault();
     setModalOpen(null);
-    setactiveDeckId(null);
+    setActiveDeckId(null);
     setDecks(() =>
       [...decks].filter((el) => {
         return el.id !== activeDeckId;

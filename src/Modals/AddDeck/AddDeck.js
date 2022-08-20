@@ -7,7 +7,7 @@ import IMG__SAVE from "./../../Assets/save.png";
 
 export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
-  const { setModalOpen, setactiveDeckId, decks, setDecks } = props;
+  const { setModalOpen, setActiveDeckId, decks, setDecks } = props;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +19,7 @@ export const AddDeck = (props) => {
     };
 
     setDecks([...decks, deck]);
-    setactiveDeckId(deck.id);
+    setActiveDeckId(deck.id);
     setModalOpen("EditDeck");
   }
 

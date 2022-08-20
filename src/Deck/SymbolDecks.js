@@ -4,7 +4,7 @@ import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
 import { AddDeckBtn } from "../ModalBtns/AddDeckBtn";
 
-export const SymbolDecks = ({ decks, setModalOpen, setactiveDeckId }) => {
+export const SymbolDecks = ({ decks, setModalOpen, setActiveDeckId }) => {
   return (
     <div className="SymbolDecks">
       <AddDeckBtn setModalOpen={setModalOpen} />
@@ -14,7 +14,7 @@ export const SymbolDecks = ({ decks, setModalOpen, setactiveDeckId }) => {
             <SymbolDeck
               key={uuidv4()}
               deck={deck}
-              setactiveDeckId={setactiveDeckId}
+              setActiveDeckId={setActiveDeckId}
             />
           );
         })
