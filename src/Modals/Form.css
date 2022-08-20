@@ -97,7 +97,7 @@
   }
   .Form__ConfirmAndDelete__submitInputContainer__img {
     cursor: pointer;
-
+    opacity: 0.4;
     position: absolute;
     bottom: 1rem;
     left: 2.75rem;
@@ -111,6 +111,7 @@
     transition: transform 3s ease-in-out;
   }
   .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__img {
+    opacity: 0.75;
     -webkit-filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
     filter: invert(11%) sepia(91%) saturate(5391%) hue-rotate(14deg) brightness(87%) contrast(124%);
     transform: scale(1.825) translateY(-.5rem);
@@ -129,6 +130,7 @@
 
   }
   .Form__ConfirmAndDelete__submitInputContainer:hover .Form__ConfirmAndDelete__submitInputContainer__text {
+    opacity: 0.85;
     transform: translateY(-3rem);
   }
   .Form__ConfirmAndDelete__submitInputContainer__submitInput {
