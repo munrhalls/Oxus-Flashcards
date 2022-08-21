@@ -8,6 +8,8 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "./Data/Firebase/Firebase";
+// navigation
+import { Routes, Route, Link } from "react-router-dom";
 // introduction
 import { useEffect, useState } from "react";
 import { Welcome } from "./Welcome/Welcome";
@@ -67,7 +69,7 @@ function App() {
     modalOpen,
     setModalOpen: (modalOpen) => setModalOpen(modalOpen),
   };
-  
+
   return (
     <div className="App">
       {/* <Welcome.Shade /> */}
@@ -114,10 +116,14 @@ function App() {
             <Modals.EditFlashcard {...modalProps} />
           )}
 
-          {/* {modalOpen && <ModalsUser modalOpen={modalOpen} />} */}
+          {modalOpen === "Register" && <ModalsUser modalOpen={modalOpen} />}
         </div>
       </main>
       <Footer />
+      <Routes>
+        <Route path="/" element={<h1>Hello.</h1>} />
+        <Route path="/Deck" element={<h1>Deck</h1>} />
+      </Routes>
     </div>
   );
 }
