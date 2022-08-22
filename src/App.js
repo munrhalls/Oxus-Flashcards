@@ -9,13 +9,12 @@ import {
   getDownloadURL,
 } from "./Data/Firebase/Firebase";
 // navigation
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 // introduction
 import { useEffect, useState } from "react";
 import { Welcome } from "./Welcome/Welcome";
 import { Header } from "./Header/Header";
 // cluster 1
-import { ModalsUser } from "./ModalsUser/ModalsUser";
 import { FormUser } from "./ModalsUser/FormUser";
 // cluster 2
 import { Modals } from "./Modals/Modals";
@@ -71,60 +70,68 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {/* <Welcome.Shade /> */}
-      <Header>
-        <FormUser.LoginBtn
-          setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-        />
-        <FormUser.RegisterBtn
-          setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-        />
-      </Header>
-      <main className="Main">
-        {activeDeckId && (
-          <div className="Aside">
-            <ModalBtns
-              modalOpen={modalOpen} 
-              setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
-            />
-          </div>
-        )}
-        <div className="Centerstage">
-          {/* <Welcome.Message /> */}
-          {activeDeckId ? (
-            <Deck
-              activeDeckId={activeDeckId}
-              decks={decks}
-              setDecks={(decks) => setDecks(decks)}
-            />
-          ) : (
-            <SymbolDecks
-              decks={decks}
-              setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
-            />
+    <>
+      <div className="App">
+        {/* <Welcome.Shade /> */}
+        <Header>
+          <FormUser.LoginBtn
+            setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+          />
+          <FormUser.RegisterBtn
+            setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+          />
+        </Header>
+        <main className="Main">
+          {activeDeckId && (
+            <div className="Aside">
+              <ModalBtns
+                modalOpen={modalOpen}
+                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+                setActiveDeckId={(activeDeckId) =>
+                  setActiveDeckId(activeDeckId)
+                }
+              />
+            </div>
           )}
-          {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
-          {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
-          {modalOpen === "DeleteDeck" && <Modals.DeleteDeck {...modalProps} />}
-          {modalOpen === "AddFlashcard" && (
-            <Modals.AddFlashcard {...modalProps} />
-          )}
-          {modalOpen === "EditFlashcard" && (
-            <Modals.EditFlashcard {...modalProps} />
-          )}
+          <div className="Centerstage">
+            {/* <Welcome.Message /> */}
+            {activeDeckId ? (
+              <Deck
+                activeDeckId={activeDeckId}
+                decks={decks}
+                setDecks={(decks) => setDecks(decks)}
+              />
+            ) : (
+              <SymbolDecks
+                decks={decks}
+                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+                setActiveDeckId={(activeDeckId) =>
+                  setActiveDeckId(activeDeckId)
+                }
+              />
+            )}
+            {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
+            {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
+            {modalOpen === "DeleteDeck" && (
+              <Modals.DeleteDeck {...modalProps} />
+            )}
+            {modalOpen === "AddFlashcard" && (
+              <Modals.AddFlashcard {...modalProps} />
+            )}
+            {modalOpen === "EditFlashcard" && (
+              <Modals.EditFlashcard {...modalProps} />
+            )}
 
-          {modalOpen === "Register" && <ModalsUser modalOpen={modalOpen} />}
-        </div>
-      </main>
-      <Footer />
-      <Routes>
-        <Route path="/" element={<h1>Hello.</h1>} />
-        <Route path="/Deck" element={<h1>Deck</h1>} />
-      </Routes>
-    </div>
+            {modalOpen === "Register" && (
+              <FormUser.Register
+                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+              />
+            )}
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
 

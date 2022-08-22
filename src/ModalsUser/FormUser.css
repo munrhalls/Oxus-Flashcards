@@ -1,5 +1,6 @@
 /* Component  */
 .LoginRegisterBtn {
+    
     transition: transform .15s ease-in;
     cursor: pointer;
 
@@ -34,6 +35,9 @@
     justify-content: space-between;
 }
 .FormUser {
+    position: absolute;
+    top: 0;
+    z-index: 10;
     width: 90%;
     height: 90%;
     margin: auto;
