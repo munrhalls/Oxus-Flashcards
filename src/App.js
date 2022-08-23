@@ -7,7 +7,7 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
-} from "./Data/Firebase/Firebase";
+} from "./Firebase";
 // navigation
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 // introduction

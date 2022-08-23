@@ -3,7 +3,7 @@ import { Form } from "../Modals/Form";
 import {
   createUserWithEmailAndPassword,
   getAuth,
-} from "./../Data/Firebase/Firebase";
+} from "../Firebase";
 
 export const FormUser = {
   Register: function ({ setModalOpen }) {

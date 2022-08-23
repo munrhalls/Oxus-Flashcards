@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export const Flashcard = ({ flashcard }) => {
   const [turned, setTurned] = useState(false);
