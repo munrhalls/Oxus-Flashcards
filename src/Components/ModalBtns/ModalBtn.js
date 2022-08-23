@@ -1,5 +1,5 @@
 import React from "react";
-import useMobileCheck from "../Hooks/useMobileCheck";
+import useMobileCheck from "./../../Hooks/useMobileCheck";
 
 export function ModalBtn({ name, icon, open, setModalOpen, setActiveDeckId }) {
   const isMobile = useMobileCheck();

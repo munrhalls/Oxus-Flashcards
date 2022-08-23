@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
 import { countBy, max } from "lodash";
-// import { useMobileCheck } from "./../Hooks/useMobileCheck";
+// import { useMobileCheck } from "./../../Hooks/useMobileCheck";
 
 export const CompletedFlashcards = ({ completedFlashcards }) => {
   let count = 0;

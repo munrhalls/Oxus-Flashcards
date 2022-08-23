@@ -1,9 +1,9 @@
 import React from "react";
-import IMG__CLOSE from "./../Assets/close.png";
-import IMG__SAVE from "./../Assets/save.png";
-import IMG__EDIT from "./../Assets/edit.png";
-import IMG__BACK from "./../Assets/go-back-arrow.png";
-import IMG__NUCLEAR from "./../Assets/nuclear.png";
+import IMG__CLOSE from "./../../Assets/close.png";
+import IMG__SAVE from "./../../Assets/save.png";
+import IMG__EDIT from "./../../Assets/edit.png";
+import IMG__BACK from "./../../Assets/go-back-arrow.png";
+import IMG__NUCLEAR from "./../../Assets/nuclear.png";
 
 export const Form = {
   Close: function ({ closeFunction }) {

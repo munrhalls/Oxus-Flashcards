@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DeleteFlashcard } from "./DeleteFlashcard";
 import EditFlashcard from "./EditFlashcard";
 import { uuidv4 } from "@firebase/util";
-import AddFlashcardBtn from "./../../ModalBtns/AddFlashcardBtn";
+import AddFlashcardBtn from "./../../../Components/ModalBtns/AddFlashcardBtn";
 
 export function EditFlashcardsList({
   editedDeck,

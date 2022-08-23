@@ -1,8 +1,8 @@
 import React from "react";
-import { Flashcard } from "../../Flashcards/Flashcard";
+import { Flashcard } from "./../../../Components/Flashcards/Flashcard";
 import { uuidv4 } from "@firebase/util";
-import IMG__CLOSE from "./../../Assets/close.png";
-import IMG__EDIT from "./../../Assets/edit.png";
+import IMG__CLOSE from "./../../../Assets/close.png";
+import IMG__EDIT from "./../../../Assets/edit.png";
 
 export default function EditFlashcard({
   card,

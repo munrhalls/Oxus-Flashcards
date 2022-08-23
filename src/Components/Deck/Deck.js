@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Flashcards } from "../Flashcards/Flashcards";
 import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
-import IMG__CARDS from "./../Assets/cards.png";
+import IMG__CARDS from "./../../Assets/cards.png";
 
 export const Deck = ({ activeDeckId, setDecks, decks }) => {
   const activeDeck = decks.filter((deck) => deck.id === activeDeckId)[0];

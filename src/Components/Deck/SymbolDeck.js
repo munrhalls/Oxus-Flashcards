@@ -1,5 +1,5 @@
 import React from "react";
-import img from "./../Assets/cards.png";
+import img from "./../../Assets/cards.png";
 
 export const SymbolDeck = ({ deck, setActiveDeckId }) => {
   return (

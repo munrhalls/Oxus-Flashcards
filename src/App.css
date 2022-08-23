@@ -1,37 +1,37 @@
 @import './reset.css';
-@import './Header/Header.css';
-@import './Welcome/Welcome.css';
-@import './Flashcards/Flashcard.css';
-@import './Flashcards/Flashcards.css';
-@import './Flashcards/CompletedFlashcards.css';
-@import './Deck/Deck.css';
+@import './Components/Header/Header.css';
+@import './Components/Welcome/Welcome.css';
+@import './Components/Flashcards/Flashcard.css';
+@import './Components/Flashcards/Flashcards.css';
+@import './Components/Flashcards/CompletedFlashcards.css';
+@import './Components/Deck/Deck.css';
 
-@import './ModalBtns/AddDeckBtn.css';
-@import './ModalBtns/ModalBtns.css';
-@import './ModalBtns/ModalBtn.css';
-@import './Modals/Modals.css';
-@import './Modals/Form.css';
-@import './Modals/FormTopbar.css';
+@import './Components/ModalBtns/AddDeckBtn.css';
+@import './Components/ModalBtns/ModalBtns.css';
+@import './Components/ModalBtns/ModalBtn.css';
+@import './Components/Modals/Modals.css';
+@import './Components/Modals/Form.css';
+@import './Components/Modals/FormTopbar.css';
 
-@import './ModalsUser/ModalsUser.css';
-@import './ModalsUser/FormUser.css';
-
-
-@import './Modals/AddDeck/AddDeck.css';
-@import './Modals//EditDeck/EditDeck.css';
-@import './Modals//EditDeck/EditFlashcardsList.css';
-@import './Modals/DeleteDeck/DeleteDeck.css';
-
-@import './Modals/AddFlashcard/AddFlashcard.css';
-@import './Modals/AddFlashcard/InputsHandler.css';
-@import './Modals/AddFlashcard/Preview.css';
-@import './Footer/Footer.css';
+@import './Components/ModalsUser/ModalsUser.css';
+@import './Components/ModalsUser/FormUser.css';
 
 
-@import './Deck/MobileDeck.css';
-@import './Flashcards/MobileFlashcards.css';
-@import './Flashcards/MobileCompletedFlashcards.css';
-@import './Footer/MobileFooter.css';
+@import './Components/Modals/AddDeck/AddDeck.css';
+@import './Components/Modals//EditDeck/EditDeck.css';
+@import './Components/Modals//EditDeck/EditFlashcardsList.css';
+@import './Components/Modals/DeleteDeck/DeleteDeck.css';
+
+@import './Components/Modals/AddFlashcard/AddFlashcard.css';
+@import './Components/Modals/AddFlashcard/InputsHandler.css';
+@import './Components/Modals/AddFlashcard/Preview.css';
+@import './Components/Footer/Footer.css';
+
+
+@import './Components/Deck/MobileDeck.css';
+@import './Components/Flashcards/MobileFlashcards.css';
+@import './Components/Flashcards/MobileCompletedFlashcards.css';
+@import './Components/Footer/MobileFooter.css';
 
 *, :hover, :after {
     box-sizing: border-box;

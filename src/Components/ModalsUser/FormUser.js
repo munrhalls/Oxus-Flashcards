@@ -1,9 +1,5 @@
 import React from "react";
-import { Form } from "../Modals/Form";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-} from "../Firebase";
+import { Form } from "./../../Components/Modals/Form";
 
 export const FormUser = {
   Register: function ({ setModalOpen }) {

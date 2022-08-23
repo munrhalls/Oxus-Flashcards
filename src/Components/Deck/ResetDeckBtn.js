@@ -1,5 +1,5 @@
 import React from "react";
-import IMG__RESET from "./../Assets/go-back-arrow.png";
+import IMG__RESET from "./../../Assets/go-back-arrow.png";
 
 export default function ResetDeckBtn({ resetDeck }) {
   return (

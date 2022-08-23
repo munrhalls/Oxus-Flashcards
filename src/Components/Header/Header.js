@@ -1,5 +1,5 @@
 import React from "react";
-import { FormUser } from "../ModalsUser/FormUser";
+import { FormUser } from "./../ModalsUser/FormUser";
 
 export function Header(props) {
   return (

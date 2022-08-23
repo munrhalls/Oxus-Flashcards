@@ -2,29 +2,24 @@
 import "./App.css";
 // data
 import { uuidv4 } from "@firebase/util";
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} from "./Firebase";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "./Firebase";
 // navigation
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 // introduction
 import { useEffect, useState } from "react";
-import { Welcome } from "./Welcome/Welcome";
-import { Header } from "./Header/Header";
+import { Welcome } from "./Components/Welcome/Welcome";
+import { Header } from "./Components/Header/Header";
 // cluster 1
-import { FormUser } from "./ModalsUser/FormUser";
+import { FormUser } from "./Components/ModalsUser/FormUser";
 // cluster 2
-import { Modals } from "./Modals/Modals";
-import { ModalBtns } from "./ModalBtns/ModalBtns";
+import { Modals } from "./Components/Modals/Modals";
+import { ModalBtns } from "./Components/ModalBtns/ModalBtns";
 // cluster 3
-import { SymbolDecks } from "./Deck/SymbolDecks";
+import { SymbolDecks } from "./Components/Deck/SymbolDecks";
 // cluster 4
-import { Deck } from "./Deck/Deck.js";
+import { Deck } from "./Components/Deck/Deck.js";
 // conclusion
-import { Footer } from "./Footer/Footer";
+import { Footer } from "./Components/Footer/Footer";
 
 import { introExampleDeck } from "./introExampleDeck";
 

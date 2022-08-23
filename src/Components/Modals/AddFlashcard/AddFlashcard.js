@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Preview } from "./Preview";
 import { uuidv4 } from "@firebase/util";
 import { InputsHandler } from "./InputsHandler";
-import IMG__EDIT from "./../../Assets/edit.png";
-import IMG__CLOSE from "./../../Assets/close.png";
-import IMG__SAVE from "./../../Assets/save.png";
-import { Form } from "./../Form";
+import IMG__EDIT from "./../../../Assets/edit.png";
+import IMG__CLOSE from "./../../../Assets/close.png";
+import IMG__SAVE from "./../../../Assets/save.png";
+import { Form } from "../Form";
 
 export const AddFlashcard = (props) => {
   const [flashcard, setFlashcard] = useState({
