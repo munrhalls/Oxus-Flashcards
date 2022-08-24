@@ -13,8 +13,11 @@ export const FormUser = {
     function handleSubmit(e) {
       e.preventDefault();
 
+      if (passwordRef.current.value.length < 3)
+        return setError("Password needs at least 3 characters.");
       if (passwordRef.current.value !== passwordConfirmRef.current.value)
         return setError("Passwords do not match.");
+
       setError("");
       console.log("submit");
       console.log(firebaseWhatevs());
