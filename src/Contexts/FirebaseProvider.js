@@ -1,6 +1,11 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import firebase from "../Firebase";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const Firebase = React.createContext();
 
@@ -10,13 +15,32 @@ export function useFirebase() {
 
 export function FirebaseProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
-
+  function getCurrentUser() {
+    return currentUser;
+  }
+  console.log(currentUser);
   function register(email, password) {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   }
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+    });
+  }, []);
+
   const value = {
-    currentUser,
+    getCurrentUser,
     register,
   };
   return <Firebase.Provider value={value}>{children}</Firebase.Provider>;

@@ -23,9 +23,7 @@ export const FormUser = {
       try {
         setError("");
         setLoading(true);
-
-        console.log(register);
-        // await signup(emailRef.current.value, passwordRef.current.value)
+        register(emailRef.current.value, passwordRef.current.value);
       } catch {
         setError("Server couldn't create an account.");
       }
@@ -42,19 +40,19 @@ export const FormUser = {
           <label className="FormUser__inputs__label">E-mail address:</label>
           <input
             ref={emailRef}
-            type="text"
+            type="email"
             className="FormUser__inputs__email"
           ></input>
           <label className="FormUser__inputs__label">Password:</label>
           <input
             ref={passwordRef}
-            type="text"
+            type="password"
             className="FormUser__inputs__password"
           ></input>
           <label className="FormUser__inputs__label">Confirm password:</label>
           <input
             ref={passwordConfirmRef}
-            type="text"
+            type="password"
             className="FormUser__inputs__passwordConfirm"
           ></input>
         </div>
@@ -143,19 +141,19 @@ export const FormUser = {
           <label className="FormUser__inputs__label">E-mail address:</label>
           <input
             ref={emailRef}
-            type="text"
+            type="email"
             className="FormUser__inputs__email"
           ></input>
           <label className="FormUser__inputs__label">Password:</label>
           <input
             ref={passwordRef}
-            type="text"
+            type="password"
             className="FormUser__inputs__password"
           ></input>
           <label className="FormUser__inputs__label">Confirm password:</label>
           <input
             ref={passwordConfirmRef}
-            type="text"
+            type="password"
             className="FormUser__inputs__passwordConfirm"
           ></input>
         </div>
@@ -221,13 +219,13 @@ export const FormUser = {
           <label className="FormUser__inputs__label">Password:</label>
           <input
             ref={passwordRef}
-            type="text"
+            type="password"
             className="FormUser__inputs__password"
           ></input>
           <label className="FormUser__inputs__label">Confirm password:</label>
           <input
             ref={passwordConfirmRef}
-            type="text"
+            type="password"
             className="FormUser__inputs__passwordConfirm"
           ></input>
           <button
