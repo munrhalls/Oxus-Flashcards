@@ -7,5 +7,11 @@ export function useFirebase() {
 }
 
 export function FirebaseProvider({ children }) {
-  return <Firebase.Provider value={"firebase"}>{children}</Firebase.Provider>;
+  function firebaseWhatevs() {
+    return "firebase whatevs method";
+  }
+  const value = {
+    firebaseWhatevs,
+  };
+  return <Firebase.Provider value={value}>{children}</Firebase.Provider>;
 }

@@ -4,11 +4,11 @@ import { useFirebase } from "../../Contexts/FirebaseProvider";
 
 export const FormUser = {
   Register: function ({ setModalOpen }) {
-    let someFirebaseStuff = useFirebase();
+    const { firebaseWhatevs } = useFirebase();
     function handleSubmit(e) {
       e.preventDefault();
       console.log("submit");
-      console.log(someFirebaseStuff);
+      console.log(firebaseWhatevs());
 
       // const auth = getAuth();
       // createUserWithEmailAndPassword(
