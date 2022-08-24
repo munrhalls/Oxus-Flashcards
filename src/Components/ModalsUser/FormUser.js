@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Form } from "./../../Components/Modals/Form";
 import { useFirebase } from "../../Contexts/FirebaseProvider";
 
 export const FormUser = {
   Register: function ({ setModalOpen }) {
+    const emailRef = useRef("");
+    const passwordRef = useRef("");
+    const passwordConfirmRef = useRef("");
+    const [error, setError] = useState("");
     const { firebaseWhatevs } = useFirebase();
+
     function handleSubmit(e) {
       e.preventDefault();
+
+      if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+        return setError("Passwords do not match");
+      }
       console.log("submit");
       console.log(firebaseWhatevs());
     }
