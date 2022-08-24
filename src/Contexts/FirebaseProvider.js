@@ -10,8 +10,12 @@ export function FirebaseProvider({ children }) {
   function firebaseWhatevs() {
     return "firebase whatevs method";
   }
+  function register() {
+    return "register";
+  }
   const value = {
     firebaseWhatevs,
+    register,
   };
   return <Firebase.Provider value={value}>{children}</Firebase.Provider>;
 }

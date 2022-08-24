@@ -9,7 +9,7 @@ export const FormUser = {
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const { firebaseWhatevs } = useFirebase();
+    const { register } = useFirebase();
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -23,8 +23,8 @@ export const FormUser = {
       try {
         setError("");
         setLoading(true);
-        console.log(firebaseWhatevs());
 
+        console.log(register());
         // await signup(emailRef.current.value, passwordRef.current.value)
       } catch {
         setError("Server couldn't create an account.");
@@ -58,9 +58,11 @@ export const FormUser = {
             className="FormUser__inputs__passwordConfirm"
           ></input>
         </div>
+
         <div className="FormUser__ErrorContainer">
           <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
         </div>
+
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
             Already have an account?
@@ -78,10 +80,14 @@ export const FormUser = {
             className="FormUser__exit__cancel"
             onClick={() => setModalOpen(null)}
           >
-            cancel btn
+            exit
           </button>
 
-          <button className="FormUser__exit__submit" type="submit">
+          <button
+            disabled={loading}
+            className="FormUser__exit__submit"
+            type="submit"
+          >
             submit btn
           </button>
         </div>
