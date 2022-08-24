@@ -2,7 +2,7 @@
 import "./App.css";
 // data
 import { uuidv4 } from "@firebase/util";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "./Firebase";
+import firebase from "./Firebase";
 // navigation
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 // introduction
@@ -36,14 +36,15 @@ function App() {
   }
   async function fileTest(e) {
     let img = e.target.files[0];
-    const storage = getStorage();
-    const imageRef = ref(storage, img.name);
-    uploadBytes(imageRef, img)
+    const storage = firebase.getStorage();
+    const imageRef = firebase.ref(storage, img.name);
+    firebase
+      .uploadBytes(imageRef, img)
       .then((snapshot) => {
         console.log("Uploaded a blob or file!");
       })
       .then(() => {
-        getDownloadURL(ref(storage, img.name)).then((url) => {
+        firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
           console.log(url);
           // setImage(url);
           // hook
