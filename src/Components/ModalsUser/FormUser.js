@@ -12,7 +12,8 @@ export const FormUser = {
 
     function handleSubmit(e) {
       e.preventDefault();
-
+      if (!emailRef.current.value)
+        return setError("E-mail field cannot be empty.");
       if (passwordRef.current.value.length < 3)
         return setError("Password needs at least 3 characters.");
       if (passwordRef.current.value !== passwordConfirmRef.current.value)
@@ -49,8 +50,8 @@ export const FormUser = {
             className="FormUser__inputs__passwordConfirm"
           ></input>
         </div>
-        <div className="FormUser__Error">
-          <h3>{error}</h3>
+        <div className="FormUser__ErrorContainer">
+          <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
         </div>
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">

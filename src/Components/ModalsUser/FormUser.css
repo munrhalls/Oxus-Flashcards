@@ -78,6 +78,12 @@
 .FormUser__inputs__label {
 
 }
+.FormUser__ErrorContainer {
+
+}
+.FormUser__ErrorContainer__msg {
+    color: red;
+}
 .FormUser__exit {
 
 }
