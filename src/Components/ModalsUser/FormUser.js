@@ -1,11 +1,14 @@
 import React from "react";
 import { Form } from "./../../Components/Modals/Form";
+import { useFirebaseAuth } from "../../Contexts/FirebaseAuthProvider";
 
 export const FormUser = {
   Register: function ({ setModalOpen }) {
+    let someFirebaseStuff = useFirebaseAuth();
     function handleSubmit(e) {
       e.preventDefault();
       console.log("submit");
+      console.log(someFirebaseStuff);
 
       // const auth = getAuth();
       // createUserWithEmailAndPassword(

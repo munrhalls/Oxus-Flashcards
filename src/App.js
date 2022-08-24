@@ -3,6 +3,7 @@ import "./App.css";
 // data
 import { uuidv4 } from "@firebase/util";
 import firebase from "./Firebase";
+import { firebaseAuth } from "./Firebase";
 // navigation
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 // introduction
@@ -52,6 +53,7 @@ function App() {
       });
   }
   useEffect(() => {
+    console.log(firebaseAuth);
     let decks = getDecks();
     setDecks(decks);
   }, []);
