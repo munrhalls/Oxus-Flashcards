@@ -24,7 +24,7 @@ export const FormUser = {
         setError("");
         setLoading(true);
 
-        console.log(register());
+        console.log(register);
         // await signup(emailRef.current.value, passwordRef.current.value)
       } catch {
         setError("Server couldn't create an account.");

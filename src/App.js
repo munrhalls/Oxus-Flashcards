@@ -2,8 +2,6 @@
 import "./App.css";
 // data
 import { uuidv4 } from "@firebase/util";
-import firebase from "./Firebase";
-import { firebaseAuth } from "./Firebase";
 // navigation
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 // introduction
@@ -35,25 +33,24 @@ function App() {
     decks.push(introExampleDeck);
     return decks;
   }
-  async function fileTest(e) {
-    let img = e.target.files[0];
-    const storage = firebase.getStorage();
-    const imageRef = firebase.ref(storage, img.name);
-    firebase
-      .uploadBytes(imageRef, img)
-      .then((snapshot) => {
-        console.log("Uploaded a blob or file!");
-      })
-      .then(() => {
-        firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
-          console.log(url);
-          // setImage(url);
-          // hook
-        });
-      });
-  }
+  // async function fileTest(e) {
+  //   let img = e.target.files[0];
+  //   const storage = firebase.getStorage();
+  //   const imageRef = firebase.ref(storage, img.name);
+  //   firebase
+  //     .uploadBytes(imageRef, img)
+  //     .then((snapshot) => {
+  //       console.log("Uploaded a blob or file!");
+  //     })
+  //     .then(() => {
+  //       firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
+  //         console.log(url);
+  //         // setImage(url);
+  //         // hook
+  //       });
+  //     });
+  // }
   useEffect(() => {
-    console.log(firebaseAuth);
     let decks = getDecks();
     setDecks(decks);
   }, []);
@@ -71,14 +68,7 @@ function App() {
     <>
       <div className="App">
         {/* <Welcome.Shade /> */}
-        <Header>
-          <FormUser.LoginBtn
-            setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-          />
-          <FormUser.RegisterBtn
-            setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-          />
-        </Header>
+        <Header setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         <main className="Main">
           {activeDeckId && (
             <div className="Aside">
