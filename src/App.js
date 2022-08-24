@@ -67,7 +67,7 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* <Welcome.Shade /> */}
+        <Welcome.Shade />
         <Header setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         <main className="Main">
           {activeDeckId && (
@@ -82,7 +82,7 @@ function App() {
             </div>
           )}
           <div className="Centerstage">
-            {/* <Welcome.Message /> */}
+            <Welcome.Message />
             {activeDeckId ? (
               <Deck
                 activeDeckId={activeDeckId}
@@ -117,6 +117,11 @@ function App() {
             )}
             {modalOpen === "Login" && (
               <FormUser.Login
+                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
+              />
+            )}
+            {modalOpen === "ResetPassword" && (
+              <FormUser.ResetPassword
                 setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
               />
             )}

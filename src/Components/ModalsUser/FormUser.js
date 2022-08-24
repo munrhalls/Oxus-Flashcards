@@ -164,6 +164,17 @@ export const FormUser = {
         </div>
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
+            Forgot password?
+          </span>
+          <button
+            className="FormUser__gotAccContainer__button"
+            onClick={() => setModalOpen("ResetPassword")}
+          >
+            Reset password
+          </button>
+        </div>
+        <div className="FormUser__gotAccContainer">
+          <span className="FormUser__gotAccContainer__msg">
             Don't have an account yet?
           </span>
           <button
@@ -197,6 +208,42 @@ export const FormUser = {
       >
         Log in
       </button>
+    );
+  },
+  ResetPassword: function ({ setModalOpen }) {
+    const emailRef = useRef("");
+    const passwordRef = useRef("");
+    const passwordConfirmRef = useRef("");
+    function handleSubmit() {}
+    return (
+      <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
+        <div className="FormUser__ResetPassword">
+          <label className="FormUser__inputs__label">Password:</label>
+          <input
+            ref={passwordRef}
+            type="text"
+            className="FormUser__inputs__password"
+          ></input>
+          <label className="FormUser__inputs__label">Confirm password:</label>
+          <input
+            ref={passwordConfirmRef}
+            type="text"
+            className="FormUser__inputs__passwordConfirm"
+          ></input>
+          <button
+            className="FormUser__ResetPassword__button"
+            onClick={() => setModalOpen("Login")}
+          >
+            Submit
+          </button>
+          <button
+            className="FormUser__ResetPassword__button"
+            onClick={() => setModalOpen(null)}
+          >
+            Exit
+          </button>
+        </div>
+      </form>
     );
   },
 };
