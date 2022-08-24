@@ -47,8 +47,9 @@
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    border: 6px solid #000;
+    border: 12px solid #000;
     border-radius: 5px;
+    padding: 1rem;
 }
 .FormUser__topbar {
     min-height: 2rem;
