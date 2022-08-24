@@ -13,9 +13,9 @@ export const FormUser = {
     function handleSubmit(e) {
       e.preventDefault();
 
-      if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-        return setError("Passwords do not match");
-      }
+      if (passwordRef.current.value !== passwordConfirmRef.current.value)
+        return setError("Passwords do not match.");
+      setError("");
       console.log("submit");
       console.log(firebaseWhatevs());
     }
@@ -46,7 +46,9 @@ export const FormUser = {
             className="FormUser__inputs__passwordConfirm"
           ></input>
         </div>
-
+        <div className="FormUser__Error">
+          <h3>{error}</h3>
+        </div>
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
             Already have an account?
