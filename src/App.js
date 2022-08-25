@@ -23,12 +23,16 @@ import { Deck } from "./Components/Deck/Deck.js";
 import { Footer } from "./Components/Footer/Footer";
 import { useGlobal } from "./Contexts/GlobalProvider";
 
+import useModal from "./Hooks/useModal";
+
 function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
-  const [modalOpen, setModalOpen] = useState(null);
-  const { whatever } = useGlobal();
-  whatever()
+  const { ModalFunctions } = useGlobal();
+  let modalOpen = useModal(null);
+  console.log(modalOpen);
+
+  ModalFunctions();
   // async function fileTest(e) {
   //   let img = e.target.files[0];
   //   const storage = firebase.getStorage();
