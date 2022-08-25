@@ -26,10 +26,6 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-
-  function getDecks() {
-    return [introExampleDeck];
-  }
   // async function fileTest(e) {
   //   let img = e.target.files[0];
   //   const storage = firebase.getStorage();
@@ -48,8 +44,7 @@ function App() {
   //     });
   // }
   useEffect(() => {
-    let decks = getDecks();
-    setDecks(decks);
+    setDecks([introExampleDeck]);
   }, []);
 
   const modalProps = {
