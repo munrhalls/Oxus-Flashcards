@@ -18,7 +18,8 @@ export const FormUser = {
       </div>
     );
   },
-  GotAccBtn: function ({ setModalOpen }) {
+  GotAccBtn: function () {
+    const { setModalOpen } = useGlobal();
     return (
       <div className="FormUser__gotAccContainer">
         <span className="FormUser__gotAccContainer__msg">
@@ -36,13 +37,13 @@ export const FormUser = {
       </div>
     );
   },
-  Register: function ({ setModalOpen }) {
+  Register: function () {
     const emailRef = useRef("");
     const passwordRef = useRef("");
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const { register } = useGlobal();
+    const { register, setModalOpen } = useGlobal();
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -107,7 +108,8 @@ export const FormUser = {
       </form>
     );
   },
-  RegisterBtn: function ({ setModalOpen }) {
+  RegisterBtn: function () {
+    const { setModalOpen } = useGlobal();
     return (
       <button
         className="LoginRegisterBtn --register"
@@ -117,7 +119,8 @@ export const FormUser = {
       </button>
     );
   },
-  Login: function ({ setModalOpen }) {
+  Login: function () {
+    const { setModalOpen } = useGlobal();
     const emailRef = useRef("");
     const passwordRef = useRef("");
     const [error, setError] = useState("");
@@ -193,7 +196,8 @@ export const FormUser = {
       </form>
     );
   },
-  LoginBtn: function ({ setModalOpen }) {
+  LoginBtn: function () {
+    const { setModalOpen } = useGlobal();
     return (
       <button
         className="LoginRegisterBtn --login"
@@ -212,7 +216,8 @@ export const FormUser = {
       </button>
     );
   },
-  ResetPassword: function ({ setModalOpen }) {
+  ResetPassword: function () {
+    const { setModalOpen } = useGlobal();
     const emailRef = useRef("");
     const passwordRef = useRef("");
     const passwordConfirmRef = useRef("");

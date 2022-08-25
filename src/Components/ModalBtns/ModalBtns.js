@@ -3,8 +3,10 @@ import React from "react";
 import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__DOOR from "./../../Assets/opened-door-aperture.png";
+import { useGlobal } from "../../Contexts/GlobalProvider";
 
-export const ModalBtns = ({ modalOpen, setModalOpen, setActiveDeckId }) => {
+export const ModalBtns = ({ modalOpen, setActiveDeckId }) => {
+  const { setModalOpen } = useGlobal();
   return (
     <div className="ModalBtns">
       <ModalBtn
