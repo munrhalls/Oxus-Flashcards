@@ -26,9 +26,10 @@ import { useGlobal } from "./Contexts/GlobalProvider";
 function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
-  const [modalOpen, setModalOpen] = useState(null);
   const { getModalOpen } = useGlobal();
-  getModalOpen();
+  const { setModalOpen } = useGlobal();
+
+  let modalOpen = getModalOpen();
 
   useEffect(() => {
     setDecks([introExampleDeck]);
