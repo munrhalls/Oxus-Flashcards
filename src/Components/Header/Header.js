@@ -3,13 +3,20 @@ import React from "react";
 import { FormUser } from "./../ModalsUser/FormUser";
 
 export function Header({ setModalOpen }) {
-  const { currentUser } = useFirebase();
+  const { getCurrentUser } = useFirebase();
+  const currentUser = getCurrentUser();
+
   return (
     <header className="Header">
       <h6 className="Header__title">Flashcards</h6>
       <div className="Header__account">
-        {currentUser ? (
-          <h1>Welcome {currentUser} !</h1>
+        {currentUser?.email ? (
+          <>
+            <h1 className="Header__account__welcomeMsg">
+              Welcome {currentUser?.email} !
+            </h1>
+            <FormUser.LogOutBtn setModalOpen={setModalOpen} />
+          </>
         ) : (
           <>
             <FormUser.LoginBtn setModalOpen={setModalOpen} />

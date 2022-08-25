@@ -3,6 +3,13 @@ import { Form } from "./../../Components/Modals/Form";
 import { useFirebase } from "../../Contexts/FirebaseProvider";
 
 export const FormUser = {
+  TopBar: function ({ title }) {
+    return (
+      <div className="FormUser__topbar">
+        <h1 className="FormUser__topbar__title">{title}</h1>
+      </div>
+    );
+  },
   Register: function ({ setModalOpen }) {
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -15,7 +22,7 @@ export const FormUser = {
       e.preventDefault();
       if (!emailRef.current.value)
         return setError("E-mail field cannot be empty.");
-      if (passwordRef.current.value.length < 3)
+      if (passwordRef.current.value.length < 6)
         return setError("Password needs at least 3 characters.");
       if (passwordRef.current.value !== passwordConfirmRef.current.value)
         return setError("Passwords do not match.");
@@ -32,9 +39,7 @@ export const FormUser = {
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        <div className="FormUser__topbar">
-          <h1 className="FormUser__topbar__title">REGISTER</h1>
-        </div>
+        <FormUser.TopBar title="REGISTER" />
 
         <div className="FormUser__inputs">
           <label className="FormUser__inputs__label">E-mail address:</label>
@@ -105,28 +110,26 @@ export const FormUser = {
   Login: function ({ setModalOpen }) {
     const emailRef = useRef("");
     const passwordRef = useRef("");
-    const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const { firebaseWhatevs } = useFirebase();
+    const { login } = useFirebase();
 
     async function handleSubmit(e) {
       e.preventDefault();
       if (!emailRef.current.value)
         return setError("E-mail field cannot be empty.");
-      if (passwordRef.current.value.length < 3)
-        return setError("Password needs at least 3 characters.");
-      if (passwordRef.current.value !== passwordConfirmRef.current.value)
-        return setError("Passwords do not match.");
+      if (passwordRef.current.value.length < 6)
+        return setError("Password needs at least 6 characters.");
 
       try {
         setError("");
         setLoading(true);
-        console.log(firebaseWhatevs());
-
-        // await signup(emailRef.current.value, passwordRef.current.value)
-      } catch {
-        setError("Server couldn't create an account.");
+        await login(emailRef.current.value, passwordRef.current.value);
+        setModalOpen(null);
+      } catch (error) {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        setError("Server couldn't log in.");
       }
       setLoading(false);
     }
@@ -150,12 +153,6 @@ export const FormUser = {
             type="password"
             className="FormUser__inputs__password"
           ></input>
-          <label className="FormUser__inputs__label">Confirm password:</label>
-          <input
-            ref={passwordConfirmRef}
-            type="password"
-            className="FormUser__inputs__passwordConfirm"
-          ></input>
         </div>
         <div className="FormUser__ErrorContainer">
           <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
@@ -164,32 +161,32 @@ export const FormUser = {
           <span className="FormUser__gotAccContainer__msg">
             Forgot password?
           </span>
-          <button
+          {/* <button
             className="FormUser__gotAccContainer__button"
             onClick={() => setModalOpen("ResetPassword")}
           >
             Reset password
-          </button>
+          </button> */}
         </div>
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
             Don't have an account yet?
           </span>
-          <button
+          {/* <button
             className="FormUser__gotAccContainer__button"
             onClick={() => setModalOpen("Register")}
           >
             Make an account
-          </button>
+          </button> */}
         </div>
 
         <div className="FormUser__exit">
-          <button
+          {/* <button
             className="FormUser__exit__cancel"
             onClick={() => setModalOpen(null)}
           >
             cancel btn
-          </button>
+          </button> */}
 
           <button className="FormUser__exit__submit" type="submit">
             submit btn
@@ -205,6 +202,15 @@ export const FormUser = {
         onClick={() => setModalOpen(() => "Login")}
       >
         Log in
+      </button>
+    );
+  },
+  LogOutBtn: function () {
+    const { logout } = useFirebase();
+
+    return (
+      <button className="LoginRegisterBtn --login" onClick={() => logout()}>
+        Log out
       </button>
     );
   },
