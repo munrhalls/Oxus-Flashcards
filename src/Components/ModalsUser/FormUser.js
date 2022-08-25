@@ -18,6 +18,24 @@ export const FormUser = {
       </div>
     );
   },
+  GotAccBtn: function ({ setModalOpen }) {
+    return (
+      <div className="FormUser__gotAccContainer">
+        <span className="FormUser__gotAccContainer__msg">
+          Already have an account?
+        </span>
+        <button
+          className="FormUser__gotAccContainer__button"
+          onClick={(e) => {
+            e.preventDefault();
+            setModalOpen("Login");
+          }}
+        >
+          Log in
+        </button>
+      </div>
+    );
+  },
   Register: function ({ setModalOpen }) {
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -34,7 +52,6 @@ export const FormUser = {
         return setError("Password needs at least 6 characters.");
       if (passwordRef.current.value !== passwordConfirmRef.current.value)
         return setError("Passwords do not match.");
-
       try {
         setError("");
         setLoading(true);
@@ -70,18 +87,7 @@ export const FormUser = {
           ></input>
         </div>
         <FormUser.Error error={error} />
-        <div className="FormUser__gotAccContainer">
-          <span className="FormUser__gotAccContainer__msg">
-            Already have an account?
-          </span>
-          <button
-            className="FormUser__gotAccContainer__button"
-            onClick={() => setModalOpen("Login")}
-          >
-            Log in
-          </button>
-        </div>
-
+        <FormUser.GotAccBtn setModalOpen={() => setModalOpen()} />
         <div className="FormUser__exit">
           <button
             className="FormUser__exit__cancel"
@@ -159,17 +165,7 @@ export const FormUser = {
           ></input>
         </div>
         <FormUser.Error error={error} />
-        <div className="FormUser__gotAccContainer">
-          <span className="FormUser__gotAccContainer__msg">
-            Forgot password?
-          </span>
-          {/* <button
-            className="FormUser__gotAccContainer__button"
-            onClick={() => setModalOpen("ResetPassword")}
-          >
-            Reset password
-          </button> */}
-        </div>
+        <FormUser.GotAccBtn />
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
             Don't have an account yet?

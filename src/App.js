@@ -4,6 +4,8 @@ import "./App.css";
 import { uuidv4 } from "@firebase/util";
 // navigation
 import { Routes, Route, Link, Outlet } from "react-router-dom";
+// introduction materials
+import { introExampleDeck } from "./introExampleDeck";
 // introduction
 import { useEffect, useState } from "react";
 import { Welcome } from "./Components/Welcome/Welcome";
@@ -20,18 +22,13 @@ import { Deck } from "./Components/Deck/Deck.js";
 // conclusion
 import { Footer } from "./Components/Footer/Footer";
 
-import { introExampleDeck } from "./introExampleDeck";
-
 function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
 
   function getDecks() {
-    let decks = [];
-
-    decks.push(introExampleDeck);
-    return decks;
+    return [introExampleDeck];
   }
   // async function fileTest(e) {
   //   let img = e.target.files[0];
