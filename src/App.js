@@ -21,11 +21,14 @@ import { SymbolDecks } from "./Components/Deck/SymbolDecks";
 import { Deck } from "./Components/Deck/Deck.js";
 // conclusion
 import { Footer } from "./Components/Footer/Footer";
+import { useGlobal } from "./Contexts/GlobalProvider";
 
 function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
+  const { whatever } = useGlobal();
+  whatever()
   // async function fileTest(e) {
   //   let img = e.target.files[0];
   //   const storage = firebase.getStorage();

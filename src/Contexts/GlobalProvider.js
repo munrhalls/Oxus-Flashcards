@@ -64,7 +64,10 @@ export function GlobalProvider({ children }) {
   //   login,
   //   logout,
   // };
-  const value = FirebaseFunctions();
+  function whatever() {
+    return console.log("whatever");
+  }
+  const value = { ...FirebaseFunctions(), whatever };
   console.log(value);
 
   return <Global.Provider value={value}>{children}</Global.Provider>;
