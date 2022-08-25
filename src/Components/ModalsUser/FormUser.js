@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Form } from "./../../Components/Modals/Form";
-import { useFirebase } from "../../Contexts/FirebaseProvider";
+import { useGlobal } from "../../Contexts/GlobalProvider";
 
 export const FormUser = {
   TopBar: function ({ title }) {
@@ -42,7 +42,7 @@ export const FormUser = {
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const { register } = useFirebase();
+    const { register } = useGlobal();
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -122,7 +122,7 @@ export const FormUser = {
     const passwordRef = useRef("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const { login } = useFirebase();
+    const { login } = useGlobal();
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -204,7 +204,7 @@ export const FormUser = {
     );
   },
   LogOutBtn: function () {
-    const { logout } = useFirebase();
+    const { logout } = useGlobal();
 
     return (
       <button className="LoginRegisterBtn --login" onClick={() => logout()}>

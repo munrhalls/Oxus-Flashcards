@@ -1,9 +1,9 @@
-import { useFirebase } from "../../Contexts/FirebaseProvider";
+import { useGlobal } from "../../Contexts/GlobalProvider";
 import React from "react";
 import { FormUser } from "./../ModalsUser/FormUser";
 
 export function Header({ setModalOpen }) {
-  const { getCurrentUser } = useFirebase();
+  const { getCurrentUser } = useGlobal();
   const currentUser = getCurrentUser();
 
   return (

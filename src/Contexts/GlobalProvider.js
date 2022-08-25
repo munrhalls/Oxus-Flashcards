@@ -8,12 +8,12 @@ import {
 } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 
-const Firebase = React.createContext();
-export function useFirebase() {
-  return useContext(Firebase);
+const Global = React.createContext();
+export function useGlobal() {
+  return useContext(Global);
 }
 
-export function FirebaseProvider({ children }) {
+export function GlobalProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   console.log(currentUser?.email, " in FirebaseProvider");
 
@@ -64,5 +64,5 @@ export function FirebaseProvider({ children }) {
     login,
     logout,
   };
-  return <Firebase.Provider value={value}>{children}</Firebase.Provider>;
+  return <Global.Provider value={value}>{children}</Global.Provider>;
 }
