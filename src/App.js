@@ -27,7 +27,8 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
-  const { whatever } = useGlobal();
+  const { getModalOpen } = useGlobal();
+  getModalOpen();
 
   useEffect(() => {
     setDecks([introExampleDeck]);
