@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { uuidv4 } from "@firebase/util";
 import { Form } from "../Form";
+import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
-  const { setModalOpen, setActiveDeckId, decks, setDecks } = props;
-
+  const { setActiveDeckId, decks, setDecks } = props;
+  const { setModalOpen } = useGlobal();
   function handleSubmit(e) {
     e.preventDefault();
     let deck = {

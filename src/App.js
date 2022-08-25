@@ -28,7 +28,6 @@ function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
   const { getModalOpen } = useGlobal();
   const { setModalOpen } = useGlobal();
-
   let modalOpen = getModalOpen();
 
   useEffect(() => {
@@ -40,8 +39,6 @@ function App() {
     setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
     decks,
     setDecks: (decks) => setDecks(decks),
-    modalOpen,
-    setModalOpen: (modalOpen) => setModalOpen(modalOpen),
   };
 
   return (
@@ -49,13 +46,12 @@ function App() {
       <div className="App">
         {/* <Welcome.Shade /> */}
         {/* <Welcome.Message /> */}
-        <Header setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
+        <Header />
         <main className="Main">
           {activeDeckId && (
             <div className="Aside">
               <ModalBtns
                 modalOpen={modalOpen}
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
                 setActiveDeckId={(activeDeckId) =>
                   setActiveDeckId(activeDeckId)
                 }
@@ -72,7 +68,6 @@ function App() {
             ) : (
               <SymbolDecks
                 decks={decks}
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
                 setActiveDeckId={(activeDeckId) =>
                   setActiveDeckId(activeDeckId)
                 }
@@ -90,21 +85,9 @@ function App() {
               <Modals.EditFlashcard {...modalProps} />
             )}
 
-            {modalOpen === "Register" && (
-              <FormUser.Register
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              />
-            )}
-            {modalOpen === "Login" && (
-              <FormUser.Login
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              />
-            )}
-            {modalOpen === "ResetPassword" && (
-              <FormUser.ResetPassword
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              />
-            )}
+            {modalOpen === "Register" && <FormUser.Register />}
+            {modalOpen === "Login" && <FormUser.Login />}
+            {modalOpen === "ResetPassword" && <FormUser.ResetPassword />}
           </div>
         </main>
         <Footer />
