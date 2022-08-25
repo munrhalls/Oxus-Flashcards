@@ -28,24 +28,7 @@ function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
   const [modalOpen, setModalOpen] = useState(null);
   const { whatever } = useGlobal();
-  whatever()
-  // async function fileTest(e) {
-  //   let img = e.target.files[0];
-  //   const storage = firebase.getStorage();
-  //   const imageRef = firebase.ref(storage, img.name);
-  //   firebase
-  //     .uploadBytes(imageRef, img)
-  //     .then((snapshot) => {
-  //       console.log("Uploaded a blob or file!");
-  //     })
-  //     .then(() => {
-  //       firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
-  //         console.log(url);
-  //         // setImage(url);
-  //         // hook
-  //       });
-  //     });
-  // }
+
   useEffect(() => {
     setDecks([introExampleDeck]);
   }, []);
@@ -63,6 +46,7 @@ function App() {
     <>
       <div className="App">
         {/* <Welcome.Shade /> */}
+        {/* <Welcome.Message /> */}
         <Header setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
         <main className="Main">
           {activeDeckId && (
@@ -77,7 +61,6 @@ function App() {
             </div>
           )}
           <div className="Centerstage">
-            {/* <Welcome.Message /> */}
             {activeDeckId ? (
               <Deck
                 activeDeckId={activeDeckId}
@@ -129,3 +112,20 @@ function App() {
 }
 
 export default App;
+// async function fileTest(e) {
+//   let img = e.target.files[0];
+//   const storage = firebase.getStorage();
+//   const imageRef = firebase.ref(storage, img.name);
+//   firebase
+//     .uploadBytes(imageRef, img)
+//     .then((snapshot) => {
+//       console.log("Uploaded a blob or file!");
+//     })
+//     .then(() => {
+//       firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
+//         console.log(url);
+//         // setImage(url);
+//         // hook
+//       });
+//     });
+// }
