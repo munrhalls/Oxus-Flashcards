@@ -1,7 +1,10 @@
 import React from "react";
+import { useGlobal } from "../../Contexts/GlobalProvider";
 import IMG__PLUS from "./../../Assets/plus.png";
 
-export default function AddFlashcard({ setModalOpen }) {
+export default function AddFlashcard() {
+  const { setModalOpen } = useGlobal();
+
   return (
     <div
       onClick={() => setModalOpen("AddFlashcard")}

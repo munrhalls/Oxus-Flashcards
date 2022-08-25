@@ -3,12 +3,11 @@ import { Flashcard } from "./../../../Components/Flashcards/Flashcard";
 import { uuidv4 } from "@firebase/util";
 import IMG__CLOSE from "./../../../Assets/close.png";
 import IMG__EDIT from "./../../../Assets/edit.png";
+import { useGlobal } from "../../../Contexts/GlobalProvider";
 
-export default function EditFlashcard({
-  card,
-  setisDelConfirmId,
-  setModalOpen,
-}) {
+export default function EditFlashcard({ card, setisDelConfirmId }) {
+  const { setModalOpen } = useGlobal();
+
   return (
     <div className="FormFlashcardsList__instanceContainer__elements">
       <Flashcard key={uuidv4()} flashcard={card} />

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-
+// comment for commit
 export const Flashcard = ({ flashcard }) => {
   const [turned, setTurned] = useState(false);
 

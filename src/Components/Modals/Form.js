@@ -4,6 +4,7 @@ import IMG__SAVE from "./../../Assets/save.png";
 import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__BACK from "./../../Assets/go-back-arrow.png";
 import IMG__NUCLEAR from "./../../Assets/nuclear.png";
+import { useGlobal } from "../../Contexts/GlobalProvider";
 
 export const Form = {
   Close: function ({ closeFunction }) {
@@ -49,13 +50,14 @@ export const Form = {
       />
     );
   },
-  ExitBtns: function ({ setModalOpen }) {
+  ExitBtns: function ({ toModal }) {
+    const { setModalOpen } = useGlobal();
     return (
       <div className="Form__exitBtnsContainer">
         <button
           type="button"
           className="Form__exitBtnsContainer__btn"
-          onClick={() => setModalOpen()}
+          onClick={() => setModalOpen(toModal || null)}
         >
           <span className="Form__exitBtnsContainer__btn__text">Close</span>
           <img
@@ -75,7 +77,8 @@ export const Form = {
       </div>
     );
   },
-  BackBtn: function ({ setModalOpen }) {
+  BackBtn: function () {
+    const { setModalOpen } = useGlobal();
     return (
       <button className="Form__BackBtn" onClick={() => setModalOpen()}>
         <span className="Form__BackBtn__text">BACK</span>

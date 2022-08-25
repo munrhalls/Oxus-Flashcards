@@ -23,33 +23,14 @@ import { Deck } from "./Components/Deck/Deck.js";
 import { Footer } from "./Components/Footer/Footer";
 import { useGlobal } from "./Contexts/GlobalProvider";
 
-import useModal from "./Hooks/useModal";
-
 function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
-  const { ModalFunctions } = useGlobal();
-  let modalOpen = useModal(null);
+  const { getModalOpen } = useGlobal();
+  const { setModalOpen } = useGlobal();
+  let modalOpen = getModalOpen();
   console.log(modalOpen);
 
-  ModalFunctions();
-  // async function fileTest(e) {
-  //   let img = e.target.files[0];
-  //   const storage = firebase.getStorage();
-  //   const imageRef = firebase.ref(storage, img.name);
-  //   firebase
-  //     .uploadBytes(imageRef, img)
-  //     .then((snapshot) => {
-  //       console.log("Uploaded a blob or file!");
-  //     })
-  //     .then(() => {
-  //       firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
-  //         console.log(url);
-  //         // setImage(url);
-  //         // hook
-  //       });
-  //     });
-  // }
   useEffect(() => {
     setDecks([introExampleDeck]);
   }, []);
@@ -59,21 +40,19 @@ function App() {
     setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
     decks,
     setDecks: (decks) => setDecks(decks),
-    modalOpen,
-    setModalOpen: (modalOpen) => setModalOpen(modalOpen),
   };
 
   return (
     <>
       <div className="App">
         {/* <Welcome.Shade /> */}
-        <Header setModalOpen={(modalOpen) => setModalOpen(modalOpen)} />
+        {/* <Welcome.Message /> */}
+        <Header />
         <main className="Main">
           {activeDeckId && (
             <div className="Aside">
               <ModalBtns
                 modalOpen={modalOpen}
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
                 setActiveDeckId={(activeDeckId) =>
                   setActiveDeckId(activeDeckId)
                 }
@@ -81,7 +60,6 @@ function App() {
             </div>
           )}
           <div className="Centerstage">
-            {/* <Welcome.Message /> */}
             {activeDeckId ? (
               <Deck
                 activeDeckId={activeDeckId}
@@ -91,7 +69,6 @@ function App() {
             ) : (
               <SymbolDecks
                 decks={decks}
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
                 setActiveDeckId={(activeDeckId) =>
                   setActiveDeckId(activeDeckId)
                 }
@@ -109,21 +86,9 @@ function App() {
               <Modals.EditFlashcard {...modalProps} />
             )}
 
-            {modalOpen === "Register" && (
-              <FormUser.Register
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              />
-            )}
-            {modalOpen === "Login" && (
-              <FormUser.Login
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              />
-            )}
-            {modalOpen === "ResetPassword" && (
-              <FormUser.ResetPassword
-                setModalOpen={(modalOpen) => setModalOpen(modalOpen)}
-              />
-            )}
+            {modalOpen === "Register" && <FormUser.Register />}
+            {modalOpen === "Login" && <FormUser.Login />}
+            {modalOpen === "ResetPassword" && <FormUser.ResetPassword />}
           </div>
         </main>
         <Footer />
@@ -133,3 +98,20 @@ function App() {
 }
 
 export default App;
+// async function fileTest(e) {
+//   let img = e.target.files[0];
+//   const storage = firebase.getStorage();
+//   const imageRef = firebase.ref(storage, img.name);
+//   firebase
+//     .uploadBytes(imageRef, img)
+//     .then((snapshot) => {
+//       console.log("Uploaded a blob or file!");
+//     })
+//     .then(() => {
+//       firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
+//         console.log(url);
+//         // setImage(url);
+//         // hook
+//       });
+//     });
+// }

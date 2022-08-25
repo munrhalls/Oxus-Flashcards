@@ -6,6 +6,7 @@ import IMG__EDIT from "./../../../Assets/edit.png";
 import IMG__CLOSE from "./../../../Assets/close.png";
 import IMG__SAVE from "./../../../Assets/save.png";
 import { Form } from "../Form";
+import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const AddFlashcard = (props) => {
   const [flashcard, setFlashcard] = useState({
@@ -13,8 +14,9 @@ export const AddFlashcard = (props) => {
     turned: { text: "", image: "" },
   });
   const [side, setSide] = useState(false);
-  const { setModalOpen, activeDeckId, decks, setDecks } = props;
+  const { activeDeckId, decks, setDecks } = props;
   const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
+  const { setModalOpen } = useGlobal();
 
   function makeNewFlashcard() {
     let newFlashcard = {
@@ -80,7 +82,7 @@ export const AddFlashcard = (props) => {
           />
         </div>
 
-        <Form.ExitBtns setModalOpen={() => setModalOpen("EditDeck")} />
+        <Form.ExitBtns toModal="EditDeck" />
       </form>
     </div>
   );

@@ -2,7 +2,7 @@ import { useGlobal } from "../../Contexts/GlobalProvider";
 import React from "react";
 import { FormUser } from "./../ModalsUser/FormUser";
 
-export function Header({ setModalOpen }) {
+export function Header() {
   const { getCurrentUser } = useGlobal();
   const currentUser = getCurrentUser();
 
@@ -15,12 +15,12 @@ export function Header({ setModalOpen }) {
             <h1 className="Header__account__welcomeMsg">
               Welcome {currentUser?.email} !
             </h1>
-            <FormUser.LogOutBtn setModalOpen={setModalOpen} />
+            <FormUser.LogOutBtn />
           </>
         ) : (
           <>
-            <FormUser.LoginBtn setModalOpen={setModalOpen} />
-            <FormUser.RegisterBtn setModalOpen={setModalOpen} />
+            <FormUser.LoginBtn />
+            <FormUser.RegisterBtn />
           </>
         )}
       </div>

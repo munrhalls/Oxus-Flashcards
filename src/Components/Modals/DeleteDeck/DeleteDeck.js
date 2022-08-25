@@ -1,15 +1,13 @@
 import React from "react";
 import { Form } from "../Form";
+import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const DeleteDeck = (props) => {
-  const {
-    modalOpen,
-    setModalOpen,
-    setActiveDeckId,
-    activeDeckId,
-    decks,
-    setDecks,
-  } = props;
+  const { getModalOpen } = useGlobal();
+  const { setModalOpen } = useGlobal();
+  let modalOpen = getModalOpen();
+
+  const { setActiveDeckId, activeDeckId, decks, setDecks } = props;
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
 
   function handleSubmit(e) {
@@ -38,7 +36,7 @@ export const DeleteDeck = (props) => {
             </div>
           </div>
           <Form.ConfirmAndDelete id={activeDeckId} />
-          <Form.BackBtn setModalOpen={() => setModalOpen(null)} />
+          <Form.BackBtn />
         </form>
       </div>
     </div>

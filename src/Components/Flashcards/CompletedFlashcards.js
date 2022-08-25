@@ -23,7 +23,6 @@ export const CompletedFlashcards = ({ completedFlashcards }) => {
     const multiplier = 1.1 / 2;
     return completedFlashcards.map((card, i) => {
       let nextNum = getNextNum();
-      console.log(max);
 
       return (
         <div
