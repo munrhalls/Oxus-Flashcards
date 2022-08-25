@@ -10,6 +10,14 @@ export const FormUser = {
       </div>
     );
   },
+  Error: function ({ error }) {
+    console.log(error);
+    return (
+      <div className="FormUser__ErrorContainer">
+        <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
+      </div>
+    );
+  },
   Register: function ({ setModalOpen }) {
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -23,7 +31,7 @@ export const FormUser = {
       if (!emailRef.current.value)
         return setError("E-mail field cannot be empty.");
       if (passwordRef.current.value.length < 6)
-        return setError("Password needs at least 3 characters.");
+        return setError("Password needs at least 6 characters.");
       if (passwordRef.current.value !== passwordConfirmRef.current.value)
         return setError("Passwords do not match.");
 
@@ -61,11 +69,7 @@ export const FormUser = {
             className="FormUser__inputs__passwordConfirm"
           ></input>
         </div>
-
-        <div className="FormUser__ErrorContainer">
-          <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
-        </div>
-
+        <FormUser.Error error={error} />
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
             Already have an account?
@@ -154,9 +158,7 @@ export const FormUser = {
             className="FormUser__inputs__password"
           ></input>
         </div>
-        <div className="FormUser__ErrorContainer">
-          <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
-        </div>
+        <FormUser.Error error={error} />
         <div className="FormUser__gotAccContainer">
           <span className="FormUser__gotAccContainer__msg">
             Forgot password?
