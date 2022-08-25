@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { EditFlashcardsList } from "./EditFlashcardsList";
 import { Form } from "./../Form";
+import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const EditDeck = (props) => {
-  const { setModalOpen, activeDeckId, decks, setDecks } = props;
+  const { setModalOpen } = useGlobal();
+  const { activeDeckId, decks, setDecks } = props;
 
   const deck = decks?.filter((instance) => instance?.id === activeDeckId)?.[0];
   const [editedDeck, setEditedDeck] = useState(deck);
@@ -53,11 +55,10 @@ export const EditDeck = (props) => {
           </div>
         </div>
         <EditFlashcardsList
-          setModalOpen={setModalOpen}
           editedDeck={editedDeck}
           setEditedDeck={(editedDeck) => setEditedDeck(editedDeck)}
         />
-        <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
+        <Form.ExitBtns />
       </form>
     </div>
   );

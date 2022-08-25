@@ -4,12 +4,9 @@ import EditFlashcard from "./EditFlashcard";
 import { uuidv4 } from "@firebase/util";
 import AddFlashcardBtn from "./../../../Components/ModalBtns/AddFlashcardBtn";
 
-export function EditFlashcardsList({
-  editedDeck,
-  setEditedDeck,
-  setModalOpen,
-}) {
+export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
+
   let flashcards = editedDeck?.flashcards;
   let completedFlashcards = editedDeck?.completedFlashcards;
 
@@ -26,7 +23,7 @@ export function EditFlashcardsList({
   return (
     <div className="FormFlashcardsList">
       <div className="FormFlashcardsList__list">
-        <AddFlashcardBtn setModalOpen={() => setModalOpen("AddFlashcard")} />
+        <AddFlashcardBtn />
 
         {flashcards &&
           completedFlashcards &&
@@ -51,7 +48,6 @@ export function EditFlashcardsList({
                 ) : (
                   <EditFlashcard
                     card={card}
-                    setModalOpen={setModalOpen}
                     setisDelConfirmId={() => setisDelConfirmId(card.id)}
                   />
                 )}
