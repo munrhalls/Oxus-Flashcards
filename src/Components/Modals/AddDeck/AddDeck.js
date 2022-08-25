@@ -7,7 +7,7 @@ export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
   const { setActiveDeckId, decks, setDecks } = props;
   const { setModalOpen } = useGlobal();
-  
+
   function handleSubmit(e) {
     e.preventDefault();
     let deck = {
@@ -47,7 +47,7 @@ export const AddDeck = (props) => {
           />
         </div>
 
-        <Form.ExitBtns setModalOpen={() => setModalOpen(null)} />
+        <Form.ExitBtns />
       </form>
     </div>
   );

@@ -50,14 +50,14 @@ export const Form = {
       />
     );
   },
-  ExitBtns: function () {
+  ExitBtns: function ({ toModal }) {
     const { setModalOpen } = useGlobal();
     return (
       <div className="Form__exitBtnsContainer">
         <button
           type="button"
           className="Form__exitBtnsContainer__btn"
-          onClick={() => setModalOpen()}
+          onClick={() => setModalOpen(toModal || null)}
         >
           <span className="Form__exitBtnsContainer__btn__text">Close</span>
           <img

@@ -88,7 +88,7 @@ export const FormUser = {
           ></input>
         </div>
         <FormUser.Error error={error} />
-        <FormUser.GotAccBtn setModalOpen={() => setModalOpen()} />
+        <FormUser.GotAccBtn />
         <div className="FormUser__exit">
           <button
             className="FormUser__exit__cancel"

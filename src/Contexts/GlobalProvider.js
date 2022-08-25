@@ -8,7 +8,9 @@ export function useGlobal() {
 }
 
 export function GlobalProvider({ children }) {
-  const value = { ...FirebaseFunctions(), ...ModalsAPI() };
-
-  return <Global.Provider value={value}>{children}</Global.Provider>;
+  return (
+    <Global.Provider value={{ ...FirebaseFunctions(), ...ModalsAPI() }}>
+      {children}
+    </Global.Provider>
+  );
 }
