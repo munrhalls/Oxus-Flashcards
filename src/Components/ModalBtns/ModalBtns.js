@@ -5,26 +5,27 @@ import IMG__CLOSE from "./../../Assets/close.png";
 import IMG__DOOR from "./../../Assets/opened-door-aperture.png";
 import { useGlobal } from "../../Contexts/GlobalProvider";
 
-export const ModalBtns = ({ modalOpen, setActiveDeckId }) => {
-  const { setModalOpen } = useGlobal();
+export const ModalBtns = ({ setActiveDeckId }) => {
+  const { getModalOpen } = useGlobal();
+  let modalOpen = getModalOpen();
   return (
     <div className="ModalBtns">
       <ModalBtn
         name="EXIT"
-        setModalOpen={() => setModalOpen(null)}
+        deck={null}
         setActiveDeckId={() => setActiveDeckId(null)}
         icon={IMG__DOOR}
       />
       <ModalBtn
         name="EDIT"
         open={modalOpen === "EditDeck"}
-        setModalOpen={() => setModalOpen("EditDeck")}
+        deck="EditDeck"
         icon={IMG__EDIT}
       />
       <ModalBtn
         name="DELETE"
         open={modalOpen === "DeleteDeck"}
-        setModalOpen={() => setModalOpen("DeleteDeck")}
+        deck="DeleteDeck"
         icon={IMG__CLOSE}
       />
     </div>

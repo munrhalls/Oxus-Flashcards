@@ -5,7 +5,7 @@ import { useGlobal } from "../../Contexts/GlobalProvider";
 
 export const AddDeckBtn = () => {
   const { setModalOpen } = useGlobal();
-
+  
   return (
     <div onClick={() => setModalOpen("AddDeck")} className="AddDeckBtn">
       <button className="AddDeckBtn__btn">ADD NEW DECK</button>
