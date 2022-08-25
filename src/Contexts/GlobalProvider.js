@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import FirebaseFunctions from "./FirebaseFunctions";
+import FirebaseFunctions from "./FirebaseAPI";
 
 const Global = React.createContext();
 export function useGlobal() {
@@ -7,11 +7,10 @@ export function useGlobal() {
 }
 
 export function GlobalProvider({ children }) {
-  function whatever() {
-    return console.log("whatever");
+  function ModalsAPI() {
+    return console.log("ModalsAPI");
   }
-  const value = { ...FirebaseFunctions(), whatever };
-  console.log(value);
+  const value = { ...FirebaseFunctions(), ModalsAPI };
 
   return <Global.Provider value={value}>{children}</Global.Provider>;
 }
