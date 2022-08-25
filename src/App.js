@@ -29,6 +29,7 @@ function App() {
   const { getModalOpen } = useGlobal();
   const { setModalOpen } = useGlobal();
   let modalOpen = getModalOpen();
+  console.log(modalOpen);
 
   useEffect(() => {
     setDecks([introExampleDeck]);
