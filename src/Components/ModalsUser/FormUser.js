@@ -74,6 +74,20 @@ export const FormUser = {
       </div>
     );
   },
+  ForgotPasswordBtn: function () {
+    const { setModalOpen } = useGlobal();
+    return (
+      <div className="FormUser__gotAccContainer">
+        <span className="FormUser__gotAccContainer__msg">Forgot password?</span>
+        <button
+          className="FormUser__gotAccContainer__button"
+          onClick={() => setModalOpen("ResetPassword")}
+        >
+          Reset password
+        </button>
+      </div>
+    );
+  },
   Register: function () {
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -217,10 +231,12 @@ export const FormUser = {
   },
   ResetPassword: function () {
     const { setModalOpen } = useGlobal();
-    const emailRef = useRef("");
     const passwordRef = useRef("");
     const passwordConfirmRef = useRef("");
-    function handleSubmit() {}
+    async function handleSubmit(e) {
+      e.preventDefault();
+    }
+
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <div className="FormUser__ResetPassword">
