@@ -29,21 +29,27 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: #000;
+    position: relative;
 }
 
 .Loader__symbol {
     position: relative;
-    height: 85%;
+    height: 82.5%;
     width: 60%;
+    min-width: 3rem;
     max-width: 10rem;
-    border: 6px solid #000;
+    border: 3px solid #fff;
     border-radius: 12px;
     background: linear-gradient(to left, #000, #000 5%, #fff 1%, #000 95%);
-    margin-top: .25rem;
+    margin-top: .55rem;
+    box-shadow: #fff 0 0 30px 15px;
 }
 
 .Loader__text {
-    margin-bottom: .5rem;
+    position: absolute;
+    bottom: .5rem;
+    color: #fff;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 1rem;
