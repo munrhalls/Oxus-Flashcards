@@ -246,58 +246,69 @@ export const FormUser = {
   ResetPassword: function () {
     const { resetPassword, setModalOpen } = useGlobal();
     const [isLinkSent, setIsLinkSent] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
     const emailRef = useRef("");
 
     async function handleSubmit(e) {
       e.preventDefault();
-
+      setIsLoading(true);
       try {
         setError("");
         await resetPassword(emailRef.current.value);
-        console.log("???");
-        setIsLinkSent(true);
+
+        setTimeout(() => {
+          setIsLoading(false);
+          setIsLinkSent(true);
+        }, 500);
       } catch {
-        setError("Could not send password reset link to that e-mail address.");
+        setTimeout(() => {
+          setIsLoading(false);
+          setError(
+            "Could not send password reset link to that e-mail address."
+          );
+        }, 500);
       }
     }
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        {isLinkSent ? (
-          <div className="FormUser__ResetPassword__viewAfterLinkSent">
-            <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
-              Link to reset password has been sent to your email address{" "}
-              {emailRef.current.value}.
-            </h1>
-            <ul className="FormUser__ResetPassword__viewAfterLinkSent__list">
-              <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
-                Click the link, type new password, log in with new password.
-                That's it.
-              </li>
-              <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
-                Make sure to check spam folder, if you don't see the message.
-              </li>
-            </ul>
-            <button
-              className="FormUser__exit__cancel"
-              onClick={() => setModalOpen(null)}
-            >
-              exit
-            </button>
-          </div>
-        ) : (
-          <div className="FormUser__ResetPassword">
-            <label className="FormUser__inputs__label">Email</label>
-            <input
-              ref={emailRef}
-              type="email"
-              className="FormUser__inputs__email"
-            ></input>
-            {error && <FormUser.Error error={error} />}
-            <FormUser.Exit />
-          </div>
-        )}
+        <Loader active={isLoading}>
+          {isLinkSent ? (
+            <div className="FormUser__ResetPassword__viewAfterLinkSent">
+              <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
+                Link to reset password has been sent to your email address{" "}
+                {emailRef.current.value}.
+              </h1>
+              <ul className="FormUser__ResetPassword__viewAfterLinkSent__list">
+                <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
+                  Click the link, type new password, log in with new password.
+                  That's it.
+                </li>
+                <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
+                  Make sure to check spam folder, if you don't see the message.
+                </li>
+              </ul>
+              <button
+                className="FormUser__exit__cancel"
+                onClick={() => setModalOpen(null)}
+              >
+                exit
+              </button>
+            </div>
+          ) : (
+            <div className="FormUser__ResetPassword">
+              <label className="FormUser__inputs__label">Email</label>
+              <input
+                ref={emailRef}
+                type="email"
+                className="FormUser__inputs__email"
+              ></input>
+              {error && <FormUser.Error error={error} />}
+              <FormUser.Exit />
+            </div>
+          )}
+        </Loader>
       </form>
     );
   },
