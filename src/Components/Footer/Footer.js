@@ -15,6 +15,7 @@ export const Footer = () => {
         <span className="Footer__attribs__title">ICONS BY: </span>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/arrow"
           title="arrow icons"
         >
@@ -22,6 +23,7 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/close"
           title="close icons"
         >
@@ -29,12 +31,14 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://icon-library.com/icon/cards-icon-23.html.html>Cards Icon # 185438"
         >
           <span> /// </span> Card icons by https://icon-library.com/.
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/edit"
           title="edit icons"
         >
@@ -42,6 +46,7 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/plus"
           title="plus icons"
         >
@@ -49,6 +54,7 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/save"
           title="save icons"
         >
@@ -56,6 +62,7 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/return"
           title="return icons"
         >
@@ -63,6 +70,7 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/door"
           title="door icons"
         >
@@ -70,6 +78,7 @@ export const Footer = () => {
         </a>
         <a
           className="Footer__attribs__link"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/nuclear-energy"
           title="nuclear energy icons"
         >
