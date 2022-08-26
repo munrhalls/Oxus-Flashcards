@@ -18,16 +18,7 @@ export default function FirebaseFunctions() {
 
   function register(email, password) {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
+    return createUserWithEmailAndPassword(auth, email, password);
   }
 
   function login(email, password) {
@@ -37,13 +28,7 @@ export default function FirebaseFunctions() {
 
   function logout() {
     const auth = getAuth();
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        // An error happened.
-      });
+    return signOut(auth);
   }
 
   function resetPassword(email) {

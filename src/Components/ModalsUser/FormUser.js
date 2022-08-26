@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Form } from "./../../Components/Modals/Form";
 import { useGlobal } from "../../Contexts/GlobalProvider";
+import Loader from "../Loader/Loader";
 
 export const FormUser = {
   TopBar: function ({ title }) {
@@ -18,7 +18,7 @@ export const FormUser = {
       </div>
     );
   },
-  Exit: function ({ loading }) {
+  Exit: function ({ isLoading }) {
     const { setModalOpen } = useGlobal();
     return (
       <div className="FormUser__exit">
@@ -30,7 +30,7 @@ export const FormUser = {
         </button>
 
         <button
-          disabled={loading}
+          disabled={isLoading}
           className="FormUser__exit__submit"
           type="submit"
         >
@@ -93,7 +93,7 @@ export const FormUser = {
     const passwordRef = useRef("");
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const { register, setModalOpen } = useGlobal();
 
     async function handleSubmit(e) {
@@ -104,43 +104,49 @@ export const FormUser = {
         return setError("Password needs at least 6 characters.");
       if (passwordRef.current.value !== passwordConfirmRef.current.value)
         return setError("Passwords do not match.");
+
+      setIsLoading(true);
+
       try {
         setError("");
-        setLoading(true);
-        register(emailRef.current.value, passwordRef.current.value);
+        await register(emailRef.current.value, passwordRef.current.value);
+        setIsLoading(false);
+        // setModalOpen("ThanksForJoining");
       } catch {
+        setIsLoading(false);
         setError("Server couldn't create an account.");
       }
-      setLoading(false);
     }
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        <FormUser.TopBar title="REGISTER" />
+        <Loader active={!isLoading}>
+          <FormUser.TopBar title="REGISTER" />
 
-        <div className="FormUser__inputs">
-          <label className="FormUser__inputs__label">E-mail address:</label>
-          <input
-            ref={emailRef}
-            type="email"
-            className="FormUser__inputs__email"
-          ></input>
-          <label className="FormUser__inputs__label">Password:</label>
-          <input
-            ref={passwordRef}
-            type="password"
-            className="FormUser__inputs__password"
-          ></input>
-          <label className="FormUser__inputs__label">Confirm password:</label>
-          <input
-            ref={passwordConfirmRef}
-            type="password"
-            className="FormUser__inputs__passwordConfirm"
-          ></input>
-        </div>
-        <FormUser.Error error={error} />
-        <FormUser.GotAccBtn />
-        <FormUser.Exit loading={loading} />
+          <div className="FormUser__inputs">
+            <label className="FormUser__inputs__label">E-mail address:</label>
+            <input
+              ref={emailRef}
+              type="email"
+              className="FormUser__inputs__email"
+            ></input>
+            <label className="FormUser__inputs__label">Password:</label>
+            <input
+              ref={passwordRef}
+              type="password"
+              className="FormUser__inputs__password"
+            ></input>
+            <label className="FormUser__inputs__label">Confirm password:</label>
+            <input
+              ref={passwordConfirmRef}
+              type="password"
+              className="FormUser__inputs__passwordConfirm"
+            ></input>
+          </div>
+          <FormUser.Error error={error} />
+          <FormUser.GotAccBtn />
+          <FormUser.Exit loading={isLoading} />
+        </Loader>
       </form>
     );
   },
@@ -160,7 +166,7 @@ export const FormUser = {
     const emailRef = useRef("");
     const passwordRef = useRef("");
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setIsLoading] = useState(false);
     const { login } = useGlobal();
 
     async function handleSubmit(e) {
@@ -172,7 +178,7 @@ export const FormUser = {
 
       try {
         setError("");
-        setLoading(true);
+        setIsLoading(true);
         await login(emailRef.current.value, passwordRef.current.value);
         setModalOpen(null);
       } catch (error) {
@@ -180,7 +186,7 @@ export const FormUser = {
         console.log(errorMessage);
         setError("Server couldn't log in.");
       }
-      setLoading(false);
+      setIsLoading(false);
     }
 
     return (
