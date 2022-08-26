@@ -256,7 +256,6 @@ export const FormUser = {
       try {
         setError("");
         await resetPassword(emailRef.current.value);
-
         setTimeout(() => {
           setIsLoading(false);
           setIsLinkSent(true);
@@ -277,8 +276,9 @@ export const FormUser = {
           {isLinkSent ? (
             <div className="FormUser__ResetPassword__viewAfterLinkSent">
               <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
-                Link to reset password has been sent to your email address{" "}
-                {emailRef.current.value}.
+                Link to reset password has been sent to your email address
+                {emailRef?.current && " "}
+                {emailRef?.current?.value}.
               </h1>
               <ul className="FormUser__ResetPassword__viewAfterLinkSent__list">
                 <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
@@ -303,9 +303,9 @@ export const FormUser = {
                 ref={emailRef}
                 type="email"
                 className="FormUser__inputs__email"
-              ></input>
+              />
               {error && <FormUser.Error error={error} />}
-              <FormUser.Exit />
+              <FormUser.Exit isLoading={isLoading} />
             </div>
           )}
         </Loader>
