@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import FirebaseFunctions from "./FirebaseAPI";
 import ModalsAPI from "./ModalsAPI";
+import Loader from "../Components/Loader/Loader";
 
 const Global = React.createContext();
 export function useGlobal() {
