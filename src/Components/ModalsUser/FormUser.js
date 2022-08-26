@@ -231,12 +231,19 @@ export const FormUser = {
     );
   },
   ResetPassword: function () {
-    const { setModalOpen } = useGlobal();
+    const { resetPassword, setModalOpen } = useGlobal();
+    const [error, setError] = useState();
     const emailRef = useRef("");
-    const passwordRef = useRef("");
-    const passwordConfirmRef = useRef("");
+
     async function handleSubmit(e) {
       e.preventDefault();
+
+      try {
+        setError("");
+        await resetPassword(emailRef);
+      } catch {
+        setError("Could not send password reset link to that e-mail address.");
+      }
     }
 
     return (
@@ -248,16 +255,8 @@ export const FormUser = {
             type="email"
             className="FormUser__inputs__email"
           ></input>
-
-          <button className="FormUser__ResetPassword__button" type="submit">
-            Submit
-          </button>
-          <button
-            className="FormUser__ResetPassword__button"
-            onClick={() => setModalOpen(null)}
-          >
-            Exit
-          </button>
+          {error && <FormUser.Error error={error} />}
+          <FormUser.Exit />
         </div>
       </form>
     );
