@@ -232,6 +232,7 @@ export const FormUser = {
   },
   ResetPassword: function () {
     const { resetPassword, setModalOpen } = useGlobal();
+    const [isLinkSent, setIsLinkSent] = useState(true);
     const [error, setError] = useState();
     const emailRef = useRef("");
 
@@ -241,6 +242,7 @@ export const FormUser = {
       try {
         setError("");
         await resetPassword(emailRef.current.value);
+        setIsLinkSent(true);
       } catch {
         setError("Could not send password reset link to that e-mail address.");
       }
@@ -248,16 +250,34 @@ export const FormUser = {
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        <div className="FormUser__ResetPassword">
-          <label className="FormUser__inputs__label">Email</label>
-          <input
-            ref={emailRef}
-            type="email"
-            className="FormUser__inputs__email"
-          ></input>
-          {error && <FormUser.Error error={error} />}
-          <FormUser.Exit />
-        </div>
+        {isLinkSent ? (
+          <div className="FormUser__ResetPassword__viewAfterLinkSent">
+            <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
+              Link to reset password has been sent to your email address
+              {emailRef.current.value}.
+            </h1>
+            <ul className="FormUser__ResetPassword__viewAfterLinkSent__list">
+              <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
+                Click the link, type new password, log in with new password.
+                That's it.
+              </li>
+              <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
+                Make sure to check spam folder, if you don't see the message.
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="FormUser__ResetPassword">
+            <label className="FormUser__inputs__label">Email</label>
+            <input
+              ref={emailRef}
+              type="email"
+              className="FormUser__inputs__email"
+            ></input>
+            {error && <FormUser.Error error={error} />}
+            <FormUser.Exit />
+          </div>
+        )}
       </form>
     );
   },

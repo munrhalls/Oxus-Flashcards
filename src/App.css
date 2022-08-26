@@ -14,6 +14,8 @@
 @import './Components/Modals/FormTopbar.css';
 
 @import './Components/ModalsUser/FormUser.css';
+@import './Components/ModalsUser/ResetPassword.css';
+
 
 
 @import './Components/Modals/AddDeck/AddDeck.css';
