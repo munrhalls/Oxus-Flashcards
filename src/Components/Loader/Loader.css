@@ -29,8 +29,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 }
 
 .Loader__symbol {
@@ -41,10 +39,12 @@
     border: 6px solid #000;
     border-radius: 12px;
     background: linear-gradient(to left, #000, #000 5%, #fff 1%, #000 95%);
+    margin-top: .25rem;
 }
 
 .Loader__text {
+    margin-bottom: .5rem;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 1.75rem;
+    font-size: 50%;
 }
