@@ -110,17 +110,19 @@ export const FormUser = {
       try {
         setError("");
         await register(emailRef.current.value, passwordRef.current.value);
-        setIsLoading(false);
+        setTimeout(() => setIsLoading(false), 750);
         // setModalOpen("ThanksForJoining");
       } catch {
-        setIsLoading(false);
-        setError("Server couldn't create an account.");
+        setTimeout(() => {
+          setIsLoading(false);
+          setError("Server couldn't create an account.");
+        }, 750);
       }
     }
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        <Loader active={!isLoading}>
+        <Loader active={isLoading}>
           <FormUser.TopBar title="REGISTER" />
 
           <div className="FormUser__inputs">
