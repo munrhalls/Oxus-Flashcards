@@ -23,18 +23,18 @@ export const FormUser = {
     return (
       <div className="FormUser__exit">
         <button
-          className="FormUser__exit__cancel"
+          className="FormUser__exit__cancel --formUserButton"
           onClick={() => setModalOpen(null)}
         >
-          exit
+          EXIT
         </button>
 
         <button
           disabled={isLoading}
-          className="FormUser__exit__submit"
+          className="FormUser__exit__submit --formUserButton"
           type="submit"
         >
-          submit btn
+          SUBMIT
         </button>
       </div>
     );
@@ -47,7 +47,7 @@ export const FormUser = {
           Already have an account?
         </span>
         <button
-          className="FormUser__gotAccContainer__button"
+          className="FormUser__gotAccContainer__button --formUserButton"
           onClick={(e) => {
             e.preventDefault();
             setModalOpen("Login");
@@ -66,7 +66,7 @@ export const FormUser = {
           Don't have an account yet?
         </span>
         <button
-          className="FormUser__gotAccContainer__button"
+          className="FormUser__gotAccContainer__button --formUserButton"
           onClick={() => setModalOpen("Register")}
         >
           Make an account
@@ -80,7 +80,7 @@ export const FormUser = {
       <div className="FormUser__gotAccContainer">
         <span className="FormUser__gotAccContainer__msg">Forgot password?</span>
         <button
-          className="FormUser__gotAccContainer__button"
+          className="FormUser__gotAccContainer__button --formUserButton"
           onClick={() => setModalOpen("ResetPassword")}
         >
           Reset password
@@ -290,7 +290,7 @@ export const FormUser = {
                 </li>
               </ul>
               <button
-                className="FormUser__exit__cancel"
+                className="FormUser__exit__cancel --formUserButton"
                 onClick={() => setModalOpen(null)}
               >
                 exit

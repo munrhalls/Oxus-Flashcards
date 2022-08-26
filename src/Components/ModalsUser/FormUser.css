@@ -34,6 +34,9 @@
     align-items: center;
     justify-content: space-between;
 }
+
+
+
 .FormUser {
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
@@ -50,6 +53,17 @@
     border: 12px solid #000;
     border-radius: 5px;
     padding: 1rem;
+}
+.--formUserButton {
+    cursor: pointer;
+    background: #000;
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 0.75rem;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    border: 3px solid #fff;
 }
 .FormUser__topbar {
     min-height: 2rem;
@@ -86,10 +100,10 @@
     color: red;
 }
 .FormUser__exit {
-
+    display: flex;
 }
 .FormUser__exit__cancel {
-
+    
 }
 .FormUser__exit__submit {
 
