@@ -204,6 +204,7 @@ export const FormUser = {
           ></input>
         </div>
         <FormUser.Error error={error} />
+        <FormUser.ForgotPasswordBtn />
         <FormUser.GotNoAccBtn />
         <FormUser.Exit loading={loading} />
       </form>
@@ -231,6 +232,7 @@ export const FormUser = {
   },
   ResetPassword: function () {
     const { setModalOpen } = useGlobal();
+    const emailRef = useRef("");
     const passwordRef = useRef("");
     const passwordConfirmRef = useRef("");
     async function handleSubmit(e) {
@@ -240,22 +242,14 @@ export const FormUser = {
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <div className="FormUser__ResetPassword">
-          <label className="FormUser__inputs__label">Password:</label>
+          <label className="FormUser__inputs__label">Email</label>
           <input
-            ref={passwordRef}
-            type="password"
-            className="FormUser__inputs__password"
+            ref={emailRef}
+            type="email"
+            className="FormUser__inputs__email"
           ></input>
-          <label className="FormUser__inputs__label">Confirm password:</label>
-          <input
-            ref={passwordConfirmRef}
-            type="password"
-            className="FormUser__inputs__passwordConfirm"
-          ></input>
-          <button
-            className="FormUser__ResetPassword__button"
-            onClick={() => setModalOpen("Login")}
-          >
+
+          <button className="FormUser__ResetPassword__button" type="submit">
             Submit
           </button>
           <button
