@@ -232,7 +232,7 @@ export const FormUser = {
   },
   ResetPassword: function () {
     const { resetPassword, setModalOpen } = useGlobal();
-    const [isLinkSent, setIsLinkSent] = useState(true);
+    const [isLinkSent, setIsLinkSent] = useState(false);
     const [error, setError] = useState();
     const emailRef = useRef("");
 
@@ -265,6 +265,12 @@ export const FormUser = {
                 Make sure to check spam folder, if you don't see the message.
               </li>
             </ul>
+            <button
+              className="FormUser__exit__cancel"
+              onClick={() => setModalOpen(null)}
+            >
+              exit
+            </button>
           </div>
         ) : (
           <div className="FormUser__ResetPassword">
