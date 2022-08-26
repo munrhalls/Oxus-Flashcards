@@ -10,6 +10,13 @@ export function Header() {
 
   useEffect(() => {
     setIsLoading(true);
+    let timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [currentUser]);
 
   return (
