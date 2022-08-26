@@ -242,6 +242,7 @@ export const FormUser = {
       try {
         setError("");
         await resetPassword(emailRef.current.value);
+        console.log("???");
         setIsLinkSent(true);
       } catch {
         setError("Could not send password reset link to that e-mail address.");
@@ -253,7 +254,7 @@ export const FormUser = {
         {isLinkSent ? (
           <div className="FormUser__ResetPassword__viewAfterLinkSent">
             <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
-              Link to reset password has been sent to your email address
+              Link to reset password has been sent to your email address{" "}
               {emailRef.current.value}.
             </h1>
             <ul className="FormUser__ResetPassword__viewAfterLinkSent__list">
