@@ -18,6 +18,27 @@ export const FormUser = {
       </div>
     );
   },
+  Exit: function ({ loading }) {
+    const { setModalOpen } = useGlobal;
+    return (
+      <div className="FormUser__exit">
+        <button
+          className="FormUser__exit__cancel"
+          onClick={() => setModalOpen(null)}
+        >
+          exit
+        </button>
+
+        <button
+          disabled={loading}
+          className="FormUser__exit__submit"
+          type="submit"
+        >
+          submit btn
+        </button>
+      </div>
+    );
+  },
   GotAccBtn: function () {
     const { setModalOpen } = useGlobal();
     return (
@@ -89,22 +110,7 @@ export const FormUser = {
         </div>
         <FormUser.Error error={error} />
         <FormUser.GotAccBtn />
-        <div className="FormUser__exit">
-          <button
-            className="FormUser__exit__cancel"
-            onClick={() => setModalOpen(null)}
-          >
-            exit
-          </button>
-
-          <button
-            disabled={loading}
-            className="FormUser__exit__submit"
-            type="submit"
-          >
-            submit btn
-          </button>
-        </div>
+        <FormUser.Exit loading={loading} />
       </form>
     );
   },
