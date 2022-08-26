@@ -97,23 +97,26 @@ export const FormUser = {
     const { register, setModalOpen } = useGlobal();
 
     useEffect(() => {
-      emailRef.current.focus();
+      emailRef?.current?.focus();
     });
     async function handleSubmit(e) {
       e.preventDefault();
-      if (!emailRef.current.value)
+      if (!emailRef?.current.value)
         return setError("E-mail field cannot be empty.");
-      if (passwordRef.current.value.length < 6)
+      if (passwordRef?.current?.value?.length < 6)
         return setError("Password needs at least 6 characters.");
-      if (passwordRef.current.value !== passwordConfirmRef.current.value)
+      if (passwordRef?.current?.value !== passwordConfirmRef?.current?.value)
         return setError("Passwords do not match.");
 
       setIsLoading(true);
 
       try {
         setError("");
-        await register(emailRef.current.value, passwordRef.current.value);
-        setTimeout(() => setIsLoading(false), 1000);
+        await register(emailRef?.current?.value, passwordRef?.current?.value);
+        setTimeout(() => {
+          setIsLoading(false);
+          setModalOpen(null);
+        }, 1000);
         // setModalOpen("ThanksForJoining");
       } catch {
         setTimeout(() => {
@@ -174,20 +177,20 @@ export const FormUser = {
     const [isLoading, setIsLoading] = useState(false);
     const { login } = useGlobal();
     useEffect(() => {
-      emailRef.current.focus();
+      emailRef?.current?.focus();
     });
 
     async function handleSubmit(e) {
       e.preventDefault();
-      if (!emailRef.current.value)
+      if (!emailRef?.current?.value)
         return setError("E-mail field cannot be empty.");
-      if (passwordRef.current.value.length < 6)
+      if (passwordRef?.current?.value?.length < 6)
         return setError("Password needs at least 6 characters.");
 
       setIsLoading(true);
       try {
         setError("");
-        await login(emailRef.current.value, passwordRef.current.value);
+        await login(emailRef?.current?.value, passwordRef?.current?.value);
         setTimeout(() => {
           setIsLoading(false);
           setModalOpen(null);
@@ -264,7 +267,7 @@ export const FormUser = {
       setIsLoading(true);
       try {
         setError("");
-        await resetPassword(emailRef.current.value);
+        await resetPassword(emailRef?.current?.value);
         setTimeout(() => {
           setIsLoading(false);
           setIsLinkSent(true);

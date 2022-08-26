@@ -12,7 +12,7 @@ export function Header() {
     setIsLoading(true);
     let timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1250);
 
     return () => {
       clearTimeout(timeout);
