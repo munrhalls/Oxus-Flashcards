@@ -3,6 +3,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
@@ -45,6 +46,11 @@ export default function FirebaseFunctions() {
       });
   }
 
+  function resetPassword(email) {
+    const auth = getAuth();
+    return sendPasswordResetEmail(auth, email);
+  }
+
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -57,6 +63,7 @@ export default function FirebaseFunctions() {
     register,
     login,
     logout,
+    resetPassword,
   };
   return value;
 }
