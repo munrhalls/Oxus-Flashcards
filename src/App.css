@@ -6,6 +6,8 @@
 @import './Components/Flashcards/CompletedFlashcards.css';
 @import './Components/Deck/Deck.css';
 
+@import './Components/Loader/Loader.css';
+
 @import './Components/ModalBtns/AddDeckBtn.css';
 @import './Components/ModalBtns/ModalBtns.css';
 @import './Components/ModalBtns/ModalBtn.css';
