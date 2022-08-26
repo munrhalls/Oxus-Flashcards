@@ -101,6 +101,7 @@
     width: 100%;
 }
 .FormUser__inputs__label {
+    padding: .25rem;
 
 }
 .FormUser__gotAccContainer {
@@ -109,6 +110,10 @@
     align-items: center;
     justify-content: center;
 }
+.FormUser__gotAccContainer__msg {
+    padding: 0.25rem;
+}
+
 .FormUser__ErrorContainer {
 
 }

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGlobal } from "../../Contexts/GlobalProvider";
 import Loader from "../Loader/Loader";
 
@@ -96,6 +96,9 @@ export const FormUser = {
     const [isLoading, setIsLoading] = useState(false);
     const { register, setModalOpen } = useGlobal();
 
+    useEffect(() => {
+      emailRef.current.focus();
+    });
     async function handleSubmit(e) {
       e.preventDefault();
       if (!emailRef.current.value)
@@ -170,6 +173,9 @@ export const FormUser = {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const { login } = useGlobal();
+    useEffect(() => {
+      emailRef.current.focus();
+    });
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -248,6 +254,10 @@ export const FormUser = {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
     const emailRef = useRef("");
+
+    useEffect(() => {
+      emailRef?.current?.focus();
+    });
 
     async function handleSubmit(e) {
       e.preventDefault();
