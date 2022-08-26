@@ -196,7 +196,7 @@ export const FormUser = {
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        <Loader active={!isLoading}>
+        <Loader active={isLoading}>
           <div className="FormUser__topbar">
             <h1 className="FormUser__topbar__title">LOG IN</h1>
           </div>
