@@ -1,36 +1,35 @@
+/* intro */
 @import './reset.css';
 @import './Components/Header/Header.css';
 @import './Components/Welcome/Welcome.css';
+/* central clusters*/
 @import './Components/Flashcards/Flashcard.css';
 @import './Components/Flashcards/Flashcards.css';
 @import './Components/Flashcards/CompletedFlashcards.css';
 @import './Components/Deck/Deck.css';
-
+/* functional clusters, windows */
 @import './Components/Loader/Loader.css';
-
 @import './Components/ModalBtns/AddDeckBtn.css';
 @import './Components/ModalBtns/ModalBtns.css';
 @import './Components/ModalBtns/ModalBtn.css';
 @import './Components/Modals/Modals.css';
 @import './Components/Modals/Form.css';
 @import './Components/Modals/FormTopbar.css';
-
+/* functional clusters, user account windows */
 @import './Components/ModalsUser/FormUser.css';
 @import './Components/ModalsUser/ResetPassword.css';
-
-
-
+/* functional clusters, managing decks */
 @import './Components/Modals/AddDeck/AddDeck.css';
 @import './Components/Modals//EditDeck/EditDeck.css';
 @import './Components/Modals//EditDeck/EditFlashcardsList.css';
 @import './Components/Modals/DeleteDeck/DeleteDeck.css';
-
+/* functional clusters, managing flashcards within a deck */
 @import './Components/Modals/AddFlashcard/AddFlashcard.css';
 @import './Components/Modals/AddFlashcard/InputsHandler.css';
 @import './Components/Modals/AddFlashcard/Preview.css';
+/* outro */
 @import './Components/Footer/Footer.css';
-
-
+/* being friendly to cell phones */
 @import './Components/Deck/MobileDeck.css';
 @import './Components/Flashcards/MobileFlashcards.css';
 @import './Components/Flashcards/MobileCompletedFlashcards.css';
