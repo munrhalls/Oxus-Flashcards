@@ -110,13 +110,13 @@ export const FormUser = {
       try {
         setError("");
         await register(emailRef.current.value, passwordRef.current.value);
-        setTimeout(() => setIsLoading(false), 750);
+        setTimeout(() => setIsLoading(false), 1000);
         // setModalOpen("ThanksForJoining");
       } catch {
         setTimeout(() => {
           setIsLoading(false);
           setError("Server couldn't create an account.");
-        }, 750);
+        }, 1000);
       }
     }
 
@@ -168,7 +168,7 @@ export const FormUser = {
     const emailRef = useRef("");
     const passwordRef = useRef("");
     const [error, setError] = useState("");
-    const [loading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const { login } = useGlobal();
 
     async function handleSubmit(e) {
@@ -178,43 +178,48 @@ export const FormUser = {
       if (passwordRef.current.value.length < 6)
         return setError("Password needs at least 6 characters.");
 
+      setIsLoading(true);
       try {
         setError("");
-        setIsLoading(true);
         await login(emailRef.current.value, passwordRef.current.value);
-        setModalOpen(null);
-      } catch (error) {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-        setError("Server couldn't log in.");
+        setTimeout(() => {
+          setIsLoading(false);
+          setModalOpen(null);
+        }, 500);
+      } catch {
+        setTimeout(() => {
+          setIsLoading(false);
+          setError("Server cannot log in these credentials.");
+        }, 1000);
       }
-      setIsLoading(false);
     }
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
-        <div className="FormUser__topbar">
-          <h1 className="FormUser__topbar__title">LOG IN</h1>
-        </div>
+        <Loader active={isLoading}>
+          <div className="FormUser__topbar">
+            <h1 className="FormUser__topbar__title">LOG IN</h1>
+          </div>
 
-        <div className="FormUser__inputs">
-          <label className="FormUser__inputs__label">E-mail address:</label>
-          <input
-            ref={emailRef}
-            type="email"
-            className="FormUser__inputs__email"
-          ></input>
-          <label className="FormUser__inputs__label">Password:</label>
-          <input
-            ref={passwordRef}
-            type="password"
-            className="FormUser__inputs__password"
-          ></input>
-        </div>
-        <FormUser.Error error={error} />
-        <FormUser.ForgotPasswordBtn />
-        <FormUser.GotNoAccBtn />
-        <FormUser.Exit loading={loading} />
+          <div className="FormUser__inputs">
+            <label className="FormUser__inputs__label">E-mail address:</label>
+            <input
+              ref={emailRef}
+              type="email"
+              className="FormUser__inputs__email"
+            ></input>
+            <label className="FormUser__inputs__label">Password:</label>
+            <input
+              ref={passwordRef}
+              type="password"
+              className="FormUser__inputs__password"
+            ></input>
+          </div>
+          <FormUser.Error error={error} />
+          <FormUser.ForgotPasswordBtn />
+          <FormUser.GotNoAccBtn />
+          <FormUser.Exit isLoading={isLoading} />
+        </Loader>
       </form>
     );
   },
