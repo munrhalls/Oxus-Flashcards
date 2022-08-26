@@ -19,7 +19,7 @@ export const FormUser = {
     );
   },
   Exit: function ({ loading }) {
-    const { setModalOpen } = useGlobal;
+    const { setModalOpen } = useGlobal();
     return (
       <div className="FormUser__exit">
         <button
@@ -54,6 +54,22 @@ export const FormUser = {
           }}
         >
           Log in
+        </button>
+      </div>
+    );
+  },
+  GotNoAccBtn: function () {
+    const { setModalOpen } = useGlobal();
+    return (
+      <div className="FormUser__gotAccContainer">
+        <span className="FormUser__gotAccContainer__msg">
+          Don't have an account yet?
+        </span>
+        <button
+          className="FormUser__gotAccContainer__button"
+          onClick={() => setModalOpen("Register")}
+        >
+          Make an account
         </button>
       </div>
     );
@@ -174,31 +190,8 @@ export const FormUser = {
           ></input>
         </div>
         <FormUser.Error error={error} />
-        <FormUser.GotAccBtn />
-        <div className="FormUser__gotAccContainer">
-          <span className="FormUser__gotAccContainer__msg">
-            Don't have an account yet?
-          </span>
-          {/* <button
-            className="FormUser__gotAccContainer__button"
-            onClick={() => setModalOpen("Register")}
-          >
-            Make an account
-          </button> */}
-        </div>
-
-        <div className="FormUser__exit">
-          {/* <button
-            className="FormUser__exit__cancel"
-            onClick={() => setModalOpen(null)}
-          >
-            cancel btn
-          </button> */}
-
-          <button className="FormUser__exit__submit" type="submit">
-            submit btn
-          </button>
-        </div>
+        <FormUser.GotNoAccBtn />
+        <FormUser.Exit loading={loading} />
       </form>
     );
   },
