@@ -2,19 +2,20 @@
 @import './reset.css';
 @import './Components/Header/Header.css';
 @import './Components/Welcome/Welcome.css';
-/* central clusters*/
+/* central clusters, all else...nodes that plug into that*/
 @import './Components/Flashcards/Flashcard.css';
 @import './Components/Flashcards/Flashcards.css';
 @import './Components/Flashcards/CompletedFlashcards.css';
 @import './Components/Deck/Deck.css';
-/* functional clusters, windows */
-@import './Components/Loader/Loader.css';
+/* functional clusters, window triggers */
 @import './Components/ModalBtns/AddDeckBtn.css';
 @import './Components/ModalBtns/ModalBtns.css';
 @import './Components/ModalBtns/ModalBtn.css';
+/* abstracted user experience clusters   */
 @import './Components/Modals/Modals.css';
 @import './Components/Modals/Form.css';
 @import './Components/Modals/FormTopbar.css';
+@import './Components/Loader/Loader.css';
 /* functional clusters, user account windows */
 @import './Components/ModalsUser/FormUser.css';
 @import './Components/ModalsUser/ResetPassword.css';
