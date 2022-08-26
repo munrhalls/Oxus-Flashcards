@@ -83,7 +83,7 @@ export const FormUser = {
           className="FormUser__gotAccContainer__button --formUserButton"
           onClick={() => setModalOpen("ResetPassword")}
         >
-          Reset password
+          RESET
         </button>
       </div>
     );
@@ -217,7 +217,6 @@ export const FormUser = {
           </div>
           <FormUser.Error error={error} />
           <FormUser.ForgotPasswordBtn />
-          <FormUser.GotNoAccBtn />
           <FormUser.Exit isLoading={isLoading} />
         </Loader>
       </form>
