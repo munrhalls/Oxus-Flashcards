@@ -240,7 +240,7 @@ export const FormUser = {
 
       try {
         setError("");
-        await resetPassword(emailRef);
+        await resetPassword(emailRef.current.value);
       } catch {
         setError("Could not send password reset link to that e-mail address.");
       }
