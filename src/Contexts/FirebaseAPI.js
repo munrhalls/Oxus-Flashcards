@@ -2,6 +2,7 @@ import firebase from "../Firebase";
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  updateProfile,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   onAuthStateChanged,
@@ -19,6 +20,13 @@ export default function FirebaseFunctions() {
   function register(email, password) {
     const auth = getAuth();
     return createUserWithEmailAndPassword(auth, email, password);
+  }
+  function updateProfile(displayName, photoURL) {
+    const auth = getAuth();
+    updateProfile(auth.currentUser, {
+      displayName: "Jane Q. User",
+      photoURL: "https://example.com/jane-q-user/profile.jpg",
+    });
   }
 
   function login(email, password) {
@@ -46,6 +54,7 @@ export default function FirebaseFunctions() {
   const value = {
     getCurrentUser,
     register,
+    updateProfile,
     login,
     logout,
     resetPassword,
