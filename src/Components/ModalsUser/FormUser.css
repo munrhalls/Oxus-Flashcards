@@ -83,8 +83,10 @@
 }
 .FormUser__topbar__title {
     padding: 0.5rem;
+    padding-right: 1rem;
     font-size: 1.5rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 .FormUser__inputs {
     flex: 1;

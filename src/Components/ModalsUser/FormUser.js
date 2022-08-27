@@ -304,7 +304,7 @@ export const FormUser = {
 
           <FormUser.ExitBtn />
 
-          {!isLinkSent ? (
+          {isLinkSent ? (
             <div className="FormUser__ResetPassword__viewAfterLinkSent">
               <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
                 Link to reset password has been sent to your email address
@@ -313,11 +313,22 @@ export const FormUser = {
               </h1>
               <ul className="FormUser__ResetPassword__viewAfterLinkSent__list">
                 <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
-                  Click the link, type new password, log in with new password.
+                  You can click the link and type in new password to reset it.
                   That's it.
                 </li>
                 <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
-                  Make sure to check spam folder, if you don't see the message.
+                  Don't quite see the message? Make sure to check the spam
+                  folder or...
+                </li>
+                <li className="FormUser__ResetPassword__viewAfterLinkSent__list__item">
+                  Send{" "}
+                  <button
+                    className="--formUserButton"
+                    onClick={() => setIsLinkSent(() => false)}
+                  >
+                    link
+                  </button>{" "}
+                  again.
                 </li>
               </ul>
             </div>
