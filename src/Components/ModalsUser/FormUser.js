@@ -125,7 +125,7 @@ export const FormUser = {
         await register(emailRef?.current?.value, passwordRef?.current?.value);
         setTimeout(() => {
           setIsLoading(false);
-          setModalOpen(null);
+          setModalOpen("UpdateProfile");
         }, 1000);
         // setModalOpen("ThanksForJoining");
       } catch {
@@ -174,29 +174,31 @@ export const FormUser = {
   },
   UpdateProfile: function () {
     const [error, setError] = useState("");
-    const { updateProfile } = useGlobal();
+    const [isLoading, setIsLoading] = useState(false);
     const displayNameRef = useRef("");
+
+    const { updateProfile } = useGlobal();
 
     async function handleSubmit(e) {
       e.preventDefault();
 
       if (displayNameRef.current?.length > 21)
         return setError("Username cannot be longer than 21 characters");
-        
+
       try {
       } catch {
         setError("Server cannot update profile");
       }
     }
 
-    function fasterPreview(uploader) {
-      if (uploader.files && uploader.files[0]) {
-        $("#profileImage").attr(
-          "src",
-          window.URL.createObjectURL(uploader.files[0])
-        );
-      }
-    }
+    // function fasterPreview(uploader) {
+    //   if (uploader.files && uploader.files[0]) {
+    //     $("#profileImage").attr(
+    //       "src",
+    //       window.URL.createObjectURL(uploader.files[0])
+    //     );
+    //   }
+    // }
 
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>

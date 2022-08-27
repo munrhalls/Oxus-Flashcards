@@ -87,6 +87,7 @@ function App() {
             )}
 
             {modalOpen === "Register" && <FormUser.Register />}
+            {modalOpen === "UpdateProfile" && <FormUser.UpdateProfile />}
             {modalOpen === "Login" && <FormUser.Login />}
             {modalOpen === "ResetPassword" && <FormUser.ResetPassword />}
           </div>
