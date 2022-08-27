@@ -274,8 +274,8 @@ export const FormUser = {
     const emailRef = useRef("");
 
     useEffect(() => {
-      emailRef?.current?.focus();
-    });
+      if (emailRef.current) emailRef.current?.focus();
+    }, [emailRef]);
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -300,9 +300,11 @@ export const FormUser = {
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
+          <FormUser.TopBar title="Password Reset" />
+
           <FormUser.ExitBtn />
 
-          {isLinkSent ? (
+          {!isLinkSent ? (
             <div className="FormUser__ResetPassword__viewAfterLinkSent">
               <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
                 Link to reset password has been sent to your email address
@@ -318,12 +320,6 @@ export const FormUser = {
                   Make sure to check spam folder, if you don't see the message.
                 </li>
               </ul>
-              <button
-                className="FormUser__exit__cancel --formUserButton"
-                onClick={() => setModalOpen(null)}
-              >
-                exit
-              </button>
             </div>
           ) : (
             <div className="FormUser__ResetPassword">
