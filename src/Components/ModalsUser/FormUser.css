@@ -94,14 +94,16 @@
     justify-content: center;
 
 }
-.FormUser__inputs__email {
+.FormUser__inputs__instance {
     width: 100%;
+    padding: 0.25rem;
+    cursor: pointer;
+    margin-bottom: .25rem;
 }
-.FormUser__inputs__password {
-    width: 100%;
-}
+
 .FormUser__inputs__label {
     padding: .25rem;
+    margin: .25rem;
 
 }
 .FormUser__gotAccContainer {
