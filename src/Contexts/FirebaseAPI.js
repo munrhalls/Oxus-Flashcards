@@ -24,10 +24,11 @@ export default function FirebaseFunctions() {
 
   function updateProfile(displayName, photoURL) {
     const auth = getAuth();
-    return updateProfile(auth.currentUser, {
-      displayName: displayName,
-      photoURL: photoURL,
-    });
+    console.log(displayName, photoURL);
+    // return updateProfile(auth.currentUser, {
+    //   displayName: displayName,
+    //   photoURL: photoURL,
+    // });
   }
 
   function login(email, password) {
