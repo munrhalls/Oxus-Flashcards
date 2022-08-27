@@ -35,14 +35,13 @@
     justify-content: space-between;
 }
 
-
-
 .FormUser {
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
     z-index: 10;
     width: 95%;
     height: 97.5%;
+    max-width: 25rem;
     margin: auto;
 
     display: flex;
@@ -116,7 +115,7 @@
 }
 
 .FormUser__ErrorContainer {
-
+    padding: 1rem;
 }
 .FormUser__ErrorContainer__msg {
     color: red;
