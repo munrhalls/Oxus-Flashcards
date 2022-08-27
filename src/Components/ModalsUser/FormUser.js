@@ -186,6 +186,7 @@ export const FormUser = {
         return setError("Username cannot be longer than 21 characters");
 
       try {
+        await updateProfile(displayNameRef.current.value);
       } catch {
         setError("Server cannot update profile");
       }
@@ -207,7 +208,7 @@ export const FormUser = {
           <FormUser.ExitBtn />
 
           <div className="FormUser__inputs">
-            <label className="FormUser__inputs__label">Your Username:</label>
+            <label className="FormUser__inputs__label">Username:</label>
             <input
               placeholder="type..."
               ref={displayNameRef}
@@ -238,6 +239,17 @@ export const FormUser = {
         onClick={() => setModalOpen(() => "Register")}
       >
         Register
+      </button>
+    );
+  },
+  EditProfileBtn: function () {
+    const { setModalOpen } = useGlobal();
+    return (
+      <button
+        className="LoginRegisterBtn --register"
+        onClick={() => setModalOpen(() => "UpdateProfile")}
+      >
+        Profile
       </button>
     );
   },

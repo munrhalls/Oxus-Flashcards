@@ -29,7 +29,10 @@ export function Header() {
               <h1 className="Header__account__welcomeMsg">
                 Welcome {currentUser?.email} !
               </h1>
-              <FormUser.LogOutBtn />
+              <div className="Header__account__btnsContainer">
+                <FormUser.EditProfileBtn />
+                <FormUser.LogOutBtn />
+              </div>
             </>
           ) : (
             <>

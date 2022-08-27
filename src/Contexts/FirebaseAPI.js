@@ -21,11 +21,12 @@ export default function FirebaseFunctions() {
     const auth = getAuth();
     return createUserWithEmailAndPassword(auth, email, password);
   }
+
   function updateProfile(displayName, photoURL) {
     const auth = getAuth();
-    updateProfile(auth.currentUser, {
-      displayName: "Jane Q. User",
-      photoURL: "https://example.com/jane-q-user/profile.jpg",
+    return updateProfile(auth.currentUser, {
+      displayName: displayName,
+      photoURL: photoURL,
     });
   }
 
