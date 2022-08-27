@@ -172,6 +172,62 @@ export const FormUser = {
       </form>
     );
   },
+  UpdateProfile: function () {
+    const [error, setError] = useState("");
+    const { updateProfile } = useGlobal();
+    const displayNameRef = useRef("");
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+
+      if (displayNameRef.current?.length > 21)
+        return setError("Username cannot be longer than 21 characters");
+        
+      try {
+      } catch {
+        setError("Server cannot update profile");
+      }
+    }
+
+    function fasterPreview(uploader) {
+      if (uploader.files && uploader.files[0]) {
+        $("#profileImage").attr(
+          "src",
+          window.URL.createObjectURL(uploader.files[0])
+        );
+      }
+    }
+
+    return (
+      <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
+        <Loader active={isLoading}>
+          <FormUser.TopBar title="YOUR PROFILE" />
+          <FormUser.ExitBtn />
+
+          <div className="FormUser__inputs">
+            <label className="FormUser__inputs__label">Your Username:</label>
+            <input
+              placeholder="type..."
+              ref={displayNameRef}
+              type="text"
+              className="FormUser__inputs__instance"
+            ></input>
+            {/* <label className="FormUser__inputs__label">
+              Type desired username:
+            </label>
+            <input
+              placeholder="type..."
+              ref={imgRef}
+              type="text"
+              className="FormUser__inputs__instance"
+            ></input> */}
+          </div>
+          <FormUser.Error error={error} />
+          <FormUser.SubmitBtn loading={isLoading} />
+        </Loader>
+      </form>
+    );
+  },
   RegisterBtn: function () {
     const { setModalOpen } = useGlobal();
     return (
