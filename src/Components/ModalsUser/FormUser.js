@@ -217,9 +217,8 @@ export const FormUser = {
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
-          <div className="FormUser__topbar">
-            <h1 className="FormUser__topbar__title">LOG IN</h1>
-          </div>
+          <FormUser.TopBar title="LOG IN" />
+          <FormUser.ExitBtn />
 
           <div className="FormUser__inputs">
             <label className="FormUser__inputs__label">E-mail address:</label>
@@ -296,6 +295,8 @@ export const FormUser = {
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
+          <FormUser.ExitBtn />
+
           {isLinkSent ? (
             <div className="FormUser__ResetPassword__viewAfterLinkSent">
               <h1 className="FormUser__ResetPassword__viewAfterLinkSent__title">
