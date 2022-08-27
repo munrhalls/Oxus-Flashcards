@@ -145,18 +145,21 @@ export const FormUser = {
           <div className="FormUser__inputs">
             <label className="FormUser__inputs__label">E-mail address:</label>
             <input
+              placeholder="type..."
               ref={emailRef}
               type="email"
               className="FormUser__inputs__instance"
             ></input>
             <label className="FormUser__inputs__label">Password:</label>
             <input
+              placeholder="type..."
               ref={passwordRef}
               type="password"
               className="FormUser__inputs__instance"
             ></input>
             <label className="FormUser__inputs__label">Confirm password:</label>
             <input
+              placeholder="type..."
               ref={passwordConfirmRef}
               type="password"
               className="FormUser__inputs__instance"
@@ -223,12 +226,14 @@ export const FormUser = {
           <div className="FormUser__inputs">
             <label className="FormUser__inputs__label">E-mail address:</label>
             <input
+              placeholder="type..."
               ref={emailRef}
               type="email"
               className="FormUser__inputs__instance"
             ></input>
             <label className="FormUser__inputs__label">Password:</label>
             <input
+              placeholder="type..."
               ref={passwordRef}
               type="password"
               className="FormUser__inputs__instance"
@@ -322,11 +327,14 @@ export const FormUser = {
             </div>
           ) : (
             <div className="FormUser__ResetPassword">
-              <label className="FormUser__inputs__label">Email</label>
+              <label className="FormUser__inputs__label --largerFont">
+                Email
+              </label>
               <input
+                placeholder="type..."
                 ref={emailRef}
                 type="email"
-                className="FormUser__inputs__instance"
+                className="FormUser__inputs__instance --extraMarginTop --extraMarginBottom"
               />
               {error && <FormUser.Error error={error} />}
               <FormUser.SubmitBtn isLoading={isLoading} />
