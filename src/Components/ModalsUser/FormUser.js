@@ -147,19 +147,19 @@ export const FormUser = {
             <input
               ref={emailRef}
               type="email"
-              className="FormUser__inputs__email"
+              className="FormUser__inputs__instance"
             ></input>
             <label className="FormUser__inputs__label">Password:</label>
             <input
               ref={passwordRef}
               type="password"
-              className="FormUser__inputs__password"
+              className="FormUser__inputs__instance"
             ></input>
             <label className="FormUser__inputs__label">Confirm password:</label>
             <input
               ref={passwordConfirmRef}
               type="password"
-              className="FormUser__inputs__passwordConfirm"
+              className="FormUser__inputs__instance"
             ></input>
           </div>
           <FormUser.Error error={error} />
@@ -225,13 +225,13 @@ export const FormUser = {
             <input
               ref={emailRef}
               type="email"
-              className="FormUser__inputs__email"
+              className="FormUser__inputs__instance"
             ></input>
             <label className="FormUser__inputs__label">Password:</label>
             <input
               ref={passwordRef}
               type="password"
-              className="FormUser__inputs__password"
+              className="FormUser__inputs__instance"
             ></input>
           </div>
           <FormUser.Error error={error} />
@@ -326,7 +326,7 @@ export const FormUser = {
               <input
                 ref={emailRef}
                 type="email"
-                className="FormUser__inputs__email"
+                className="FormUser__inputs__instance"
               />
               {error && <FormUser.Error error={error} />}
               <FormUser.SubmitBtn isLoading={isLoading} />
