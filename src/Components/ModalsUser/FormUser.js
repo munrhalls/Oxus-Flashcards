@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useGlobal } from "../../Contexts/GlobalProvider";
 import Loader from "../Loader/Loader";
+import IMG__CLOSE from "./../../Assets/close.png";
 
 export const FormUser = {
   TopBar: function ({ title }) {
@@ -18,17 +19,25 @@ export const FormUser = {
       </div>
     );
   },
-  Exit: function ({ isLoading }) {
+  ExitBtn: function () {
     const { setModalOpen } = useGlobal();
+
+    return (
+      <button
+        className="FormUser__exit__cancel --formUserButton"
+        onClick={() => setModalOpen(null)}
+      >
+        <img
+          className="FormUser__exit__cancel__icon"
+          src={IMG__CLOSE}
+          alt="EXIT"
+        />
+      </button>
+    );
+  },
+  SubmitBtn: function ({ isLoading }) {
     return (
       <div className="FormUser__exit">
-        <button
-          className="FormUser__exit__cancel --formUserButton"
-          onClick={() => setModalOpen(null)}
-        >
-          EXIT
-        </button>
-
         <button
           disabled={isLoading}
           className="FormUser__exit__submit --formUserButton"
@@ -99,6 +108,7 @@ export const FormUser = {
     useEffect(() => {
       emailRef?.current?.focus();
     });
+
     async function handleSubmit(e) {
       e.preventDefault();
       if (!emailRef?.current.value)
@@ -130,6 +140,7 @@ export const FormUser = {
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
           <FormUser.TopBar title="REGISTER" />
+          <FormUser.ExitBtn />
 
           <div className="FormUser__inputs">
             <label className="FormUser__inputs__label">E-mail address:</label>
@@ -153,7 +164,7 @@ export const FormUser = {
           </div>
           <FormUser.Error error={error} />
           <FormUser.GotAccBtn />
-          <FormUser.Exit loading={isLoading} />
+          <FormUser.SubmitBtn loading={isLoading} />
         </Loader>
       </form>
     );
@@ -226,7 +237,7 @@ export const FormUser = {
           </div>
           <FormUser.Error error={error} />
           <FormUser.ForgotPasswordBtn />
-          <FormUser.Exit isLoading={isLoading} />
+          <FormUser.SubmitBtn isLoading={isLoading} />
         </Loader>
       </form>
     );
@@ -317,7 +328,7 @@ export const FormUser = {
                 className="FormUser__inputs__email"
               />
               {error && <FormUser.Error error={error} />}
-              <FormUser.Exit isLoading={isLoading} />
+              <FormUser.SubmitBtn isLoading={isLoading} />
             </div>
           )}
         </Loader>

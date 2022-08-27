@@ -80,6 +80,7 @@
     width: 100%;
     margin-bottom: auto;
     text-align: center;
+    position: relative;
 }
 .FormUser__topbar__title {
     padding: 0.5rem;
@@ -127,8 +128,24 @@
     justify-content: center;
 }
 .FormUser__exit__cancel {
-    
+    position: absolute;
+    right: 0;
+    top: 0.25rem;
+    height: 3.75rem;
+    width: 3.75rem;
 }
+.FormUser__exit__cancel:hover .FormUser__exit__cancel__icon {
+    filter: none;
+    height: 1.75rem;
+    width: 1.75rem;
+
+}
+.FormUser__exit__cancel__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(110deg) brightness(100%) contrast(106%);
+}
+
 .FormUser__exit__submit {
 
 }
