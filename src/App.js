@@ -45,10 +45,11 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* <Welcome.Shade /> */}
-        {/* <Welcome.Message /> */}
+        <Welcome.Shade />
         <Header />
         <main className="Main">
+          {/* <Welcome.Message /> */}
+
           {activeDeckId && (
             <div className="Aside">
               <ModalBtns
