@@ -210,16 +210,7 @@ export const FormUser = {
         setError("Server cannot update profile");
       }
     }
-
-    // function fasterPreview(uploader) {
-    //   if (uploader.files && uploader.files[0]) {
-    //     $("#profileImage").attr(
-    //       "src",
-    //       window.URL.createObjectURL(uploader.files[0])
-    //     );
-    //   }
-    // }
-
+    
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>

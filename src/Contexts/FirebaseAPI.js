@@ -1,4 +1,5 @@
-import firebase from "../Firebase";
+import { db } from "../Firebase";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -8,6 +9,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
+import { collection, addDoc } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 
 export default function FirebaseFunctions() {
@@ -24,8 +26,6 @@ export default function FirebaseFunctions() {
 
   function editProfile(displayName, photoURL) {
     const auth = getAuth();
-    // console.log(displayName, photoURL);
-    // console.log(auth.currentUser);
     return updateProfile(auth.currentUser, {
       displayName: displayName,
       photoURL: photoURL,
