@@ -88,6 +88,15 @@
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+.FormUser__subtitle {
+
+}
+.FormUser__subtitle__line {
+
+}
+.FormUser__subtitle__line .--bold {
+    font-weight: bold;
+}
 .FormUser__inputs {
     flex: 1;
     width: 70%;

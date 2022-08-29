@@ -177,17 +177,24 @@ export const FormUser = {
     const [isLoading, setIsLoading] = useState(false);
     const displayNameRef = useRef("");
 
-    const { editProfile } = useGlobal();
+    const { editProfile, getCurrentUser, setModalOpen } = useGlobal();
+
+    const currentUser = getCurrentUser();
 
     async function handleSubmit(e) {
       e.preventDefault();
+      setError("");
 
       if (displayNameRef.current?.length > 21)
         return setError("Username cannot be longer than 21 characters");
-        
+
       try {
+        setIsLoading(true);
         await editProfile(displayNameRef.current.value);
+        setIsLoading(false);
+        setModalOpen(null);
       } catch {
+        setIsLoading(false);
         setError("Server cannot update profile");
       }
     }
@@ -204,10 +211,19 @@ export const FormUser = {
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
-          <FormUser.TopBar title="YOUR PROFILE" />
+          <FormUser.TopBar title="WELCOME!" />
           <FormUser.ExitBtn />
 
           <div className="FormUser__inputs">
+            <h2 className="FormUser__subtitle">
+              <span className="FormUser__subtitle__line">
+                You are now registered with e-mail address:
+              </span>
+              <span className="FormUser__subtitle__line --bold">
+                {currentUser?.email}
+              </span>
+              .
+            </h2>
             <label className="FormUser__inputs__label">Username:</label>
             <input
               placeholder="type..."
