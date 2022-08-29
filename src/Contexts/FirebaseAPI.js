@@ -2,7 +2,7 @@ import firebase from "../Firebase";
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  updateProfile,
+  SetProfile,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   onAuthStateChanged,
@@ -24,8 +24,9 @@ export default function FirebaseFunctions() {
 
   function updateProfile(displayName, photoURL) {
     const auth = getAuth();
-    console.log(displayName, photoURL);
-    // return updateProfile(auth.currentUser, {
+    // console.log(displayName, photoURL);
+    console.log(auth.currentUser);
+    // return SetProfile(auth.currentUser, {
     //   displayName: displayName,
     //   photoURL: photoURL,
     // });

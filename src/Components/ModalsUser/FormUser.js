@@ -125,7 +125,7 @@ export const FormUser = {
         await register(emailRef?.current?.value, passwordRef?.current?.value);
         setTimeout(() => {
           setIsLoading(false);
-          setModalOpen("UpdateProfile");
+          setModalOpen("SetProfile");
         }, 1000);
         // setModalOpen("ThanksForJoining");
       } catch {
@@ -172,7 +172,7 @@ export const FormUser = {
       </form>
     );
   },
-  UpdateProfile: function () {
+  SetProfile: function () {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const displayNameRef = useRef("");
@@ -247,7 +247,7 @@ export const FormUser = {
     return (
       <button
         className="LoginRegisterBtn --register"
-        onClick={() => setModalOpen(() => "UpdateProfile")}
+        onClick={() => setModalOpen(() => "SetProfile")}
       >
         Profile
       </button>
