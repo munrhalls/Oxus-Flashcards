@@ -195,9 +195,10 @@ export const FormUser = {
     async function handleSubmit(e) {
       e.preventDefault();
       setError("");
-
+      if (displayName.length < 3)
+        return setError("Username cannot be shorter than 3 characters.");
       if (displayName.length > 21)
-        return setError("Username cannot be longer than 21 characters");
+        return setError("Username cannot be longer than 21 characters.");
 
       try {
         setIsLoading(true);
@@ -222,7 +223,7 @@ export const FormUser = {
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
-          <FormUser.TopBar title="WELCOME!" />
+          <FormUser.TopBar title="SET USERNAME" />
           <FormUser.ExitBtn />
           <FormUser.Subtitle
             line="You are now registered with e-mail address:"
@@ -230,7 +231,7 @@ export const FormUser = {
           />
           <div className="FormUser__inputs">
             <label className="FormUser__inputs__label --larger">
-              Set Username:
+              Choose username:
             </label>
             <input
               placeholder="type..."
