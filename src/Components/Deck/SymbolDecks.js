@@ -28,12 +28,6 @@ export const SymbolDecks = ({ decks, setActiveDeckId }) => {
               Decks repository is empty.
             </h1>
           </div>
-          <button
-            className="SymbolDecks__noDecksMsg__addBtn"
-            onClick={() => setModalOpen("AddDeck")}
-          >
-            ADD NEW DECK
-          </button>
         </div>
       )}
     </div>

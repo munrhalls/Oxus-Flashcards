@@ -22,15 +22,15 @@ export const AddDeckBtn = () => {
         alt="ADD BUTTON IMAGE."
       />
 
-      {Array(6)
+      {Array(1)
         .fill()
         .map((icon, i) => {
           i++;
           return (
             <img
               style={{
-                bottom: `${8 + 1 / i / 1 / i}rem`,
-                left: `${-5 + 2.25 * i}rem`,
+                bottom: `${2.5}rem`,
+                left: `${0.5}rem`,
                 transform: `rotate(${-30 + i * 15}deg)`,
               }}
               key={uuidv4()}
