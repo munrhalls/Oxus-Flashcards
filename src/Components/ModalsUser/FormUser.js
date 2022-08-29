@@ -185,6 +185,7 @@ export const FormUser = {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const displayNameRef = useRef("");
+    const imgRef = useRef("");
 
     const { editProfile, getCurrentUser, setModalOpen } = useGlobal();
 
@@ -236,15 +237,15 @@ export const FormUser = {
               type="text"
               className="FormUser__inputs__instance --larger"
             ></input>
-            {/* <label className="FormUser__inputs__label">
-              Type desired username:
+            <label className="FormUser__inputs__label">
+              (OPTIONAL) Set profile image:
             </label>
             <input
               placeholder="type..."
               ref={imgRef}
-              type="text"
+              type="file"
               className="FormUser__inputs__instance"
-            ></input> */}
+            ></input>
           </div>
           <FormUser.Error error={error} />
           <FormUser.SubmitBtn loading={isLoading} />
