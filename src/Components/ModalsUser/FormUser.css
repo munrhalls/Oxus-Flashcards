@@ -89,12 +89,16 @@
     text-transform: uppercase;
 }
 .FormUser__subtitle {
-
+    font-size: 1.25rem;
+    width: 70%;
+    margin-top: 2rem;
+    margin-bottom: auto;
 }
 .FormUser__subtitle__line {
 
 }
-.FormUser__subtitle__line .--bold {
+.FormUser__subtitle__line.--bold {
+    margin-top: 0.25rem;
     font-weight: bold;
 }
 .FormUser__inputs {

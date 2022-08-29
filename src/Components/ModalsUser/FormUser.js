@@ -213,17 +213,17 @@ export const FormUser = {
         <Loader active={isLoading}>
           <FormUser.TopBar title="WELCOME!" />
           <FormUser.ExitBtn />
-
+          <h2 className="FormUser__subtitle">
+            <span className="FormUser__subtitle__line">
+              You are now registered with e-mail address:
+            </span>
+            <span className="FormUser__subtitle__line --bold">
+              {" "}
+              {currentUser?.email}
+            </span>
+            .
+          </h2>
           <div className="FormUser__inputs">
-            <h2 className="FormUser__subtitle">
-              <span className="FormUser__subtitle__line">
-                You are now registered with e-mail address:
-              </span>
-              <span className="FormUser__subtitle__line --bold">
-                {currentUser?.email}
-              </span>
-              .
-            </h2>
             <label className="FormUser__inputs__label">Username:</label>
             <input
               placeholder="type..."
