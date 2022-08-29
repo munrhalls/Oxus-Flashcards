@@ -28,9 +28,9 @@ export const AddDeckBtn = () => {
           return (
             <img
               style={{
-                bottom: `${(2 * i) / 2}rem`,
+                bottom: `${8 + (4 * i) / 3}rem`,
                 left: `${2 * i}rem`,
-                transform: `rotate(${-30 + i * 10}deg)`,
+                transform: `rotate(${-30 + i * 18}deg)`,
               }}
               key={uuidv4()}
               className="AddDeckBtn__imgCards"
