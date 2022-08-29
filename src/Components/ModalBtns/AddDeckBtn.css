@@ -7,9 +7,10 @@
     margin-right: 4rem;
 
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    border: 6px solid #000;
+    border-right: 6px solid #000;
+    border-bottom: 6px solid #000;
     border-radius: 5px;
 
 }
@@ -55,8 +56,9 @@
 .AddDeckBtn__imgCards {
     cursor: pointer;
     position: absolute;
-    top: -1rem;
-    right: -2.5%;
-    width: 60%;
-    height: 60%;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 5rem;
+    
 }
