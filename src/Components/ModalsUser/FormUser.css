@@ -84,7 +84,7 @@
 .FormUser__topbar__title {
     padding: 0.5rem;
     padding-right: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -98,7 +98,7 @@
 
 }
 .FormUser__subtitle__line.--bold {
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
     font-weight: bold;
 }
 .FormUser__inputs {
