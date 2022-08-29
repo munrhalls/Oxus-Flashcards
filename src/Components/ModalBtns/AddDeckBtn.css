@@ -5,12 +5,14 @@
     width: 14rem;
     height: 16rem;
     margin-right: 4rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
 
     display: flex;
     justify-content: right;
     align-items: center;
-    border-right: 6px solid #000;
-    border-bottom: 6px solid #000;
+    border-right: 24px solid #000;
+    border-bottom: 18px solid #000;
     border-radius: 5px;
 
 }
