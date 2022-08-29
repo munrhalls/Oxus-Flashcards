@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Welcome.Shade />
+        {/* <Welcome.Shade /> */}
         <Header />
         <main className="Main">
           {/* <Welcome.Message /> */}
