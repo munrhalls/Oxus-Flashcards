@@ -27,7 +27,7 @@ export function Header() {
           {currentUser?.email ? (
             <>
               <h1 className="Header__account__welcomeMsg">
-                Welcome {currentUser?.email} !
+                Welcome {currentUser?.displayName} !
               </h1>
               <div className="Header__account__btnsContainer">
                 <FormUser.EditProfileBtn />

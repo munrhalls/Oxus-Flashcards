@@ -2,7 +2,7 @@ import firebase from "../Firebase";
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  SetProfile,
+  updateProfile,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   onAuthStateChanged,
@@ -22,14 +22,14 @@ export default function FirebaseFunctions() {
     return createUserWithEmailAndPassword(auth, email, password);
   }
 
-  function updateProfile(displayName, photoURL) {
+  function editProfile(displayName, photoURL) {
     const auth = getAuth();
     // console.log(displayName, photoURL);
-    console.log(auth.currentUser);
-    // return SetProfile(auth.currentUser, {
-    //   displayName: displayName,
-    //   photoURL: photoURL,
-    // });
+    // console.log(auth.currentUser);
+    return updateProfile(auth.currentUser, {
+      displayName: displayName,
+      photoURL: photoURL,
+    });
   }
 
   function login(email, password) {
@@ -57,7 +57,7 @@ export default function FirebaseFunctions() {
   const value = {
     getCurrentUser,
     register,
-    updateProfile,
+    editProfile,
     login,
     logout,
     resetPassword,

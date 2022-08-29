@@ -177,16 +177,16 @@ export const FormUser = {
     const [isLoading, setIsLoading] = useState(false);
     const displayNameRef = useRef("");
 
-    const { updateProfile } = useGlobal();
+    const { editProfile } = useGlobal();
 
     async function handleSubmit(e) {
       e.preventDefault();
 
       if (displayNameRef.current?.length > 21)
         return setError("Username cannot be longer than 21 characters");
-
+        
       try {
-        await updateProfile(displayNameRef.current.value);
+        await editProfile(displayNameRef.current.value);
       } catch {
         setError("Server cannot update profile");
       }
