@@ -27,7 +27,11 @@ export const AddDeckBtn = () => {
         .map((icon, i) => {
           return (
             <img
-              style={{ left: `${2 * i}rem`, transform: `rotate(-30deg)` }}
+              style={{
+                bottom: `${(2 * i) / 2}rem`,
+                left: `${2 * i}rem`,
+                transform: `rotate(${-30 + i * 10}deg)`,
+              }}
               key={uuidv4()}
               className="AddDeckBtn__imgCards"
               src={IMG__CARDS}
