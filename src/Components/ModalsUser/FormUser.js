@@ -182,25 +182,26 @@ export const FormUser = {
     );
   },
   SetProfile: function () {
+    const [displayName, setDisplayName] = useState();
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const displayNameRef = useRef("");
-    const imgRef = useRef("");
-
     const { editProfile, getCurrentUser, setModalOpen } = useGlobal();
-
     const currentUser = getCurrentUser();
+
+    useEffect(() => {
+      setDisplayName(() => currentUser.displayName);
+    }, []);
 
     async function handleSubmit(e) {
       e.preventDefault();
       setError("");
 
-      if (displayNameRef.current?.length > 21)
+      if (displayName.length > 21)
         return setError("Username cannot be longer than 21 characters");
 
       try {
         setIsLoading(true);
-        await editProfile(displayNameRef.current.value);
+        await editProfile(displayName);
         setIsLoading(false);
         setModalOpen(null);
       } catch {
@@ -233,18 +234,10 @@ export const FormUser = {
             </label>
             <input
               placeholder="type..."
-              ref={displayNameRef}
+              onChange={(e) => setDisplayName(() => e.target.value)}
+              value={displayName}
               type="text"
               className="FormUser__inputs__instance --larger"
-            ></input>
-            <label className="FormUser__inputs__label">
-              (OPTIONAL) Set profile image:
-            </label>
-            <input
-              placeholder="type..."
-              ref={imgRef}
-              type="file"
-              className="FormUser__inputs__instance"
             ></input>
           </div>
           <FormUser.Error error={error} />
