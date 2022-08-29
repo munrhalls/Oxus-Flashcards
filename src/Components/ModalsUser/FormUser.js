@@ -15,7 +15,8 @@ export const FormUser = {
     return (
       <h2 className="FormUser__subtitle">
         <span className="FormUser__subtitle__line">{line}</span>
-        <span className="FormUser__subtitle__line --bold">{boldedLine}</span>.
+        <span className="FormUser__subtitle__line --bold">{` ${boldedLine}`}</span>
+        .
       </h2>
     );
   },
@@ -226,12 +227,14 @@ export const FormUser = {
             boldedLine={currentUser?.email}
           />
           <div className="FormUser__inputs">
-            <label className="FormUser__inputs__label">Username:</label>
+            <label className="FormUser__inputs__label --larger">
+              Set Username:
+            </label>
             <input
               placeholder="type..."
               ref={displayNameRef}
               type="text"
-              className="FormUser__inputs__instance"
+              className="FormUser__inputs__instance --larger"
             ></input>
             {/* <label className="FormUser__inputs__label">
               Type desired username:
