@@ -15,3 +15,8 @@
     border-color: 2px solid #aaa;
     background-color: #000;
 }
+
+.DeleteDeck .Form__topBar__line__title {
+    color:rgb(120, 0, 0);
+}
+
