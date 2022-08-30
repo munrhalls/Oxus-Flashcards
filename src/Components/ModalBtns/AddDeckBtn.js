@@ -5,7 +5,7 @@ import { useGlobal } from "../../Contexts/GlobalProvider";
 import { uuidv4 } from "@firebase/util";
 
 export const AddDeckBtn = () => {
-  const { setModalOpen } = useGlobal();
+  const { setModalOpen, doc, setDoc } = useGlobal();
 
   return (
     <div onClick={() => setModalOpen("AddDeck")} className="AddDeckBtn">
