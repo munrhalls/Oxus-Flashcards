@@ -20,7 +20,6 @@ export const DeleteDeck = (props) => {
       })
     );
   }
-  console.log(modalOpen);
   return (
     <div>
       <div className="DeleteDeck">

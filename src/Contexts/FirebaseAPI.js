@@ -50,17 +50,18 @@ export default function FirebaseFunctions() {
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
+      setCurrentUser(() => user);
     });
   }, []);
 
   const value = {
+    currentUser,
     getCurrentUser,
     register,
     editProfile,
     login,
     logout,
-    resetPassword,
+    resetPassword,  
 
     collection,
     addDoc,

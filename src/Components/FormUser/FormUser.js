@@ -21,18 +21,18 @@ export const FormUser = {
     );
   },
   Error: function ({ error }) {
-    console.log(error);
     return (
       <div className="FormUser__ErrorContainer">
         <h3 className="FormUser__ErrorContainer__msg">{error}</h3>
       </div>
     );
   },
-  ExitBtn: function () {
+  ExitBtn: function ({ disabled }) {
     const { setModalOpen } = useGlobal();
 
     return (
       <button
+        disabled={disabled || null}
         className="FormUser__exit__cancel --formUserButton"
         onClick={() => setModalOpen(null)}
       >
@@ -112,12 +112,13 @@ export const FormUser = {
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const { register, setModalOpen, collection, addDoc } = useGlobal();
-      
+    const { register, currentUser, setModalOpen, collection, addDoc } =
+      useGlobal();
+
     useEffect(() => {
       emailRef?.current?.focus();
     });
-
+    function handleNewUserDatabaseEntry(user) {}
     async function handleSubmit(e) {
       e.preventDefault();
       if (!emailRef?.current.value)
@@ -126,17 +127,21 @@ export const FormUser = {
         return setError("Password needs at least 6 characters.");
       if (passwordRef?.current?.value !== passwordConfirmRef?.current?.value)
         return setError("Passwords do not match.");
-      
+
       setIsLoading(true);
 
       try {
         setError("");
-        await register(emailRef?.current?.value, passwordRef?.current?.value);
+        const user = await register(
+          emailRef?.current?.value,
+          passwordRef?.current?.value
+        );
+        handleNewUserDatabaseEntry(user);
+
         setTimeout(() => {
           setIsLoading(false);
           setModalOpen("SetProfile");
         }, 1000);
-        // setModalOpen("ThanksForJoining");
       } catch {
         setTimeout(() => {
           setIsLoading(false);
@@ -195,6 +200,7 @@ export const FormUser = {
     async function handleSubmit(e) {
       e.preventDefault();
       setError("");
+
       if (displayName.length < 3)
         return setError("Username cannot be shorter than 3 characters.");
       if (displayName.length > 21)
@@ -210,12 +216,12 @@ export const FormUser = {
         setError("Server cannot update profile");
       }
     }
-    
+
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
           <FormUser.TopBar title="SET USERNAME" />
-          <FormUser.ExitBtn />
+          <FormUser.ExitBtn disabled={error} />
           <FormUser.Subtitle
             line="You are now registered with e-mail address:"
             boldedLine={currentUser?.email}
@@ -373,7 +379,7 @@ export const FormUser = {
         }, 500);
       }
     }
-    
+
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>
