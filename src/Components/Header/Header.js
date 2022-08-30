@@ -1,6 +1,6 @@
 import { useGlobal } from "../../Contexts/GlobalProvider";
 import React, { useState, useEffect } from "react";
-import { FormUser } from "./../ModalsUser/FormUser";
+import { FormUser } from "../FormUser/FormUser";
 import Loader from "../Loader/Loader";
 
 export function Header() {

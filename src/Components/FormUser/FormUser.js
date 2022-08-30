@@ -112,8 +112,8 @@ export const FormUser = {
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const { register, setModalOpen } = useGlobal();
-
+    const { register, setModalOpen, collection, addDoc } = useGlobal();
+      
     useEffect(() => {
       emailRef?.current?.focus();
     });
@@ -126,7 +126,7 @@ export const FormUser = {
         return setError("Password needs at least 6 characters.");
       if (passwordRef?.current?.value !== passwordConfirmRef?.current?.value)
         return setError("Passwords do not match.");
-
+      
       setIsLoading(true);
 
       try {
@@ -373,7 +373,7 @@ export const FormUser = {
         }, 500);
       }
     }
-
+    
     return (
       <form className="FormUser" onSubmit={(e) => handleSubmit(e)}>
         <Loader active={isLoading}>

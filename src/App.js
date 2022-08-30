@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { Welcome } from "./Components/Welcome/Welcome";
 import { Header } from "./Components/Header/Header";
 // cluster 1
-import { FormUser } from "./Components/ModalsUser/FormUser";
+import { FormUser } from "./Components/FormUser/FormUser";
 // cluster 2
 import { Modals } from "./Components/Modals/Modals";
 import { ModalBtns } from "./Components/ModalBtns/ModalBtns";

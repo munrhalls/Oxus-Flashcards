@@ -17,8 +17,8 @@
 @import './Components/Modals/FormTopbar.css';
 @import './Components/Loader/Loader.css';
 /* functional clusters, user account windows */
-@import './Components/ModalsUser/FormUser.css';
-@import './Components/ModalsUser/ResetPassword.css';
+@import './Components/FormUser/FormUser.css';
+@import './Components/FormUser/ResetPassword.css';
 /* functional clusters, managing decks */
 @import './Components/Modals/AddDeck/AddDeck.css';
 @import './Components/Modals//EditDeck/EditDeck.css';

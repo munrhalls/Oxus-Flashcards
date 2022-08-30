@@ -6,10 +6,11 @@ import { useGlobal } from "../../../Contexts/GlobalProvider";
 export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
   const { setActiveDeckId, decks, setDecks } = props;
-  const { setModalOpen } = useGlobal();
+  const { setModalOpen, collection, addDoc } = useGlobal();
 
   function handleSubmit(e) {
     e.preventDefault();
+
     let deck = {
       id: uuidv4(),
       name: deckName,
