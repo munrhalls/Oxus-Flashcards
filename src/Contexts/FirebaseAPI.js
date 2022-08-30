@@ -9,7 +9,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 
 export default function FirebaseFunctions() {
@@ -61,10 +61,13 @@ export default function FirebaseFunctions() {
     editProfile,
     login,
     logout,
-    resetPassword,  
+    resetPassword,
 
+    firestore,
     collection,
     addDoc,
+    setDoc,
+    doc,
   };
   return value;
 }

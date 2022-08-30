@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useGlobal } from "../../Contexts/GlobalProvider";
 import Loader from "../Loader/Loader";
 import IMG__CLOSE from "./../../Assets/close.png";
+import { introExampleDeck } from "../../introExampleDeck";
 
 export const FormUser = {
   TopBar: function ({ title }) {
@@ -112,13 +113,28 @@ export const FormUser = {
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const { register, currentUser, setModalOpen, collection, addDoc } =
-      useGlobal();
+    const {
+      firestore,
+      register,
+      currentUser,
+      setModalOpen,
+      collection,
+      setDoc,
+      doc,
+    } = useGlobal();
 
     useEffect(() => {
       emailRef?.current?.focus();
     });
-    function handleNewUserDatabaseEntry(user) {}
+    function handleNewUserDatabaseEntry(userID) {
+      console.log(userID);
+      console.log(`DecksForUserID_${userID}`);
+      return setDoc(
+        doc(firestore, `DecksForUserID_${userID}`, "IntroExampleDeck"),
+        introExampleDeck
+      );
+    }
+
     async function handleSubmit(e) {
       e.preventDefault();
       if (!emailRef?.current.value)
@@ -132,17 +148,21 @@ export const FormUser = {
 
       try {
         setError("");
-        const user = await register(
+        const authObj = await register(
           emailRef?.current?.value,
           passwordRef?.current?.value
         );
-        handleNewUserDatabaseEntry(user);
+        console.log(authObj);
+        console.log(authObj.user.uid);
+        await handleNewUserDatabaseEntry(authObj.user.uid);
 
         setTimeout(() => {
           setIsLoading(false);
           setModalOpen("SetProfile");
         }, 1000);
-      } catch {
+      } catch (e) {
+        console.error("Error adding document: ", e);
+
         setTimeout(() => {
           setIsLoading(false);
           setError("Server couldn't create an account.");
