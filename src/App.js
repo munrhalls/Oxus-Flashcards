@@ -27,12 +27,40 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
   const { getModalOpen } = useGlobal();
-  const { setModalOpen } = useGlobal();
+  const {
+    setModalOpen,
+    currentUser,
+    firestore,
+    collection,
+    doc,
+    getDocs,
+    query,
+  } = useGlobal();
   let modalOpen = getModalOpen();
 
+  async function getUserDecksFromDB() {
+    try {
+      const querySnapshot = await getDocs(
+        collection(firestore, `DecksForUserID_${currentUser.uid}`)
+      );
+      let decksFromDB = [];
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        decksFromDB.push(doc.data());
+      });
+
+      setDecks(decksFromDB);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   useEffect(() => {
-    setDecks([introExampleDeck]);
-  }, []);
+    if (!currentUser) return setDecks([introExampleDeck]);
+    console.log(currentUser.uid);
+
+    getUserDecksFromDB();
+  }, [currentUser]);
 
   const modalProps = {
     activeDeckId,

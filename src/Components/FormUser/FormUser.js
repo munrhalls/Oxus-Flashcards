@@ -119,6 +119,7 @@ export const FormUser = {
       currentUser,
       setModalOpen,
       collection,
+      addDoc,
       setDoc,
       doc,
     } = useGlobal();
@@ -127,10 +128,9 @@ export const FormUser = {
       emailRef?.current?.focus();
     });
     function handleNewUserDatabaseEntry(userID) {
-      console.log(userID);
       console.log(`DecksForUserID_${userID}`);
-      return setDoc(
-        doc(firestore, `DecksForUserID_${userID}`, "IntroExampleDeck"),
+      return addDoc(
+        collection(firestore, `DecksForUserID_${userID}`),
         introExampleDeck
       );
     }
