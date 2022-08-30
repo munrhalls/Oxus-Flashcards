@@ -1,4 +1,4 @@
-import { db } from "../Firebase";
+import { firestore } from "../Firebase";
 
 import {
   getAuth,
@@ -61,6 +61,9 @@ export default function FirebaseFunctions() {
     login,
     logout,
     resetPassword,
+
+    collection,
+    addDoc,
   };
   return value;
 }

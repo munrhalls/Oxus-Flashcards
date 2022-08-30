@@ -31,6 +31,9 @@ export const AddDeckBtn = () => {
               style={{
                 bottom: `${0.5 + i * 1.2}rem`,
                 left: `${-6.25 + 0.25 * i * 4.25 + (1 / i) * 5}rem`,
+                boxShadow: `0 0 45px 15px rgb(${255}, ${255}, ${255})`,
+                borderRadius: `50%`,
+                padding: `0.25rem`,
                 transform: `rotateY(${i * 2.5}deg) scale(${1 - i / 12.5})`,
               }}
               key={uuidv4()}
