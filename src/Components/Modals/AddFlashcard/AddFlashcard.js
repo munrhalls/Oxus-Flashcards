@@ -16,7 +16,8 @@ export const AddFlashcard = (props) => {
   const [side, setSide] = useState(false);
   const { activeDeckId, decks, setDecks } = props;
   const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
-  const { setModalOpen } = useGlobal();
+  const { setModalOpen, getDecksFromDBAndUpdateUI, DB__setDeck, currentUser } =
+    useGlobal();
 
   function makeNewFlashcard() {
     let newFlashcard = {
@@ -35,16 +36,27 @@ export const AddFlashcard = (props) => {
     };
     return newFlashcard;
   }
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     let newFlashcard = makeNewFlashcard();
-    setDecks((decks) =>
-      decks.map((deck) => {
-        return deck.id === activeDeckId
-          ? { ...deck, flashcards: [...deck.flashcards, newFlashcard] }
-          : { ...deck };
-      })
-    );
+
+    try {
+      await DB__setDeck(currentUser.uid, {
+        ...deck,
+        flashcards: [...deck.flashcards, newFlashcard],
+      });
+      await getDecksFromDBAndUpdateUI(currentUser);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // setDecks((decks) =>
+    //   decks.map((deck) => {
+    //     return deck.id === activeDeckId
+    //       ? { ...deck, flashcards: [...deck.flashcards, newFlashcard] }
+    //       : { ...deck };
+    //   })
+    // );
     resetForm();
     setModalOpen("EditDeck");
   }

@@ -113,23 +113,11 @@ export const FormUser = {
     const passwordConfirmRef = useRef("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const {
-      firestore,
-      register,
-      currentUser,
-      setModalOpen,
-      collection,
-      addDoc,
-      setDoc,
-      doc,
-      DB__addDeck,
-    } = useGlobal();
+    const { register, setModalOpen, DB__setDeck } = useGlobal();
 
     useEffect(() => {
       emailRef?.current?.focus();
     });
-
-    // introExampleDeck as arg
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -141,24 +129,20 @@ export const FormUser = {
         return setError("Passwords do not match.");
 
       setIsLoading(true);
-
       try {
         setError("");
+
         const authObj = await register(
           emailRef?.current?.value,
           passwordRef?.current?.value
         );
-        console.log(authObj);
-        console.log(authObj.user.uid);
-        await DB__addDeck(authObj.user.uid, introExampleDeck);
-
+        await DB__setDeck(authObj.user.uid, introExampleDeck);
         setTimeout(() => {
           setIsLoading(false);
           setModalOpen("SetProfile");
         }, 1000);
       } catch (e) {
         console.error("Error adding document: ", e);
-
         setTimeout(() => {
           setIsLoading(false);
           setError("Server couldn't create an account.");

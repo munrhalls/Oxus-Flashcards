@@ -7,7 +7,8 @@ export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
   const [error, setError] = useState("");
   const { setActiveDeckId, decks, setDecks } = props;
-  const { setModalOpen, DB__addDeck, DB__getDecks, currentUser } = useGlobal();
+  const { setModalOpen, DB__setDeck, getDecksFromDBAndUpdateUI, currentUser } =
+    useGlobal();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,15 +22,14 @@ export const AddDeck = (props) => {
     };
 
     try {
-      await DB__addDeck(currentUser.uid, newDeck);
-      // await DB__getDecks
+      await DB__setDeck(currentUser.uid, newDeck);
+      await getDecksFromDBAndUpdateUI(currentUser);
     } catch (e) {
       console.error(e);
       return setError("Server could not add the deck at this time.");
     }
 
-    // setDecks([...decks, deck]);
-    // setActiveDeckId(deck.id);
+    setActiveDeckId(newDeck.id);
     setModalOpen("EditDeck");
   }
 
@@ -57,6 +57,9 @@ export const AddDeck = (props) => {
             onChange={(e) => setDeckName(e.target.value)}
           />
         </div>
+
+        {error && <h1>{error}</h1>}
+        {/* refactor ^ */}
         <Form.ExitBtns />
       </form>
     </div>
