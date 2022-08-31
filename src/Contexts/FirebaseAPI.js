@@ -8,19 +8,10 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-// cluster 2 - firebase actual database, called firestore
-import { firestore } from "../Firebase";
-import {
-  collection,
-  addDoc,
-  setDoc,
-  doc,
-  getDocs,
-  query,
-} from "firebase/firestore";
+
 // cluster 3, exporting firebaseAPI contents globally to app
 import React, { useContext, useEffect, useState } from "react";
-export default function FirebaseFunctions() {
+export default function FirebaseAPI() {
   const [currentUser, setCurrentUser] = useState();
 
   function getCurrentUser() {
@@ -70,14 +61,6 @@ export default function FirebaseFunctions() {
     login,
     logout,
     resetPassword,
-
-    firestore,
-    collection,
-    addDoc,
-    setDoc,
-    doc,
-    getDocs,
-    query,
   };
   return value;
 }
