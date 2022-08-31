@@ -5,6 +5,7 @@ export default function ModalsAPI() {
   function getModalOpen() {
     return modalOpen;
   }
-  const value = { getModalOpen, setModalOpen };
+  // to refactor, getmodal open
+  const value = { modalOpen, getModalOpen, setModalOpen };
   return value;
 }

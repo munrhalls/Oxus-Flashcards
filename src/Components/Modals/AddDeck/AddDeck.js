@@ -5,28 +5,31 @@ import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
+  const [error, setError] = useState("");
   const { setActiveDeckId, decks, setDecks } = props;
-  const { setModalOpen, collection, addDoc } = useGlobal();
+  const { setModalOpen, DB__addDeck, DB__getDecks, currentUser } = useGlobal();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    
-    let deck = {
+    setError("");
+
+    let newDeck = {
       id: uuidv4(),
       name: deckName,
       flashcards: [],
       completedFlashcards: [],
     };
-    
-    // add deck method from firestore api
-    // pass deck
-    // get updated decks from database
-    // set decks
 
-    // likewise everywhere else
+    try {
+      await DB__addDeck(currentUser.uid, newDeck);
+      // await DB__getDecks
+    } catch (e) {
+      console.error(e);
+      return setError("Server could not add the deck at this time.");
+    }
 
-    setDecks([...decks, deck]);
-    setActiveDeckId(deck.id);
+    // setDecks([...decks, deck]);
+    // setActiveDeckId(deck.id);
     setModalOpen("EditDeck");
   }
 
@@ -54,7 +57,6 @@ export const AddDeck = (props) => {
             onChange={(e) => setDeckName(e.target.value)}
           />
         </div>
-
         <Form.ExitBtns />
       </form>
     </div>

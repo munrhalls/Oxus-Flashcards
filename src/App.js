@@ -24,30 +24,21 @@ import { Footer } from "./Components/Footer/Footer";
 import { useGlobal } from "./Contexts/GlobalProvider";
 
 function App() {
-  const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
-  const { getModalOpen } = useGlobal();
-  const { currentUser, DB__getDecks } = useGlobal();
-  let modalOpen = getModalOpen();
+  const {
+    currentUser,
+    DB__getDecks,
+    modalOpen,
+    getDatabaseDecks,
+    decks,
+    setDecks,
+  } = useGlobal();
 
   useEffect(() => {
     if (!currentUser) return setDecks([introExampleDeck]);
 
-    getDatabaseDecks();
+    getDatabaseDecks(currentUser);
   }, [currentUser]);
-
-  async function getDatabaseDecks() {
-    try {
-      const docs = await DB__getDecks(currentUser);
-      let decks = [];
-      docs.forEach((doc) => {
-        decks.push(doc.data());
-      });
-      setDecks(decks);
-    } catch (e) {
-      console.error(e);
-    }
-  }
 
   const modalProps = {
     activeDeckId,
