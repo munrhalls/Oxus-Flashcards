@@ -30,6 +30,13 @@ function App() {
   const { currentUser, firestore, collection, getDocs } = useGlobal();
   let modalOpen = getModalOpen();
 
+  useEffect(() => {
+    if (!currentUser) return setDecks([introExampleDeck]);
+    console.log(currentUser.uid);
+
+    getUserDecksFromDB();
+  }, [currentUser]);
+
   async function getUserDecksFromDB() {
     try {
       const decksQuery = await getDocs(
@@ -45,13 +52,6 @@ function App() {
       console.error(e);
     }
   }
-
-  useEffect(() => {
-    if (!currentUser) return setDecks([introExampleDeck]);
-    console.log(currentUser.uid);
-
-    getUserDecksFromDB();
-  }, [currentUser]);
 
   const modalProps = {
     activeDeckId,
@@ -71,7 +71,6 @@ function App() {
           {activeDeckId && (
             <div className="Aside">
               <ModalBtns
-                modalOpen={modalOpen}
                 setActiveDeckId={(activeDeckId) =>
                   setActiveDeckId(activeDeckId)
                 }
