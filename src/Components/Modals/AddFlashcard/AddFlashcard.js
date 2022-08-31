@@ -50,13 +50,6 @@ export const AddFlashcard = (props) => {
       console.error(e);
     }
 
-    // setDecks((decks) =>
-    //   decks.map((deck) => {
-    //     return deck.id === activeDeckId
-    //       ? { ...deck, flashcards: [...deck.flashcards, newFlashcard] }
-    //       : { ...deck };
-    //   })
-    // );
     resetForm();
     setModalOpen("EditDeck");
   }
