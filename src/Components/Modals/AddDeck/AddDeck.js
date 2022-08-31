@@ -10,14 +10,14 @@ export const AddDeck = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    
     let deck = {
       id: uuidv4(),
       name: deckName,
       flashcards: [],
       completedFlashcards: [],
     };
-
+    
     setDecks([...decks, deck]);
     setActiveDeckId(deck.id);
     setModalOpen("EditDeck");

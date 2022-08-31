@@ -9,9 +9,9 @@ import {
   signOut,
 } from "firebase/auth";
 
-// cluster 3, exporting firebaseAPI contents globally to app
+// cluster 3, exporting firebaseAuthAPI contents globally to app
 import React, { useContext, useEffect, useState } from "react";
-export default function FirebaseAPI() {
+export default function FirebaseAuthAPI() {
   const [currentUser, setCurrentUser] = useState();
 
   function getCurrentUser() {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import FirebaseAPI from "./FirebaseAPI";
+import FirebaseAuthAPI from "./FirebaseAuthAPI";
 import ModalsAPI from "./ModalsAPI";
 import Loader from "../Components/Loader/Loader";
 import FirestoreAPI from "./FirestoreAPI";
@@ -11,7 +11,7 @@ export function useGlobal() {
 export function GlobalProvider({ children }) {
   return (
     <Global.Provider
-      value={{ ...FirebaseAPI(), ...FirestoreAPI(), ...ModalsAPI() }}
+      value={{ ...FirebaseAuthAPI(), ...FirestoreAPI(), ...ModalsAPI() }}
     >
       {children}
     </Global.Provider>

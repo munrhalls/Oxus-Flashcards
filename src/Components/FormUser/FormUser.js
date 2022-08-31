@@ -122,18 +122,14 @@ export const FormUser = {
       addDoc,
       setDoc,
       doc,
+      handleNewUserDatabaseEntry,
     } = useGlobal();
 
     useEffect(() => {
       emailRef?.current?.focus();
     });
-    function handleNewUserDatabaseEntry(userID) {
-      console.log(`DecksForUserID_${userID}`);
-      return addDoc(
-        collection(firestore, `DecksForUserID_${userID}`),
-        introExampleDeck
-      );
-    }
+
+    // introExampleDeck as arg
 
     async function handleSubmit(e) {
       e.preventDefault();
@@ -154,7 +150,7 @@ export const FormUser = {
         );
         console.log(authObj);
         console.log(authObj.user.uid);
-        await handleNewUserDatabaseEntry(authObj.user.uid);
+        await handleNewUserDatabaseEntry(authObj.user.uid, introExampleDeck);
 
         setTimeout(() => {
           setIsLoading(false);
