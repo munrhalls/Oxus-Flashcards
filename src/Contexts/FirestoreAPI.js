@@ -5,21 +5,30 @@ import { useState } from "react";
 
 export default function FirestoreAPI() {
   const [decks, setDecks] = useState([]);
+  const [DB_CRUD_ERR, setDB_CRUD_ERR] = useState("");
 
   function DB__getDecks(currentUser) {
     return getDocs(collection(firestore, `DecksForUserID_${currentUser.uid}`));
   }
 
-  async function getDatabaseDecks(currentUser) {
+  function parseDBDecksDocs(docs) {
+    let parsedDBDecksDocs = [];
+    docs.forEach((doc) => {
+      parsedDBDecksDocs.push(doc.data());
+    });
+
+    return parsedDBDecksDocs;
+  }
+
+  async function getDecksFromDBAndUpdateUI(currentUser) {
+    setDB_CRUD_ERR("");
     try {
       const docs = await DB__getDecks(currentUser);
-      let decks = [];
-      docs.forEach((doc) => {
-        decks.push(doc.data());
-      });
-      return decks;
+      const parsedDBDecksDocs = parseDBDecksDocs(docs);
+      setDecks(parsedDBDecksDocs);
     } catch (e) {
       console.error(e);
+      setDB_CRUD_ERR(e);
     }
   }
 
@@ -31,7 +40,7 @@ export default function FirestoreAPI() {
     decks,
     setDecks,
     DB__getDecks,
-    getDatabaseDecks,
+    getDecksFromDBAndUpdateUI,
     DB__addDeck,
     firestore,
     collection,

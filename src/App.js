@@ -25,19 +25,13 @@ import { useGlobal } from "./Contexts/GlobalProvider";
 
 function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
-  const {
-    currentUser,
-    DB__getDecks,
-    modalOpen,
-    getDatabaseDecks,
-    decks,
-    setDecks,
-  } = useGlobal();
-
+  const { currentUser, modalOpen, getDecksFromDBAndUpdateUI, decks, setDecks } =
+    useGlobal();
+  console.log(decks);
   useEffect(() => {
     if (!currentUser) return setDecks([introExampleDeck]);
 
-    getDatabaseDecks(currentUser);
+    getDecksFromDBAndUpdateUI(currentUser);
   }, [currentUser]);
 
   const modalProps = {
