@@ -3,20 +3,19 @@ import { firestore } from "../Firebase";
 import { collection, addDoc, setDoc, doc, getDocs } from "firebase/firestore";
 
 export default function FirestoreAPI() {
-  function getUserDecksFromDatabase(currentUser) {
+  function DB__getDecks(currentUser) {
     return getDocs(collection(firestore, `DecksForUserID_${currentUser.uid}`));
   }
 
-  function handleNewUserDatabaseEntry(userID, newDeck) {
+  function DB__addDeck(userID, newDeck) {
     return addDoc(collection(firestore, `DecksForUserID_${userID}`), newDeck);
   }
-  
-  const value = {
-    getUserDecksFromDatabase,
 
+  const value = {
+    DB__getDecks,
+    DB__getDecks,
+    DB__addDeck,
     firestore,
-    getUserDecksFromDatabase,
-    handleNewUserDatabaseEntry,
     collection,
     addDoc,
     setDoc,

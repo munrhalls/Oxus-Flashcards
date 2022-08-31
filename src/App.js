@@ -27,7 +27,7 @@ function App() {
   const [decks, setDecks] = useState([]);
   const [activeDeckId, setActiveDeckId] = useState(null);
   const { getModalOpen } = useGlobal();
-  const { currentUser, getUserDecksFromDatabase } = useGlobal();
+  const { currentUser, DB__getDecks } = useGlobal();
   let modalOpen = getModalOpen();
 
   useEffect(() => {
@@ -38,7 +38,7 @@ function App() {
 
   async function getDatabaseDecks() {
     try {
-      const docs = await getUserDecksFromDatabase(currentUser);
+      const docs = await DB__getDecks(currentUser);
       let decks = [];
       docs.forEach((doc) => {
         decks.push(doc.data());

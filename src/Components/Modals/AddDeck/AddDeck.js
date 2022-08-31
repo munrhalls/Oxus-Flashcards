@@ -18,6 +18,13 @@ export const AddDeck = (props) => {
       completedFlashcards: [],
     };
     
+    // add deck method from firestore api
+    // pass deck
+    // get updated decks from database
+    // set decks
+
+    // likewise everywhere else
+
     setDecks([...decks, deck]);
     setActiveDeckId(deck.id);
     setModalOpen("EditDeck");

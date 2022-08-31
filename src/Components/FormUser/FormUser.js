@@ -122,7 +122,7 @@ export const FormUser = {
       addDoc,
       setDoc,
       doc,
-      handleNewUserDatabaseEntry,
+      DB__addDeck,
     } = useGlobal();
 
     useEffect(() => {
@@ -150,7 +150,7 @@ export const FormUser = {
         );
         console.log(authObj);
         console.log(authObj.user.uid);
-        await handleNewUserDatabaseEntry(authObj.user.uid, introExampleDeck);
+        await DB__addDeck(authObj.user.uid, introExampleDeck);
 
         setTimeout(() => {
           setIsLoading(false);
