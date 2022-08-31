@@ -45,7 +45,9 @@ function App() {
     <>
       <div className="App">
         {/* <Welcome.Shade /> */}
-        <Header />
+        <Header
+          setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
+        />
         <main className="Main">
           {/* <Welcome.Message /> */}
 

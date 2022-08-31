@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FormUser } from "../FormUser/FormUser";
 import Loader from "../Loader/Loader";
 
-export function Header() {
+export function Header({ setActiveDeckId }) {
   const { getCurrentUser } = useGlobal();
   const [isLoading, setIsLoading] = useState(false);
   const currentUser = getCurrentUser();
@@ -31,7 +31,7 @@ export function Header() {
               </h1>
               <div className="Header__account__btnsContainer">
                 <FormUser.EditProfileBtn />
-                <FormUser.LogOutBtn />
+                <FormUser.LogOutBtn setActiveDeckId={setActiveDeckId} />
               </div>
             </>
           ) : (

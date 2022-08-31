@@ -340,11 +340,17 @@ export const FormUser = {
       </button>
     );
   },
-  LogOutBtn: function () {
+  LogOutBtn: function ({ setActiveDeckId }) {
     const { logout } = useGlobal();
 
     return (
-      <button className="LoginRegisterBtn --login" onClick={() => logout()}>
+      <button
+        className="LoginRegisterBtn --login"
+        onClick={() => {
+          setActiveDeckId(() => null);
+          logout();
+        }}
+      >
         Log out
       </button>
     );
