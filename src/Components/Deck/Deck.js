@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ShufflableFlashcard } from "../Flashcards/ShufflableFlashcard";
-import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
+import { ShufflableFlashcard } from "../ShufflableFlashcard/ShufflableFlashcard";
+import { CompletedFlashcards } from "../ShufflableFlashcard/CompletedFlashcards";
 import IMG__CARDS from "./../../Assets/cards.png";
 
 export const Deck = ({ activeDeckId, setDecks, decks }) => {
