@@ -33,7 +33,7 @@ export const AddDeck = (props) => {
         setDecks([...decks, newDeck]);
         setModalOpen("EditDeck");
       })();
-    console.log("after iife");
+      
     try {
       await DB__setDeck(currentUser.uid, newDeck);
       await getDecksFromDBAndUpdateUI(currentUser);

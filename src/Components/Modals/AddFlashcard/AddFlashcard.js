@@ -23,7 +23,7 @@ export const AddFlashcard = (props) => {
     decks,
     setDecks,
   } = useGlobal();
-  const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
+  let deck = decks.filter((deck) => activeDeckId === deck.id)[0];
 
   function makeNewFlashcard() {
     let newFlashcard = {
@@ -44,12 +44,21 @@ export const AddFlashcard = (props) => {
   }
   async function handleSubmit(e) {
     e.preventDefault();
-    let newFlashcard = makeNewFlashcard();
+
+    if (!currentUser)
+      return (function () {
+        decks[decks.indexOf(deck)] = {
+          ...deck,
+          flashcards: [...deck.flashcards, makeNewFlashcard()],
+        };
+        setDecks(() => [...decks]);
+        setModalOpen("EditDeck");
+      })();
 
     try {
       await DB__setDeck(currentUser.uid, {
         ...deck,
-        flashcards: [...deck.flashcards, newFlashcard],
+        flashcards: [...deck.flashcards, makeNewFlashcard()],
       });
       await getDecksFromDBAndUpdateUI(currentUser);
     } catch (e) {

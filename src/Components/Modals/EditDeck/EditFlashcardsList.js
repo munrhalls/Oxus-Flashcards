@@ -3,10 +3,11 @@ import { DeleteFlashcard } from "./DeleteFlashcard";
 import EditFlashcard from "./EditFlashcard";
 import { uuidv4 } from "@firebase/util";
 import AddFlashcardBtn from "./../../../Components/ModalBtns/AddFlashcardBtn";
+import { Form } from "../Form";
 
 export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
-  
+
   let flashcards = editedDeck?.flashcards;
   let completedFlashcards = editedDeck?.completedFlashcards;
 
@@ -39,18 +40,20 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
                   </div>
                 </div>
 
-                {isDelConfirmId && isDelConfirmId === card.id ? (
+                <Form.Toggle
+                  toggle={isDelConfirmId && isDelConfirmId === card.id}
+                >
                   <DeleteFlashcard
                     deleteCard={deleteCard}
                     setisDelConfirmId={setisDelConfirmId}
                     delId={card.id}
                   />
-                ) : (
+
                   <EditFlashcard
                     card={card}
                     setisDelConfirmId={() => setisDelConfirmId(card.id)}
                   />
-                )}
+                </Form.Toggle>
               </div>
             );
           })}
