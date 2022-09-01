@@ -7,7 +7,7 @@ import ResetDeckBtn from "../Deck/ResetDeckBtn";
 import DifficultyBtn from "./DifficultyBtn";
 import DifficultyBtnsList from "./DifficultyBtnsList";
 
-export const Flashcards = ({
+export const ShufflableFlashcard = ({
   deck,
   shuffleDeckFlashcards,
   mvToCompleted,
@@ -80,21 +80,6 @@ export const Flashcards = ({
               <img className="Flashcards__btns__next__image" src={img} />
             </div>
           </div>
-
-          {/* <DifficultyBtnsList
-            levels={levels}
-            difficulty={difficulty}
-            setDifficulty={() => setDifficulty()}
-          >
-            <div
-              className="Flashcards__btns__next"
-              key={uuidv4()}
-              onClick={() => shuffleDeck()}
-            >
-              <span className="Flashcards__btns__next__text">Next</span>
-              <img className="Flashcards__btns__next__image" src={img} />
-            </div>
-          </DifficultyBtnsList> */}
         </div>
       ) : (
         <>

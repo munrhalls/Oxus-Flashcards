@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Flashcards } from "../Flashcards/Flashcards";
+import { ShufflableFlashcard } from "../Flashcards/ShufflableFlashcard";
 import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
 import IMG__CARDS from "./../../Assets/cards.png";
 
@@ -57,7 +57,7 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
         </div>
       </div>
       <div className="Deck__instance">
-        <Flashcards
+        <ShufflableFlashcard
           deck={deck}
           shuffleDeckFlashcards={shuffleDeckFlashcards}
           mvToCompleted={mvToCompleted}
