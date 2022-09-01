@@ -3,7 +3,8 @@ import { uuidv4 } from "@firebase/util";
 import { countBy, max } from "lodash";
 // import { useMobileCheck } from "./../../Hooks/useMobileCheck";
 
-export const CompletedFlashcards = ({ completedFlashcards }) => {
+export const CompletedFlashcards = ({ deck }) => {
+  let completedFlashcards = deck?.completedFlashcards;
   let count = 0;
   let max = 10;
   let heapToTheRight = 0;

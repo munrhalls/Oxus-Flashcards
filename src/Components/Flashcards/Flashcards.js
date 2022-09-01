@@ -5,43 +5,47 @@ import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
 import ResetDeckBtn from "../Deck/ResetDeckBtn";
 import DifficultyBtn from "./DifficultyBtn";
-import useCheckEnter from "./../../Hooks/useCheckEnter";
 import DifficultyBtnsList from "./DifficultyBtnsList";
 
 export const Flashcards = ({
-  flashcards,
-  completedFlashcards,
+  deck,
   shuffleDeckFlashcards,
-  moveDeckFlashcardToCompleted,
+  mvToCompleted,
   resetDeck,
 }) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["hard", "medium", "easy", "pass"];
-  function shuffleCard(divideDeckBy, rndFrom, rndTo) {
-    let shuffleBy = Math.floor(flashcards.length / divideDeckBy);
-    if (flashcards.length > 4)
-      shuffleBy += randomIntFromInterval(rndFrom, rndTo);
-    flashcards.splice(shuffleBy, 0, flashcards.shift());
-  }
+  let flashcards = deck.flashcards;
 
-  function shuffleDeck() {
-    if (difficulty === 3) shuffleCard(3, -2, 0);
-
-    if (difficulty === 2) shuffleCard(2, -2, 2);
-
-    if (difficulty === 1) shuffleCard(3, 0, 3);
-
-    if (difficulty === 0 && flashcards.length)
-      moveDeckFlashcardToCompleted([
-        ...completedFlashcards,
-        flashcards.shift(),
-      ]);
-
-    shuffleDeckFlashcards(cloneDeep(flashcards));
-  }
-  function randomIntFromInterval(min, max) {
+  function rndInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  function getStartRangeNum() {
+    let num = Math.floor(flashcards.length / 5) + 1;
+    if (num > 5) return 3 + rndInt(0, 2);
+    return num;
+  }
+  function getMidRangeNum() {
+    let num = Math.floor(flashcards.length / 2) + 1;
+    if (num > 7) return 6 + rndInt(0, 4);
+    return num;
+  }
+  function getEndRangeNum() {
+    let num = Math.floor(flashcards.length - flashcards.length / 3);
+    return num;
+  }
+  function getShuffledNum() {
+    if (difficulty === 3) return getStartRangeNum();
+    if (difficulty === 2) return getMidRangeNum();
+    if (difficulty === 1) return getEndRangeNum();
+  }
+  function shuffle() {
+    flashcards.splice(getShuffledNum(), 0, flashcards.shift());
+    console.log(flashcards);
+    shuffleDeckFlashcards([...flashcards]);
+  }
+
   return (
     <>
       {flashcards.length > 0 ? (
@@ -50,6 +54,7 @@ export const Flashcards = ({
             <h3 className="Flashcard__number">{flashcards.length} cards</h3>
             <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
           </div>
+
           <div className="Flashcards__btns">
             <h3 className="Flashcards__btns__difficulty__title">DIFFICULTY</h3>
             <div className="Flashcards__btns__difficulty">
@@ -69,7 +74,7 @@ export const Flashcards = ({
             <div
               className="Flashcards__btns__next"
               key={uuidv4()}
-              onClick={shuffleDeck}
+              onClick={shuffle}
             >
               <span className="Flashcards__btns__next__text">Next</span>
               <img className="Flashcards__btns__next__image" src={img} />

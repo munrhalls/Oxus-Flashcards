@@ -4,18 +4,18 @@ import { CompletedFlashcards } from "../Flashcards/CompletedFlashcards";
 import IMG__CARDS from "./../../Assets/cards.png";
 
 export const Deck = ({ activeDeckId, setDecks, decks }) => {
-  const activeDeck = decks.filter((deck) => deck.id === activeDeckId)[0];
+  const deck = decks.filter((deck) => deck.id === activeDeckId)[0];
 
   function shuffleDeckFlashcards(flashcards) {
     setDecks((decks) => {
       return decks.map((deck) => {
-        return deck.id === activeDeckId
-          ? { ...deck, flashcards: flashcards }
-          : deck;
+        if (deck.id === activeDeckId)
+          return { ...deck, flashcards: flashcards };
+        return deck;
       });
     });
   }
-  function moveDeckFlashcardToCompleted(completedFlashcards) {
+  function mvToCompleted(completedFlashcards) {
     setDecks((decks) => {
       return decks.map((deck) => {
         return deck.id === activeDeckId
@@ -29,8 +29,8 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
       decks.map((deck) => {
         if (deck.id !== activeDeckId) return deck;
         return {
-          ...activeDeck,
-          flashcards: [...activeDeck.completedFlashcards],
+          ...deck,
+          flashcards: [...deck.completedFlashcards],
           completedFlashcards: [],
         };
       })
@@ -50,20 +50,17 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
           />
         </div>
         <div className="Deck__titleContainer__titleContainer">
-          <h3 className="Deck__titleContainer__title">{activeDeck.name}.</h3>
+          <h3 className="Deck__titleContainer__title">{deck.name}.</h3>
         </div>
       </div>
       <div className="Deck__instance">
         <Flashcards
-          flashcards={activeDeck.flashcards}
-          completedFlashcards={activeDeck.completedFlashcards}
+          deck={deck}
           shuffleDeckFlashcards={shuffleDeckFlashcards}
-          moveDeckFlashcardToCompleted={moveDeckFlashcardToCompleted}
+          mvToCompleted={mvToCompleted}
           resetDeck={() => resetDeck()}
         />
-        <CompletedFlashcards
-          completedFlashcards={activeDeck.completedFlashcards}
-        />
+        <CompletedFlashcards deck={deck} />
       </div>
     </div>
   );
