@@ -4,7 +4,7 @@ import { countBy, max } from "lodash";
 // import { useMobileCheck } from "./../../Hooks/useMobileCheck";
 
 export const CompletedFlashcards = ({ deck }) => {
-  let completedFlashcards = deck?.completedFlashcards;
+  const completedFlashcards = deck?.completedFlashcards;
   let count = 0;
   let max = 10;
   let heapToTheRight = 0;

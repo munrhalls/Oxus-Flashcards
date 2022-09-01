@@ -41,8 +41,8 @@ export const Flashcards = ({
     if (difficulty === 1) return getEndRangeNum();
   }
   function shuffle() {
+    if (difficulty === 0) return mvToCompleted(flashcards.shift());
     flashcards.splice(getShuffledNum(), 0, flashcards.shift());
-    console.log(flashcards);
     shuffleDeckFlashcards([...flashcards]);
   }
 

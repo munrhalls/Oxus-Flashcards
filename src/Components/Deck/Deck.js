@@ -15,11 +15,14 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
       });
     });
   }
-  function mvToCompleted(completedFlashcards) {
+  function mvToCompleted(card) {
     setDecks((decks) => {
       return decks.map((deck) => {
         return deck.id === activeDeckId
-          ? { ...deck, completedFlashcards: completedFlashcards }
+          ? {
+              ...deck,
+              completedFlashcards: [...deck.completedFlashcards, card],
+            }
           : deck;
       });
     });
