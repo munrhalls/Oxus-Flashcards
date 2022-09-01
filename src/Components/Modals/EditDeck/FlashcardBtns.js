@@ -5,7 +5,7 @@ import IMG__CLOSE from "./../../../Assets/close.png";
 import IMG__EDIT from "./../../../Assets/edit.png";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
 
-export default function EditFlashcard({ card, setisDelConfirmId }) {
+export default function FlashcardBtns({ card, setisDelConfirmId }) {
   const { setModalOpen } = useGlobal();
 
   return (
