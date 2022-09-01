@@ -3,11 +3,9 @@ import { Form } from "../Form";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const DeleteDeck = (props) => {
-  const { getModalOpen } = useGlobal();
-  const { setModalOpen } = useGlobal();
-  let modalOpen = getModalOpen();
+  const { modalOpen, setModalOpen, decks, setDecks } = useGlobal();
 
-  const { setActiveDeckId, activeDeckId, decks, setDecks } = props;
+  const { setActiveDeckId, activeDeckId } = props;
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
 
   function handleSubmit(e) {

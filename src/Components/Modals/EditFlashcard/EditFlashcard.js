@@ -17,7 +17,7 @@ export const EditFlashcard = (props) => {
   async function handleSubmit(e) {
     e.preventDefault();
     let newFlashcard = card;
-
+      
     try {
       await DB__setDeck(currentUser.uid, {
         ...deck,

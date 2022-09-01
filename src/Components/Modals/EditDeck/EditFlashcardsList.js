@@ -39,7 +39,7 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
                     {i}
                   </div>
                 </div>
-
+                
                 <Form.Toggle
                   toggle={isDelConfirmId && isDelConfirmId === card.id}
                 >

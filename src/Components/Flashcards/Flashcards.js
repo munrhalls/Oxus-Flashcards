@@ -6,6 +6,7 @@ import { Flashcard } from "./Flashcard";
 import ResetDeckBtn from "../Deck/ResetDeckBtn";
 import DifficultyBtn from "./DifficultyBtn";
 import useCheckEnter from "./../../Hooks/useCheckEnter";
+import DifficultyBtnsList from "./DifficultyBtnsList";
 
 export const Flashcards = ({
   flashcards,
@@ -16,7 +17,6 @@ export const Flashcards = ({
 }) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["hard", "medium", "easy", "pass"];
-  useCheckEnter();
   function shuffleCard(divideDeckBy, rndFrom, rndTo) {
     let shuffleBy = Math.floor(flashcards.length / divideDeckBy);
     if (flashcards.length > 4)
@@ -75,6 +75,21 @@ export const Flashcards = ({
               <img className="Flashcards__btns__next__image" src={img} />
             </div>
           </div>
+
+          {/* <DifficultyBtnsList
+            levels={levels}
+            difficulty={difficulty}
+            setDifficulty={() => setDifficulty()}
+          >
+            <div
+              className="Flashcards__btns__next"
+              key={uuidv4()}
+              onClick={() => shuffleDeck()}
+            >
+              <span className="Flashcards__btns__next__text">Next</span>
+              <img className="Flashcards__btns__next__image" src={img} />
+            </div>
+          </DifficultyBtnsList> */}
         </div>
       ) : (
         <>
