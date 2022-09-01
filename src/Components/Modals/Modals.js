@@ -1,5 +1,7 @@
 import React from "react";
 import { AddFlashcard } from "./AddFlashcard/AddFlashcard";
+import { EditFlashcard } from "./EditFlashcard/EditFlashcard";
+
 import { AddDeck } from "./AddDeck/AddDeck";
 import { EditDeck } from "./EditDeck/EditDeck";
 import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
@@ -18,6 +20,6 @@ export const Modals = {
     return <AddFlashcard {...props} />;
   },
   EditFlashcard: function (props) {
-    return <AddFlashcard {...props} />;
+    return <EditFlashcard {...props} />;
   },
 };

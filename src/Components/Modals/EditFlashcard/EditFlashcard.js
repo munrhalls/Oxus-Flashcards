@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function EditFlashcard() {
+export const EditFlashcard = (props) => {
   return <div>EditFlashcard</div>;
-}
+};

@@ -49,7 +49,7 @@ export const AddFlashcard = (props) => {
     } catch (e) {
       console.error(e);
     }
-
+    
     resetForm();
     setModalOpen("EditDeck");
   }
