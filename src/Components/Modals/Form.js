@@ -47,7 +47,6 @@ export const Form = {
     const [isEditDeckName, setIsEditDeckName] = useState(false);
 
     const { setEditedDeck, editedDeck } = props;
-
     return (
       <>
         <Form.Toggle toggle={isEditDeckName}>
@@ -62,6 +61,7 @@ export const Form = {
           />
           <h1 className="Form__topBar__line__deckName">{editedDeck?.name}</h1>
         </Form.Toggle>
+
 
         <Form.Toggle toggle={isEditDeckName}>
           <Form.CloseBtn

@@ -14,10 +14,16 @@ export const AddFlashcard = (props) => {
     turned: { text: "", image: "" },
   });
   const [side, setSide] = useState(false);
-  const { activeDeckId, decks, setDecks } = props;
+  const { activeDeckId } = props;
+  const {
+    setModalOpen,
+    getDecksFromDBAndUpdateUI,
+    DB__setDeck,
+    currentUser,
+    decks,
+    setDecks,
+  } = useGlobal();
   const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
-  const { setModalOpen, getDecksFromDBAndUpdateUI, DB__setDeck, currentUser } =
-    useGlobal();
 
   function makeNewFlashcard() {
     let newFlashcard = {
@@ -49,7 +55,7 @@ export const AddFlashcard = (props) => {
     } catch (e) {
       console.error(e);
     }
-    
+
     resetForm();
     setModalOpen("EditDeck");
   }

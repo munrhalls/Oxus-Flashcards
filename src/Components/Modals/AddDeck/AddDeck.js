@@ -6,9 +6,15 @@ import { useGlobal } from "../../../Contexts/GlobalProvider";
 export const AddDeck = (props) => {
   const [deckName, setDeckName] = useState("");
   const [error, setError] = useState("");
-  const { setActiveDeckId, decks, setDecks } = props;
-  const { setModalOpen, DB__setDeck, getDecksFromDBAndUpdateUI, currentUser } =
-    useGlobal();
+  const { setActiveDeckId } = props;
+  const {
+    setModalOpen,
+    DB__setDeck,
+    getDecksFromDBAndUpdateUI,
+    currentUser,
+    decks,
+    setDecks,
+  } = useGlobal();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +27,13 @@ export const AddDeck = (props) => {
       completedFlashcards: [],
     };
 
+    if (!currentUser)
+      return (function () {
+        setActiveDeckId(newDeck.id);
+        setDecks([...decks, newDeck]);
+        setModalOpen("EditDeck");
+      })();
+    console.log("after iife");
     try {
       await DB__setDeck(currentUser.uid, newDeck);
       await getDecksFromDBAndUpdateUI(currentUser);

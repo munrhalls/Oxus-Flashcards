@@ -37,8 +37,6 @@ function App() {
   const modalProps = {
     activeDeckId,
     setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
-    decks,
-    setDecks: (decks) => setDecks(decks),
   };
 
   return (
