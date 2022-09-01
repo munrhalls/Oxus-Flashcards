@@ -53,8 +53,9 @@
     width: 70%;
     height: 60%;
     bottom: 3rem;
-    border: 12px solid #000;
+    border: 24px solid #000;
     border-radius: 100%;
+    transform: skew(-0.06turn, -3deg);
 }
 
 .AddDeckBtn__imgCards {
