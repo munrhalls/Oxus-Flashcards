@@ -4,7 +4,7 @@
 @import './Components/Welcome/Welcome.css';
 /* central clusters, all else...nodes that plug into that*/
 @import './Components/Flashcards/Flashcard.css';
-@import './Components/Flashcards/Flashcards.css';
+@import './Components/ShufflableFlashcard/Flashcards.css';
 @import './Components/Flashcards/CompletedFlashcards.css';
 @import './Components/Deck/Deck.css';
 /* functional clusters, window triggers */
@@ -32,8 +32,8 @@
 @import './Components/Footer/Footer.css';
 /* being friendly to cell phones */
 @import './Components/Deck/MobileDeck.css';
-@import './Components/Flashcards/MobileFlashcards.css';
-@import './Components/Flashcards/MobileCompletedFlashcards.css';
+@import './Components/ShufflableFlashcard/MobileFlashcards.css';
+@import './Components/ShufflableFlashcard/MobileCompletedFlashcards.css';
 @import './Components/Footer/MobileFooter.css';
 
 *, :hover, :after {
