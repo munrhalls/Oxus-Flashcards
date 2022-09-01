@@ -1,6 +1,6 @@
 import React from "react";
 
-export function DeleteFlashcard({ deleteCard, delId, setisDelConfirmId }) {
+export function DeleteFlashcardModal({ deleteCard, delId, setisDelConfirmId }) {
   return (
     <div className="FormFlashcardsList__instanceContainer__deleteContainer">
       <h3 className="FormFlashcardsList__instanceContainer__deleteContainer__question">

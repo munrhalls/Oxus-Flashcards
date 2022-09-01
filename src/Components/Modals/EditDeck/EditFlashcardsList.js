@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DeleteFlashcard } from "./DeleteFlashcard";
+import { DeleteFlashcardModal } from "./DeleteFlashcardModal";
 import EditFlashcard from "./EditFlashcard";
 import { uuidv4 } from "@firebase/util";
 import AddFlashcardBtn from "./../../../Components/ModalBtns/AddFlashcardBtn";
@@ -39,16 +39,14 @@ export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
                     {i}
                   </div>
                 </div>
-                
                 <Form.Toggle
                   toggle={isDelConfirmId && isDelConfirmId === card.id}
                 >
-                  <DeleteFlashcard
+                  <DeleteFlashcardModal
                     deleteCard={deleteCard}
                     setisDelConfirmId={setisDelConfirmId}
                     delId={card.id}
                   />
-
                   <EditFlashcard
                     card={card}
                     setisDelConfirmId={() => setisDelConfirmId(card.id)}
