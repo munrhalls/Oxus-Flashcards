@@ -6,7 +6,7 @@ import AddFlashcardBtn from "./../../../Components/ModalBtns/AddFlashcardBtn";
 
 export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
-
+  
   let flashcards = editedDeck?.flashcards;
   let completedFlashcards = editedDeck?.completedFlashcards;
 

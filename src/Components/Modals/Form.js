@@ -5,14 +5,15 @@ import IMG__EDIT from "./../../Assets/edit.png";
 import IMG__BACK from "./../../Assets/go-back-arrow.png";
 import IMG__NUCLEAR from "./../../Assets/nuclear.png";
 import { useGlobal } from "../../Contexts/GlobalProvider";
+import { useState } from "react";
 
 export const Form = {
-  Close: function ({ closeFunction }) {
+  CloseBtn: function ({ close }) {
     return (
       <button
         type="button"
         className="Form__topBar__line__btn"
-        onClick={() => closeFunction()}
+        onClick={() => close()}
       >
         <span className="Form__topBar__line__btn__text">Close</span>
         <img
@@ -23,7 +24,7 @@ export const Form = {
       </button>
     );
   },
-  Edit: function ({ editFunction }) {
+  EditBtn: function ({ editFunction }) {
     return (
       <button
         type="button"
@@ -39,15 +40,40 @@ export const Form = {
       </button>
     );
   },
-  EditName: function ({ onChangeFunction, newVal }) {
+  Toggle: function ({ children, toggle }) {
+    return toggle ? children[0] : children[1];
+  },
+  EditDeckName: function (props) {
+    const [isEditDeckName, setIsEditDeckName] = useState(false);
+
+    const { setEditedDeck, editedDeck } = props;
+
     return (
-      <input
-        className="Form__topBar__line__deckName --input"
-        placeholder="Type new deck name..."
-        type="text"
-        value={newVal}
-        onChange={(e) => onChangeFunction(e)}
-      />
+      <>
+        <Form.Toggle toggle={isEditDeckName}>
+          <input
+            className="Form__topBar__line__deckName --input"
+            placeholder="Type new deck name..."
+            type="text"
+            value={editedDeck?.name}
+            onChange={(e) =>
+              setEditedDeck({ ...editedDeck, name: e.target.value })
+            }
+          />
+          <h1 className="Form__topBar__line__deckName">{editedDeck?.name}</h1>
+        </Form.Toggle>
+
+        <Form.Toggle toggle={isEditDeckName}>
+          <Form.CloseBtn
+            close={() => setIsEditDeckName(() => !isEditDeckName)}
+          />
+          <Form.EditBtn
+            editFunction={() =>
+              setIsEditDeckName((isEditDeckName) => !isEditDeckName)
+            }
+          />
+        </Form.Toggle>
+      </>
     );
   },
   ExitBtns: function ({ toModal }) {
