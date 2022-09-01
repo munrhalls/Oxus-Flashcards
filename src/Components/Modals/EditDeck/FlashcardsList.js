@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { DeleteFlashcardModal } from "./DeleteFlashcardModal";
 import FlashcardBtns from "./FlashcardBtns";
 import { uuidv4 } from "@firebase/util";
-import AddFlashcardBtn from "./../../../Components/ModalBtns/AddFlashcardBtn";
+import AddFlashcardBtn from "../../ModalBtns/AddFlashcardBtn";
 import { Form } from "../Form";
 
-export function EditFlashcardsList({ editedDeck, setEditedDeck }) {
+export function FlashcardsList({ editedDeck, setEditedDeck }) {
   const [isDelConfirmId, setisDelConfirmId] = useState(null);
 
   let flashcards = editedDeck?.flashcards;

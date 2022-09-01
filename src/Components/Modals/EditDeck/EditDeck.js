@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { EditFlashcardsList } from "./EditFlashcardsList";
+import { FlashcardsList } from "./FlashcardsList";
 import { Form } from "./../Form";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
 
@@ -35,7 +35,7 @@ export const EditDeck = (props) => {
             <Form.EditDeckName {...edit} />
           </div>
         </div>
-        <EditFlashcardsList {...edit} />
+        <FlashcardsList {...edit} />
         <Form.ExitBtns />
       </form>
     </div>

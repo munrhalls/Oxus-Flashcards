@@ -22,7 +22,7 @@
 /* functional clusters, managing decks */
 @import './Components/Modals/AddDeck/AddDeck.css';
 @import './Components/Modals//EditDeck/EditDeck.css';
-@import './Components/Modals//EditDeck/EditFlashcardsList.css';
+@import './Components/Modals//EditDeck/FlashcardsList.css';
 @import './Components/Modals/DeleteDeck/DeleteDeck.css';
 /* functional clusters, managing flashcards within a deck */
 @import './Components/Modals/AddFlashcard/AddFlashcard.css';
