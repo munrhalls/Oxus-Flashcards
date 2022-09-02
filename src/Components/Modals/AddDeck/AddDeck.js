@@ -29,21 +29,20 @@ export const AddDeck = (props) => {
 
     if (!currentUser)
       return (function () {
-        setActiveDeckId(newDeck.id);
+        setActiveDeckId(() => newDeck.id);
         setDecks([...decks, newDeck]);
         setModalOpen("EditDeck");
       })();
-      
+
     try {
       await DB__setDeck(currentUser.uid, newDeck);
       await getDecksFromDBAndUpdateUI(currentUser);
+      setActiveDeckId(() => newDeck.id);
+      setModalOpen("EditDeck");
     } catch (e) {
       console.error(e);
       return setError("Server could not add the deck at this time.");
     }
-
-    setActiveDeckId(newDeck.id);
-    setModalOpen("EditDeck");
   }
 
   return (

@@ -16,8 +16,8 @@ export default function FlashcardBtns({ card, setisDelConfirmId }) {
           type="button"
           className="FormFlashcardsList__instanceContainer__elements__btns__btn --edit"
           onClick={() => {
-            setActiveFlashcardId(card.id);
-            setModalOpen("EditFlashcard");
+            setActiveFlashcardId(() => card.id);
+            setModalOpen("SetFlashcard");
           }}
         >
           <img

@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { Preview } from "./Preview";
-import { uuidv4 } from "@firebase/util";
-import { InputsHandler } from "./InputsHandler";
-import IMG__EDIT from "./../../../Assets/edit.png";
-import IMG__CLOSE from "./../../../Assets/close.png";
-import IMG__SAVE from "./../../../Assets/save.png";
-import { Form } from "../Form";
+import React, { useEffect, useState } from "react";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
+import { Form } from "../Form";
+import { Preview } from "./Preview";
+import { InputsHandler } from "./InputsHandler";
+import { makeNewFlashcard } from "./MakeNewFlashcard";
 
 export const SetFlashcard = (props) => {
   const [flashcard, setFlashcard] = useState({
@@ -22,34 +19,34 @@ export const SetFlashcard = (props) => {
     currentUser,
     decks,
     setDecks,
+    activeFlashcardId,
+    setActiveFlashcardId,
   } = useGlobal();
-  let deck = decks.filter((deck) => activeDeckId === deck.id)[0];
 
-  function makeNewFlashcard() {
-    let newFlashcard = {
-      id: uuidv4(),
-      difficulty: 3,
-      orderNum:
-        deck?.flashcards?.filter((card) => card?.difficulty === 3)?.length || 1,
-      unturned: {
-        text: flashcard.unturned.text,
-        image: flashcard.unturned.image,
-      },
-      turned: {
-        text: flashcard.turned.text,
-        image: flashcard.turned.image,
-      },
-    };
-    return newFlashcard;
-  }
+  // currentUser true
+  // currentUser false
+  // add new flashcard
+  // edit current flashcard
+  // simplest handling?
+
+  // update =
+  // activeflashcard true? -> flashcards = accordingly
+  // no? -> accordingly
+  // variable to handleSubmit
+  // must always reset activeFlashcardId
+  useEffect(() => {});
+
+  let deck = decks.filter((deck) => activeDeckId === deck.id)[0];
   async function handleSubmit(e) {
     e.preventDefault();
+
+    let update = [...deck.flashcards, makeNewFlashcard(deck, flashcard)];
 
     if (!currentUser)
       return (function () {
         decks[decks.indexOf(deck)] = {
           ...deck,
-          flashcards: [...deck.flashcards, makeNewFlashcard()],
+          flashcards: update,
         };
         setDecks(() => [...decks]);
         setModalOpen("EditDeck");
@@ -58,7 +55,7 @@ export const SetFlashcard = (props) => {
     try {
       await DB__setDeck(currentUser.uid, {
         ...deck,
-        flashcards: [...deck.flashcards, makeNewFlashcard()],
+        flashcards: update,
       });
       await getDecksFromDBAndUpdateUI(currentUser);
     } catch (e) {
@@ -81,7 +78,7 @@ export const SetFlashcard = (props) => {
       <form className="Form" onSubmit={handleSubmit}>
         <div className="Form__topBar">
           <div className="Form__topBar__line --first">
-            <h2 className="Form__topBar__line__title">ADD FLASHCARD</h2>
+            <h2 className="Form__topBar__line__title">SET FLASHCARD</h2>
           </div>
           <div className="Form__topBar__line --second">
             <h1 className="Form__topBar__line__deckName">DECK: {deck.name}</h1>
