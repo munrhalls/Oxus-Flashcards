@@ -4,6 +4,7 @@ import { Form } from "../Form";
 import { Preview } from "./Preview";
 import { InputsHandler } from "./InputsHandler";
 import { makeNewFlashcard } from "./MakeNewFlashcard";
+import Loader from "../../Loader/Loader";
 
 export const SetFlashcard = (props) => {
   const [flashcard, setFlashcard] = useState({
@@ -11,6 +12,8 @@ export const SetFlashcard = (props) => {
     turned: { text: "", image: "" },
   });
   const [side, setSide] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   const { activeDeckId } = props;
   const {
     setModalOpen,
@@ -52,6 +55,7 @@ export const SetFlashcard = (props) => {
   async function handleSubmit(e) {
     e.preventDefault();
     let update = getUpdate();
+    setIsLoading(true);
 
     if (!currentUser)
       return (function () {
@@ -60,6 +64,7 @@ export const SetFlashcard = (props) => {
           flashcards: update,
         };
         setDecks(() => [...decks]);
+        setIsLoading(false);
         resetForm();
         setModalOpen("EditDeck");
       })();
@@ -71,9 +76,11 @@ export const SetFlashcard = (props) => {
       });
       await getDecksFromDBAndUpdateUI(currentUser);
       resetForm();
+      setIsLoading(false);
       setModalOpen("EditDeck");
     } catch (e) {
       console.error(e);
+      setIsLoading(false);
     }
   }
 
@@ -89,30 +96,34 @@ export const SetFlashcard = (props) => {
   return (
     <div className="SetFlashcard">
       <form className="Form" onSubmit={handleSubmit}>
-        <div className="Form__topBar">
-          <div className="Form__topBar__line --first">
-            <h2 className="Form__topBar__line__title">SET FLASHCARD</h2>
+        <Loader active={isLoading}>
+          <div className="Form__topBar">
+            <div className="Form__topBar__line --first">
+              <h2 className="Form__topBar__line__title">SET FLASHCARD</h2>
+            </div>
+            <div className="Form__topBar__line --second">
+              <h1 className="Form__topBar__line__deckName">
+                DECK: {deck.name}
+              </h1>
+            </div>
           </div>
-          <div className="Form__topBar__line --second">
-            <h1 className="Form__topBar__line__deckName">DECK: {deck.name}</h1>
+          <div className="InputsAndPreviewContainer">
+            <InputsHandler
+              className="InputsHandler"
+              setFlashcard={(flashcard) => setFlashcard(flashcard)}
+              flashcard={flashcard}
+              side={side}
+            />
+            <Preview
+              className="Preview"
+              side={side}
+              setSide={(side) => setSide(side)}
+              flashcard={flashcard}
+            />
           </div>
-        </div>
-        <div className="InputsAndPreviewContainer">
-          <InputsHandler
-            className="InputsHandler"
-            setFlashcard={(flashcard) => setFlashcard(flashcard)}
-            flashcard={flashcard}
-            side={side}
-          />
-          <Preview
-            className="Preview"
-            side={side}
-            setSide={(side) => setSide(side)}
-            flashcard={flashcard}
-          />
-        </div>
 
-        <Form.ExitBtns toModal="EditDeck" />
+          <Form.ExitBtns toModal="EditDeck" />
+        </Loader>
       </form>
     </div>
   );

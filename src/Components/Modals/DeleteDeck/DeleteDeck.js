@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "../Form";
+import Loader from "../../Loader/Loader";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const DeleteDeck = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const {
     DB_deleteDeck,
     getDecksFromDBAndUpdateUI,
@@ -18,6 +21,7 @@ export const DeleteDeck = (props) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     if (!currentUser)
       return (function () {
@@ -27,6 +31,7 @@ export const DeleteDeck = (props) => {
             return el.id !== activeDeckId;
           })
         );
+        setIsLoading(false);
         setModalOpen(null);
       })();
 
@@ -35,27 +40,31 @@ export const DeleteDeck = (props) => {
       await getDecksFromDBAndUpdateUI(currentUser);
       setActiveDeckId(null);
       setModalOpen(null);
+      setIsLoading(false);
     } catch (e) {
       console.error(e);
+      setIsLoading(false);
     }
   }
   return (
     <div>
       <div className="DeleteDeck">
-        <form className="Form" onSubmit={handleSubmit}>
-          <div className="Form__topBar">
-            <div className="Form__topBar__line --first">
-              <h2 className="Form__topBar__line__title">DELETE DECK</h2>
+        <Loader active={isLoading}>
+          <form className="Form" onSubmit={handleSubmit}>
+            <div className="Form__topBar">
+              <div className="Form__topBar__line --first">
+                <h2 className="Form__topBar__line__title">DELETE DECK</h2>
+              </div>
+              <div className="Form__topBar__line --second">
+                <h1 className="Form__topBar__line__deckName">
+                  TITLE: {deck.name}
+                </h1>
+              </div>
             </div>
-            <div className="Form__topBar__line --second">
-              <h1 className="Form__topBar__line__deckName">
-                TITLE: {deck.name}
-              </h1>
-            </div>
-          </div>
-          <Form.ConfirmAndDelete id={activeDeckId} />
-          <Form.BackBtn />
-        </form>
+            <Form.ConfirmAndDelete id={activeDeckId} />
+            <Form.BackBtn />
+          </form>
+        </Loader>
       </div>
     </div>
   );
