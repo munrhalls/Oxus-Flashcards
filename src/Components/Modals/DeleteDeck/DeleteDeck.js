@@ -4,7 +4,7 @@ import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export const DeleteDeck = (props) => {
   const { modalOpen, setModalOpen, decks, setDecks } = useGlobal();
-
+  
   const { setActiveDeckId, activeDeckId } = props;
   const deck = decks.filter((instance) => instance.id === activeDeckId)[0];
 

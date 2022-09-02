@@ -1,6 +1,13 @@
 // cluster 2 - firebase actual database, called firestore
 import { firestore } from "../Firebase";
-import { collection, addDoc, setDoc, doc, getDocs } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  setDoc,
+  deleteDoc,
+  doc,
+  getDocs,
+} from "firebase/firestore";
 import { useState } from "react";
 
 export default function FirestoreAPI() {
@@ -36,6 +43,12 @@ export default function FirestoreAPI() {
     return setDoc(
       doc(firestore, `DecksForUserID_${userID}`, newDeck.id),
       newDeck
+    );
+  }
+
+  function DB_deleteDeck(currentUser, deckId) {
+    return deleteDoc(
+      doc(firestore, `DecksForUserID_${currentUser.uid}`, deckId)
     );
   }
 
