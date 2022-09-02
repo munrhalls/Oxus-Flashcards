@@ -6,9 +6,9 @@ import { Preview } from "../AddFlashcard/Preview";
 import { Form } from "../Form";
 
 export const EditFlashcard = (props) => {
-  const [flashcard, setFlashcard] = useState();
+  const [flashcard, setFlashcard] = useState(null);
   const [side, setSide] = useState(false);
-  console.log(flashcard);
+
   const {
     setModalOpen,
     getDecksFromDBAndUpdateUI,
@@ -16,22 +16,28 @@ export const EditFlashcard = (props) => {
     currentUser,
     decks,
     setDecks,
+    setActiveFlashcardId,
+    activeFlashcardId,
   } = useGlobal();
-  const { card, activeDeckId } = props;
+
+  const { activeDeckId } = props;
   const deck = decks.filter((deck) => activeDeckId === deck.id)[0];
 
   useEffect(() => {
-    setFlashcard(card);
+    const activeFlashcard = deck.flashcards.filter(
+      (flashcard) => flashcard.id === activeFlashcardId
+    )[0];
+    console.log(activeFlashcard);
+    setFlashcard(activeFlashcard);
   }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    let newFlashcard = card;
 
     try {
       await DB__setDeck(currentUser.uid, {
         ...deck,
-        flashcards: [...deck.flashcards, newFlashcard],
+        flashcards: [...deck.flashcards],
       });
       await getDecksFromDBAndUpdateUI(currentUser);
     } catch (e) {

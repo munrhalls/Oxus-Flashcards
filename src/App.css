@@ -3,9 +3,9 @@
 @import './Components/Header/Header.css';
 @import './Components/Welcome/Welcome.css';
 /* central clusters, all else...nodes that plug into that*/
-@import './Components/Flashcards/Flashcard.css';
+@import './Components/ShufflableFlashcard/Flashcard.css';
 @import './Components/ShufflableFlashcard/Flashcards.css';
-@import './Components/Flashcards/CompletedFlashcards.css';
+@import './Components/ShufflableFlashcard/CompletedFlashcards.css';
 @import './Components/Deck/Deck.css';
 /* functional clusters, window triggers */
 @import './Components/ModalBtns/AddDeckBtn.css';

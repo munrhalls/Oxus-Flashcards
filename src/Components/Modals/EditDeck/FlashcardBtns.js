@@ -1,12 +1,12 @@
 import React from "react";
-import { Flashcard } from "./../../../Components/Flashcards/Flashcard";
+import { Flashcard } from "./../../../Components/ShufflableFlashcard/Flashcard";
 import { uuidv4 } from "@firebase/util";
 import IMG__CLOSE from "./../../../Assets/close.png";
 import IMG__EDIT from "./../../../Assets/edit.png";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
 
 export default function FlashcardBtns({ card, setisDelConfirmId }) {
-  const { setModalOpen } = useGlobal();
+  const { setModalOpen, setActiveFlashcardId } = useGlobal();
 
   return (
     <div className="FormFlashcardsList__instanceContainer__elements">
@@ -15,7 +15,10 @@ export default function FlashcardBtns({ card, setisDelConfirmId }) {
         <button
           type="button"
           className="FormFlashcardsList__instanceContainer__elements__btns__btn --edit"
-          onClick={() => setModalOpen("EditFlashcard")}
+          onClick={() => {
+            setActiveFlashcardId(card.id);
+            setModalOpen("EditFlashcard");
+          }}
         >
           <img
             className="FormFlashcardsList__instanceContainer__elements__btns__btn__img"

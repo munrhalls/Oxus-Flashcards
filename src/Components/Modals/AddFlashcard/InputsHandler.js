@@ -2,8 +2,9 @@ import React from "react";
 import cloneDeep from "lodash.clonedeep";
 
 export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
-  const flashcardSide = side ? flashcard.turned : flashcard.unturned;
+  const flashcardSide = side ? flashcard?.turned : flashcard?.unturned;
 
+  console.log(flashcardSide);
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -38,7 +39,7 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
         <textarea
           className="InputsHandler__inputContainer__textArea"
           placeholder="Type..."
-          value={flashcardSide.text}
+          value={flashcardSide?.text}
           onChange={updateFlashcardText}
         />
       </div>
