@@ -58,6 +58,7 @@ export default function FirestoreAPI() {
     DB__getDecks,
     getDecksFromDBAndUpdateUI,
     DB__setDeck,
+    DB_deleteDeck,
     firestore,
     collection,
     addDoc,
