@@ -54,34 +54,31 @@ export const SetFlashcard = (props) => {
   }
   async function handleSubmit(e) {
     e.preventDefault();
-    let update = getUpdate();
     setIsLoading(true);
 
-    if (!currentUser)
-      return (function () {
-        decks[decks.indexOf(deck)] = {
-          ...deck,
-          flashcards: update,
-        };
-        setDecks(() => [...decks]);
-        setIsLoading(false);
-        resetForm();
-        setModalOpen("EditDeck");
-      })();
+    let update = getUpdate();
+    decks[decks.indexOf(deck)] = {
+      ...deck,
+      flashcards: update,
+    };
+    setDecks(() => [...decks]);
+    setIsLoading(false);
+    resetForm();
+    setModalOpen("EditDeck");
 
-    try {
-      await DB__setDeck(currentUser.uid, {
-        ...deck,
-        flashcards: update,
-      });
-      await getDecksFromDBAndUpdateUI(currentUser);
-      resetForm();
-      setIsLoading(false);
-      setModalOpen("EditDeck");
-    } catch (e) {
-      console.error(e);
-      setIsLoading(false);
-    }
+    // try {
+    //   await DB__setDeck(currentUser.uid, {
+    //     ...deck,
+    //     flashcards: update,
+    //   });
+    //   await getDecksFromDBAndUpdateUI(currentUser);
+    //   resetForm();
+    //   setIsLoading(false);
+    //   setModalOpen("EditDeck");
+    // } catch (e) {
+    //   console.error(e);
+    //   setIsLoading(false);
+    // }
   }
 
   function resetForm() {
