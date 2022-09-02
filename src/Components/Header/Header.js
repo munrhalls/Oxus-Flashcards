@@ -31,7 +31,9 @@ export function Header({ setActiveDeckId }) {
               </h1>
               <div className="Header__account__btnsContainer">
                 <FormUser.EditProfileBtn />
-                <FormUser.LogOutBtn setActiveDeckId={setActiveDeckId} />
+                <FormUser.LogOutBtn
+                  setActiveDeckId={() => setActiveDeckId(null)}
+                />
               </div>
             </>
           ) : (

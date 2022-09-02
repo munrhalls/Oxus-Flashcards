@@ -22,25 +22,36 @@ export const SetFlashcard = (props) => {
     activeFlashcardId,
     setActiveFlashcardId,
   } = useGlobal();
-
-  // currentUser true
-  // currentUser false
-  // add new flashcard
-  // edit current flashcard
-  // simplest handling?
-
-  // update =
-  // activeflashcard true? -> flashcards = accordingly
-  // no? -> accordingly
-  // variable to handleSubmit
-  // must always reset activeFlashcardId
-  useEffect(() => {});
-
   let deck = decks.filter((deck) => activeDeckId === deck.id)[0];
+  console.log(activeFlashcardId);
+
+  useEffect(() => {
+    handleEditedCard();
+  });
+
+  function handleEditedCard() {
+    if (activeFlashcardId) {
+      const activeFlashcard = deck.flashcards.filter(
+        (card) => card.id === activeFlashcardId
+      )[0];
+      setFlashcard(() => activeFlashcard);
+    }
+  }
+  function editCard() {
+    let card = deck.flashcards.find((card) => card.id === activeFlashcardId);
+    card = flashcard;
+    return [...deck.flashcards];
+  }
+  function addCard() {
+    return [...deck.flashcards, makeNewFlashcard(deck, flashcard)];
+  }
+  function getUpdate() {
+    if (activeFlashcardId) return editCard();
+    return addCard();
+  }
   async function handleSubmit(e) {
     e.preventDefault();
-
-    let update = [...deck.flashcards, makeNewFlashcard(deck, flashcard)];
+    let update = getUpdate();
 
     if (!currentUser)
       return (function () {
@@ -49,6 +60,7 @@ export const SetFlashcard = (props) => {
           flashcards: update,
         };
         setDecks(() => [...decks]);
+        resetForm();
         setModalOpen("EditDeck");
       })();
 
@@ -58,15 +70,16 @@ export const SetFlashcard = (props) => {
         flashcards: update,
       });
       await getDecksFromDBAndUpdateUI(currentUser);
+      resetForm();
+      setModalOpen("EditDeck");
     } catch (e) {
       console.error(e);
     }
-
-    resetForm();
-    setModalOpen("EditDeck");
   }
+
   function resetForm() {
     setSide(false);
+    setActiveFlashcardId(() => null);
     setFlashcard({
       unturned: { text: "", image: "" },
       turned: { text: "", image: "" },

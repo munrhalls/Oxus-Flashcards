@@ -4,7 +4,7 @@ import { CompletedFlashcards } from "../ShufflableFlashcard/CompletedFlashcards"
 import IMG__CARDS from "./../../Assets/cards.png";
 
 export const Deck = ({ activeDeckId, setDecks, decks }) => {
-  const deck = decks.filter((deck) => deck.id === activeDeckId)[0];
+  const deck = decks?.filter((deck) => deck?.id === activeDeckId)[0];
 
   function shuffleDeckFlashcards(flashcards) {
     setDecks((decks) => {

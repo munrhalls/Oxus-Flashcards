@@ -341,13 +341,15 @@ export const FormUser = {
     );
   },
   LogOutBtn: function ({ setActiveDeckId }) {
-    const { logout } = useGlobal();
+    const { logout, setActiveFlashcardId, setModalOpen } = useGlobal();
 
     return (
       <button
         className="LoginRegisterBtn --login"
         onClick={() => {
+          setModalOpen(() => null);
           setActiveDeckId(() => null);
+          setActiveFlashcardId(() => null);
           logout();
         }}
       >
