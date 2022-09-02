@@ -1,7 +1,5 @@
 import React from "react";
-import { AddFlashcard } from "./AddFlashcard/AddFlashcard";
-import { EditFlashcard } from "./EditFlashcard/EditFlashcard";
-
+import { SetFlashcard } from "./SetFlashcard/SetFlashcard";
 import { AddDeck } from "./AddDeck/AddDeck";
 import { EditDeck } from "./EditDeck/EditDeck";
 import { DeleteDeck } from "./DeleteDeck/DeleteDeck";
@@ -16,10 +14,7 @@ export const Modals = {
   DeleteDeck: function (props) {
     return <DeleteDeck {...props} />;
   },
-  AddFlashcard: function (props) {
-    return <AddFlashcard {...props} />;
-  },
-  EditFlashcard: function (props) {
-    return <EditFlashcard {...props} />;
+  SetFlashcard: function (props) {
+    return <SetFlashcard {...props} />;
   },
 };

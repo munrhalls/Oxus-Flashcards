@@ -8,7 +8,7 @@ import IMG__SAVE from "./../../../Assets/save.png";
 import { Form } from "../Form";
 import { useGlobal } from "../../../Contexts/GlobalProvider";
 
-export const AddFlashcard = (props) => {
+export const SetFlashcard = (props) => {
   const [flashcard, setFlashcard] = useState({
     unturned: { text: "", image: "" },
     turned: { text: "", image: "" },
@@ -77,7 +77,7 @@ export const AddFlashcard = (props) => {
   }
 
   return (
-    <div className="AddFlashcard">
+    <div className="SetFlashcard">
       <form className="Form" onSubmit={handleSubmit}>
         <div className="Form__topBar">
           <div className="Form__topBar__line --first">

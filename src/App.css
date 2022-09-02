@@ -25,9 +25,9 @@
 @import './Components/Modals//EditDeck/FlashcardsList.css';
 @import './Components/Modals/DeleteDeck/DeleteDeck.css';
 /* functional clusters, managing flashcards within a deck */
-@import './Components/Modals/AddFlashcard/AddFlashcard.css';
-@import './Components/Modals/AddFlashcard/InputsHandler.css';
-@import './Components/Modals/AddFlashcard/Preview.css';
+@import './Components/Modals/SetFlashcard/SetFlashcard.css';
+@import './Components/Modals/SetFlashcard/InputsHandler.css';
+@import './Components/Modals/SetFlashcard/Preview.css';
 /* outro */
 @import './Components/Footer/Footer.css';
 /* being friendly to cell phones */

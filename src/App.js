@@ -78,11 +78,8 @@ function App() {
             {modalOpen === "DeleteDeck" && (
               <Modals.DeleteDeck {...modalProps} />
             )}
-            {modalOpen === "AddFlashcard" && (
-              <Modals.AddFlashcard {...modalProps} />
-            )}
-            {modalOpen === "EditFlashcard" && (
-              <Modals.EditFlashcard {...modalProps} />
+            {modalOpen === "SetFlashcard" && (
+              <Modals.SetFlashcard {...modalProps} />
             )}
 
             {modalOpen === "Register" && <FormUser.Register />}

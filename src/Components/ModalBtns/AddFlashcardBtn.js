@@ -7,7 +7,7 @@ export default function AddFlashcard() {
 
   return (
     <div
-      onClick={() => setModalOpen("AddFlashcard")}
+      onClick={() => setModalOpen("SetFlashcard")}
       className="FormFlashcardsList__instanceContainer --addBtn"
     >
       <button
