@@ -15,6 +15,14 @@ export default function FirestoreAPI() {
   const [ErrorDbCRUD, setErrorDbCRUD] = useState("");
 
   function DB__getDecks(currentUser) {
+    // return firestore.getDocs(
+    //   collection(`DecksForUserID_${currentUser.uid}`).where(
+    //     "ownerId",
+    //     "==",
+    //     currentUser.uid
+    //   )
+    // );
+
     return getDocs(collection(firestore, `DecksForUserID_${currentUser.uid}`));
   }
 
@@ -40,6 +48,7 @@ export default function FirestoreAPI() {
   }
 
   function DB__setDeck(userID, newDeck) {
+    newDeck.ownerId = userID;
     return setDoc(
       doc(firestore, `DecksForUserID_${userID}`, newDeck.id),
       newDeck

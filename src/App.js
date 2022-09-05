@@ -27,7 +27,6 @@ function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
   const { currentUser, modalOpen, getDecksFromDBAndUpdateUI, decks, setDecks } =
     useGlobal();
-
   useEffect(() => {
     if (!currentUser) return setDecks([introExampleDeck]);
 

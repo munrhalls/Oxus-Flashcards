@@ -136,6 +136,7 @@ export const FormUser = {
           emailRef?.current?.value,
           passwordRef?.current?.value
         );
+        console.log(introExampleDeck);
         await DB__setDeck(authObj.user.uid, introExampleDeck);
         setTimeout(() => {
           setIsLoading(false);
@@ -180,8 +181,11 @@ export const FormUser = {
             ></input>
           </div>
           <FormUser.Error error={error} />
-          <FormUser.GotAccBtn />
-          <FormUser.SubmitBtn loading={isLoading} />
+
+          <div className="FormUser__btns">
+            <FormUser.GotAccBtn />
+            <FormUser.SubmitBtn loading={isLoading} />
+          </div>
         </Loader>
       </form>
     );
@@ -323,8 +327,10 @@ export const FormUser = {
             ></input>
           </div>
           <FormUser.Error error={error} />
-          <FormUser.ForgotPasswordBtn />
-          <FormUser.SubmitBtn isLoading={isLoading} />
+          <div className="FormUser__btns">
+            <FormUser.ForgotPasswordBtn />
+            <FormUser.SubmitBtn isLoading={isLoading} />
+          </div>
         </Loader>
       </form>
     );

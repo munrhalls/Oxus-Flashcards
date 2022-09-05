@@ -22,6 +22,7 @@ export const AddDeck = (props) => {
 
     let newDeck = {
       id: uuidv4(),
+      ownerId: currentUser?.uid,
       name: deckName,
       flashcards: [],
       completedFlashcards: [],
