@@ -18,5 +18,14 @@
         max-width: 4rem;
         min-width: 0;
     }
+    .AddDeckBtn {
+        margin: 2.5rem 0 0 0;
+        height: 10rem;
+        width: 10rem;
+    }
+    .AddDeckBtn__btn {
+        font-size: .75rem;
+        width: 8rem;
+    }
   }
   

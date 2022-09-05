@@ -1,4 +1,41 @@
 @media only screen and (max-width: 600px) {
+    .SymbolDecks__deck {
+        max-height: 16rem;
+        max-width: 16rem;
+        justify-content: safe center;
+        align-items: safe center;
+        cursor: pointer;
+        overflow: auto;
+        margin-left: 0.5rem;
+    }
+    .SymbolDecks__deck__title {
+        font-size: 1rem;
+        max-width: 100%;
+        width: 8rem;
+        height: 3rem;
+        overflow: auto;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: .15rem;
+        margin: 0.5rem;
+        font-weight: bold;
+    }
+    .SymbolDecks__deck:hover {
+        transform: scale(1);
+        margin: inherit;
+        margin-left: 0.5rem;
+    }
+    .SymbolDecks__deck:hover .SymbolDecks__deck__title {
+        text-overflow: initial;
+        white-space: unset;
+    }
+    .SymbolDecks__deck__img {
+        height: 7rem;
+        width: 7rem;
+    }
+    .SymbolDecks__openDeckBtn {
+        width: 7rem;
+    }
     .Deck {
         padding: 0.75rem;
     }
@@ -46,4 +83,5 @@
         max-height: 1.75rem;
         margin-left: 0.5rem;
     }
+    
 }

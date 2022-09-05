@@ -21,7 +21,7 @@
     background-color: #777;
     opacity: .95;
     border-radius: 5px;
-    transform: scale(1.5) translate(3.35rem, 3.35rem);
+    transform: scale(1.15) translate(1.25rem, 1.25rem);
     box-shadow: 0 0 15px 30px #fff;
     
 }
@@ -33,6 +33,7 @@
     background-color: #000;
     color: #fff;
     height: 2rem;
+    max-width: 100%;
     font-weight: bold;
     letter-spacing: 1px;
     margin-top: 0.15rem;
@@ -63,5 +64,4 @@
     position: absolute;
     width: 5rem;
     height: 5rem;
-    
 }

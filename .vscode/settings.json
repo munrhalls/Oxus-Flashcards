@@ -1,5 +1,5 @@
 {
-    "breadcrumbs.enabled": false,
+    "breadcrumbs.enabled": true,
     "breadcrumbs.icons": true,
     "editor.rename.enablePreview": false,
     "workbench.editor.enablePreview": false
