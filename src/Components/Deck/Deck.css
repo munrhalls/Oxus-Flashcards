@@ -106,7 +106,6 @@
 
 .SymbolDecks__deck__title {
     cursor: pointer;
-    min-height: 3rem;
     max-height: 5.5rem;
     width: 12rem;
     font-size: 1.5rem;
