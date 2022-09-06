@@ -42,11 +42,6 @@ function App() {
     getDecksFromDBAndUpdateUI(currentUser);
   }, [currentUser]);
 
-  useEffect(() => {
-    if (!currentUser) setModalOpen("WelcomeMessage");
-    if (currentUser) setModalOpen(null);
-  }, []);
-  
   const modalProps = {
     activeDeckId,
     setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
@@ -60,7 +55,7 @@ function App() {
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
         <main className="Main">
-          {modalOpen === "WelcomeMessage" && <Welcome.Message />}
+          {!currentUser && <Welcome.Message />}
 
           {activeDeckId && (
             <div className="Aside">
