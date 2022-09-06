@@ -7,6 +7,9 @@
     bottom: 0;
     border-radius: 10px;
     border: 10px solid #000;
+    min-height: 0;
+    overflow-y: auto;
+    background-color: #000;
 }
 
 .InputsAndPreviewContainer {
@@ -14,6 +17,6 @@
     width: 100%;
     max-width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: safe center;
+    align-items: safe center;
 }
