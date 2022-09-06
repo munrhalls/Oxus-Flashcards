@@ -121,7 +121,7 @@ export const Welcome = {
               className="WelcomeMessage__btnContainer"
             >
               <button className="WelcomeMessage__btnContainer__btn">
-                Close this message.
+                Close this message
               </button>
             </div>
           </div>
