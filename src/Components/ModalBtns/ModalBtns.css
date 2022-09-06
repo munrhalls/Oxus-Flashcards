@@ -27,5 +27,8 @@
         font-size: .75rem;
         width: 8rem;
     }
+    .AddDeckBtn__imgPlus {
+        border: 18px solid #000;
+    }
   }
   

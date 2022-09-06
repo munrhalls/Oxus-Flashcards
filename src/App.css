@@ -79,6 +79,10 @@
     border-radius: 30px;
   }
 
+  input, textarea, button {
+    font-family: inherit;
+  }
+
 .App {
     font-family: 'Metropolis', 'Metropolis Extra', 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Verdana', 'sans-serif';
     font-weight: 300;
@@ -89,7 +93,6 @@
     overflow: hidden;
     min-width: 0;
 }
-
 
 
 .Main {
