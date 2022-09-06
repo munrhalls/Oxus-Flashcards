@@ -85,6 +85,14 @@ export const Footer = () => {
           <span> ///</span> Nuclear energy icons created by IwitoStudio -
           Flaticon
         </a>
+        <a
+          className="Footer__attribs__link"
+          target="_blank"
+          href="https://www.flaticon.com/free-icons/share"
+          title="share icons"
+        >
+          <span> ///</span> Share icons created by IconKanan - Flaticon
+        </a>
       </div>
     </footer>
   );
