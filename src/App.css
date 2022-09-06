@@ -105,6 +105,8 @@
 
     min-height: 0;
     min-width: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .Centerstage {
     position: relative;
@@ -115,8 +117,8 @@
 }
 
 .Aside {
-  flex: 0 1;
-  flex-basis: 0;
+  flex: 1 1;
+  max-width: 4rem;
 
 }
 
