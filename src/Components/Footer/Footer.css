@@ -6,8 +6,8 @@
     align-self: flex-end;
     align-items: center;
     justify-content: space-between;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.5rem;
     margin-top: auto;
     background-color: rgb(6, 1, 27);
     color: #fff;
@@ -30,7 +30,7 @@
     padding-bottom: 0.5rem;
   }
   .Footer__authorContainer__author {
-    
+    font-size: .75rem;
   }
 
   .Footer__attribs {

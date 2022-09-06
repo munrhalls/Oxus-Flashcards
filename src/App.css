@@ -41,12 +41,6 @@
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 600px) {
-  html, body {
-    font-size: 12px;
-  }
-}
-
 
 ::-webkit-scrollbar {
     width: 3vw; 
@@ -118,7 +112,14 @@
 
 .Aside {
   flex: 1 1;
-  max-width: 4rem;
-
+  max-width: 10rem;
 }
 
+@media only screen and (max-width: 600px) {
+  html, body {
+    font-size: 12px;
+  }
+  .Aside {
+    max-width: 4rem;
+  }
+}
