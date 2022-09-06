@@ -42,10 +42,14 @@ export const Welcome = {
             <h2 className="WelcomeMessage__subtitle">
               Flashcards work like this: you write question on one side, and
               answer on the other side. You make at least a few such cards, like
-              a deck of cards. Then you flip through them, one by one. Each
-              time, you try to answer the question on your own. Then you check
-              it with the answer you've written on the other side.
+              a deck of cards.
             </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              Then you flip through them, one by one. Each time, you try to
+              answer the question on your own. Then you check it with the answer
+              you've written on the other side.
+            </h2>
+
             <h2 className="WelcomeMessage__subtitle">
               If the card was hard, you put it at the start of the deck. If
               medium, in the middle. If easy, at the end of the deck. If you've
@@ -55,13 +59,18 @@ export const Welcome = {
             <h2 className="WelcomeMessage__subtitle">
               You continue like this, until you've completed (learned) all
               flashcards. Each flashcard represents a small portion of
-              information that it gets you to easily learn by providing
-              automated spaced-repetition.
+              information that it gets you to{" "}
+              <span className="--italic">
+                easily learn by providing automated spaced-repetition.
+              </span>
             </h2>
 
             <h2 className="WelcomeMessage__subtitle">
-              It's an electronic version of the well-known, popular, simple and
-              highly effective learning tool: flashcards.
+              It's an electronic version of the well-known, popular,{" "}
+              <span className="--italic">
+                simple and highly effective learning tool
+              </span>
+              : flashcards.
             </h2>
             <h2 className="WelcomeMessage__subtitle --link">
               <div>
