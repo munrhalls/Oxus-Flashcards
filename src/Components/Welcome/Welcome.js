@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../Loader/Loader";
 
 export const Welcome = {
   Shade: function Shade(props) {
@@ -24,9 +25,16 @@ export const Welcome = {
   },
   Message: function Message(props) {
     const [message, setIsMessage] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+    });
 
     return (
-      <>
+      <Loader active={isLoading}>
         {message ? (
           <div className="WelcomeMessage">
             <h1 className="WelcomeMessage__title">Welcome to flashcards!</h1>
@@ -151,7 +159,7 @@ export const Welcome = {
         ) : (
           ""
         )}
-      </>
+      </Loader>
     );
   },
 };

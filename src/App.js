@@ -33,16 +33,20 @@ function App() {
     decks,
     setDecks,
   } = useGlobal();
+
   useEffect(() => {
     if (!currentUser)
       return (function () {
         setDecks([introExampleDeck]);
-        setModalOpen("WelcomeMessage");
       })();
-
     getDecksFromDBAndUpdateUI(currentUser);
   }, [currentUser]);
 
+  useEffect(() => {
+    if (!currentUser) setModalOpen("WelcomeMessage");
+    if (currentUser) setModalOpen(null);
+  }, []);
+  
   const modalProps = {
     activeDeckId,
     setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
