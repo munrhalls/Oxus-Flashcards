@@ -2,7 +2,7 @@ import { uuidv4 } from "@firebase/util";
 
 export const introExampleDeck = {
   id: uuidv4(),
-  name: "Learn how to greet someone in over 10 different languages! (Example deck)",
+  name: "Learn how to greet someone in 30+ languages. Example of a flashcards deck.",
   flashcards: getIntroExampleFLashcards(),
   completedFlashcards: [],
 };

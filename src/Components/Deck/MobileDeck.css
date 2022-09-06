@@ -6,31 +6,33 @@
         align-items: safe center;
         cursor: pointer;
         overflow: auto;
-        margin-left: 0.5rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
     }
     .SymbolDecks__deck__title {
-        font-size: 1rem;
+        font-size: 1.15rem;
         max-width: 100%;
         width: 8rem;
         padding: .15rem;
         margin: 0.5rem;
+        overflow-y: auto;
     }
     .SymbolDecks__deck:hover {
         transform: scale(1);
         margin: inherit;
         margin-left: 0.5rem;
-        font-weight: bold;
     }
     .SymbolDecks__deck:hover .SymbolDecks__deck__title {
         text-overflow: initial;
         white-space: unset;
+        font-size: 1rem;
     }
     .SymbolDecks__deck__img {
-        height: 7rem;
-        width: 7rem;
+        height: 5.5rem;
+        width: 5.5rem;
     }
     .SymbolDecks__openDeckBtn {
-        width: 7rem;
+        width: 100%;
     }
     .Deck {
         padding: 0.75rem;
