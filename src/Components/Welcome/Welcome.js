@@ -61,7 +61,14 @@ export const Welcome = {
               flashcards. Each flashcard represents a small portion of
               information that it gets you to{" "}
               <span className="--italic">
-                easily learn by providing automated spaced-repetition.
+                easily learn by providing automated{" "}
+                <a
+                  href="https://en.wikipedia.org/wiki/Spaced_repetition"
+                  target="_blank"
+                >
+                  spaced-repetition
+                </a>
+                .
               </span>
             </h2>
 
@@ -82,7 +89,7 @@ export const Welcome = {
                 </a>
               </div>
             </h2>
-            <ul className="WelcomeMessage__list">
+            {/* <ul className="WelcomeMessage__list">
               <li className="WelcomeMessage__list__item">
                 To start, first click the "ADD NEW DECK" button.
               </li>
@@ -103,17 +110,31 @@ export const Welcome = {
                 press "SAVE", you'll be taken to deck edition window, where you
                 can add and edit deck's flashcards.
               </li>
-            </ul>
-            <h2 className="WelcomeMessage__subtitle">
+            </ul> */}
+            {/* <h2 className="WelcomeMessage__subtitle">
               Add as many flashcards as you want to a deck. You can also create
               as many different decks with different flashcards as you want.
             </h2>
             <h2 className="WelcomeMessage__subtitle">
               To turn a flashcard, click it. To go to the next flashcard, mark
               how hard the flashcard was, and click "NEXT".
+            </h2> */}
+            <h2 className="WelcomeMessage__subtitle">
+              This app is designed to offer simple, practical, no-nonsense
+              solution for making and using electronic flashcards.
             </h2>
             <h2 className="WelcomeMessage__subtitle">
-              Simple, practical, no-nonsense.
+              You can easily add pure text or{" "}
+              <span className="--bold --italic">images</span>, or both{" "}
+              <span className="--bold --italic">text and images</span>, in your
+              flashcards.
+            </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              For mobile phone users, you can easily{" "}
+              <span className="--bold --italic">
+                take a picture with phone camera and upload it to your flashcard
+                in 1 step!
+              </span>
             </h2>
             <h2 className="WelcomeMessage__subtitle">Enjoy Oxus Flashcards!</h2>
             <div
