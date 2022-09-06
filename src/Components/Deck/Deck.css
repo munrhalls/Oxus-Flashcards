@@ -94,6 +94,7 @@
     flex-direction: column;
     justify-content: safe     center;
     align-items: safe center;
+    max-width: 9rem;
 }
 .SymbolDecks__deck:hover {
     cursor: pointer;
@@ -106,15 +107,15 @@
 .SymbolDecks__deck__img {
     cursor: pointer;
 
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 .SymbolDecks__deck__title {
     cursor: pointer;
     max-height: 5.5rem;
-    width: 12rem;
-    font-size: 1.5rem;
+    width: 100%;
+    font-size: 1.15rem;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -123,14 +124,14 @@
 }
 
 .SymbolDecks__deck:hover .SymbolDecks__deck__title {
-    font-weight: bold;
+    font-size: 1.5rem;
     text-overflow: initial;
     white-space: unset;
     max-height: unset;
 }
 .SymbolDecks__openDeckBtn {
     cursor: pointer;
-    width: 10rem;
+    width: 100%;
     height: 2rem;
     font-size: 1rem;
     text-align: center;
