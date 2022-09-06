@@ -30,14 +30,38 @@ export const Welcome = {
         {message ? (
           <div className="WelcomeMessage">
             <h1 className="WelcomeMessage__title">Welcome to flashcards!</h1>
-            <h2 className="WelcomeMessage__subtitle">
-              This app is an electronic version of the well-known, popular,
-              simple and highly effective learning tool: flashcards.
-            </h2>
             <h2 className="WelcomeMessage__subtitle --link">
               <a href="https://en.wikipedia.org/wiki/Flashcard" target="_blank">
                 What are flashcards?&nbsp;
               </a>
+            </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              Flashcards are a great tool for learning. This app lets you easily
+              create and review decks of flashcards.
+            </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              Flashcards work like this: you write question on one side, and
+              answer on the other side. You make at least a few such cards, like
+              a deck of cards. Then you flip through them, one by one. Each
+              time, you try to answer the question on your own. Then you check
+              it with the answer you've written on the other side.
+            </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              If the card was hard, you put it at the start of the deck. If
+              medium, in the middle. If easy, at the end of the deck. If you've
+              repeated a given card so many times you think you've completely
+              gotten it, you put that card away.
+            </h2>
+            <h2 className="WelcomeMessage__subtitle">
+              You continue like this, until you've completed (learned) all
+              flashcards. Each flashcard represents a small portion of
+              information that it gets you to easily learn by providing
+              automated spaced-repetition.
+            </h2>
+
+            <h2 className="WelcomeMessage__subtitle">
+              It's an electronic version of the well-known, popular, simple and
+              highly effective learning tool: flashcards.
             </h2>
             <h2 className="WelcomeMessage__subtitle --link">
               <div>
@@ -48,10 +72,6 @@ export const Welcome = {
                   Click to read Wikipedia article.
                 </a>
               </div>
-            </h2>
-            <h2 className="WelcomeMessage__subtitle">
-              In this app, all flashcards are managed within decks. When you
-              add, delete or edit
             </h2>
             <ul className="WelcomeMessage__list">
               <li className="WelcomeMessage__list__item">
