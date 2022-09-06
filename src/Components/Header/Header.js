@@ -2,6 +2,7 @@ import { useGlobal } from "../../Contexts/GlobalProvider";
 import React, { useState, useEffect } from "react";
 import { FormUser } from "../FormUser/FormUser";
 import Loader from "../Loader/Loader";
+import IMG__CARDS from "./../../Assets/cards.png";
 
 export function Header({ setActiveDeckId }) {
   const { getCurrentUser } = useGlobal();
@@ -21,7 +22,14 @@ export function Header({ setActiveDeckId }) {
 
   return (
     <header className="Header">
-      <h6 className="Header__title">Flashcards</h6>
+      <h6 className="Header__title">
+        Flashcards
+        <img
+          className="Header__title__icon"
+          src={IMG__CARDS}
+          alt="Flashcards Icon"
+        />
+      </h6>
       <div className="Header__account">
         <Loader active={isLoading}>
           {currentUser?.email ? (

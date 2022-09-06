@@ -10,12 +10,31 @@
     justify-content: space-between;
     padding: 0 .75rem;
 }
-
 .Header__title {
     font-size: 1.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
+    background-color: transparent;
+    display: flex;
+    justify-content: safe center;
+    align-items: safe center;
+    box-shadow: inset -1.5rem -.5rem 3px 1px #fff;
+    padding-top: .5rem;
+    padding-right: 1.75rem;
+    border-radius: 3px;
+}
+
+.Header__title__icon {
+    margin-left: 1rem;
+    height: 4rem;
+    width: 4rem;
+    max-height: 5rem;
+    max-width: 5rem;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+.Header__title__icon:hover {
+    box-shadow: 0 0 30px 15px #fff;
 }
 .Header__account {
     height: 100%;
@@ -47,3 +66,17 @@
     transform: scale(1.25);
     box-shadow: 0 0 30px 5px #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    .Header__title {
+        font-size: 1.5rem;
+        padding-right: 1.75rem;
+    }
+    .Header__title__icon {
+        margin-left: .5rem;
+        height: 3rem;
+        width: 3rem;
+        max-height: 3rem;
+        max-width: 3rem;
+    }
+  }
