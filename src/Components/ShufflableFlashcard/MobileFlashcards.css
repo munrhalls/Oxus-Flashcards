@@ -1,6 +1,10 @@
 @media only screen and (max-width: 600px) {
     .Flashcards {
-    
+        min-height: 20rem;
+        display: flex;
+        flex-wrap: nowrap;
+        flex: 5;
+        margin-bottom: 1rem;
     }
     
     .Flashcard__image {
@@ -79,13 +83,6 @@
 
 
 
-    .Flashcards {
-        display: flex;
-        flex-wrap: nowrap;
-        min-height: 15rem;
-        flex: 5;
-        margin-bottom: 1rem;
-    }
     .Flashcard__container {
         display: flex;
         flex-direction: column;
