@@ -14,7 +14,7 @@
 .Deck__instance {
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content:     space-between;
     min-height: 0;
     flex-wrap: wrap;
 }
@@ -31,7 +31,7 @@
     flex: 1 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:     space-between;
     min-height: 0;
     flex-wrap: nowrap;
 }
@@ -45,7 +45,7 @@
 }
 .Deck__titleContainer__titleContainer {
     display: flex;
-    justify-content: center;
+    justify-content:     center;
     align-items: center;
     font-weight: bold;
     flex-wrap: wrap;
@@ -58,7 +58,7 @@
 }
 .Deck__titleContainer__metaContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content:     space-between;
     align-items: center;
 }
 .Deck__titleContainer__metaContainer__metaTitle {
@@ -77,7 +77,7 @@
     width: 100%;
     padding: 1rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content:     flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
 }
@@ -86,7 +86,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:     center;
     align-items: center;
 }
 .SymbolDecks__deck:hover {
@@ -135,7 +135,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:     center;
     align-items: center;
 }
 .SymbolDecks__noDecksMsg {
@@ -166,7 +166,7 @@
     letter-spacing: 3px;
     
     display: flex;
-    justify-content: center;
+    justify-content:     center;
     align-items: center;
 
     padding: 1rem;

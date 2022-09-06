@@ -11,8 +11,8 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    border-right: 24px solid #000;
-    border-bottom: 18px solid #000;
+    border-right: 2rem solid #000;
+    border-bottom: 2rem solid #000;
     border-radius: 5px;
     opacity: 0.8;
 
