@@ -54,6 +54,7 @@
     margin: auto;
     top: 0; right: 0; bottom: 0; left: 0;
     padding: 2rem;
+    padding-bottom: 8rem;
     max-width: 100%;
     max-height: 100%;
     overflow-y: auto;
@@ -66,12 +67,6 @@
     align-items: safe center;
     z-index: 100;
     background-color: #fff;
-  }
-  .--italic {
-    font-style: italic;
-  }
-  .--bold {
-    font-weight: bold;
   }
   .WelcomeMessage__title {
     font-size: 2rem;
@@ -118,4 +113,14 @@
     list-style-type: space-counter;
     font-size: 1.5rem;
     margin-top: 0.5rem;
+  }
+  /* modifiers */
+  .--italic {
+    font-style: italic;
+  }
+  .--bold {
+    font-weight: bold;
+  }
+  .--fontLarge {
+    font-size: 2.5rem;
   }

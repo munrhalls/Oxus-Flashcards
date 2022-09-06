@@ -136,7 +136,9 @@ export const Welcome = {
                 in 1 step!
               </span>
             </h2>
-            <h2 className="WelcomeMessage__subtitle">Enjoy Oxus Flashcards!</h2>
+            <h2 className="WelcomeMessage__subtitle --fontLarge">
+              Enjoy Oxus Flashcards!
+            </h2>
             <div
               onClick={() => setIsMessage((message) => false)}
               className="WelcomeMessage__btnContainer"
