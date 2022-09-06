@@ -106,10 +106,22 @@
 
 .SymbolDecks__deck__title {
     cursor: pointer;
-
-    width: 10rem;
+    min-height: 3rem;
+    max-height: 5.5rem;
+    width: 12rem;
     font-size: 1.5rem;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: .5rem;
+}
+
+.SymbolDecks__deck:hover .SymbolDecks__deck__title {
+    font-weight: bold;
+    text-overflow: initial;
+    white-space: unset;
+    max-height: unset;
 }
 .SymbolDecks__openDeckBtn {
     cursor: pointer;

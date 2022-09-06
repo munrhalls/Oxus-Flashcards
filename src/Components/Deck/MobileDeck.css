@@ -12,18 +12,14 @@
         font-size: 1rem;
         max-width: 100%;
         width: 8rem;
-        height: 3rem;
-        overflow: auto;
-        text-overflow: ellipsis;
-        white-space: nowrap;
         padding: .15rem;
         margin: 0.5rem;
-        font-weight: bold;
     }
     .SymbolDecks__deck:hover {
         transform: scale(1);
         margin: inherit;
         margin-left: 0.5rem;
+        font-weight: bold;
     }
     .SymbolDecks__deck:hover .SymbolDecks__deck__title {
         text-overflow: initial;
