@@ -25,10 +25,20 @@ import { useGlobal } from "./Contexts/GlobalProvider";
 
 function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
-  const { currentUser, modalOpen, getDecksFromDBAndUpdateUI, decks, setDecks } =
-    useGlobal();
+  const {
+    currentUser,
+    setModalOpen,
+    modalOpen,
+    getDecksFromDBAndUpdateUI,
+    decks,
+    setDecks,
+  } = useGlobal();
   useEffect(() => {
-    if (!currentUser) return setDecks([introExampleDeck]);
+    if (!currentUser)
+      return (function () {
+        setDecks([introExampleDeck]);
+        setModalOpen("WelcomeMessage");
+      })();
 
     getDecksFromDBAndUpdateUI(currentUser);
   }, [currentUser]);
@@ -46,7 +56,7 @@ function App() {
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
         <main className="Main">
-          {!currentUser && <Welcome.Message />}
+          {modalOpen === "WelcomeMessage" && <Welcome.Message />}
 
           {activeDeckId && (
             <div className="Aside">
