@@ -5,6 +5,7 @@ import Loader from "../Loader/Loader";
 import IMG__CARDS from "./../../Assets/cards.png";
 import { Menu } from "./../Menu/Menu";
 import useMobileCheck from "../../Hooks/useMobileCheck";
+import { Utils } from "../Utils/Utils";
 
 export function Header({ setActiveDeckId }) {
   const { getCurrentUser } = useGlobal();
@@ -33,34 +34,34 @@ export function Header({ setActiveDeckId }) {
           alt="Flashcards Icon"
         />
       </h6>
-      {!useMobileCheck() && (
+
+      {/* {!useMobileCheck() && (
         <div className="Header__desktopMenuBtns">
           <button>Tutorial</button>
           <button>About</button>
         </div>
-      )}
-      <div className="Header__account">
-        <Loader active={isLoading}>
-          {currentUser?.email ? (
-            <>
-              <h1 className="Header__account__welcomeMsg">
-                Welcome {currentUser?.displayName} !
-              </h1>
-              <div className="Header__account__btnsContainer">
-                <FormUser.EditProfileBtn />
-                <FormUser.LogOutBtn
-                  setActiveDeckId={() => setActiveDeckId(null)}
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              <FormUser.LoginBtn />
-              <FormUser.RegisterBtn />
-            </>
-          )}
-        </Loader>
-      </div>
+      )} */}
+
+      <Loader active={isLoading}>
+        <Utils.Toggle toggle={currentUser?.email}>
+          <div className="Header__account">
+            <h1 className="Header__account__welcomeMsg">
+              Welcome {currentUser?.displayName} !
+            </h1>
+            <div className="Header__account__btnsContainer">
+              <FormUser.EditProfileBtn />
+              <FormUser.LogOutBtn
+                setActiveDeckId={() => setActiveDeckId(null)}
+              />
+            </div>
+          </div>
+
+          <div className="Header__account">
+            <FormUser.LoginBtn />
+            <FormUser.RegisterBtn />
+          </div>
+        </Utils.Toggle>
+      </Loader>
     </header>
   );
 }

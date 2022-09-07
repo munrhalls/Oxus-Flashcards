@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import IMG__MENU from "./../../Assets/menu.png";
 import useMobileCheck from "../../Hooks/useMobileCheck";
 import IMG__CLOSE from "./../../Assets/close.png";
 import { useGlobal } from "../../Contexts/GlobalProvider";
+import Loader from "../Loader/Loader";
+import { FormUser } from "../FormUser/FormUser";
+
 import { Utils } from "../Utils/Utils";
 
 export const Menu = {
@@ -42,7 +45,39 @@ export const Menu = {
     );
   },
 
-  Mobile: function () {
-    return <div className="Menu__Mobile">Mobile Menu</div>;
+  Mobile: function ({ setActiveDeckId }) {
+    const [isLoading, setIsLoading] = useState(true);
+    const currentUser = useGlobal();
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 750);
+    });
+
+    return (
+      <div className="Menu__Mobile">
+        <Loader active={isLoading}>
+          <Utils.Toggle toggle={currentUser?.email}>
+            <div className="Header__account">
+              <h1 className="Header__account__welcomeMsg">
+                Welcome {currentUser?.displayName} !
+              </h1>
+              <div className="Header__account__btnsContainer">
+                <FormUser.EditProfileBtn />
+                <FormUser.LogOutBtn
+                  setActiveDeckId={() => setActiveDeckId(null)}
+                />
+              </div>
+            </div>
+
+            <div className="Header__account">
+              <FormUser.LoginBtn />
+              <FormUser.RegisterBtn />
+            </div>
+          </Utils.Toggle>
+        </Loader>
+      </div>
+    );
   },
 };
