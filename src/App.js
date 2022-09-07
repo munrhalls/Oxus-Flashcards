@@ -82,7 +82,7 @@ function App() {
                 }
               />
             )}
-            {modalOpen === 'MenuMobile' && <Menu.Mobile />}
+            {modalOpen === "MenuMobile" && <Menu.Mobile />}
             {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
             {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
             {modalOpen === "DeleteDeck" && (
