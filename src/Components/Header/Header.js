@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FormUser } from "../FormUser/FormUser";
 import Loader from "../Loader/Loader";
 import IMG__CARDS from "./../../Assets/cards.png";
+import useMobileCheck from "../../Hooks/useMobileCheck";
 
 export function Header({ setActiveDeckId }) {
   const { getCurrentUser } = useGlobal();
@@ -22,6 +23,7 @@ export function Header({ setActiveDeckId }) {
 
   return (
     <header className="Header">
+      {useMobileCheck() && <div>Menu btn</div>}
       <h6 className="Header__title">
         Flashcards
         <img
@@ -30,6 +32,12 @@ export function Header({ setActiveDeckId }) {
           alt="Flashcards Icon"
         />
       </h6>
+      {!useMobileCheck() && (
+        <div className="Header__menuBtns">
+          <button>Tutorial</button>
+          <button>About</button>
+        </div>
+      )}
       <div className="Header__account">
         <Loader active={isLoading}>
           {currentUser?.email ? (
