@@ -47,7 +47,7 @@ export const Menu = {
 
   Mobile: function ({ setActiveDeckId }) {
     const [isLoading, setIsLoading] = useState(true);
-    const currentUser = useGlobal();
+    const { currentUser } = useGlobal();
 
     useEffect(() => {
       setTimeout(() => {
@@ -58,7 +58,7 @@ export const Menu = {
     return (
       <div className="Menu__Mobile">
         <Loader active={isLoading}>
-          <Utils.Toggle toggle={currentUser?.email}>
+          <Utils.Toggle toggle={currentUser}>
             <div className="Header__account">
               <h1 className="Header__account__welcomeMsg">
                 Welcome {currentUser?.displayName} !
