@@ -66,16 +66,3 @@
     transform: scale(1.25);
     box-shadow: 0 0 30px 5px #fff;
 }
-
-@media only screen and (max-width: 600px) {
-    .Header__title {
-        font-size: 1.5rem;
-    }
-    .Header__title__icon {
-        margin-left: .5rem;
-        height: 3rem;
-        width: 3rem;
-        max-height: 3rem;
-        max-width: 3rem;
-    }
-  }

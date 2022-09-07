@@ -85,7 +85,7 @@ export const ShufflableFlashcard = ({
         <>
           <div className="Flashcards__completedMessage">
             <div className="Flashcards__completedMessage__title">
-              Deck completed.
+              DECK COMPLETED.
             </div>
           </div>
           <ResetDeckBtn resetDeck={() => resetDeck()} />

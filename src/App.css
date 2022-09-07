@@ -32,6 +32,8 @@
 /* outro */
 @import './Components/Footer/Footer.css';
 /* being friendly to cell phones */
+@import './Components/Header/MobileHeader.css';
+@import './Components/FormUser/MobileFormUser.css';
 @import './Components/Deck/MobileDeck.css';
 @import './Components/ShufflableFlashcard/MobileFlashcards.css';
 @import './Components/ShufflableFlashcard/MobileCompletedFlashcards.css';
