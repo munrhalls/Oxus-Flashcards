@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FormUser } from "../FormUser/FormUser";
 import Loader from "../Loader/Loader";
 import IMG__CARDS from "./../../Assets/cards.png";
-import MobileMenuBtn from "./MobileMenuBtn";
+import { Menu } from "./../Menu/Menu";
 import useMobileCheck from "../../Hooks/useMobileCheck";
 
 export function Header({ setActiveDeckId }) {
@@ -24,9 +24,9 @@ export function Header({ setActiveDeckId }) {
 
   return (
     <header className="Header">
-      <MobileMenuBtn />
+      <Menu.MobileBtn />
       <h6 className="Header__title">
-        Flashcards
+        <span className="Header__title__text">Flashcards</span>
         <img
           className="Header__title__icon"
           src={IMG__CARDS}

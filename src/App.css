@@ -2,6 +2,7 @@
 @import './reset.css';
 @import './Fonts/fonts.css';
 @import './Components/Header/Header.css';
+@import './Components/Menu/Menu.css';
 @import './Components/Header/MobileMenuBtn.css';
 @import './Components/Welcome/Welcome.css';
 /* central clusters, all else...nodes that plug into that*/

@@ -5,6 +5,7 @@
     .Header__account {
         justify-content: flex-start;
     }
+    
     .Header__title__icon {
         margin-left: .25rem;
         height: 2.5rem;
