@@ -9,6 +9,7 @@ import { introExampleDeck } from "./introExampleDeck";
 // introduction
 import { useEffect, useState } from "react";
 import { Welcome } from "./Components/Welcome/Welcome";
+import { Menu } from "./Components/Menu/Menu";
 import { Header } from "./Components/Header/Header";
 // cluster 1
 import { FormUser } from "./Components/FormUser/FormUser";
@@ -81,6 +82,7 @@ function App() {
                 }
               />
             )}
+            {modalOpen === 'MenuMobile' && <Menu.Mobile />}
             {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
             {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
             {modalOpen === "DeleteDeck" && (
