@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FormUser } from "../FormUser/FormUser";
 import Loader from "../Loader/Loader";
 import IMG__CARDS from "./../../Assets/cards.png";
+import MobileMenuBtn from "./MobileMenuBtn";
 import useMobileCheck from "../../Hooks/useMobileCheck";
 
 export function Header({ setActiveDeckId }) {
@@ -23,7 +24,7 @@ export function Header({ setActiveDeckId }) {
 
   return (
     <header className="Header">
-      {useMobileCheck() && <div>Menu btn</div>}
+      <MobileMenuBtn />
       <h6 className="Header__title">
         Flashcards
         <img
@@ -33,7 +34,7 @@ export function Header({ setActiveDeckId }) {
         />
       </h6>
       {!useMobileCheck() && (
-        <div className="Header__menuBtns">
+        <div className="Header__desktopMenuBtns">
           <button>Tutorial</button>
           <button>About</button>
         </div>

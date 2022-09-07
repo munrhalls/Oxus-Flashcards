@@ -1,0 +1,15 @@
+.Header__mobileMenuBtn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.Header__mobileMenuBtn__text {
+    font-weight: bold;
+    margin-left: -.33rem;
+    margin-bottom: .33rem;
+}
+.Header__mobileMenuBtn__img {
+    height: 2rem;
+    width: 2rem;
+    filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(301deg) brightness(104%) contrast(105%);
+}

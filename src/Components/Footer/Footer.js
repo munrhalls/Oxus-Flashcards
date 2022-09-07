@@ -93,6 +93,14 @@ export const Footer = () => {
         >
           <span> ///</span> Share icons created by IconKanan - Flaticon
         </a>
+        <a
+          className="Footer__attribs__link"
+          target="_blank"
+          href="https://www.flaticon.com/free-icons/menu"
+          title="menu icons"
+        >
+          <span> ///</span> Menu icons created by Freepik - Flaticon
+        </a>
       </div>
     </footer>
   );
