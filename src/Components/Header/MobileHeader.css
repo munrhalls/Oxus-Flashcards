@@ -3,10 +3,12 @@
     display: flex;
     justify-content: safe center;
     align-items: safe center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-right: 2rem;
 }
 .Header__title__text {
+    letter-spacing: 5px;
+
 }
 .Header__account {
 }
@@ -26,6 +28,10 @@
 @media only screen and (max-width: 900px) {
     .Header__title {
         margin-right: .25rem;
+    }
+    .Header__title__text{
+        letter-spacing: 2px;
+        font-size: 2rem;
     }
     .Header__title__icon {
         margin-right: 1.5rem;
