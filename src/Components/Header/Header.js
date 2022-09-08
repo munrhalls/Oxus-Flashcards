@@ -24,7 +24,7 @@ export function Header({ setActiveDeckId }) {
 
   return (
     <header className="Header">
-      <Menu.MobileBtn />
+      <Menu.Btn />
       <h6 className="Header__loggedStatus">
         <span className="Header__loggedStatus__title">Logged:</span>
         <span className="Header__loggedStatus__displayName">

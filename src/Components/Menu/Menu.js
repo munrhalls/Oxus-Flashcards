@@ -9,31 +9,31 @@ import { FormUser } from "../FormUser/FormUser";
 import { Utils } from "../Utils/Utils";
 
 export const Menu = {
-  MobileBtn: function () {
+  Btn: function () {
     const { setMenuOpen, menuOpen } = useGlobal();
 
     return (
       <>
         <Utils.Toggle toggle={menuOpen === "MenuMobile"}>
           <button
-            className="Header__mobileMenuBtn"
+            className="Header__menuBtn"
             onClick={() => setMenuOpen(() => null)}
           >
-            <span className="Header__mobileMenuBtn__text">Close</span>
+            <span className="Header__menuBtn__text">Close</span>
             <img
-              className="Header__mobileMenuBtn__img"
+              className="Header__menuBtn__img"
               src={IMG__CLOSE}
               alt="Menu icon"
             />
           </button>
 
           <button
-            className="Header__mobileMenuBtn"
+            className="Header__menuBtn"
             onClick={() => setMenuOpen(() => "MenuMobile")}
           >
-            <span className="Header__mobileMenuBtn__text">Menu</span>
+            <span className="Header__menuBtn__text">Menu</span>
             <img
-              className="Header__mobileMenuBtn__img"
+              className="Header__menuBtn__img"
               src={IMG__MENU}
               alt="Menu icon"
             />
@@ -42,7 +42,7 @@ export const Menu = {
       </>
     );
   },
-  Mobile: function ({ setActiveDeckId }) {
+  Modal: function ({ setActiveDeckId }) {
     const { currentUser } = useGlobal();
 
     return (
