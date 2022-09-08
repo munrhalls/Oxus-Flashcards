@@ -10,15 +10,15 @@ import { Utils } from "../Utils/Utils";
 
 export const Menu = {
   MobileBtn: function () {
-    const { setModalOpen, modalOpen } = useGlobal();
+    const { setMenuOpen, menuOpen } = useGlobal();
 
     return (
       <>
         {useMobileCheck() && (
-          <Utils.Toggle toggle={modalOpen === "MenuMobile"}>
+          <Utils.Toggle toggle={menuOpen === "MenuMobile"}>
             <button
               className="Header__mobileMenuBtn"
-              onClick={() => setModalOpen(() => null)}
+              onClick={() => setMenuOpen(() => null)}
             >
               <span className="Header__mobileMenuBtn__text">Close</span>
               <img
@@ -30,7 +30,7 @@ export const Menu = {
 
             <button
               className="Header__mobileMenuBtn"
-              onClick={() => setModalOpen(() => "MenuMobile")}
+              onClick={() => setMenuOpen(() => "MenuMobile")}
             >
               <span className="Header__mobileMenuBtn__text">Menu</span>
               <img

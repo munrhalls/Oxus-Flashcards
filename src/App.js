@@ -30,6 +30,7 @@ function App() {
     currentUser,
     setModalOpen,
     modalOpen,
+    menuOpen,
     getDecksFromDBAndUpdateUI,
     decks,
     setDecks,
@@ -56,7 +57,7 @@ function App() {
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
         {!currentUser && <Welcome.Message />}
-        
+
         <main className="Main">
           {activeDeckId && (
             <div className="Aside">
@@ -82,7 +83,7 @@ function App() {
                 }
               />
             )}
-            {modalOpen === "MenuMobile" && <Menu.Mobile {...modalProps} />}
+            {menuOpen === "MenuMobile" && <Menu.Mobile {...modalProps} />}
             {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
             {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
             {modalOpen === "DeleteDeck" && (
