@@ -10,7 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: safe center;
-    align-items: safe center
+    align-items: safe center;
+    z-index: 100;
 }
 .Menu__Mobile__btnsContainer {
     display: flex;

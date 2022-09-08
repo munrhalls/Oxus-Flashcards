@@ -43,7 +43,6 @@
 .FormUser {
     position: absolute;
     left: 0; top: 3rem; right: 0; bottom: 25%;
-    z-index: 10;
     width: 95%;
     height: 80%;
     min-height: 0;
@@ -59,6 +58,7 @@
     border-radius: 5px;
     padding: 1rem;
     overflow: auto;
+    z-index: 1000;
 }
 .FormUser__topbar {
     min-height: 2rem;

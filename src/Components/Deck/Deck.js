@@ -18,7 +18,7 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
   function mvToCompleted(card) {
     setDecks((decks) => {
       return decks.map((deck) => {
-        return deck.id === activeDeckId
+        return deck?.id === activeDeckId
           ? {
               ...deck,
               completedFlashcards: [...deck.completedFlashcards, card],
@@ -33,7 +33,7 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
         if (deck.id !== activeDeckId) return deck;
         return {
           ...deck,
-          flashcards: [...deck.completedFlashcards],
+          flashcards: [...deck?.completedFlashcards],
           completedFlashcards: [],
         };
       })
@@ -53,7 +53,7 @@ export const Deck = ({ activeDeckId, setDecks, decks }) => {
           />
         </div>
         <div className="Deck__titleContainer__titleContainer">
-          <h3 className="Deck__titleContainer__title">{deck.name}.</h3>
+          <h3 className="Deck__titleContainer__title">{deck?.name}.</h3>
         </div>
       </div>
       <div className="Deck__instance">
