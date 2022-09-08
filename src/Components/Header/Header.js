@@ -39,7 +39,7 @@ export function Header({ setActiveDeckId }) {
         </div>
       )} */}
 
-      {!useMobileCheck() && (
+      {/* {!useMobileCheck() && (
         <Loader active={isLoading}>
           <Utils.Toggle toggle={currentUser?.email}>
             <div className="Header__account">
@@ -57,7 +57,7 @@ export function Header({ setActiveDeckId }) {
             </div>
           </Utils.Toggle>
         </Loader>
-      )}
+      )} */}
       <h6 className="Header__title">
         <img
           className="Header__title__icon"

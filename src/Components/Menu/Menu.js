@@ -14,33 +14,31 @@ export const Menu = {
 
     return (
       <>
-        {useMobileCheck() && (
-          <Utils.Toggle toggle={menuOpen === "MenuMobile"}>
-            <button
-              className="Header__mobileMenuBtn"
-              onClick={() => setMenuOpen(() => null)}
-            >
-              <span className="Header__mobileMenuBtn__text">Close</span>
-              <img
-                className="Header__mobileMenuBtn__img"
-                src={IMG__CLOSE}
-                alt="Menu icon"
-              />
-            </button>
+        <Utils.Toggle toggle={menuOpen === "MenuMobile"}>
+          <button
+            className="Header__mobileMenuBtn"
+            onClick={() => setMenuOpen(() => null)}
+          >
+            <span className="Header__mobileMenuBtn__text">Close</span>
+            <img
+              className="Header__mobileMenuBtn__img"
+              src={IMG__CLOSE}
+              alt="Menu icon"
+            />
+          </button>
 
-            <button
-              className="Header__mobileMenuBtn"
-              onClick={() => setMenuOpen(() => "MenuMobile")}
-            >
-              <span className="Header__mobileMenuBtn__text">Menu</span>
-              <img
-                className="Header__mobileMenuBtn__img"
-                src={IMG__MENU}
-                alt="Menu icon"
-              />
-            </button>
-          </Utils.Toggle>
-        )}
+          <button
+            className="Header__mobileMenuBtn"
+            onClick={() => setMenuOpen(() => "MenuMobile")}
+          >
+            <span className="Header__mobileMenuBtn__text">Menu</span>
+            <img
+              className="Header__mobileMenuBtn__img"
+              src={IMG__MENU}
+              alt="Menu icon"
+            />
+          </button>
+        </Utils.Toggle>
       </>
     );
   },
