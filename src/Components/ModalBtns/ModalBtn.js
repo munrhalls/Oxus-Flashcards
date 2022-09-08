@@ -2,7 +2,14 @@ import React from "react";
 import useMobileCheck from "./../../Hooks/useMobileCheck";
 import { useGlobal } from "../../Contexts/GlobalProvider";
 
-export function ModalBtn({ deck, name, icon, open, setActiveDeckId }) {
+export function ModalBtn({
+  deck,
+  name,
+  disabled,
+  icon,
+  open,
+  setActiveDeckId,
+}) {
   const { setModalOpen } = useGlobal();
   const isMobile = useMobileCheck();
   return (
@@ -11,6 +18,7 @@ export function ModalBtn({ deck, name, icon, open, setActiveDeckId }) {
         className={`ModalBtns__container__btn --${name} ${
           open ? " --open" : ""
         }`}
+        disabled={disabled}
         onClick={() => {
           setModalOpen(deck);
           {

@@ -6,8 +6,7 @@ import IMG__DOOR from "./../../Assets/opened-door-aperture.png";
 import { useGlobal } from "../../Contexts/GlobalProvider";
 
 export const ModalBtns = ({ setActiveDeckId }) => {
-  const { getModalOpen } = useGlobal();
-  let modalOpen = getModalOpen();
+  const { modalOpen, menuOpen } = useGlobal();
   return (
     <div className="ModalBtns">
       <ModalBtn
@@ -15,18 +14,22 @@ export const ModalBtns = ({ setActiveDeckId }) => {
         deck={null}
         setActiveDeckId={() => setActiveDeckId(null)}
         icon={IMG__DOOR}
+        disabled={menuOpen}
       />
+
       <ModalBtn
         name="EDIT"
         open={modalOpen === "EditDeck"}
         deck="EditDeck"
         icon={IMG__EDIT}
+        disabled={menuOpen}
       />
       <ModalBtn
         name="DELETE"
         open={modalOpen === "DeleteDeck"}
         deck="DeleteDeck"
         icon={IMG__CLOSE}
+        disabled={menuOpen}
       />
     </div>
   );

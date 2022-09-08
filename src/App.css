@@ -81,6 +81,9 @@
   input, textarea, button {
     font-family: inherit;
   }
+  a {
+    outline: none;
+  }
 
 .App {
     font-family: 'Metropolis', 'Metropolis Extra', 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Verdana', 'sans-serif';
