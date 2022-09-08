@@ -4,8 +4,6 @@ export default function useWindowSize() {
   const [vh, setVh] = useState(0);
 
   const checkSize = () => {
-    console.log("bla");
-
     var height =
       window?.innerHeight ||
       document?.documentElement?.clientHeight ||
@@ -24,8 +22,6 @@ export default function useWindowSize() {
       window.removeEventListener("resize", checkSize);
     };
   });
-
-  console.log(vh);
 
   return vh;
 }
