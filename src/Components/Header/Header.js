@@ -8,9 +8,8 @@ import useMobileCheck from "../../Hooks/useMobileCheck";
 import { Utils } from "../Utils/Utils";
 
 export function Header({ setActiveDeckId }) {
-  const { getCurrentUser } = useGlobal();
   const [isLoading, setIsLoading] = useState(false);
-  const currentUser = getCurrentUser();
+  const { currentUser } = useGlobal();
 
   useEffect(() => {
     setIsLoading(true);
