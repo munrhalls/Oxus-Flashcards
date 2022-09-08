@@ -17,6 +17,13 @@
     flex-direction: column;
 }
 
+
+.Menu__Mobile__modalBtnsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: safe center;
+    justify-content: safe flex-start;
+}
 .Menu__Mobile__modalBtn {
     transition: transform .15s ease-in;
     cursor: pointer;
@@ -24,16 +31,17 @@
     border: 1px solid #fff;
     color: #000;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #ddd;
     width: 5rem;
     padding: .25rem;
     margin: .25rem;
     font-size: 1rem;
 
-    width: 7rem;
+   width: 8rem;
     padding: .25rem .75rem;
     margin-bottom: .75rem;
-    font-size: 1.25rem;  
+    font-size: 1.25rem;
+    text-transform: uppercase;
 }
 .Menu__Mobile__modalBtn:hover {
     transform: scale(1.25);

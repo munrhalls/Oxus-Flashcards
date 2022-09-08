@@ -44,7 +44,6 @@ export const Menu = {
       </>
     );
   },
-
   Mobile: function ({ setActiveDeckId }) {
     const { currentUser } = useGlobal();
 
@@ -54,13 +53,23 @@ export const Menu = {
           <div className="Menu__Mobile__account">
             <FormUser.EditProfileBtn />
             <FormUser.LogOutBtn setActiveDeckId={() => setActiveDeckId(null)} />
+            <Menu.ModalBtns />
           </div>
 
           <div className="Menu__Mobile__account">
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
+            <Menu.ModalBtns />
           </div>
         </Utils.Toggle>
+      </div>
+    );
+  },
+  ModalBtns: function () {
+    return (
+      <div className="Menu__Mobile__modalBtnsContainer">
+        <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
+        <button className="Menu__Mobile__modalBtn">ABOUT</button>
       </div>
     );
   },
