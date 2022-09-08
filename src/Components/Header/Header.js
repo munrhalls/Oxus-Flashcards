@@ -42,26 +42,28 @@ export function Header({ setActiveDeckId }) {
         </div>
       )} */}
 
-      <Loader active={isLoading}>
-        <Utils.Toggle toggle={currentUser?.email}>
-          <div className="Header__account">
-            <h1 className="Header__account__welcomeMsg">
-              Welcome {currentUser?.displayName} !
-            </h1>
-            <div className="Header__account__btnsContainer">
-              <FormUser.EditProfileBtn />
-              <FormUser.LogOutBtn
-                setActiveDeckId={() => setActiveDeckId(null)}
-              />
+      {!useMobileCheck() && (
+        <Loader active={isLoading}>
+          <Utils.Toggle toggle={currentUser?.email}>
+            <div className="Header__account">
+              <h1 className="Header__account__welcomeMsg">
+                Welcome {currentUser?.displayName} !
+              </h1>
+              <div className="Header__account__btnsContainer">
+                <FormUser.EditProfileBtn />
+                <FormUser.LogOutBtn
+                  setActiveDeckId={() => setActiveDeckId(null)}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="Header__account">
-            <FormUser.LoginBtn />
-            <FormUser.RegisterBtn />
-          </div>
-        </Utils.Toggle>
-      </Loader>
+            <div className="Header__account">
+              <FormUser.LoginBtn />
+              <FormUser.RegisterBtn />
+            </div>
+          </Utils.Toggle>
+        </Loader>
+      )}
     </header>
   );
 }

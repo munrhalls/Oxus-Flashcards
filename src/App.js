@@ -56,7 +56,7 @@ function App() {
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
         {!currentUser && <Welcome.Message />}
-
+        
         <main className="Main">
           {activeDeckId && (
             <div className="Aside">
