@@ -1,12 +1,20 @@
 @media only screen and (max-width: 600px) {
     .Header__title {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        height: 100%;
+        padding-bottom: .5rem;
+        display: flex;
+        align-items: flex-start;
+    }
+    .Header__title__text {
+        letter-spacing: 1.5px;
     }
     .Header__account {
         justify-content: flex-start;
     }
     
     .Header__title__icon {
+        margin-top: -.25rem;
         margin-left: .25rem;
         height: 2.5rem;
         width: 2.5rem;
@@ -17,7 +25,8 @@
 
   @media only screen and (max-width: 325px) {
     .Header__title {
-        font-size: 1rem;
+        font-size: 1.25rem;
+        letter-spacing: .5px;
     } 
     .Header__title__icon {
         margin-left: .25rem;

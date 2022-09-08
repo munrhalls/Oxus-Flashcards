@@ -77,13 +77,14 @@
 }
 
 .Header__loggedStatus__title {
-
+    margin-top: .25rem;
 }
 
 .Header__loggedStatus__displayName {
     margin: auto;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 100%;
-    
+    max-width: 4.5rem;
+    width: 100%;
+    font-weight: bold;
 }
