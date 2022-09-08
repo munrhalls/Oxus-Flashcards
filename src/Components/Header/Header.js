@@ -26,6 +26,14 @@ export function Header({ setActiveDeckId }) {
   return (
     <header className="Header">
       <Menu.MobileBtn />
+      {currentUser && (
+        <h6 className="Header__loggedStatus">
+          <span className="Header__loggedStatus__title"></span>Logged:
+          <span className="Header__loggedStatus__displayName">
+            {currentUser.displayName}
+          </span>
+        </h6>
+      )}
       <h6 className="Header__title">
         <span className="Header__title__text">Flashcards</span>
         <img

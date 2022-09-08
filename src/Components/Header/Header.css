@@ -66,3 +66,24 @@
     transform: scale(1.25);
     box-shadow: 0 0 30px 5px #fff;
 }
+
+.Header__loggedStatus {
+    height: 100%;
+    padding: 0.5rem;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.Header__loggedStatus__title {
+
+}
+
+.Header__loggedStatus__displayName {
+    margin: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    
+}
