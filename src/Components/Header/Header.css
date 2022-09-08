@@ -37,7 +37,8 @@
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 .Header__title__icon:hover {
-    box-shadow: 0 0 30px 15px #fff;
+    cursor: move;
+    box-shadow: inset 0 0 12px 5px #000;
 }
 .Header__account {
     height: 100%;
