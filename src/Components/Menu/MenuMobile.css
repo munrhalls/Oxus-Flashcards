@@ -3,10 +3,39 @@
     top: 0; right: 0; bottom: 0; left: 0;
     height: 100%;
     width: 100%;
+    padding-top: .75rem;
     background-color: #000;
     color: #fff;
 
     display: flex;
-    justify-content: safe center;
-    align-items: safe center;
+    flex-direction: column;
+    justify-content: safe flex-start;
+    align-items: safe center
+}
+.Menu__Mobile__account {
+    display: flex;
+    flex-direction: column;
+}
+
+.Menu__Mobile__modalBtn {
+    transition: transform .15s ease-in;
+    cursor: pointer;
+
+    border: 1px solid #fff;
+    color: #000;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 5rem;
+    padding: .25rem;
+    margin: .25rem;
+    font-size: 1rem;
+
+    width: 7rem;
+    padding: .25rem .75rem;
+    margin-bottom: .75rem;
+    font-size: 1.25rem;  
+}
+.Menu__Mobile__modalBtn:hover {
+    transform: scale(1.25);
+    box-shadow: 0 0 30px 5px #fff;
 }

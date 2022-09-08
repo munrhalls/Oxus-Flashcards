@@ -46,25 +46,17 @@ export const Menu = {
   },
 
   Mobile: function ({ setActiveDeckId }) {
-    const [isLoading, setIsLoading] = useState(true);
     const { currentUser } = useGlobal();
 
     return (
       <div className="Menu__Mobile">
         <Utils.Toggle toggle={currentUser}>
-          <div className="Header__account">
-            <h1 className="Header__account__welcomeMsg">
-              Welcome {currentUser?.displayName} !
-            </h1>
-            <div className="Header__account__btnsContainer">
-              <FormUser.EditProfileBtn />
-              <FormUser.LogOutBtn
-                setActiveDeckId={() => setActiveDeckId(null)}
-              />
-            </div>
+          <div className="Menu__Mobile__account">
+            <FormUser.EditProfileBtn />
+            <FormUser.LogOutBtn setActiveDeckId={() => setActiveDeckId(null)} />
           </div>
 
-          <div className="Header__account">
+          <div className="Menu__Mobile__account">
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
           </div>

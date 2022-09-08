@@ -23,7 +23,7 @@ export function Header({ setActiveDeckId }) {
   }, [currentUser]);
 
   return (
-    <header className="Header">
+    <header className="Header"> 
       <Menu.MobileBtn />
       {currentUser && (
         <h6 className="Header__loggedStatus">
