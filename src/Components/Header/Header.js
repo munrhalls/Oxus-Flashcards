@@ -32,32 +32,6 @@ export function Header({ setActiveDeckId }) {
         </span>
       </h6>
 
-      {/* {!useMobileCheck() && (
-        <div className="Header__desktopMenuBtns">
-          <button>Tutorial</button>
-          <button>About</button>
-        </div>
-      )} */}
-
-      {/* {!useMobileCheck() && (
-        <Loader active={isLoading}>
-          <Utils.Toggle toggle={currentUser?.email}>
-            <div className="Header__account">
-              <div className="Header__account__btnsContainer">
-                <FormUser.EditProfileBtn />
-                <FormUser.LogOutBtn
-                  setActiveDeckId={() => setActiveDeckId(null)}
-                />
-              </div>
-            </div>
-
-            <div className="Header__account">
-              <FormUser.LoginBtn />
-              <FormUser.RegisterBtn />
-            </div>
-          </Utils.Toggle>
-        </Loader>
-      )} */}
       <h6 className="Header__title">
         <img
           className="Header__title__icon"
