@@ -55,9 +55,9 @@ function App() {
         <Header
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
-        <main className="Main">
-          {!currentUser && <Welcome.Message />}
+        {!currentUser && <Welcome.Message />}
 
+        <main className="Main">
           {activeDeckId && (
             <div className="Aside">
               <ModalBtns
