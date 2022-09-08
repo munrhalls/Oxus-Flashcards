@@ -1,3 +1,17 @@
+@media only screen and (max-width: 900px) {
+    .LoginRegisterBtn {
+        margin-top: .5rem;
+        width: 12rem;
+        padding: 1rem 1.5rem;
+        margin-bottom: .75rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+  }
+
+
 @media only screen and (max-width: 600px) {
     .LoginRegisterBtn {
         width: 8rem;

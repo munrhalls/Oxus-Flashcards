@@ -51,23 +51,17 @@ export const Menu = {
           <div className="Menu__Mobile__account">
             <FormUser.EditProfileBtn />
             <FormUser.LogOutBtn setActiveDeckId={() => setActiveDeckId(null)} />
-            <Menu.ModalBtns />
+            <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
+            <button className="Menu__Mobile__modalBtn">ABOUT</button>
           </div>
 
           <div className="Menu__Mobile__account">
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
-            <Menu.ModalBtns />
+            <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
+            <button className="Menu__Mobile__modalBtn">ABOUT</button>
           </div>
         </Utils.Toggle>
-      </div>
-    );
-  },
-  ModalBtns: function () {
-    return (
-      <div className="Menu__Mobile__modalBtnsContainer">
-        <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
-        <button className="Menu__Mobile__modalBtn">ABOUT</button>
       </div>
     );
   },

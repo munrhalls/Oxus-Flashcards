@@ -15,6 +15,8 @@
 .Menu__Mobile__account {
     display: flex;
     flex-direction: column;
+    align-items: safe center;
+    justify-content: safe center;
 }
 
 
@@ -37,7 +39,7 @@
     margin: .25rem;
     font-size: 1rem;
 
-   width: 8rem;
+    width: 8rem;
     padding: .25rem .75rem;
     margin-bottom: .75rem;
     font-size: 1.25rem;
@@ -47,3 +49,29 @@
     transform: scale(1.25);
     box-shadow: 0 0 30px 5px #fff;
 }
+
+
+
+@media only screen and (max-width: 900px) {
+    .Menu__Mobile__modalBtn {
+        margin-top: .5rem;
+        width: 12rem;
+        min-width: 0;
+        padding: 1rem 1.5rem;
+        margin-bottom: .75rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .Menu__Mobile__modalBtn {
+        width: 8rem;
+        padding: .25rem .75rem;
+        margin-bottom: .75rem;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+    }
+  }
