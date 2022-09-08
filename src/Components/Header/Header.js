@@ -31,14 +31,6 @@ export function Header({ setActiveDeckId }) {
           {currentUser ? currentUser.displayName : "You're not logged in."}
         </span>
       </h6>
-      <h6 className="Header__title">
-        <span className="Header__title__text">Flashcards</span>
-        <img
-          className="Header__title__icon"
-          src={IMG__CARDS}
-          alt="Flashcards Icon"
-        />
-      </h6>
 
       {/* {!useMobileCheck() && (
         <div className="Header__desktopMenuBtns">
@@ -51,9 +43,6 @@ export function Header({ setActiveDeckId }) {
         <Loader active={isLoading}>
           <Utils.Toggle toggle={currentUser?.email}>
             <div className="Header__account">
-              <h1 className="Header__account__welcomeMsg">
-                Welcome {currentUser?.displayName} !
-              </h1>
               <div className="Header__account__btnsContainer">
                 <FormUser.EditProfileBtn />
                 <FormUser.LogOutBtn
@@ -69,6 +58,14 @@ export function Header({ setActiveDeckId }) {
           </Utils.Toggle>
         </Loader>
       )}
+      <h6 className="Header__title">
+        <img
+          className="Header__title__icon"
+          src={IMG__CARDS}
+          alt="Flashcards Icon"
+        />
+        <span className="Header__title__text">Flashcards</span>
+      </h6>
     </header>
   );
 }
