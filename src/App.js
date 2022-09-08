@@ -23,6 +23,7 @@ import { Deck } from "./Components/Deck/Deck.js";
 // conclusion
 import { Footer } from "./Components/Footer/Footer";
 import { useGlobal } from "./Contexts/GlobalProvider";
+import useWindowSize from "./Hooks/useWindowSize";
 
 function App() {
   const [activeDeckId, setActiveDeckId] = useState(null);
@@ -36,6 +37,8 @@ function App() {
     setDecks,
   } = useGlobal();
 
+  useWindowSize();
+  
   useEffect(() => {
     if (!currentUser)
       return (function () {
