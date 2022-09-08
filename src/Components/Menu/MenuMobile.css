@@ -9,14 +9,19 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: safe flex-start;
+    justify-content: safe center;
     align-items: safe center
 }
-.Menu__Mobile__account {
+.Menu__Mobile__btnsContainer {
     display: flex;
     flex-direction: column;
     align-items: safe center;
-    justify-content: safe center;
+    justify-content: space-around;
+    padding: 2rem 0;
+    height: 100%;
+    width: 35%;
+    
+    
 }
 
 
@@ -73,5 +78,9 @@
         margin-bottom: .75rem;
         font-size: 1.25rem;
         text-transform: uppercase;
+    }
+    .Menu__Mobile__btnsContainer {
+        padding: .5rem 0;
+        width: 100%;
     }
   }

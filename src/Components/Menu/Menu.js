@@ -48,14 +48,14 @@ export const Menu = {
     return (
       <div className="Menu__Mobile">
         <Utils.Toggle toggle={currentUser}>
-          <div className="Menu__Mobile__account">
+          <div className="Menu__Mobile__btnsContainer">
             <FormUser.EditProfileBtn />
             <FormUser.LogOutBtn setActiveDeckId={() => setActiveDeckId(null)} />
             <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
             <button className="Menu__Mobile__modalBtn">ABOUT</button>
           </div>
 
-          <div className="Menu__Mobile__account">
+          <div className="Menu__Mobile__btnsContainer">
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
             <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
