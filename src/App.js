@@ -52,7 +52,13 @@ function App() {
 
   return (
     <>
-      <div style={{ minHeight: `${useWindowSize()}px` }} className="App">
+      <div
+        style={{
+          minHeight: `${useWindowSize()}px`,
+          height: `${useWindowSize()}px`,
+        }}
+        className="App"
+      >
         {/* <Welcome.Shade /> */}
         <Header
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
