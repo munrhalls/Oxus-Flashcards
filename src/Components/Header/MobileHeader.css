@@ -1,29 +1,43 @@
+.Header__title {
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: safe center;
+    align-items: safe center;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+.Header__title__text {
+}
+.Header__account {
+}
+
+.Header__title__icon {
+    margin-right: 2rem;
+    height: 4rem;
+    width: 4rem;
+    max-height: 4rem;
+    max-width: 4rem;
+
+    box-shadow: 0 0 30px 5px #000;
+    border-radius: 100%;
+    padding: .5rem;
+}
+
 @media only screen and (max-width: 900px) {
     .Header__title {
-        padding-bottom: 0.5rem;
-        display: flex;
-        justify-content: safe center;
-        align-items: safe center;
-        font-size: 2rem;
-        margin-right: 1rem;
+        margin-right: .25rem;
     }
-    .Header__title__text {
-    }
-    .Header__account {
-    }
-    
     .Header__title__icon {
-
+        margin-right: 1.5rem;
     }
-  }
-
+}
 @media only screen and (max-width: 600px) {
     .Header__title {
         font-size: 1.75rem;
         height: 100%;
         padding-bottom: .5rem;
         display: flex;
-        flex-direction: row-reverse;
+        /* flex-direction: row-reverse; */
         align-items: flex-start;
     }
     .Header__title__text {
