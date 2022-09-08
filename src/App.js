@@ -37,8 +37,6 @@ function App() {
     setDecks,
   } = useGlobal();
 
-  useWindowSize();
-  
   useEffect(() => {
     if (!currentUser)
       return (function () {
@@ -54,7 +52,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <div style={{ minHeight: `${useWindowSize()}px` }} className="App">
         {/* <Welcome.Shade /> */}
         <Header
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
