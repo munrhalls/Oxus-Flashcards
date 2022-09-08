@@ -38,7 +38,7 @@ export function Header({ setActiveDeckId }) {
           src={IMG__CARDS}
           alt="Flashcards Icon"
         />
-        <span className="Header__title__text">Flashcards</span>
+        <span className="Header__title__text">FLASHCARDS</span>
       </h6>
     </header>
   );

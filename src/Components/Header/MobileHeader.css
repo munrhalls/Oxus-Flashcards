@@ -1,3 +1,22 @@
+@media only screen and (max-width: 900px) {
+    .Header__title {
+        padding-bottom: 0.5rem;
+        display: flex;
+        justify-content: safe center;
+        align-items: safe center;
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    .Header__title__text {
+    }
+    .Header__account {
+    }
+    
+    .Header__title__icon {
+
+    }
+  }
+
 @media only screen and (max-width: 600px) {
     .Header__title {
         font-size: 1.75rem;
