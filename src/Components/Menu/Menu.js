@@ -49,34 +49,26 @@ export const Menu = {
     const [isLoading, setIsLoading] = useState(true);
     const { currentUser } = useGlobal();
 
-    useEffect(() => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 750);
-    });
-
     return (
       <div className="Menu__Mobile">
-        <Loader active={isLoading}>
-          <Utils.Toggle toggle={currentUser}>
-            <div className="Header__account">
-              <h1 className="Header__account__welcomeMsg">
-                Welcome {currentUser?.displayName} !
-              </h1>
-              <div className="Header__account__btnsContainer">
-                <FormUser.EditProfileBtn />
-                <FormUser.LogOutBtn
-                  setActiveDeckId={() => setActiveDeckId(null)}
-                />
-              </div>
+        <Utils.Toggle toggle={currentUser}>
+          <div className="Header__account">
+            <h1 className="Header__account__welcomeMsg">
+              Welcome {currentUser?.displayName} !
+            </h1>
+            <div className="Header__account__btnsContainer">
+              <FormUser.EditProfileBtn />
+              <FormUser.LogOutBtn
+                setActiveDeckId={() => setActiveDeckId(null)}
+              />
             </div>
+          </div>
 
-            <div className="Header__account">
-              <FormUser.LoginBtn />
-              <FormUser.RegisterBtn />
-            </div>
-          </Utils.Toggle>
-        </Loader>
+          <div className="Header__account">
+            <FormUser.LoginBtn />
+            <FormUser.RegisterBtn />
+          </div>
+        </Utils.Toggle>
       </div>
     );
   },
