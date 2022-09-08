@@ -51,7 +51,7 @@
 .WelcomeMessage {
     position: absolute;
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     top: 5rem; right: 0; bottom: 3.5rem; left: 0;
     padding: 2rem;
     padding-bottom: 8rem;
@@ -68,6 +68,20 @@
     z-index: 100;
     background-color: #fff;
   }
+  .WelcomeMessage .Loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .WelcomeMessage .Loader .Loader__text {
+    margin-bottom: 1rem;
+    font-size: .75rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+  }
+
   .WelcomeMessage__title {
     font-size: 2rem;
     font-weight: bold;
