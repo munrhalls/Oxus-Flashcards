@@ -41,6 +41,7 @@
     .Header__loggedStatus {
         padding: 0.5rem;
         margin-right: auto;
+        margin-left: .75rem;
     }
     
     .Header__loggedStatus__title {
