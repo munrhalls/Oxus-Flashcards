@@ -52,8 +52,6 @@
     box-shadow: 0 0 30px 5px #fff;
 }
 
-
-
 @media only screen and (max-width: 900px) {
     .Menu__Mobile__modalBtn {
         margin-top: .5rem;

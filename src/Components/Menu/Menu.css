@@ -1,4 +1,4 @@
-.Header__menuBtn {
+.Menu__btn {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -12,13 +12,13 @@
     padding-right: 0.5rem;
     margin-right: 0.5rem;
 }
-.Header__menuBtn__text {
+.Menu__btn__text {
     font-weight: bold;
     margin-left: -.5rem;
     margin-bottom: .33rem;
     color: #fff;
 }
-.Header__menuBtn__img {
+.Menu__btn__img {
     height: 2rem;
     width: 2rem;
     filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(301deg) brightness(104%) contrast(105%);

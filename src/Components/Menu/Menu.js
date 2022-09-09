@@ -15,28 +15,17 @@ export const Menu = {
     return (
       <>
         <Utils.Toggle toggle={menuOpen === "MenuMobile"}>
-          <button
-            className="Header__menuBtn"
-            onClick={() => setMenuOpen(() => null)}
-          >
-            <span className="Header__menuBtn__text">Close</span>
-            <img
-              className="Header__menuBtn__img"
-              src={IMG__CLOSE}
-              alt="Menu icon"
-            />
+          <button className="Menu__btn" onClick={() => setMenuOpen(() => null)}>
+            <span className="Menu__btn__text">Close</span>
+            <img className="Menu__btn__img" src={IMG__CLOSE} alt="Menu icon" />
           </button>
 
           <button
-            className="Header__menuBtn"
+            className="Menu__btn"
             onClick={() => setMenuOpen(() => "MenuMobile")}
           >
-            <span className="Header__menuBtn__text">Menu</span>
-            <img
-              className="Header__menuBtn__img"
-              src={IMG__MENU}
-              alt="Menu icon"
-            />
+            <span className="Menu__btn__text">Menu</span>
+            <img className="Menu__btn__img" src={IMG__MENU} alt="Menu icon" />
           </button>
         </Utils.Toggle>
       </>
