@@ -1,34 +1,4 @@
-.Menu__btn {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-
-    background-color: transparent;
-    background: transparent;
-    border: none;
-
-    height: 4rem;
-    border-right: 1px solid #fff;
-    padding-right: 0.5rem;
-    margin-right: 0.5rem;
-}
-.Menu__btn__text {
-    font-weight: bold;
-    margin-left: -.5rem;
-    margin-bottom: .33rem;
-    color: #fff;
-}
-.Menu__btn__img {
-    height: 2rem;
-    width: 2rem;
-    filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(301deg) brightness(104%) contrast(105%);
-}
-
-
-
-
-
-.Menu__Mobile {
+.Menu__ {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     height: 100%;
@@ -43,7 +13,7 @@
     align-items: safe center;
     z-index: 100;
 }
-.Menu__Mobile__btnsContainer {
+.Menu__btnsContainer {
     display: flex;
     flex-direction: column;
     align-items: safe center;
@@ -54,13 +24,13 @@
 }
 
 
-.Menu__Mobile__modalBtnsContainer {
+.Menu__modalBtnsContainer {
     display: flex;
     flex-direction: column;
     align-items: safe center;
     justify-content: safe flex-start;
 }
-.Menu__Mobile__modalBtn {
+.Menu__modalBtn {
     transition: transform .15s ease-in;
     cursor: pointer;
 
@@ -77,7 +47,7 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-.Menu__Mobile__modalBtn:hover {
+.Menu__modalBtn:hover {
     transform: scale(1.25);
     box-shadow: 0 0 30px 5px #fff;
 }

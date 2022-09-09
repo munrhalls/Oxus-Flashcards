@@ -35,20 +35,20 @@ export const Menu = {
     const { currentUser } = useGlobal();
 
     return (
-      <div className="Menu__Mobile">
+      <div className="Menu__">
         <Utils.Toggle toggle={currentUser}>
-          <div className="Menu__Mobile__btnsContainer">
+          <div className="Menu__btnsContainer">
             <FormUser.EditProfileBtn />
             <FormUser.LogOutBtn setActiveDeckId={() => setActiveDeckId(null)} />
-            <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
-            <button className="Menu__Mobile__modalBtn">ABOUT</button>
+            <button className="Menu__modalBtn">TUTORIAL</button>
+            <button className="Menu__modalBtn">ABOUT</button>
           </div>
 
-          <div className="Menu__Mobile__btnsContainer">
+          <div className="Menu__btnsContainer">
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
-            <button className="Menu__Mobile__modalBtn">TUTORIAL</button>
-            <button className="Menu__Mobile__modalBtn">ABOUT</button>
+            <button className="Menu__modalBtn">TUTORIAL</button>
+            <button className="Menu__modalBtn">ABOUT</button>
           </div>
         </Utils.Toggle>
       </div>
