@@ -30,7 +30,7 @@ export const Welcome = {
     useEffect(() => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 1250);
+      }, 1250000);
     });
 
     return (

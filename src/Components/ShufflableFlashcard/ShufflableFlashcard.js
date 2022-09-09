@@ -1,11 +1,9 @@
 import { uuidv4 } from "@firebase/util";
 import img from "./../../Assets/right-long-black-arrow.png";
-import cloneDeep from "lodash.clonedeep";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Flashcard } from "./Flashcard";
 import ResetDeckBtn from "../Deck/ResetDeckBtn";
 import DifficultyBtn from "./DifficultyBtn";
-import DifficultyBtnsList from "./DifficultyBtnsList";
 
 export const ShufflableFlashcard = ({
   deck,
@@ -14,7 +12,7 @@ export const ShufflableFlashcard = ({
   resetDeck,
 }) => {
   const [difficulty, setDifficulty] = useState(3);
-  
+
   const levels = ["hard", "medium", "easy", "pass"];
   let flashcards = deck.flashcards;
 
