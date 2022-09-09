@@ -113,20 +113,3 @@ function App() {
 }
 
 export default App;
-// async function fileTest(e) {
-//   let img = e.target.files[0];
-//   const storage = firebase.getStorage();
-//   const imageRef = firebase.ref(storage, img.name);
-//   firebase
-//     .uploadBytes(imageRef, img)
-//     .then((snapshot) => {
-//       console.log("Uploaded a blob or file!");
-//     })
-//     .then(() => {
-//       firebase.getDownloadURL(firebase.ref(storage, img.name)).then((url) => {
-//         console.log(url);
-//         // setImage(url);
-//         // hook
-//       });
-//     });
-// }
