@@ -63,7 +63,6 @@ function App() {
         <Header
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
-        {!currentUser && <Welcome.Message />}
 
         <main className="Main">
           {activeDeckId && (
@@ -90,6 +89,9 @@ function App() {
                 }
               />
             )}
+
+            {!currentUser && <Welcome.Message />}
+
             {menuOpen === "MenuMobile" && <Menu.Modal {...modalProps} />}
             {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
             {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}

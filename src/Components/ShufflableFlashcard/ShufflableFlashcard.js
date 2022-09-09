@@ -14,6 +14,7 @@ export const ShufflableFlashcard = ({
   resetDeck,
 }) => {
   const [difficulty, setDifficulty] = useState(3);
+  
   const levels = ["hard", "medium", "easy", "pass"];
   let flashcards = deck.flashcards;
 

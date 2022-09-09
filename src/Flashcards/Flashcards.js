@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import { Flashcard } from "./Flashcard";
 import ResetDeckBtn from "../Deck/ResetDeckBtn";
 import DifficultyBtn from "./DifficultyBtn";
-import useCheckEnter from "./../../Hooks/useCheckEnter";
 
 export const Flashcards = ({
   flashcards,
@@ -16,7 +15,7 @@ export const Flashcards = ({
 }) => {
   const [difficulty, setDifficulty] = useState(3);
   const levels = ["hard", "medium", "easy", "pass"];
-  useCheckEnter();
+
   function shuffleCard(divideDeckBy, rndFrom, rndTo) {
     let shuffleBy = Math.floor(flashcards.length / divideDeckBy);
     if (flashcards.length > 4)
