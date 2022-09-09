@@ -5,21 +5,18 @@
 
     background-color: transparent;
     background: transparent;
-    border: none;
-
-    height: 4rem;
-    border-right: 1px solid #fff;
-    padding-right: 0.5rem;
-    margin-right: 0.5rem;
+    
 }
 .Menu__OpenCloseBtn__text {
     font-weight: bold;
-    margin-left: -.5rem;
-    margin-bottom: .33rem;
+    text-transform: uppercase;
     color: #fff;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: .33rem;
 }
 .Menu__OpenCloseBtn__img {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(301deg) brightness(104%) contrast(105%);
 }
