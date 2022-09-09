@@ -91,7 +91,7 @@ function App() {
               />
             )}
 
-            {menuOpen === "MenuMobile" && <Menu.Modal {...modalProps} />}
+            {menuOpen === "Menu" && <Menu.Modal {...modalProps} />}
             {modalOpen === "AddDeck" && <Modals.AddDeck {...modalProps} />}
             {modalOpen === "EditDeck" && <Modals.EditDeck {...modalProps} />}
             {modalOpen === "DeleteDeck" && (

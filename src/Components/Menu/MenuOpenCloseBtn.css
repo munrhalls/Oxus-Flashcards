@@ -1,4 +1,4 @@
-.Menu__btn {
+.Menu__OpenCloseBtn {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -12,13 +12,13 @@
     padding-right: 0.5rem;
     margin-right: 0.5rem;
 }
-.Menu__btn__text {
+.Menu__OpenCloseBtn__text {
     font-weight: bold;
     margin-left: -.5rem;
     margin-bottom: .33rem;
     color: #fff;
 }
-.Menu__btn__img {
+.Menu__OpenCloseBtn__img {
     height: 2rem;
     width: 2rem;
     filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(301deg) brightness(104%) contrast(105%);

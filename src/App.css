@@ -4,8 +4,7 @@
 @import './Components/Header/Header.css';
 @import './Components/Menu/Menu.css';
 @import './Components/Menu/MenuMobile.css';
-@import './Components/Menu/MenuBtn.css';
-@import './Components/Menu/MenuMobileBtn.css';
+@import './Components/Menu/MenuOpenCloseBtn.css';
 @import './Components/Welcome/Welcome.css';
 /* central clusters, all else...nodes that plug into that*/
 @import './Components/ShufflableFlashcard/Flashcard.css';

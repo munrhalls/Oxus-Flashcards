@@ -9,23 +9,34 @@ import { FormUser } from "../FormUser/FormUser";
 import { Utils } from "../Utils/Utils";
 
 export const Menu = {
-  Btn: function () {
+  OpenCloseBtn: function () {
     const { setMenuOpen, menuOpen } = useGlobal();
 
     return (
       <>
-        <Utils.Toggle toggle={menuOpen === "MenuMobile"}>
-          <button className="Menu__btn" onClick={() => setMenuOpen(() => null)}>
-            <span className="Menu__btn__text">Close</span>
-            <img className="Menu__btn__img" src={IMG__CLOSE} alt="Menu icon" />
+        <Utils.Toggle toggle={menuOpen === "Menu"}>
+          <button
+            className="Menu__OpenCloseBtn"
+            onClick={() => setMenuOpen(() => null)}
+          >
+            <span className="Menu__OpenCloseBtn__text">Close</span>
+            <img
+              className="Menu__OpenCloseBtn__img"
+              src={IMG__CLOSE}
+              alt="Menu icon"
+            />
           </button>
 
           <button
-            className="Menu__btn"
-            onClick={() => setMenuOpen(() => "MenuMobile")}
+            className="Menu__OpenCloseBtn"
+            onClick={() => setMenuOpen(() => "Menu")}
           >
-            <span className="Menu__btn__text">Menu</span>
-            <img className="Menu__btn__img" src={IMG__MENU} alt="Menu icon" />
+            <span className="Menu__OpenCloseBtn__text">Menu</span>
+            <img
+              className="Menu__OpenCloseBtn__img"
+              src={IMG__MENU}
+              alt="Menu icon"
+            />
           </button>
         </Utils.Toggle>
       </>
@@ -35,20 +46,20 @@ export const Menu = {
     const { currentUser } = useGlobal();
 
     return (
-      <div className="Menu__">
+      <div className="Menu">
         <Utils.Toggle toggle={currentUser}>
           <div className="Menu__btnsContainer">
             <FormUser.EditProfileBtn />
             <FormUser.LogOutBtn setActiveDeckId={() => setActiveDeckId(null)} />
-            <button className="Menu__modalBtn">TUTORIAL</button>
-            <button className="Menu__modalBtn">ABOUT</button>
+            <button className="Menu__Btn">TUTORIAL</button>
+            <button className="Menu__Btn">ABOUT</button>
           </div>
 
           <div className="Menu__btnsContainer">
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
-            <button className="Menu__modalBtn">TUTORIAL</button>
-            <button className="Menu__modalBtn">ABOUT</button>
+            <button className="Menu__Btn">TUTORIAL</button>
+            <button className="Menu__Btn">ABOUT</button>
           </div>
         </Utils.Toggle>
       </div>
