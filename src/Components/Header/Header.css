@@ -71,17 +71,24 @@
     box-shadow: 0 0 30px 5px #fff;
 }
 
+
+
+
+
+
+
 .Header__loggedStatus {
     height: 100%;
     padding: 0.5rem;
     margin-right: auto;
+    margin-left: 1.5rem;
 
     display: flex;
     flex-direction: column;
 }
 
 .Header__loggedStatus__title {
-    margin-top: .25rem;
+    margin-top: .5rem;
 }
 
 .Header__loggedStatus__displayName {

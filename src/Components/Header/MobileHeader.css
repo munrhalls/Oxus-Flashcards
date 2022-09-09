@@ -36,6 +36,26 @@
     .Header__title__icon {
         margin-right: 1.5rem;
     }
+
+
+    .Header__loggedStatus {
+        padding: 0.5rem;
+        margin-right: auto;
+    }
+    
+    .Header__loggedStatus__title {
+        margin-top: .25rem;
+    }
+    
+    .Header__loggedStatus__displayName {
+        margin: auto;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 4.5rem;
+        width: 100%;
+        font-weight: bold;
+        font-size: 1rem;
+    }
 }
 @media only screen and (max-width: 600px) {
     .Header__title {

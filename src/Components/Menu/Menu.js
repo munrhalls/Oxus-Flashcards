@@ -16,7 +16,7 @@ export const Menu = {
       <>
         <Utils.Toggle toggle={menuOpen === "Menu"}>
           <button
-            className="Menu__OpenCloseBtn"
+            className="Menu__OpenCloseBtn --close"
             onClick={() => setMenuOpen(() => null)}
           >
             <span className="Menu__OpenCloseBtn__text">Close</span>
@@ -28,7 +28,7 @@ export const Menu = {
           </button>
 
           <button
-            className="Menu__OpenCloseBtn"
+            className="Menu__OpenCloseBtn --open"
             onClick={() => setMenuOpen(() => "Menu")}
           >
             <span className="Menu__OpenCloseBtn__text">Menu</span>

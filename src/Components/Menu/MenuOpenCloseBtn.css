@@ -23,3 +23,8 @@
     width: 3rem;
     filter: invert(95%) sepia(5%) saturate(0%) hue-rotate(301deg) brightness(104%) contrast(105%);
 }
+/* 
+.--close {
+    box-shadow: inset 45px 30px 50px 1px #333;
+    border-radius: 5%;
+} */

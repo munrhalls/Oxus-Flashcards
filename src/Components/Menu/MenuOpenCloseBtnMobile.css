@@ -13,9 +13,9 @@
     }
     .Menu__OpenCloseBtn__text {
         font-size: 1rem;
+        font-weight: lighter;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: -.2rem;
         margin-bottom: .33rem;
         text-transform: lowercase;
         
@@ -28,7 +28,7 @@
 
   @media only screen and (max-width: 600px) {
     .Menu__OpenCloseBtn {
-
+        
     }
     .Menu__OpenCloseBtn__text {
     
