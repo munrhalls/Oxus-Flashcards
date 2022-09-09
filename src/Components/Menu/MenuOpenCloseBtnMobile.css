@@ -1,6 +1,7 @@
 @media only screen and (max-width: 900px) {
     .Menu__OpenCloseBtn {
-
+        display: flex;
+        flex-direction: column;
     }
     .Menu__OpenCloseBtn__text {
     

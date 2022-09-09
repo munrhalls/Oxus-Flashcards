@@ -3,7 +3,6 @@
 @import './Fonts/fonts.css';
 @import './Components/Header/Header.css';
 @import './Components/Menu/Menu.css';
-@import './Components/Menu/MenuMobile.css';
 @import './Components/Menu/MenuOpenCloseBtn.css';
 @import './Components/Welcome/Welcome.css';
 /* central clusters, all else...nodes that plug into that*/
@@ -36,6 +35,8 @@
 @import './Components/Footer/Footer.css';
 /* being friendly to cell phones */
 @import './Components/Header/MobileHeader.css';
+@import './Components/Menu/MenuMobile.css';
+@import './Components/Menu/MenuOpenCloseBtnMobile.css';
 @import './Components/FormUser/MobileFormUser.css';
 @import './Components/Deck/MobileDeck.css';
 @import './Components/ShufflableFlashcard/MobileFlashcards.css';
