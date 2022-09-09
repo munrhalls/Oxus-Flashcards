@@ -5,15 +5,18 @@
 
     background-color: transparent;
     background: transparent;
+    border: none;
+    align-items: center;
     
 }
 .Menu__OpenCloseBtn__text {
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
-    font-size: 1.5rem;
-    margin-left: 1rem;
+    font-size: 1.75rem;
+    margin-right: 1rem;
     margin-bottom: .33rem;
+    letter-spacing: 3px;
 }
 .Menu__OpenCloseBtn__img {
     height: 3rem;
