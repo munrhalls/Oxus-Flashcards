@@ -101,6 +101,14 @@ export const Footer = () => {
         >
           <span> ///</span> Menu icons created by Freepik - Flaticon
         </a>
+        <a
+          className="Footer__attribs__link"
+          target="_blank"
+          href="https://www.flaticon.com/free-icons/list"
+          title="list icons"
+        >
+          <span> ///</span> List icons created by Wahyu Adam - Flaticon
+        </a>
       </div>
     </footer>
   );

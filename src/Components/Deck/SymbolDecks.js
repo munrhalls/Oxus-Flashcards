@@ -10,7 +10,10 @@ export const SymbolDecks = ({ decks, setActiveDeckId }) => {
 
   return (
     <>
-      <h1 className="SymbolDecks__title">List of decks</h1>
+      <div className="SymbolDecks__title">
+        <img src="" alt="List icon." />
+        <h1 className="SymbolDecks__title__text">List of decks</h1>
+      </div>
 
       <div className="SymbolDecks">
         <AddDeckBtn />
