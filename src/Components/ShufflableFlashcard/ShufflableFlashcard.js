@@ -50,7 +50,9 @@ export const ShufflableFlashcard = ({
       {flashcards.length > 0 ? (
         <div className="Flashcards">
           <div className="Flashcard__container">
-            <h3 className="Flashcard__number">{flashcards.length} cards</h3>
+            <h3 className="Flashcard__number">
+              {flashcards?.length} card{flashcards?.length !== 1 && 's'}
+            </h3>
             <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
           </div>
 
