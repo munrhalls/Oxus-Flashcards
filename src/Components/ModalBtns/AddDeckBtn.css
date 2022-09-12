@@ -63,6 +63,6 @@
 .AddDeckBtn__imgCards {
     cursor: pointer;
     position: absolute;
-    width: 5rem;
-    height: 5rem;
+    width: 2rem;
+    height: 2rem;
 }

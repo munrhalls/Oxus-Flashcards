@@ -29,8 +29,8 @@ export const AddDeckBtn = () => {
           return (
             <img
               style={{
-                bottom: `${0.5 + i * 1.2}rem`,
-                left: `${-6.25 + 0.25 * i * 4.25 + (1 / i) * 5}rem`,
+                bottom: `${-0.25 + i * 1.2}rem`,
+                left: `${-4.5 + 0.25 * i * 4.25 + (1 / i) * 5}rem`,
                 boxShadow: `0 0 15px 5px rgb(${255}, ${255}, ${255})`,
                 borderRadius: `50%`,
                 padding: `0.25rem`,
