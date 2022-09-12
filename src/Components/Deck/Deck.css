@@ -89,9 +89,9 @@
 }
 
 .SymbolDecks__title {
-    padding: .5rem;
-    margin: 1.5rem;
-    padding-top: 1rem;
+    margin: 1.5rem auto;
+    width: 23rem;
+    padding: 1rem 1rem;
     font-weight: bold;
     text-transform: uppercase;
     border: 3px solid #000;
@@ -103,8 +103,9 @@
 
 }
 .SymbolDecks__title__icon {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2.25rem;
+    width: 2.25rem;
+    margin-right: .5rem;
 }
 .SymbolDecks__title__text {
     font-size: 2.25rem;
