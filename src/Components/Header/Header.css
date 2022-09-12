@@ -52,7 +52,7 @@
     opacity: .95;
     border-radius: 5px;
     transform: scale(1.5) translate(1.25rem, 1.25rem);
-    box-shadow: 0 0 15px 30px #fff;
+    box-shadow: 0 0 30px 30px #fff;
 }
 
 .Header:hover .Header__title__icon {
