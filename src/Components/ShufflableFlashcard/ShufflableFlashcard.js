@@ -14,7 +14,7 @@ export const ShufflableFlashcard = ({
   const [difficulty, setDifficulty] = useState(3);
 
   const levels = ["hard", "medium", "easy", "pass"];
-  let flashcards = deck.flashcards;
+  let flashcards = deck?.flashcards;
 
   function rndInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -51,7 +51,7 @@ export const ShufflableFlashcard = ({
         <div className="Flashcards">
           <div className="Flashcard__container">
             <h3 className="Flashcard__number">
-              {flashcards?.length} card{flashcards?.length !== 1 && 's'}
+              {flashcards?.length} card{flashcards?.length !== 1 && "s"}
             </h3>
             <Flashcard key={uuidv4()} flashcard={flashcards[0]} />
           </div>

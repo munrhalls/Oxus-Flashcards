@@ -20,6 +20,7 @@ export const InputsHandler = ({ side, flashcard, setFlashcard }) => {
   }
   async function updateFlashcardImage(e) {
     e.preventDefault();
+    let img = e?.target?.files[0];
     let str = await getBase64(e.target.files[0]);
     setFlashcard((flashcard) => {
       flashcardSide.image = str;
