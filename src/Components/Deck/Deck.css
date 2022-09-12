@@ -88,6 +88,13 @@
     flex-wrap: wrap;
 }
 
+.SymbolDecks__title {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: .5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .SymbolDecks__deck {
     cursor: pointer;
     display: flex;
