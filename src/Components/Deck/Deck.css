@@ -89,12 +89,15 @@
 }
 
 .SymbolDecks__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     text-align: center;
     padding: .5rem;
+    margin: 1.5rem;
     padding-top: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+    border: 3px solid #000;
+    border-radius: 5px;
 }
 .SymbolDecks__deck {
     cursor: pointer;

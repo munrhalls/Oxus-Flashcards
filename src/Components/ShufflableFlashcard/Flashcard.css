@@ -31,7 +31,7 @@
     }
     /* Adding a step in the middle */
     50% {
-        transform: rotateY(90deg);
+        transform: rotateY(-90deg);
     }
     100% {
         transform: none;
