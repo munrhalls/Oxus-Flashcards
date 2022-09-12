@@ -1,5 +1,5 @@
 import { uuidv4 } from "@firebase/util";
-
+import IMG__LIST from "./../../Assets/list.png";
 import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
 import { AddDeckBtn } from "../ModalBtns/AddDeckBtn";
@@ -11,7 +11,11 @@ export const SymbolDecks = ({ decks, setActiveDeckId }) => {
   return (
     <>
       <div className="SymbolDecks__title">
-        <img src="" alt="List icon." />
+        <img
+          className="SymbolDecks__title__icon"
+          src={IMG__LIST}
+          alt="List icon."
+        />
         <h1 className="SymbolDecks__title__text">List of decks</h1>
       </div>
 
