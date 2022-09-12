@@ -2,9 +2,9 @@
 
 This app is enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both. 
 
-App is compatible both with desktop PC's and even very small mobile phones
+App is compatible both with desktop PC's and even very small mobile phones.
 
-Users can easily take a picture with their phone, and upload it to the flashcard they're editing 1 click. This is very useful for, e.g., taking a picture of a textbook's paragraph and putting it on the answer side of a flashcard. 
+Users can easily take a picture with their phone, and upload it to the flashcard they're editing in 1 click. This is very useful for, e.g., taking a picture of a textbook's paragraph and putting it on the answer side of a flashcard (image can be on either side, though, it's not limited).
 
 Users can create, edit and delete decks of flashcards. A deck is just a deck, like a deck of cards. 
 
