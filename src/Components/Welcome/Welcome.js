@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useGlobal } from "../../Contexts/GlobalProvider";
 import Loader from "../Loader/Loader";
 
 export const Welcome = {
@@ -33,6 +34,7 @@ export const Welcome = {
       }, 1250);
     });
 
+    const { setModalOpen } = useGlobal();
     return (
       <>
         {message ? (
@@ -155,7 +157,10 @@ export const Welcome = {
                 onClick={() => setIsMessage((message) => false)}
                 className="WelcomeMessage__btnContainer"
               >
-                <button className="WelcomeMessage__btnContainer__btn">
+                <button
+                  className="WelcomeMessage__btnContainer__btn"
+                  onClick={() => setModalOpen(null)}
+                >
                   Close this message
                 </button>
               </div>

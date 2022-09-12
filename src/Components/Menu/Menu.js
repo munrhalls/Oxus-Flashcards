@@ -43,7 +43,7 @@ export const Menu = {
     );
   },
   Modal: function ({ setActiveDeckId }) {
-    const { currentUser } = useGlobal();
+    const { currentUser, setModalOpen, setMenuOpen } = useGlobal();
 
     return (
       <div className="Menu">
@@ -59,7 +59,15 @@ export const Menu = {
             <FormUser.LoginBtn />
             <FormUser.RegisterBtn />
             <button className="Menu__Btn">TUTORIAL</button>
-            <button className="Menu__Btn">ABOUT</button>
+            <button
+              className="Menu__Btn"
+              onClick={() => {
+                setModalOpen(() => "WelcomeMessage");
+                setMenuOpen(null);
+              }}
+            >
+              ABOUT
+            </button>
           </div>
         </Utils.Toggle>
       </div>

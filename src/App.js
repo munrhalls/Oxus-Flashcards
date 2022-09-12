@@ -41,6 +41,14 @@ function App() {
     if (!currentUser)
       return (function () {
         setDecks([introExampleDeck]);
+        setModalOpen("WelcomeMessage");
+      })();
+  }, []);
+
+  useEffect(() => {
+    if (!currentUser)
+      return (function () {
+        setDecks([introExampleDeck]);
       })();
     getDecksFromDBAndUpdateUI(currentUser);
   }, [currentUser]);
@@ -49,7 +57,7 @@ function App() {
     activeDeckId,
     setActiveDeckId: (activeDeckId) => setActiveDeckId(activeDeckId),
   };
-
+  console.log(modalOpen);
   return (
     <>
       <div
@@ -63,7 +71,7 @@ function App() {
         <Header
           setActiveDeckId={(activeDeckId) => setActiveDeckId(activeDeckId)}
         />
-        {!currentUser && <Welcome.Message />}
+        {modalOpen === "WelcomeMessage" && <Welcome.Message />}
 
         <main className="Main">
           {activeDeckId && (
