@@ -1,8 +1,8 @@
 # Oxus Flashcards
 
-This app, in its entirety, has been designed, coded and deployed 100% by me, over the course of about 2 month's of intense learning & working on it full time.
+This app, in its entirety, every tiniest nook and cranny - has been designed, coded and deployed 100% by me, over the course of about 2 month's of intense learning & working on it full time.
 
-This app enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both. 
+This app enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both.
 
 App is compatible both with desktop PC's and even very small mobile phones.
 
@@ -10,7 +10,7 @@ Users can easily take a picture with their phone, and upload it to the flashcard
 
 Users can create, edit and delete decks of flashcards. A deck is just a deck, like a deck of cards. The UI & UE is designed to feel like that.
 
-User can use the deck just like a deck of paper flashcards for learning in real life - trying to answer one flashcard at a time, and putting it away at the start, middle or end of the deck, depending on how difficult it was to answer. 
+User can use the deck just like a deck of paper flashcards for learning in real life - trying to answer one flashcard at a time, and putting it away at the start, middle or end of the deck, depending on how difficult it was to answer.
 
 If a card was repeatedly easy, user can put it away to "Completed cards" deck. User can also easily reset the deck's cards and do them again. User can always see how many flashcards are left in the deck, and how many are completed.
 
@@ -18,23 +18,21 @@ User can see a list of the decks they've made.
 
 User can first check out and see how one can learn with flashcards, using the introductory, example flashcards deck - "How's 'hello' in 35+ different languages".
 
-The app features intuitive, minimalistic, simple and clear, modal-based UI & UE. It is richly decorated with descriptive icons and often, animations, that make it easy to get used to. 
+The app features intuitive, minimalistic, simple and clear, modal-based UI & UE. It is richly decorated with descriptive icons and often, animations, that make it easy to get used to.
 
-User can accomplish his action-goals in this app very easily, with minimal clicks/steps in between. 
+User can accomplish his action-goals in this app very easily, with minimal clicks/steps in between.
 
-The app features authentication and database. 
+The app features authentication and database.
 
-User can register, login, log out and reset password on the server. 
+User can register, login, log out and reset password on the server.
 
 After registration, user-created content is automatically saved and persisted on his account on the server.
 
 Upon logging, user's content, i.e decks of flashcards, automatically downloads and displays.
 
-Database requests to the server are minimized. User can add/edit/delete even tens of flashcards with text and images, yet the request to database is always only 1 request that edits one specific deck of flashcards. 
+Database requests to the server are minimized. User can add/edit/delete even tens of flashcards with text and images, yet the request to database is always only 1 request that edits one specific deck of flashcards.
 
 The entire UI & UE is designed around minimizing requests to the server. All flashcard editions happen within a given deck edition, and only saving that deck edition causes a database request to be fired.
-
-
 
 ## Available Scripts
 
