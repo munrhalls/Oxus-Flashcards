@@ -1,12 +1,14 @@
 # Oxus Flashcards
 
-This app is enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both. 
+This app, in its entirety, has been designed, coded and deployed 100% by me, over the course of about 2 month's of intense learning & working on it full time.
+
+This app enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both. 
 
 App is compatible both with desktop PC's and even very small mobile phones.
 
 Users can easily take a picture with their phone, and upload it to the flashcard they're editing in 1 click. This is very useful for, e.g., taking a picture of a textbook's paragraph and putting it on the answer side of a flashcard (image can be on either side, though, it's not limited).
 
-Users can create, edit and delete decks of flashcards. A deck is just a deck, like a deck of cards. 
+Users can create, edit and delete decks of flashcards. A deck is just a deck, like a deck of cards. The UI & UE is designed to feel like that.
 
 User can use the deck just like a deck of paper flashcards for learning in real life - trying to answer one flashcard at a time, and putting it away at the start, middle or end of the deck, depending on how difficult it was to answer. 
 
