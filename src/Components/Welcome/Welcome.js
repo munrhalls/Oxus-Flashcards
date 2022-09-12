@@ -148,7 +148,7 @@ export const Welcome = {
                   flashcard in 1 step!
                 </span>
               </h2>
-              <h2 className="WelcomeMessage__subtitle --fontLarge">
+              <h2 className="WelcomeMessage__subtitle --fontLarge --center">
                 Enjoy Oxus Flashcards!
               </h2>
               <div
