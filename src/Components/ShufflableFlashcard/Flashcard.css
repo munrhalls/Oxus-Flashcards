@@ -19,15 +19,33 @@
     min-width: 100%;
     max-width: 100%;
     position: relative;
+    transition: transform 1.5s ease-out;  
 }
-.Flashcard.--unrotated {
+/* .Flashcard.--unrotated {
     transition: transform 0.05s ease-out;
     transform: rotateY(-360deg);
-}
-.Flashcard.--rotated {
-    transform: rotateY(0deg);
-    transition: transform 0.05s ease-out;  
-}
+} */
+@keyframes rotate {
+    0% {
+      transform: rotateY(0deg);
+    }
+    /* Adding a step in the middle */
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: none;
+    }
+  }
+.--rotated {
+    animation-duration: .4s;
+    animation-name: rotate;
+  }
+  
+
+  
+
+
 
 .Flashcard__number {
     height: 1.25rem;
