@@ -23,7 +23,7 @@ export const Flashcard = ({ flashcard }) => {
     >
       {turned ? (
         <>
-          <h3 className="Flashcard__metaTitle">Flashcard</h3>
+          <h3 className="Flashcard__metaTitle">QUESTION</h3>
           <div className="Flashcard__turned">
             <div className="Flashcard__text">{flashcard.turned.text}</div>
           </div>
@@ -31,7 +31,7 @@ export const Flashcard = ({ flashcard }) => {
         </>
       ) : (
         <>
-          <h3 className="Flashcard__metaTitle">Flashcard</h3>
+          <h3 className="Flashcard__metaTitle">ANSWER</h3>
           <div className="Flashcard__unturned">
             <div className="Flashcard__text">{flashcard.unturned.text}</div>
           </div>
