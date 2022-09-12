@@ -1,5 +1,5 @@
 import { uuidv4 } from "@firebase/util";
-import IMG__LIST from "./../../Assets/list.png";
+import IMG__LIST from "./../../Assets/to-do-list.png";
 import React from "react";
 import { SymbolDeck } from "./SymbolDeck";
 import { AddDeckBtn } from "../ModalBtns/AddDeckBtn";
