@@ -16,8 +16,9 @@
     align-items: center;
     font-size: 1.25rem;
     font-weight: bold;
-    min-width: 100%;
-    max-width: 30rem;
+    min-width: 0;
+    max-width: 25rem;
+    width: 100%;
     position: relative;
     transition: transform 1.5s ease-out;  
 }
