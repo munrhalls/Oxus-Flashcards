@@ -1,5 +1,7 @@
 # Oxus Flashcards
 
+WEBSITE: (https://oxus.netlify.com).
+
 This app, in its entirety, every tiniest nook and cranny - has been designed, coded and deployed 100% by me, over the course of about 2 month's of intense learning & working on it full time.
 
 This app enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both.
