@@ -1,40 +1,38 @@
 # Oxus Flashcards
 
-WEBSITE: (https://oxus.netlify.com).
+https://oxus.netlify.com
 
-This app, in its entirety, every tiniest nook and cranny - has been designed, coded and deployed 100% by me, over the course of about 2 month's of intense learning & working on it full time.
+Electronic flashcards. Solo project. 
 
-This app enables users to make custom flashcards with question and answer on either side. Flashcard can feature text, images or both.
+Started the project with zero React skills.
 
-App is compatible both with desktop PC's and even very small mobile phones.
+2 months of intense training and study:
+- learned enough to build a larger app with database, users, authentication and functional UI.
 
-Users can easily take a picture with their phone, and upload it to the flashcard they're editing in 1 click. This is very useful for, e.g., taking a picture of a textbook's paragraph and putting it on the answer side of a flashcard (image can be on either side, though, it's not limited).
+LESSONS:
+- UI design, consistent styling, takes about 10 000 years. USE A FRAMEWORK FOR THAT, e.g. material-ui/spectrum etc.
+- learn before doing. IT'S FASTER. nothing takes longer than getting stuck every few steps and trying to re-invent the wheel on a small code block.
+- do, before learning for too long. IT'S CRITICAL TO LEARN ONLY THE FEW THINGS I NEED + the environment.
+- these are two opposites that need to come together:
+a) learn before doing, ALWAYS,
+b) code it soon enough, ALWAYS.
 
-Users can create, edit and delete decks of flashcards. A deck is just a deck, like a deck of cards. The UI & UE is designed to feel like that.
+Why? Why learn before doing? Why code it soon enough?
+- if you don't overlearn and learn just enough context/syntax to not get stuck, 
+- and then you code just what you need, after you've learned it...
+- that takes SIGNIFICANTLY LESS TIME - WITH THE SAME INPUT UNKNOWNS / COMPLICATIONS TO PLOW THROUGH
 
-User can use the deck just like a deck of paper flashcards for learning in real life - trying to answer one flashcard at a time, and putting it away at the start, middle or end of the deck, depending on how difficult it was to answer.
+LESSONS SUMMARY:
+If you have a given input piles of unknown stuff - learn before doing/code soon enough is like f(x) => y, where you get more y out of *same* x of unknown stuff to code.
+That's my current hypothesis, anyway.
 
-If a card was repeatedly easy, user can put it away to "Completed cards" deck. User can also easily reset the deck's cards and do them again. User can always see how many flashcards are left in the deck, and how many are completed.
+PROJECT SUMMARY:
+From ~ 0 React skills to building a larger React app with database/authentication, custom hooks, and more.
+Huge challenge.
+2 months of intense training, study and hardcore yet meditative learning and coding sessions.
+Biggest time-sinks: CSS and not using something like material-ui. By far. Refactors. Coding before learning.
+Learned: React hooks, custom hooks, React context, firebase, integrating React with REST API endpoints.
 
-User can see a list of the decks they've made.
-
-User can first check out and see how one can learn with flashcards, using the introductory, example flashcards deck - "How's 'hello' in 35+ different languages".
-
-The app features intuitive, minimalistic, simple and clear, modal-based UI & UE. It is richly decorated with descriptive icons and often, animations, that make it easy to get used to.
-
-User can accomplish his action-goals in this app very easily, with minimal clicks/steps in between.
-
-The app features authentication and database.
-
-User can register, login, log out and reset password on the server.
-
-After registration, user-created content is automatically saved and persisted on his account on the server.
-
-Upon logging, user's content, i.e decks of flashcards, automatically downloads and displays.
-
-Database requests to the server are minimized. User can add/edit/delete even tens of flashcards with text and images, yet the request to database is always only 1 request that edits one specific deck of flashcards.
-
-The entire UI & UE is designed around minimizing requests to the server. All flashcard editions happen within a given deck edition, and only saving that deck edition causes a database request to be fired.
 
 ## Available Scripts
 
