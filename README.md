@@ -21,7 +21,9 @@ Sense before code.
 - I learned that already in my first job but...
 - This app taught me a lot of painful lessons that doing a lot of skipping on these paper-solutions, isn't a good idea. 
 - It doesn't save time, it quickly comes back to waste a ton more time than it'd take to solve it on paper first.
-- every paper-solution takes time but it saves the need for 10-50 required code-solutions later on
+- Every paper-solution takes time but it saves the need for 10-50 required code-solutions later on
+- That's just my current hipothesis, anyway 
+- I think: going full pragmatic (just do x asap) where it's applicable is okay... but whenever ANYTHING looks risky/potential rabbit hole involved, I'd better solve it on paper first
 
 
 
