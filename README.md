@@ -9,6 +9,8 @@ Started the project with zero React skills.
 2 months of intense training and study:
 - learned enough to build a larger app with database, users, authentication and functional UI.
 
+I did my best but code obviously has lots of issues. It was a project I used to learn.
+
 
 
 ## Available Scripts
