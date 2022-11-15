@@ -9,23 +9,6 @@ Started the project with zero React skills.
 2 months of intense training and study:
 - learned enough to build a larger app with database, users, authentication and functional UI.
 
-LESSONS:
-UI
-- styling UI takes a lot of time, especially in terms of RWD and consistency
-- UI in this app is PRETTY POOR, actually - too much going on
-- in general, UI needs to just do its job...little is better than too much
-- occasional slight effect here and there for the feel of it, that's alright
-
-Sense before code. 
-- Everything needs to be solved conceptually, it has to make sense on paper, first.
-- I learned that already in my first job but...
-- This app taught me a lot of painful lessons that doing a lot of skipping on these paper-solutions, isn't a good idea. 
-- It doesn't save time, it quickly comes back to waste a ton more time than it'd take to solve it on paper first.
-- Every paper-solution takes time but it saves the need for 10-50 required code-solutions later on
-- That's just my current hipothesis, anyway 
-- I think: going full pragmatic (just do x asap) where it's applicable is okay... but whenever ANYTHING looks risky/potential rabbit hole involved, I'd better solve it on paper first
-
-
 
 
 ## Available Scripts
